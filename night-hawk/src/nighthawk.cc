@@ -1026,8 +1026,10 @@ int main(int argc,char *argv[])
 						pclose(sound_engine_fp);
 				}
 			else
+        {
 				printf("Error: Couldn't run sound engine, running without sound.\n");
       game();
+        }
 			/* The question here is:  do we continue without sound and 
 			 * play anyway?  Or do we abort like we used to? 
 			 */
