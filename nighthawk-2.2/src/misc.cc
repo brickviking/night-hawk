@@ -1,4 +1,5 @@
-/***************************************************************************
+/** -*- mode: C++; tab-width: 2 -*-
+****************************************************************************
 ****************************************************************************
 ****************************************************************************
 *
@@ -449,34 +450,34 @@ XRectangle rech_pos2[4] =
    { 14 + SCREEN_HSIZE_X,-17 + SCREEN_HSIZE_Y,1,1}};
 
 /***************************************************************************
-*  0123456
-*  c001122
-*  | | \  \
-* cmd | Vol \
-*   Sample Balance
-***************************************************************************/
+ *  0123456
+ *  c001122
+ *  | | \  \
+ * cmd | Vol \
+ *   Sample Balance
+ ***************************************************************************/
 void sound_engine_cmd(char cmd,int sam,int vol,int bal)
 {
   if(sound_engine_fp != NULL)
-  {
-    char packet[PIPE_PACKET_SIZE];
+		{
+			char packet[PIPE_PACKET_SIZE];
 
-    packet[0] = cmd;
-    packet[1] = (sam >> 4) + 'a';
-    packet[2] = (sam & 0xf) + 'a';
-    packet[3] = (vol >> 4) + 'a';
-    packet[4] = (vol & 0xf) + 'a';
-    packet[5] = (bal >> 4) + 'a';
-    packet[6] = (bal & 0xf) + 'a';
-    packet[7] = 0;
-    fwrite(packet,PIPE_PACKET_SIZE,1,sound_engine_fp);
-    fflush(sound_engine_fp);
-  }
+			packet[0] = cmd;
+			packet[1] = (sam >> 4) + 'a';
+			packet[2] = (sam & 0xf) + 'a';
+			packet[3] = (vol >> 4) + 'a';
+			packet[4] = (vol & 0xf) + 'a';
+			packet[5] = (bal >> 4) + 'a';
+			packet[6] = (bal & 0xf) + 'a';
+			packet[7] = 0;
+			fwrite(packet,PIPE_PACKET_SIZE,1,sound_engine_fp);
+			fflush(sound_engine_fp);
+		}
 }
 
 /***************************************************************************
-*
-***************************************************************************/
+ *
+ ***************************************************************************/
 int x_init(void)
 {
   char *error_m = "x_init() ";
@@ -485,33 +486,33 @@ int x_init(void)
   XWMHints xwmhints;
   XVisualInfo visual_info;
   XGCValues gcv;
-/*  char *font_name = "-*-fixed-*-*-*-*-12-*-*-*-*-*-*-*"; */
+	/*  char *font_name = "-*-fixed-*-*-*-*-12-*-*-*-*-*-*-*"; */
   char *font_name = "-*-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*";
   XSizeHints sizehints;
 
   if((host = (char *)getenv("DISPLAY")) == NULL)
-  {
-    perror(error_m);
-    return -1;
-  }
+		{
+			perror(error_m);
+			return -1;
+		}
   if((display = XOpenDisplay(host)) == NULL) 
-  {
-    perror(error_m);
-    return -1;
-  }
+		{
+			perror(error_m);
+			return -1;
+		}
   screen = DefaultScreen(display);
   root = parent = RootWindow(display,screen);
   depth = DefaultDepth(display,screen);
   if(!XMatchVisualInfo(display,screen, 
-    DefaultDepth(display,screen),PseudoColor,&visual_info))
+											 DefaultDepth(display,screen),PseudoColor,&visual_info))
     if(!XMatchVisualInfo(display,screen, 
-      DefaultDepth(display,screen),DirectColor,&visual_info))
+												 DefaultDepth(display,screen),DirectColor,&visual_info))
       if(!XMatchVisualInfo(display,screen, 
-        DefaultDepth(display,screen),TrueColor,&visual_info))
-      {
-        perror(error_m);
-        return -1;
-      }
+													 DefaultDepth(display,screen),TrueColor,&visual_info))
+				{
+					perror(error_m);
+					return -1;
+				}
       else
         printf("Colour Mode: TrueColor\n");
     else
@@ -519,17 +520,17 @@ int x_init(void)
   else
     printf("Colour Mode: PseudoColor\n");
   window = XCreateSimpleWindow(
-    display,root,
-    window_x_pos,window_y_pos,
-    window_width,window_height,
-    1,0,0);
+															 display,root,
+															 window_x_pos,window_y_pos,
+															 window_width,window_height,
+															 1,0,0);
   XSelectInput(display,window,
-    ButtonPressMask | KeyPressMask | KeyReleaseMask);
+							 ButtonPressMask | KeyPressMask | KeyReleaseMask);
   XChangeProperty(
-    display,window,XA_WM_NAME,XA_STRING,8,
-    PropModeReplace,(unsigned char *)wname,strlen(wname));
+									display,window,XA_WM_NAME,XA_STRING,8,
+									PropModeReplace,(unsigned char *)wname,strlen(wname));
   iconPixmap = XCreateBitmapFromData(display,window,
-    (char *)icon_bm_bits,icon_bm_width,icon_bm_height);
+																		 (char *)icon_bm_bits,icon_bm_width,icon_bm_height);
   xwmhints.icon_pixmap = iconPixmap;
   xwmhints.initial_state = NormalState;
   xwmhints.flags = IconPixmapHint | StateHint;
@@ -558,26 +559,26 @@ int x_init(void)
   gcv.fill_style = FillTiled;
   gcv.graphics_exposures = False;
   gc_bltblt = XCreateGC(display,window,
-    GCFunction | GCFillStyle | GCGraphicsExposures,&gcv);
+												GCFunction | GCFillStyle | GCGraphicsExposures,&gcv);
   XFillRectangle(display,render_screen,gc_bgblt,
-    0,0,window_width,window_height);
+								 0,0,window_width,window_height);
 
   font_st = XLoadQueryFont(display,font_name);
   if(font_st != NULL)
-  {
-    XFreeFont(display,font_st);
-    font = XLoadFont(display,font_name);
-    XSetFont(display,gc_line,font);
-    XSetFont(display,gc_dline,font);
-    XSetFont(display,gc_bgblt,font);
-    XSetFont(display,gc_bltblt,font);
-  }
+		{
+			XFreeFont(display,font_st);
+			font = XLoadFont(display,font_name);
+			XSetFont(display,gc_line,font);
+			XSetFont(display,gc_dline,font);
+			XSetFont(display,gc_bgblt,font);
+			XSetFont(display,gc_bltblt,font);
+		}
   return 1;
 }
 
 /***************************************************************************
-*
-***************************************************************************/
+ *
+ ***************************************************************************/
 int loadxpm(char *filename,tbm *bm)
 {
   XWindowAttributes root_attr;
@@ -589,9 +590,9 @@ int loadxpm(char *filename,tbm *bm)
   xpm_attributes.colormap = root_attr.colormap;
   xpm_attributes.valuemask = XpmSize | XpmReturnPixels | XpmColormap;
   val = XpmReadFileToPixmap(
-    display,root,filename,&bm->pixmap,&bm->mask,&xpm_attributes);
+														display,root,filename,&bm->pixmap,&bm->mask,&xpm_attributes);
   switch(val)
-  {
+		{
     case XpmColorError:
       printf("Error: Xpm colour error. Aborting.\n");
       break;
@@ -599,7 +600,7 @@ int loadxpm(char *filename,tbm *bm)
       bm->width = xpm_attributes.width;
       bm->height = xpm_attributes.height;
       XpmCreateXpmImageFromPixmap(
-        display,bm->pixmap,bm->mask,&xpmimage,&xpm_attributes);
+																	display,bm->pixmap,bm->mask,&xpmimage,&xpm_attributes);
       return 1;
     case XpmOpenFailed:
       printf("Error: Xpm open failed. Aborting.\n");
@@ -613,7 +614,7 @@ int loadxpm(char *filename,tbm *bm)
     case XpmColorFailed:
       printf("Error: Xpm Colour failed. Aborting.\n");
       break;
-  }
+		}
   return 0;
 }
 
@@ -630,25 +631,25 @@ void drawxpm_ani(tbm *bm,int x,int y,int i,int total)
 {
   if((x > -64) && (x < (SCREEN_SIZE_X + 64)) &&
      (y > -64) && (y < (SCREEN_SIZE_Y + 64)))
-  {
-    register int sy,o;
+		{
+			register int sy,o;
 
-    sy = bm->height / total;
-    o = i * sy;
-    XSetClipOrigin(display,gc_bltblt,x,y - o);
-    XSetClipMask(display,gc_bltblt,bm->mask);
-    XCopyArea(display,bm->pixmap,render_screen,gc_bltblt,
-      0,o,bm->width,sy,x,y);
-  }
+			sy = bm->height / total;
+			o = i * sy;
+			XSetClipOrigin(display,gc_bltblt,x,y - o);
+			XSetClipMask(display,gc_bltblt,bm->mask);
+			XCopyArea(display,bm->pixmap,render_screen,gc_bltblt,
+								0,o,bm->width,sy,x,y);
+		}
 }
 
 /***************************************************************************
-*
-***************************************************************************/
+ *
+ ***************************************************************************/
 void ramp_colour(
-  unsigned short r1,unsigned short g1,unsigned short b1,
-  unsigned short r2,unsigned short g2,unsigned short b2,
-  unsigned long *base,int run)
+								 unsigned short r1,unsigned short g1,unsigned short b1,
+								 unsigned short r2,unsigned short g2,unsigned short b2,
+								 unsigned long *base,int run)
 {
   register int x;
   XColor C;
@@ -661,18 +662,18 @@ void ramp_colour(
   bs = (b2 - b1) / run;
   C.flags = DoRed | DoGreen | DoBlue;
   for(x = 0;x < run;x++)
-  {
-    C.red = r1 + (unsigned short)(x * rs);
-    C.green = g1 + (unsigned short)(x * gs);
-    C.blue = b1 + (unsigned short)(x * bs);
-    XAllocColor(display,DefaultCMap,&C);
-    *(base + x) = C.pixel;
-  }
+		{
+			C.red = r1 + (unsigned short)(x * rs);
+			C.green = g1 + (unsigned short)(x * gs);
+			C.blue = b1 + (unsigned short)(x * bs);
+			XAllocColor(display,DefaultCMap,&C);
+			*(base + x) = C.pixel;
+		}
 }
 
 /***************************************************************************
-*
-***************************************************************************/
+ *
+ ***************************************************************************/
 void init_colours(void)
 {
   ramp_colour(0x0,0x0,0x0,0x0,0x0,0x0,&black_pixel,1);
@@ -680,16 +681,16 @@ void init_colours(void)
   ramp_colour(0x0,0x0,0x7000,0x0,0x0,0xffff,blue_pixel,8);
   ramp_colour(0xf000,0xf000,0x0,0xf000,0xf000,0x0,&yellow_pixel,1);
   ramp_colour(
-    0x0000,0xffff,0x0000,
-    0x0000,0x8000,0x0000,green_pixel,MAX_SCORE_TABLE);
+							0x0000,0xffff,0x0000,
+							0x0000,0x8000,0x0000,green_pixel,MAX_SCORE_TABLE);
   ramp_colour(
-    0xffff,0x8000,0x8000,
-    0x9000,0x1000,0x1000,red_pixel,MAX_SCORE_TABLE);
+							0xffff,0x8000,0x8000,
+							0x9000,0x1000,0x1000,red_pixel,MAX_SCORE_TABLE);
 }
 
 /***************************************************************************
-*
-***************************************************************************/
+ *
+ ***************************************************************************/
 void free_bm(tbm *bm)
 {
   if(bm->pixmap)
@@ -699,8 +700,8 @@ void free_bm(tbm *bm)
 }
 
 /***************************************************************************
-*
-***************************************************************************/
+ *
+ ***************************************************************************/
 int load_flr_xpms(void)
 {
   register int status = 1;
@@ -710,44 +711,44 @@ int load_flr_xpms(void)
   register int sprite_c;
 
   if((fp = fopen(INSTALL_DIR "/data/xpm/xpm.i","r")) == NULL)
-  {
-    perror(error_m);
-    return 0;
-  }
+		{
+			perror(error_m);
+			return 0;
+		}
   else
-  {
-    sprites_size = 0;
-    while(!feof(fp))
-    {
-      str[0] = 0;
-      fgets(str,STR_LEN,fp);
-      if(str[0])
-        sprites_size++;
-    }
-    if((flr_sprites = 
-      (tsprite *)malloc(sprites_size * sizeof(tsprite))) == NULL)
-    {
-      perror(error_m);
-      return 0;
-    }
-    rewind(fp);
-    for(sprite_c = 0;sprite_c < sprites_size;sprite_c++)
-    {
-      char fn[STR_LEN];
+		{
+			sprites_size = 0;
+			while(!feof(fp))
+				{
+					str[0] = 0;
+					fgets(str,STR_LEN,fp);
+					if(str[0])
+						sprites_size++;
+				}
+			if((flr_sprites = 
+					(tsprite *)malloc(sprites_size * sizeof(tsprite))) == NULL)
+				{
+					perror(error_m);
+					return 0;
+				}
+			rewind(fp);
+			for(sprite_c = 0;sprite_c < sprites_size;sprite_c++)
+				{
+					char fn[STR_LEN];
 
-      str[0] = 0;
-      fgets(str,STR_LEN,fp);
-      sscanf(str,"%s %c",fn,&((flr_sprites + sprite_c)->bound));
-      if(fn[0])
-        if(!loadxpm_xpm(fn,&((flr_sprites + sprite_c)->bm_ptr)))
-        {
-          (flr_sprites + sprite_c)->bm_ptr.width = -1;
-          status = 0;
-          break;
-        }
-    }
-    fclose(fp);
-  }
+					str[0] = 0;
+					fgets(str,STR_LEN,fp);
+					sscanf(str,"%s %c",fn,&((flr_sprites + sprite_c)->bound));
+					if(fn[0])
+						if(!loadxpm_xpm(fn,&((flr_sprites + sprite_c)->bm_ptr)))
+							{
+								(flr_sprites + sprite_c)->bm_ptr.width = -1;
+								status = 0;
+								break;
+							}
+				}
+			fclose(fp);
+		}
   return status;
 }
 
@@ -764,8 +765,8 @@ void free_flr_xpms(void)
 }
 
 /***************************************************************************
-*
-***************************************************************************/
+ *
+ ***************************************************************************/
 void free_sprite_xpms(void)
 {
   if(droid_bm.width != -1)
@@ -889,157 +890,157 @@ void free_sprite_xpms(void)
 int load_sprite_xpms(void)
 {
   if(!loadxpm_xpm("standard/droid_ani.xpm",&droid_bm))
-  {
-    droid_bm.width = -1;
-    return 0;
-  }
+		{
+			droid_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/paradroid_ani.xpm",&paradroid_bm))
-  {
-    paradroid_bm.width = -1;
-    return 0;
-  }
+		{
+			paradroid_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/laser_l.xpm",&laser_l_bm))
-  {
-    laser_l_bm.width = -1;
-    return 0;
-  }
+		{
+			laser_l_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/laser_cb.xpm",&laser_cb_bm))
-  {
-    laser_cb_bm.width = -1;
-    return 0;
-  }
+		{
+			laser_cb_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/laser_uv.xpm",&laser_uv_bm))
-  {
-    laser_uv_bm.width = -1;
-    return 0;
-  }
+		{
+			laser_uv_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/laser_te.xpm",&laser_te_bm))
-  {
-    laser_te_bm.width = -1;
-    return 0;
-  }
+		{
+			laser_te_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/explosion.xpm",&explosion_bm))
-  {
-    explosion_bm.width = -1;
-    return 0;
-  }
+		{
+			explosion_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/power_bay.xpm",&power_bay_bm))
-  {
-    power_bay_bm.width = -1;
-    return 0;
-  }
+		{
+			power_bay_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/ntitle.xpm",&ntitle_bm))
-  {
-    ntitle_bm.width = -1;
-    return 0;
-  }
+		{
+			ntitle_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/flr_door_h_cyan_ani.xpm",&doorh_bm))
-  {
-    doorh_bm.width = -1;
-    return 0;
-  }
+		{
+			doorh_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/flr_door_v_cyan_ani.xpm",&doorv_bm))
-  {
-    doorv_bm.width = -1;
-    return 0;
-  }
+		{
+			doorv_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/digits.xpm",&digit_bm))
-  {
-    digit_bm.width = -1;
-    return 0;
-  }
+		{
+			digit_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/digits2.xpm",&digit2_bm))
-  {
-    digit2_bm.width = -1;
-    return 0;
-  }
+		{
+			digit2_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/ship_complete.xpm",&ship_complete_bm))
-  {
-    ship_complete_bm.width = -1;
-    return 0;
-  }
+		{
+			ship_complete_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/credit_1.xpm",&credit_1_bm))
-  {
-    credit_1_bm.width = -1;
-    return 0;
-  }
+		{
+			credit_1_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/credit_2.xpm",&credit_2_bm))
-  {
-    credit_2_bm.width = -1;
-    return 0;
-  }
+		{
+			credit_2_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/credit_3.xpm",&credit_3_bm))
-  {
-    credit_3_bm.width = -1;
-    return 0;
-  }
+		{
+			credit_3_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/credit_4.xpm",&credit_4_bm))
-  {
-    credit_4_bm.width = -1;
-    return 0;
-  }
+		{
+			credit_4_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/credit_5.xpm",&credit_5_bm))
-  {
-    credit_5_bm.width = -1;
-    return 0;
-  }
+		{
+			credit_5_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/credit_6.xpm",&credit_6_bm))
-  {
-    credit_6_bm.width = -1;
-    return 0;
-  }
+		{
+			credit_6_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/neg.xpm",&neg_bm))
-  {
-    neg_bm.width = -1;
-    return 0;
-  }
+		{
+			neg_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/paused.xpm",&paused_bm))
-  {
-    paused_bm.width = -1;
-    return 0;
-  }
+		{
+			paused_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/trans_terminated.xpm",&trans_terminated_bm))
-  {
-    trans_terminated_bm.width = -1;
-    return 0;
-  }
+		{
+			trans_terminated_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/docking_to_ship.xpm",&get_ready1_bm))
-  {
-    get_ready1_bm.width = -1;
-    return 0;
-  }
+		{
+			get_ready1_bm.width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/intro_back_1.xpm",&intro_back_bm[0]))
-  {
-    intro_back_bm[0].width = -1;
-    return 0;
-  }
+		{
+			intro_back_bm[0].width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/intro_back_2.xpm",&intro_back_bm[1]))
-  {
-    intro_back_bm[1].width = -1;
-    return 0;
-  }
+		{
+			intro_back_bm[1].width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/intro_back_3.xpm",&intro_back_bm[2]))
-  {
-    intro_back_bm[2].width = -1;
-    return 0;
-  }
+		{
+			intro_back_bm[2].width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/intro_back_4.xpm",&intro_back_bm[3]))
-  {
-    intro_back_bm[3].width = -1;
-    return 0;
-  }
+		{
+			intro_back_bm[3].width = -1;
+			return 0;
+		}
   if(!loadxpm_xpm("standard/demo_mode.xpm",&demo_mode_bm))
-  {
-    demo_mode_bm.width = -1;
-    return 0;
-  }
+		{
+			demo_mode_bm.width = -1;
+			return 0;
+		}
 
   return 1;
 }
 
 /***************************************************************************
-*
-***************************************************************************/
+ *
+ ***************************************************************************/
 void Xreaper(void)
 {
   XFreeGC(display,gc_dline);
@@ -1052,9 +1053,9 @@ void Xreaper(void)
 }
 
 /***************************************************************************
-* keyboard event queueing
-* (to accommodate demo play)
-***************************************************************************/
+ * keyboard event queueing
+ * (to accommodate demo play)
+ ***************************************************************************/
 void free_demo_buf(void)
 {
   if(demo_buf != NULL)
@@ -1070,10 +1071,10 @@ void save_demo_buf(void)
   printf("Devel. mode: Saving Demo.\n");
   fp = fopen("/tmp/demo.d","w");
   if(fp != NULL)
-  {
-    fprintf(fp,demo_buf);
-    fclose(fp);
-  }
+		{
+			fprintf(fp,demo_buf);
+			fclose(fp);
+		}
   free_demo_buf();
 }
 #endif
@@ -1081,16 +1082,16 @@ void save_demo_buf(void)
 void save_kb_r_event(void)
 {
 #ifdef DEVELOPMENT_MODE
-/*
-  this is here so that keyboard events can be saved
-*/
+	/*
+		this is here so that keyboard events can be saved
+	*/
   char str[STR_LABEL_LEN];
   tkevent *kp;
   register int s,r;
 
   kp = kevent + kevent_r_ptr;
   sprintf(str,"%d %c %d %d %d\n",
-    demo_count,kp->type + '0',kp->val,kp->mouse_x,kp->mouse_y);
+					demo_count,kp->type + '0',kp->val,kp->mouse_x,kp->mouse_y);
 
   if(demo_buf == NULL)
     r = 0;
@@ -1109,35 +1110,35 @@ void save_kb_r_event(void)
 void queue_kb_events(void)
 {
   while(XPending(display))
-  {
-    XEvent event;
-    tkevent *kp;
+		{
+			XEvent event;
+			tkevent *kp;
 
-    kp = kevent + kevent_r_ptr;
-    XNextEvent(display,&event);
-    kp->type = event.type;
-    switch(event.type)
-    {
-      case ButtonPress:
-        kp->val = ((XButtonEvent *)&event)->button;
-        if(((XButtonEvent *)&event)->button == 1)
-        {
-          Window a,b;
-          int c,d;
-          unsigned int e;
+			kp = kevent + kevent_r_ptr;
+			XNextEvent(display,&event);
+			kp->type = event.type;
+			switch(event.type)
+				{
+				case ButtonPress:
+					kp->val = ((XButtonEvent *)&event)->button;
+					if(((XButtonEvent *)&event)->button == 1)
+						{
+							Window a,b;
+							int c,d;
+							unsigned int e;
 
-          XQueryPointer(display,window,&a,&b,&c,&d,
-            &(kp->mouse_x),&(kp->mouse_y),&e);
-        }
-        save_kb_r_event();
-        break;
-      case KeyPress:
-        kp->val = XLookupKeysym((XKeyEvent *)&event,0);
-      case KeyRelease:
-        save_kb_r_event();
-        break;
-    }
-  }
+							XQueryPointer(display,window,&a,&b,&c,&d,
+														&(kp->mouse_x),&(kp->mouse_y),&e);
+						}
+					save_kb_r_event();
+					break;
+				case KeyPress:
+					kp->val = XLookupKeysym((XKeyEvent *)&event,0);
+				case KeyRelease:
+					save_kb_r_event();
+					break;
+				}
+		}
 #ifdef DEVELOPMENT_MODE
   demo_count++;
 #endif
@@ -1148,11 +1149,11 @@ tkevent *get_kb_event(void)
   tkevent *kp = NULL;
 
   if(kevent_w_ptr != kevent_r_ptr)
-  {
-    kp = kevent + kevent_w_ptr;
-    kevent_w_ptr++;
-    kevent_w_ptr &= (KEVENT_SIZE - 1);
-  }
+		{
+			kp = kevent + kevent_w_ptr;
+			kevent_w_ptr++;
+			kevent_w_ptr &= (KEVENT_SIZE - 1);
+		}
   return kp;
 }
 
@@ -1163,36 +1164,36 @@ int load_demo(void)
   printf("Loading Demo data...\n");
   fp = fopen(INSTALL_DIR "/data/demo.d","r");
   if(fp != NULL)
-  {
-    char str[STR_LABEL_LEN + 1];
-    register int x;
+		{
+			char str[STR_LABEL_LEN + 1];
+			register int x;
 
-    for(;;)
-    {
-      if(fgets(str,STR_LABEL_LEN,fp) == NULL)
-        break;
-      kevent_buf_size++;
-    }
-    rewind(fp);
-    kevent_buf = (tkevent_buf *)malloc(kevent_buf_size * sizeof(tkevent_buf));
-    if(kevent_buf != NULL)
-    {
-      for(x = 0;x < kevent_buf_size;x++)
-      {
-        if(fgets(str,STR_LABEL_LEN,fp) == NULL)
-          break;
-        sscanf(str,"%d %d %d %d %d",
-          &((kevent_buf + x)->demo_count),
-          &((kevent_buf + x)->kevent.type),
-          &((kevent_buf + x)->kevent.val),
-          &((kevent_buf + x)->kevent.mouse_x),
-          &((kevent_buf + x)->kevent.mouse_y));
-      }
-    }
-    else
-      perror("load_demo() malloc()");
-    fclose(fp);
-  }
+			for(;;)
+				{
+					if(fgets(str,STR_LABEL_LEN,fp) == NULL)
+						break;
+					kevent_buf_size++;
+				}
+			rewind(fp);
+			kevent_buf = (tkevent_buf *)malloc(kevent_buf_size * sizeof(tkevent_buf));
+			if(kevent_buf != NULL)
+				{
+					for(x = 0;x < kevent_buf_size;x++)
+						{
+							if(fgets(str,STR_LABEL_LEN,fp) == NULL)
+								break;
+							sscanf(str,"%d %d %d %d %d",
+										 &((kevent_buf + x)->demo_count),
+										 &((kevent_buf + x)->kevent.type),
+										 &((kevent_buf + x)->kevent.val),
+										 &((kevent_buf + x)->kevent.mouse_x),
+										 &((kevent_buf + x)->kevent.mouse_y));
+						}
+				}
+			else
+				perror("load_demo() malloc()");
+			fclose(fp);
+		}
   else
     perror("load_demo() fopen()");
   return 1;
@@ -1201,48 +1202,51 @@ int load_demo(void)
 void playback_kb_events(void)
 {
   for(;;)
-  {
-    if(kevent_buf_ptr == kevent_buf_size)
-      break;
-    if((kevent_buf + kevent_buf_ptr)->demo_count > demo_count)
-      break;
-    memcpy(
-      kevent + kevent_r_ptr,&((kevent_buf + kevent_buf_ptr)->kevent),
-      sizeof(tkevent));
-    save_kb_r_event();
-    kevent_buf_ptr++;
-  }
+		{
+			if(kevent_buf_ptr == kevent_buf_size)
+				break;
+			if((kevent_buf + kevent_buf_ptr)->demo_count > demo_count)
+				break;
+			memcpy(
+						 kevent + kevent_r_ptr,&((kevent_buf + kevent_buf_ptr)->kevent),
+						 sizeof(tkevent));
+			save_kb_r_event();
+			kevent_buf_ptr++;
+		}
   demo_count++;
 }
 
 /***************************************************************************
-*
-***************************************************************************/
+ *
+ ***************************************************************************/
 void display_message(char *bp,int y)
 {
   char *rp;
 
   rp = bp;
   for(;;)
-  {
-    register int c;
+		{
+			register int c;
 
-    if(*rp == '\0')
-      break;
-    c = (int)(rp - bp);
-    if(!c)
-      XSetForeground(display,gc_dline,green_pixel[(*bp) - '0']); 
-    else
-      if(*rp == '\n')
-      {
-        register int sl;
+			if(*rp == '\0')
+				break;
+			c = (int)(rp - bp);
+			if(!c)
+				XSetForeground(display,gc_dline,green_pixel[(*bp) - '0']); 
+			else
+				if(*rp == '\n')
+					{
+						register int sl;
 
-        sl = (int)(rp - bp - 1);
-        XDrawString(display,render_screen,gc_dline,
-          SCREEN_HSIZE_X - ((sl * 6) >> 1),y,bp + 1,sl);
-        bp = rp + 1;
-        y += 12;
-      }
-    rp++;
-  }
+						sl = (int)(rp - bp - 1);
+						XDrawString(display,render_screen,gc_dline,
+												SCREEN_HSIZE_X - ((sl * 6) >> 1),y,bp + 1,sl);
+						bp = rp + 1;
+						y += 12;
+					}
+			rp++;
+		}
 }
+/*
+	vim:tw=0:ww=0:ts=2 
+*/
