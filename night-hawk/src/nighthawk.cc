@@ -358,7 +358,6 @@ void main_logo_fg(void)
     "5\n"
     "5'Rescue from Vega' (C) 1998, Vincent Voois (Vv)\n"
     "5home.worldonline.nl/~vvacme\n"
-    "5\n"
     "5'Introtune' (Demo tune) by 4-matt of Anarchy\n"
     "7(used without permission)\n";
 
