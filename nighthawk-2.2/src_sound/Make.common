@@ -10,7 +10,7 @@ else
   endif
 endif
 
-HOST_SAFE = 0
+HOST_SAFE = 1
 
 ifeq ($(HOSTTYPE),i386)
   HOST_SAFE = 1
