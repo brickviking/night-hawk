@@ -233,6 +233,10 @@ int cmdline(int argc,char *argv[])
           sscanf(argv[x],"-P%d",&y);
           if(y == 8) cmdline_prec = 8;
           if(y == 16) cmdline_prec = 16;
+/* if we haven't defined a precision (or a CORRECT precision) then default to 8 
+ * I just wish we had a way of warning the user that s/he had better choose 8
+ * or 16 (not 1, like I tried to do 8-) */
+					if (!cmdline_prec) cmdline_prec = 8;
           break;
         case 'S':
           sscanf(argv[x],"-S%d",&cmdline_stereo);
