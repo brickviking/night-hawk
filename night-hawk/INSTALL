@@ -106,7 +106,9 @@ undefined reference to `operator new(unsigned)'
 floor.o(.text+0x5c5):/dysk2/download/nighthawk-2.3/src/floor.cc:78:
 undefined reference to `operator new(unsigned)'
 
-... and so on.  The poor programmer had a Debian system, and had forgotten to
+... and so on.  What had happened is that gcc had tried to compile it all as
+standard ANSI-compliant C, instead of passing it to (his not-present) C++
+compiler.  The poor programmer had a Debian system, and had forgotten to
 install g++ AS WELL as g++-3.2 on their system.  Something to do with the way
 Debian packages its packages.
 
@@ -141,10 +143,10 @@ prerequisite. I guess I will have to put the other requirements in later.
 past level 3 (Anoyle). most people have said the game is too hard past
 level 1. ... rubbish.  you just have to know how to play it.  .. however,
 to make things a bit easier, i've added a "demo" to the game.. Don't say i
-don't think of you all ;). It was fucking hard to intergrate. I had to
+don't think of you all ;). It was fucking hard to integrate. I had to
 turn up side down my perfectly good way of getting Keyboard events from X
 and invent a (kludge) mezzianne input queue just so that it was possible
-to intergrate playback code capable of playing back events accurately, and
+to integrate playback code capable of playing back events accurately, and
 due to possible variances in random routines across libc's of different
 platforms, and becuase X keyboard events are queued and processed both in
 realtime and in foreground, i can't guarrantee that the demo will playback
@@ -380,7 +382,7 @@ however actually transfers it's programs over to the new host, effectively
 
 There are good and bad points to this.  The good point is that you can
 occupy the host droid for an unlimited length of time, the bad point is
-that you are stuck with the new hosts weaponary, speed and shields.
+that you are stuck with the new hosts weaponry, speed and shields.
 
 
 Key Summary
@@ -431,7 +433,8 @@ different droids. To transfer to a different droid, press "t" (white
 lights will start flashing and you will be unable to shoot) then click on
 a nearby droid (even one on the other side of a wall). The two droids will
 "negotiate" (what a euphemism!) to see which one lives. During
-negotiations, neither droid can shoot.
+negotiations, neither droid can shoot. This doesn't stop yu being shot by
+other droids however, so look out.
 
 During the negotiations a bar will appear - the green part represents your
 droid and the blue bar represents the enemy droid. The relative amounts of
@@ -594,7 +597,7 @@ Game tips
 ---------
 
 If possible, create 'friendly fire'. This is very easy to do.  Get
-inbetween any two armed droids.  If one of them preemptively attacks,
+in between any two armed droids.  If one of them preemptively attacks,
 simply duck at the last minute (if not, then just shoot at one). Their
 laser fire will/should/hopefully hit the other droid. The other droid will
 then fire back at the droid that accidently attacked it.  When the
@@ -636,7 +639,7 @@ like 799's, and 9xx's. It's far better to transfer to them through a wall
 7xx's head on as there are so many of them.
 
 On some ships, be selective with droids to destroy. You may need to
-transfer back through a wall inorder to return to the place you started.
+transfer back through a wall in order to return to the place you started.
 
 As a general rule, if a 6xx is shooting at you, don't shoot back, instead
 duck for cover, even if you sustain some hits doing it. Don't stand your
@@ -644,7 +647,7 @@ ground and fire back. However, with 7xx's & 9xx's, because of their
 unpredictable behaviour and rapid fire power, the above tactic may not
 work.
 
-Nb/ that there is a systematic "nack" to completing the levels, and if
+Nb/ that there is a systematic "knack" to completing the levels, and if
 people are having difficulty, i'll publish a guide on how to complete each
 level.
 
@@ -656,9 +659,11 @@ Contacts
 
 - My current email addresses are:
 
-       jsno@downunder.net.au
+       viking667@users.undernet.org
 
-- Read www.downunder.net.au/~jsno for furtherupdates on Nighthawk.
+jsno@downunder.net.au no longer exists.
+
+- Read night-hawk.sourceforge.net for further updates on Nighthawk.
 
 - Snail:
 
@@ -668,7 +673,8 @@ Contacts
      Australia
 
 If you can, drop me a line and tell me what you think. I love feedback on
-distributions i author.
+distributions i author. Note, this email will go to Jason Nunn, all other
+email can come to me, and I'll pass it on if you need me to.
 
 
 - Vincent Voois (the musician) contacts:
@@ -682,7 +688,7 @@ distributions i author.
   Adrian Bridgett <adrian.bridgett@poboxes.com>  ???????????
 
 i'm not sure if he can be contacted here. i haven't heard from Adrian
-since about march 98.
+since about march 98. (Editors note: yes, he still exists.)
 
 
                          *      *       *      *
