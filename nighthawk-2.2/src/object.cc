@@ -16,13 +16,10 @@
 extern "C" {
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <math.h>
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
-	/******************
-	 * Added this ECG *
-	 ******************/
-#include <string.h>
 }
 #include "nighthawk_defs.h"
 #include "misc.h"
