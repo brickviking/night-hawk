@@ -10,7 +10,11 @@ nighthawk [options]
 
 .SH DESCRIPTION
 
-Nighthawk is a tribute to one of the most playable and contagious games
+As I, (The Viking) haven't got a writeup thought about yet, I'll substantially
+retain Jason's man page here.  It's better than anything I have thought up so
+far. So - here's the introduction from Jason Nunn.
+
+"Nighthawk is a tribute to one of the most playable and contagious games
 ever written - Paradroid by Andrew Braybrook. It was so good, it was worthy
 of my attention span for 6 straight months, and was the subject of
 conversation at school for many months as well. It was quite amazing seen
@@ -46,8 +50,20 @@ and I have chosen it because it's the most popular, stable, and oldest GUI.
 Also, X-windows games are now very fashionable. Some say that
 Linux/Xwindows is the game developers preferred choice! (I think I read
 that in the Walnut Creek 1998 catalogue?), but I won't go that far yet
-anyway ;). 
+anyway ;). "
 
+Now for my introduction. I am known as The Viking, and I first saw THIS game
+mentioned when I read over some back issues of the Linux Gazette - in this
+case, an article back in January 1998 (issue 24).  I tried it, and liked it! I
+played a couple of levels, and I was hooked.  After a while, I decided I
+wanted to dodge in diagonal directions too, so, having the source at hand, I
+decided to look through and see how simple it would be to add that.
+Surprisingly, I found adding the code was a simple enough process.
+
+I then added code to stop the mouse moving outside of the screen.
+Other code modifications will follow over the next few months, if not years.
+
+Time for another excerpt.
 
 .SH NIGHTHAWK - PARADROID CHAPTER II - THE RESCUE FROM VEGA
 
@@ -99,6 +115,11 @@ Music ('-m') options:
 	  -x<d>   No of FX channels
 .fi
 
+The default is to start without music and sound effects - but if you can, I'd
+suggest turning them on - it adds to the game experience, and Vincent Voois
+has written an AWESOME Tracker tune "Rescue From Vega". Regrettably, the sound
+player only works on Intel-based machines. The coders currently maintaining
+NightHawk are working on this however.
 
 .SH KEY SUMMARY
 
@@ -124,6 +145,8 @@ Music ('-m') options:
 
 Use the cursor keys to move around each map. To open a door, either shoot
 it (see below) or move into it. Doors will close after a short time. 
+You are now also able to use the keys on the number pad on the right-hand side
+of the keyboard in most cases.
 
 To move around the ship, you must use the lifts (these look like squares
 with a cross through them, you normally start on one). To use a lift, move
@@ -134,15 +157,17 @@ the level you want to go to, and then press space to exit the lift.
 
 .SH ATTACKING
 
-To shoot, click the left mouse button at the target you are aiming at. A
-right mouse click does a burst fire which sprays shots in all directions.
+To shoot, put the mouse arrow on the target, or in between yourself and the
+target, and click the left mouse button. A right mouse click does a burst fire
+which sprays shots in all directions.
 
 The spin speed of a droid indicates how charged the shields of the droid
 are.  At full spin, the droid is fully charged. When a droid has less than
 1/4 shields green lights flash, and when they have less than 1/8 shields
 red lights flashes instead. To recharge shields, move over a recharging
 point (they have swirly bits in them) and press space.  This will lose 
-you points though.
+you points though.  The more points you need to recharge, the more will be
+taken off your score.
 
 
 .SH TRANSFERRING
@@ -342,7 +367,7 @@ When an attack droid is firing at you, duck behind a medical droid.  If
 the attacking droid hits the medic, then the medic will fire (one shot)
 back at the attacking droid (yet another 'friendly fire' example). The 599
 Surgeon droids are fitted with the powerful Uvarovite lasers, and will
-cheerfully sodomise any minor class 6xx's or 7xx's that accidently attack
+cheerfully destroy any minor class 6xx's or 7xx's that accidently attack
 it. 
 
 This game requires lots of lateral thinking. Simply blasting everything in
@@ -371,6 +396,7 @@ people are having difficulty, I'll publish a guide on how to complete each
 level. 
 
 .SH NEW KEYS
+
 You may also note that a new option has been added while playing the game:
 the "g"rab mouse option. This allows the mouse cursor to be "locked" to the Nighthawk
 window.  This is of most use to those of us whose screens are larger than the
@@ -379,30 +405,56 @@ each time we accidentally leave the window and miss that 933 that has us in its
 sights.  Those of you who have designed a screenmode specially for having 
 fullscreen Nighthawk won't have to worry.
 
+.SH BUGS
+Those funny quirks that we all LOVE to see... yes, there are some of those in
+this program.  Namely, it seems to EAT CPU time.  I can't help this yet.
+Compiling this puppy on some Intel machines (namely the latest generation of
+Pentium II, Pentium II, Celerons, etc) has caused no END of bother and
+revealed weaknesses in the build code that Jason Nunn and his developers could
+not have envisaged.  However, I'm working on them.  
+
+It does not affect gameplay, except for the fact of - if you "roll your own",
+you might have to "persuade" the build process to include the sound engine
+when you KNOW you're on an Intel-compatible platform.  Of course if you are
+NOT on a Intel-compatible platform, then all bets are off.  As yet, there are
+no modifications to handle working on a PPC, an Alpha, or other machine
+architectures.
+
+.SH DEVELOPMENT
+Recently, a change happened in maintenance of the Night Hawk project, and now
+it's up on Source Forge! See
+.nf
+http://night-hawk.sourceforge.net
+.fi
+
+If you want to see a little more development information, and get an idea of
+the flow of ideas within the project, check out the webpage:
+.nf
+http://sourceforge.net/projects/night-hawk/
+.fi
+
 .SH CONTACTS
 
-- My email address was:
+- My email address is:
 .nf
-       jsno@downunder.net.au
-.fi
-but this is no longer in operation.
-
-- Read www.downunder.net.au/~jsno for further updates on Nighthawk.
-
-- You can write to me via my snail address:
-.nf
-	Jason Nunn
-	32 Rothdale Rd
-	Moil NT 0810
-	Australia
+viking667 at users dot sourceforge dot net
 .fi
 
 If you can, drop me a line and tell me what you think. I love feedback on
-distributions I author.
+games I help with.
 
 
 - Vincent Voois (the musician) contacts:
 .nf
-	vvacme@worldonline.nl
+	vvacme at worldonline dot nl
 	http://home.worldonline.nl/~vvacme/
 .fi
+I don't guarantee that either of these contacts will work, only that they did
+in the past.  Write to me if you wish to have Jason Nunns email address and
+wish to thank him for helping to author such a great game.
+
+- Current Debian maintainer:
+.nf
+Adrian Bridgett - bridgett at debian dot org
+.fi
+
