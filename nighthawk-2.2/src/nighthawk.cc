@@ -118,11 +118,8 @@ FILE *lopen(char *filename,char *mode)
   FILE *fp;
 
   if((fp = fopen(filename,mode)) != NULL)
-#if defined __FreeBSD__ || __OpenBSD__ || __NetBSD__
-		flock(fp->_file,LOCK_EX);
-#else
-    flock(fp->_fileno,LOCK_EX);
-#endif
+/* ECG: 'nother bug nailed by the FreeBSD porters - only thing NOW puzzling me is - where does "flock() come from? */					
+		flock(fileno(fp),LOCK_EX);
   return fp;
 }
 
