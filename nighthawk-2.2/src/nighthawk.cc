@@ -2,8 +2,9 @@
 ****************************************************************************
 ****************************************************************************
 *
-* NightHawk - By Jason Nunn - Oct 96  (jsno@downunder.net.au)
-* FREEWARE.
+* NightHawk - By Jason Nunn - Oct 1996  (jsno at arafura dot net dot au)
+* Eric Gillespie and others - Jan 2003  (viking667 at users dot sourceforge dot net)
+* CopyRight GPL version 2, 2003.
 *
 * Xwindows (C++)
 *
@@ -351,7 +352,8 @@ void main_logo_fg(void)
 {
   char *mess =
     "5(C) 97,98,1999 Jason Nunn (JsNO)\n"
-    "5www.downunder.net.au/~jsno\n"
+		"5(C) 2003 Eric Gillespie (viking667)\n"
+    "5http://night-hawk.sourceforge.net/\n"
     "5\n"
     "5'Rescue from Vega' (C) 1998, Vincent Voois (Vv)\n"
     "5home.worldonline.nl/~vvacme\n"
@@ -504,7 +506,10 @@ void contacts_1_fg(void)
     "4comes  with  ABSOLUTELY NO WARRANTY.\n"
     "4This is free software,  and  you are\n"
     "4welcome  to  redistribute  it  under\n"
-    "4certain conditions.\n";
+    "4certain conditions.\n"
+		"4A copy of the  GPL  should have come\n"
+		"4in a file called COPYING distributed\n"
+		"4with this game.\n";
 
   drawxpm_ani(&intro_back_bm[intro_back_bm_no],0,0,0,1);
   display_message(mess,40);
@@ -517,7 +522,11 @@ void contacts_2_fg(void)
     "4\n"
     "4-Maintainers-\n"
     "1<viking667@users.sourceforge.net>\n"
+		"1<linuxfalcon@users.sourceforge.net\n"
+    "4\n"
+		"4-Testers-\n"
     "1<dionb@users.sourceforge.net>\n"
+		"1<zerodogg@users.sourceforge.net\n"
 		"1\n"
 		"4-Website-\n"
     "1http://night-hawk.sourceforge.net\n"
@@ -536,6 +545,8 @@ void contacts_3_fg(void)
     "4-Vincent Voois (Musician)-\n"
     "1<vvacme@worldonline.nl>\n"
     "1http://home.worldonline.nl/~vvacme\n"
+		"1(we hope there will be more neat\n"
+		"1music to come soon)\n"
     "4\n"
     "4Adrian Bridgett (Debian Maintainer)\n"
     "1<bridgett@debian.org>\n";
@@ -553,7 +564,10 @@ void contacts_4_fg(void)
     "1Support Free Software!\n"
     "4\n"
     "1Thanks also to Sourceforge.net\n"
-    "1for hosting the project\n"
+    "1for hosting this fantastic project\n"
+		"1and many many others, including\n"
+		"1paradroid clones well worth a play\n"
+		"1when you have moments of nostalgia\n"
     "4\n"
     "4Hit Space to Start.\n"
 		"4Hit 'g' to lock mouse to screen.\n"
@@ -817,10 +831,10 @@ void finale(void)
   register int a;
   char *mess =
     "1\n"
-    "1   You have completed all levels.\n"
+    "1   You have completed all levels!\n"
     "1\n"
     "1\n"
-    "1  Thankyou for playing Nighthawk.\n\0";
+    "1  Thank you for playing Nighthawk.\n\0";
 
   update_score(1);
   for(a = 0;a < (8 * 2);a++)
