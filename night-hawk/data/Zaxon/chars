@@ -1,0 +1,267 @@
+type: Battle Cruiser
+floor: Bridge
+floor: Cargo
+floor: Comms
+floor: Decoy
+floor: Dock
+floor: Engineering
+floor: Gunnery1
+floor: Gunnery2
+floor: Hull
+floor: Medical
+transport: Bridge      189 9   752 304  0
+transport: Comms       189 25  752 752  0
+transport: Comms       149 25  176 752  1
+transport: Hull        149 41  2192 144 1
+transport: Cargo       149 56  1264 144 1
+transport: Cargo       117 56  752 144  2
+transport: Medical     117 73  656 80   2
+transport: Gunnery2    117 89  48 80    2
+transport: Gunnery1      5 8   48 112   3
+transport: Engineering   5 24  48 112   3
+transport: Hull          5 40  48 176   3
+transport: Decoy         5 57  48 112   3
+transport: Dock          5 73  48 80    3
+init: Dock 48 80
+droid: 606 Dock   208 144
+* w 20 0
+* g 272 144
+* g 272 48
+* g 144 48
+* g 112 144
+* g 48 144
+* g 48 112
+* w 20 0
+* g 48 144
+* g 112 144
+* g 144 48
+* g 208 48
+* g 208 144
+droid: 805 Decoy 528 48
+* w 67 0
+* g 464 48
+* g 464 112
+* g 528 112
+* g 528 48
+droid: 261 Decoy 304 80
+* w 208 112
+* g 304 80
+droid: 108 Decoy 48 176
+* w 20 0
+* g 528 176
+* w 30 0
+* g 48 176
+droid: 691 Decoy 400 48
+* g 48 48
+* w 100 0
+* g 400 48
+droid: 355 Gunnery1 528 112
+* w 200 0
+* g 496 144
+* g 144 144
+* g 144 48
+* g 528 48
+* g 528 112
+droid: 691 Gunnery1 80 48
+* g 48 48
+* w 10 0
+* g 80 48
+* w 10 0
+droid: 805 Gunnery1 304 80
+* w 100 0
+* g 304 112
+* w 100 0
+* g 304 80
+droid: 810 Gunnery1 496 80
+* w 100 0
+* g 496 80
+droid: 805 Gunnery2 208 80
+* w 45 0
+* g 80 80
+* g 176 112
+* w 100 0
+* g 176 48
+* g 208 80
+droid: 520 Medical 752 48
+* w 100 0
+* g 848 48
+* g 848 80
+* w 100 0
+* g 848 48
+* g 752 48
+droid: 599 Medical 880 112
+* w 10 0
+* g 752 112
+* w 60 0
+* g 880 112
+droid: 599 Medical 528 144
+* g 144 144
+* w 30 0
+* g 528 144
+droid: 693 Engineering 48 48
+* w 20 0
+* g 80 48
+* g 48 48
+droid: 799 Engineering 400 48
+droid: 693 Engineering 48 176
+* w 100 0
+* g 48 176
+droid: 810 Engineering 240 80
+* w 20 0
+* g 240 112
+* g 176 112
+* g 176 144
+* w 40 0
+* g 176 48
+* g 240 48
+* g 240 80
+droid: 810 Engineering 496 144
+* g 496 80
+* w 34 0
+* g 496 144
+* w 49 0
+droid: 810 Engineering 688 80
+* w 56 0
+* g 688 48
+* g 752 48
+* g 752 80
+* w 100 0
+* g 752 112
+* g 720 176
+* g 656 176
+* g 656 112
+* g 688 80
+droid: 261 Cargo 144 80
+* g 272 80
+* g 592 48
+* w 50 0
+* g 528 112
+* g 496 112
+* g 368 176
+* g 208 112
+* g 144 80
+* w 50 0
+droid: 261 Cargo 1008 240
+* g 1136 240
+* g 1008 240
+droid: 799 Cargo 1456 112
+droid: 799 Cargo 112 48
+droid: 691 Hull 80 48
+* w 30 0
+* g 80 272
+* w 30 0
+* g 80 48
+droid: 467 Hull 240 112
+* w 45 0
+* g 240 176
+* g 528 176
+* g 528 144
+* g 240 144
+* g 240 112
+droid: 799 Hull 304 208
+droid: 261 Hull 816 80
+* g 720 80
+* g 720 112
+* g 720 80
+* g 816 80
+droid: 799 Hull 944 48
+droid: 799 Hull 1232 80
+droid: 799 Hull 1360 112
+droid: 799 Hull 1872 144
+droid: 693 Hull 1872 48
+* w 100 0
+* g 1872 48
+droid: 820 Hull 1968 144
+* g 2000 80
+* g 2000 144
+* w 40 0
+* g 2032 144
+* g 1968 144
+droid: 799 Hull 2064 80
+droid: 693 Hull 2128 48
+* w 10 0
+* g 2128 144
+* w 20 0
+* g 2138 48
+droid: 799 Hull 2352 112
+droid: 799 Hull 2704 208
+droid: 693 Hull 2928 144
+* w 200 0
+* g 3152 144
+* g 2928 144
+droid: 799 Comms 784 432
+droid: 799 Comms 592 1200
+droid: 693 Comms 848 1264
+* w 100 0
+* g 848 1264
+droid: 693 Comms 1104 368
+* w 10 0
+* g 976 368
+* g 976 240
+* g 976 368
+* g 1104 368
+droid: 799 Comms 464 208
+droid: 799 Comms 528 144
+droid: 820 Comms 1328 1264
+* w 20 0
+* g 1328 1232
+* g 1360 1200
+* g 1360 1008
+* g 1296 1008
+* g 1296 1200
+* g 1328 1232
+* g 1328 1264
+droid: 805 Comms 1328 976
+* g 1328 336
+* g 1328 976
+droid: 693 Comms 1328 80
+* w 100 0
+* g 1328 80
+droid: 799 Comms 1488 528
+droid: 693 Comms 784 1488
+* g 784 1456
+* g 784 1552
+* g 784 1488
+droid: 805 Comms 176 1264
+* g 176 1456
+* g 176 1264
+droid: 693 Comms 176 1200
+* w 100 0
+* g 176 1200
+droid: 805 Comms 176 368
+* g 176 208
+* g 176 368
+droid: 693 Bridge 400 592
+* w 100 0
+* g 400 592
+droid: 693 Bridge 400 48
+* w 100 0
+* g 400 48
+droid: 899 Bridge 336 80
+* w 100 0
+* g 336 460
+* w 100 0
+* g 336 80
+droid: 820 Bridge 560 80
+* w 30 0
+* g 560 176
+* w 10 0
+* g 560 80
+droid: 805 Bridge 560 560
+* w 100 0
+* g 560 560
+droid: 820 Bridge 560 400
+* g 560 496
+* w 20 0
+* g 560 400
+* w 30 0
+droid: 693 Bridge 752 208
+* w 100 0
+* g 752 208
+droid: 693 Bridge 752 432
+* w 100 0
+* g 752 432
+droid: 933 Bridge 688 176
+droid: 949 Bridge 688 80
+droid: 949 Bridge 688 400
+droid: 933 Bridge 688 496
