@@ -23,9 +23,9 @@
 "and comes with ABSOLUTELY NO WARRANTY. This is free software, and you are\n" \
 "welcome to redistribute it under certain conditions.\n\n" \
 "   Contact: 32 Rothdale Rd, Moil Darwin NT 0810, AUSTRALIA\n" \
-"     Email: jsno@downunder.net.au or jsno@stormfront.com.au\n" \
-"       WWW: http://www.downunder.net.au/~jsno/\n" \
-"Discussion: http://www.downunder.net.au/forum (Area:Unix_Programming)\n" \
+"   This mail address may no longer be current by the time you read this\n" \
+"     Email: jsno@arafura.net.au\n" \
+"       WWW: http://jsno.arafuraconnect.com.au/proj_linux/funk.html\n" \
 "\n"
 
 #define STOP 0
