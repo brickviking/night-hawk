@@ -121,7 +121,7 @@ int tfloor::load(char *fn,char *fname)
             if(door[door_ptr] != NULL)
             {
               door[door_ptr]->init(sx,sy,t == 'h' ? 1 : 0);
-							// Added this line
+							// ECG: Added this line
 							printf("door: %d %d %c\n", door[door_ptr]->pos_x, door[door_ptr]->pos_y, (door[door_ptr]->bm==&doorh_bm) ? 'h' : 'v');
               door_ptr++;
             }
