@@ -1,9 +1,0 @@
-#!/bin/sh
-
-if [ "$1" = "purge" ]; then
-  rm -f /var/lib/games/nighthawk.scores
-  rmdir /var/lib/games 2>/dev/null
-fi
-
-#DEBHELPER#
-
