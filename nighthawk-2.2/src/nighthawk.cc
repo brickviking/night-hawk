@@ -515,13 +515,14 @@ void contacts_2_fg(void)
   char *mess =
     "0=Contacts=\n"
     "4\n"
-    "4-Jason Nunn-\n"
-    "1<jsno@downunder.net.au>\n"
-    "1http://www.downunder.net.au/~jsno\n"
-    "4\n"
-    "432 Rothdale Rd\n"
-    "4Moil Darwin NT 0810\n"
-    "4AUSTRALIA\n";
+    "4-Maintainers-\n"
+    "1<viking667@users.sourceforge.net>\n"
+    "1<dionb@users.sourceforge.net>\n"
+		"1\n"
+		"4-Website-\n"
+    "1http://night-hawk.sourceforge.net\n"
+    "4\n";
+	// Put other developers in here
 
   drawxpm_ani(&intro_back_bm[intro_back_bm_no],0,0,0,1);
   display_message(mess,40);
@@ -537,7 +538,7 @@ void contacts_3_fg(void)
     "1http://home.worldonline.nl/~vvacme\n"
     "4\n"
     "4Adrian Bridgett (Debian Maintainer)\n"
-    "1<adrian.bridgett@poboxes.com>\n";
+    "1<bridgett@debian.org>\n";
 
   drawxpm_ani(&intro_back_bm[intro_back_bm_no],0,0,0,1);
   display_message(mess,40);
@@ -551,8 +552,8 @@ void contacts_4_fg(void)
     "4\n"
     "1Support Free Software!\n"
     "4\n"
-    "1Go GNU and Linux!!\n"
-    "4Stick it up ya arse Billy Gates!\n"
+    "1Thanks also to Sourceforge.net\n"
+    "1for hosting the project\n"
     "4\n"
     "4Hit Space to Start.\n"
 		"4Hit 'g' to lock mouse to screen.\n"
