@@ -979,8 +979,8 @@ void tparadroid::bg_calc(void)
               do_sound(FX_POWER_UP,40);
               transferring = 0;
               add_message("Transferred!!");
-							sprintf(Shield_str, "Shields: %d", stats.shielding); // Added by Dion Bonner, 14-Dec-2001
-							add_message(Shield_str);
+              sprintf(Shield_str, "Shields: %d", stats.shielding); // Added by Dion Bonner, 14-Dec-2001
+              add_message(Shield_str);
               tdroid::display_nd();
             }
         }
