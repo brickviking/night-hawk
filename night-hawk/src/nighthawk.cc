@@ -2,7 +2,7 @@
 ****************************************************************************
 ****************************************************************************
 *
-* NightHawk - By Jason Nunn - Oct 1996  (jsno at arafura dot net dot au)
+* NightHawk - By Jason Nunn - Oct 1996  (email viking for details)
 * Eric Gillespie and others - Jan 2003  (viking667 at users dot sourceforge dot net)
 * CopyRight GPL version 2, 2003.
 *
