@@ -1,0 +1,60 @@
+# automatically generated Makefile.am
+nighthawkdir = $(pkgdatadir)/data/xpm/standard
+nighthawk_DATA = credit_1.xpm \
+credit_2.xpm \
+credit_3.xpm \
+credit_4.xpm \
+credit_5.xpm \
+credit_6.xpm \
+demo_mode.xpm \
+digits.xpm \
+digits2.xpm \
+docking_to_ship.xpm \
+droid_ani.xpm \
+explosion.xpm \
+flr_base_cyan.xpm \
+flr_chair_l_cyan.xpm \
+flr_con_b_cyan.xpm \
+flr_con_l_cyan.xpm \
+flr_con_r_cyan.xpm \
+flr_con_t_cyan.xpm \
+flr_crosses_cyan.xpm \
+flr_dashes_cyan.xpm \
+flr_door_h_cyan.xpm \
+flr_door_h_cyan_ani.xpm \
+flr_door_v_cyan.xpm \
+flr_door_v_cyan_ani.xpm \
+flr_elev_cyan.xpm \
+flr_pattern1_cyan.xpm \
+flr_pattern2_cyan.xpm \
+flr_pattern3_cyan.xpm \
+flr_pattern4_cyan.xpm \
+flr_sqrs_cyan.xpm \
+flr_store1_cyan.xpm \
+flr_wall_bj_cyan.xpm \
+flr_wall_bl_cyan.xpm \
+flr_wall_br_cyan.xpm \
+flr_wall_h_cyan.xpm \
+flr_wall_lj_cyan.xpm \
+flr_wall_rj_cyan.xpm \
+flr_wall_tj_cyan.xpm \
+flr_wall_tl_cyan.xpm \
+flr_wall_tr_cyan.xpm \
+flr_wall_v_cyan.xpm \
+intro_back_1.xpm \
+intro_back_2.xpm \
+intro_back_3.xpm \
+intro_back_4.xpm \
+laser_cb.xpm \
+laser_l.xpm \
+laser_te.xpm \
+laser_uv.xpm \
+neg.xpm \
+nothing.xpm \
+ntitle.xpm \
+paradroid_ani.xpm \
+paused.xpm \
+power_bay.xpm \
+ship_complete.xpm \
+trans_terminated.xpm
+EXTRA_DIST =  $(nighthawk_DATA)
