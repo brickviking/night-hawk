@@ -3,6 +3,7 @@
 ****************************************************************************
 *
 * NightHawk - By Jason Nunn - Oct 96 (jsno@dayworld.net.au)
+* Updated by Eric Gillespie (viking at users dot sourceforge dot net)
 * FREEWARE.
 *
 ****************************************************************************

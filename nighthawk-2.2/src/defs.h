@@ -2,7 +2,8 @@
 ****************************************************************************
 ****************************************************************************
 *
-* NightHawk - By Jason Nunn - Oct 96 (jsno@dayworld.net.au)
+* NightHawk - By Jason Nunn - Oct 96 (jsno@arafura.net.au)
+* Updated by Eric Gillespie (viking at users dot sourceforge dot net)
 * FREEWARE.
 *
 ****************************************************************************
@@ -13,7 +14,7 @@
 
 #define DATED    __DATE__
 #define WELCOME \
-"Nighthawk version " VERSION " (" DATED "), Copyright (C) 97,98,1999 Jason Nunn.\n\n"
+"Nighthawk version " VERSION " (" DATED "), Copyright (C) 97,98,1999 Jason Nunn.\nEric Gillespie 2003\n"
 
 #ifndef LIBEXEC_DIR
 #define LIBEXEC_DIR "/usr/local/libexec"
