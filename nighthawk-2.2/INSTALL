@@ -1,14 +1,16 @@
-Nighthawk  2.2 Install           Copyright (C) 97,98,1999 Jason Nunn (JsNO)
+Nighthawk  2.3 Install           Copyright (C) 97,98,1999 Jason Nunn (JsNO)
+           | |                   Copyright (C) 2003 Eric Gillespie
+           | |                   (viking667@users.sourceforge.net)
            | \                   Nighthawk is under the GNU
             \ Patch level        General Public License.
-              Version            Darwin, Northern Territory, Australia
+              Version
 ------------------------
 
 #####################
 See 2.2 notes below.
 #####################
 
-Synopsis
+Synopsis, by Jason Nunn
 
 Nighthawk is a tribute to one of the most playable and contagious games
 ever written- Paradroid by Andrew Braybrook. It was so good, it was worthy
@@ -42,9 +44,9 @@ year, i worked on it on and off, to produce 1.0 that was released in
 December 97.
 
 Nighthawk has been exclusively written for the Unix/Linux X-Windows GUI,
-and have choosen it because it's the most popular, stable, and oldest GUI.
-Also, X-windows games are now very fashionable. Some say that
-Linux/Xwindows is the game developers preferred choice! (i think i read
+and I have chosen it because it's the most popular, stable, and oldest GUI.
+Also, X Window System games are now very fashionable. Some say that
+Linux/X Window System is the game developers preferred choice! (i think I read
 that in the Walnut Creek 1998 catalogue?), but i won't go that far yet
 anyway ;).
 
@@ -56,6 +58,80 @@ Enjoy..
 
 
  -------------------------------------------------------------------------
+2.3.x notes (April 2003)
+
+- Most of the relevant stuff from below is still very applicable, and it is a
+tribute to the previous team members that helped Jason to create such a
+great game.  However, I need to do some work on the build scripts as a result
+of new proccessors being made available.
+
+***** New coders - heads up *********
+
+- Make sure you install g++ as well as gcc, as some of the code within nighthawk
+is written in C++.
+
+***********  Debian ************
+- For Debian, make sure that you not only have gcc-x.xx installed, but also
+gcc too.  Drag in g++-x.xx and g++ too, while you are at it.  
+
+To summarise an example, you ought to have the following packages, although
+not necessarily the same versions as shown here:
+
+$ dpkg -l | less
+...
+ii  autoconf       2.53-2         automatic configure script builder
+ii  binutils       2.12.90.0.1-4  The GNU assembler, linker and binary utilities
+ii  cpp            2.95.4-14      The GNU C preprocessor.
+ii  cpp-2.95       2.95.4-14      The GNU C preprocessor.
+ii  g++            2.95.4-14      The GNU C++ compiler.
+ii  g++-2.95       2.95.4-7       The GNU C++ compiler.
+ii  gcc            2.95.4-14      The GNU C compiler.
+ii  gcc-2.95       2.95.4-7       The GNU C compiler. 
+ii  xlib6g         4.1.0-16       pseudopackage providing X libraries
+ii  xlib6g-dev     4.1.0-16       pseudopackage providing X library development
+ii  xlibs          4.1.0-16       X Window System client libraries
+ii  xlibs-dev      4.1.0-16       X Window System client library development f
+
+The reason for me including this segment is because it wasn't totally clear to
+someone unfamiliar with the compiling process - A recent attempted compile ran
+a little like this (wrapped for reading's sake):
+
+$ gcc -g -O2 -I/usr/X11R6/include -L/usr/X11R6/lib -o nighthawk  floor.o 
+    misc.o object.o ship.o nighthawk.o  -lXpm -lXext  -lSM -lICE -lX11   -lm
+floor.o(.text+0x42b): In function `tfloor::load(char*, char*)':
+/dysk2/download/nighthawk-2.3/src/floor.cc:135: undefined reference to
+`operator new(unsigned)'
+floor.o(.text+0x4a0):/dysk2/download/nighthawk-2.3/src/floor.cc:120:
+undefined reference to `operator new(unsigned)'
+floor.o(.text+0x5c5):/dysk2/download/nighthawk-2.3/src/floor.cc:78:
+undefined reference to `operator new(unsigned)'
+
+... and so on.  The poor programmer had a Debian system, and had forgotten to
+install g++ AS WELL as g++-3.2 on their system.  Something to do with the way
+Debian packages its packages.
+
+**********  RPM (Mandrake, Redhat, SuSE, etc etc ************
+
+To compile under an RPM system, you need to have the following packages
+installed- again, the versions are only an example:
+
+$ grpm gcc
+binutils-2.12.90.0.15-2mdk.i586.rpm
+gcc-3.2-mdk.i586.rpm
+gcc-c++-3.2-2mdk.i586.rpm
+gcc-cpp-3.2-2mdk.i586.rpm
+glibc-devel-2.2.5-16mdk.i586.rpm
+libbinutils2-2.12.90.0-15-2mdk.i586.rpm
+libgcc1-3.2-2mdk.i586.rpm
+libstdc++5-devel-3.2-2mdk.i586.rpm
+libxpm4-3.4k-21mdk.i586.rpm
+libxpm4-devel-3.4k-21mdk.i586.rpm
+make-3.79.1-15mdk.i586.rpm
+XFree86-devel-4.2.0-10mdk.i586.rpm
+
+For FreeBSD, I have to investigate further.  I'd think that gmake would be a
+prerequisite. I guess I will have to put the other requirements in later.
+
 
 2.2.x notes (May 99)
 
