@@ -1,0 +1,178 @@
+type: Cargo Vessel
+floor: Bridge
+floor: Quarters
+floor: Cargo1
+floor: Cargo2
+floor: Cargo3
+floor: Engineering
+transport: Bridge      40   8  48 144
+* Bridge  48 144
+* Cargo1 176 176
+transport: Quarters   192   8 272 144
+* Quarters 272 144
+* Cargo1   784 176
+transport: Cargo1      40  24 176 176
+* Cargo1 176 176
+* Cargo2 176 144
+* Bridge  48 144
+transport: Cargo1     192  25 784 176
+* Cargo1   784 176
+* Cargo2   688 144
+* Quarters 272 144
+transport: Cargo2      40  41 176 144
+* Cargo2   176 144
+* Bridge   48  144
+* Cargo1   176 176
+transport: Cargo2     152  41 528 144
+* Cargo2      528 144
+* Cargo3      400 144
+* Engineering 208 144
+transport: Cargo2     192  41 688 144
+* Cargo2   688 144
+* Quarters 272 144
+* Cargo1   784 176
+transport: Cargo3     152  57 400 144
+* Cargo3      400 144
+* Engineering 208 144
+* Cargo2      528 144
+transport: Engineering 152 73 208 144
+* Engineering 208 144
+* Cargo2      528 144
+* Cargo3      400 144
+init: Engineering 208 144
+droid: 275 Engineering 272 48
+* w 50  0
+* g 176 48
+* g 272 48
+droid: 810 Engineering 48 208
+* w 100 0
+* g 272 208
+* w 100 0
+* g 48 208
+droid: 719 Engineering 80 48
+droid: 108 Cargo3 48 272
+* g 48 48
+* g 48 272
+droid: 275 Cargo3 528 48
+* g 48 48
+* g 528 48
+droid: 606 Cargo3 304 80
+* w 1000 0
+droid: 606 Cargo3 240 80
+* w 1000 0
+droid: 606 Cargo3 304 208
+* w 1000 0
+droid: 606 Cargo3 240 208
+* w 1000 0
+droid: 719 Cargo3 80 144
+droid: 355 Cargo2 176 50
+* g  80  50
+* g  80 144
+* g  80 240
+* g 784 240
+* g 784  50
+* w  50  0
+* g 784 208
+* g 624 208
+* g 624 50
+* g 240 50
+* g 240 240
+* g 80  240
+* g 80  50
+* g 176 50
+* w 100 0
+droid: 176 Cargo2 464 80
+* g 464 240
+* g 464 80
+droid: 423 Cargo2 240 112
+* g 368 272
+* g 560 50
+* g 624 80
+* g 624 270
+* g 240 270
+droid: 489 Cargo2 560 144
+* g 560 208
+* g 400 208
+* g 400 176
+* g 624 176
+* g 624 144
+* g 560 144
+* w 100 0
+droid: 108 Cargo2 48 272
+* g 176 272
+* g 48  272
+* w 100 0
+droid: 606 Cargo2 176 80
+* w 20  0
+* g 48 80
+* w 10  0
+* g 176 80
+droid: 606 Cargo1 80  144
+* w  50   0
+* g  80 205
+* w  50   0
+* g  80 144
+droid: 606 Cargo1 912 176
+* w 60  0
+* g 848 176
+* g 848 208
+* g 784 208
+* w 10  0
+* g 848 208
+* g 848 176
+* g 912 176
+droid: 719 Cargo1 336 80
+droid: 261 Cargo1 720 208
+* g 720 240
+* g 624 240
+* g 624 272
+* g 560 272
+* g 560 208
+* w 30  0
+* g 656 208
+* g 656 176
+* g 720 176
+* g 720 208
+droid: 423 Cargo1 848 176
+* g 912 176
+* g 912 272
+* g 528 272
+* g 912 272
+* g 912 176
+* g 848 176
+droid: 719 Cargo1 880 80
+droid: 719 Cargo1 272 112
+droid: 720 Cargo1 656 112
+droid: 355 Cargo1 560 48
+* g 48 48
+* g 48 144
+* g 176 144
+* w 120 0
+* g 48 144
+* g 48 48
+* g 656 48
+* g 560 48
+* w 80 0
+droid: 899 Bridge 48 48
+* w 25 0
+* g 48 112
+* w 25 0
+* g 48 48
+droid: 606 Bridge 144 48
+* g 144 48
+droid: 933 Bridge 144 144
+droid: 606 Quarters 48 144
+* g 48 208
+* g 208 208
+* g 208 144
+* g 48 144
+droid: 513 Quarters 80 176
+* g 112 176
+* w 25 0
+* g 80 176
+* w 25 0
+droid: 606 Quarters 48 48
+* g 336 48
+* w 30 0
+* g 48 48
+* w 10 0

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+SCORES=/var/lib/games/nighthawk.scores
+
+if [ ! -e ${SCORES%/*} ]; then
+  mkdir ${SCORES%/*}
+fi
+
+if [ ! -e $SCORES ]; then
+  touch $SCORES
+  chown root.games $SCORES
+  chmod 0664 $SCORES
+fi
+
+#DEBHELPER#
+

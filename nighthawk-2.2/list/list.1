@@ -1,0 +1,342 @@
+.\"
+.\" list - a file listing program
+.\" Copyright (C) 1999,2002  Eric Gillespie (viking@caverock.net.nz)
+.\"
+.\" This program is free software; you can redistribute it and/or
+.\" modify it under the terms of the GNU General Public License
+.\" as published by the Free Software Foundation; either version 2
+.\" of the License, or (at your option) any later version.
+.\"
+.\" This program is distributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\" GNU General Public License for more details.
+.\"
+.\" You should have received a copy of the GNU General Public License
+.\" along with this program; if not, write to the Free Software
+.\" Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+.\"
+.\"
+.TH LIST 1 "19th May 2002" "List" \" -*- nroff -*-
+.SH NAME
+list \- Curses-based file lister
+.\"
+.\"
+.\"
+.SH SYNOPSIS
+.\" Guess I'd better list these in the same order as in list.c
+.B list
+[\-f ] list_file
+[\-s start_byte]
+[\-r] rows [\-c] columns
+.\" [\-n count_bytes]
+.\" [\-b taB size]  *** this doesn't work yet...
+[\-x|\-t|\-q]  [\-7|\-8|\-e] [\-l]
+[\-d] [\-m]
+.PP
+.B list
+also accepts the \-h, \-?, and \-v options.
+.PP
+.\"
+.\"
+.\"
+.SH DESCRIPTION
+.\"
+.PP
+.B list
+is a curses\-based interactive file listing program, which displays
+text on the screen in one of two different formats, either in
+hexadecimal dump format (a la MS\-DOS debug.com format), or in text
+format, similar to what the programs
+.B less
+and
+.B more
+do.
+.PP
+The top line of the screen can display an optional ruler line.  The
+bottom line of the screen displays a message line, queries, and other
+status information.
+.PP
+.\"
+.\"
+.\"
+.SH COMMAND LINE OPTIONS
+.\"
+.B list
+understands the following command line options.  Only the short form
+options are available in this LINUX version. It remains for me to
+write the code to understand the long format switches.
+.TP
+.I "\-f filename"
+specifies what file to display.  The "\-f" switch is not necessary,
+however, the filename
+.B is
+mandatory, else
+.B list
+will just quit back to an empty screen, and complain that it can't open
+an empty file.  I have not (yet) sorted out input from a pipe, so input
+from
+.B stdin
+is out.
+.TP
+.I "\-d"
+Specifies the debug switch.  This is not very useful unless you
+.B want
+to press a key for each iteration through a line.  Use as you want.
+.TP
+.I "\-x"
+Display the file in hexdump format (as in MS\-DOS DEBUG.COM format)
+except the display will take up the width of the screen, instead of being
+limited to 80 chars.  This looks cool on a 160x64 screen.
+.TP
+.I "\-t"
+Display the file in text format, just like other pagers (less and more).
+.TP
+.I "\-q"
+Quickmode \- only displays in hexmode, skips the scanning for line ends.
+This dramatically speeds up file startup for those of us who don't need a
+text dump \- for example, in large 125 meg files.  I have already used this
+program on such a file, and was quite happy with the result.  However, if you
+really want the whole darn thing displayed as text, then it will take a long
+time.  This is something I have to learn too.
+.TP
+.I "\-7"
+Display the file using 7 bit ASCII.  All characters above 0x127 will be
+displayed as ".", as well as any chars less than 0x20 (space).
+This is the default dump mode for the program. This is also the common ground for
+most Unices and DOS.  Windows, I don't really know about, but suspect it's the same.
+.TP
+.I "\-8"
+Display the file using the extended ASCII 8\-bit table.  This will display
+all characters except ones with a value less than 0x20 (space).  These latter
+are displayed as "." \- however, this causes the screen to behave very strangely
+with certain files, usually binary files. Because of the different way that systems 
+choose to show these values, you could get differing results between machines or
+codepages.
+.TP
+.I "\-e"
+Show line endings in text mode.
+.TP
+.I "\-l"
+Turn on line numbers in text mode.  At the moment, this is based on screen
+lines, and not on actual file lines.  Hopefully, this will change in the near
+future to reflect real lines, such as
+.B less
+presents to the user.
+.TP
+.I "\-r"
+Selects the number of rows the user wishes to display the file on the screen.
+.TP
+.I "\-c"
+Selects the number of columns the user wishes to display.  If either the rows or
+the columns figure are larger than the screen is capable of displaying, then list
+will display in the size of the screen available.
+.TP
+.\" .I "\-b tabsize"
+.\" Display the file using tabsize as the number of spaces that a tab takes up on
+.\"the screen.  Normally a Tab character only takes up one byte in the file,
+.\"however it takes up more than that on screen.  The default tabsize is 8
+.\"spaces.
+.\"
+.\"
+.SH INTERACTIVE COMMANDS
+The following keys can be used within list to control the output \- this
+section needs to be added to, but is described in the help window (using h) at the
+main screen.
+.PP
+.TP
+.I Movement keys
+.I "f (new file)"
+prompts for a new filename to view.  This will bail out if you can't
+examine the file for some reason, this could mean it doesn't exist, or you
+don't have permission to view the file.
+.TP
+.I "Home"
+.I "H"
+goes to the beginning of the file.
+.TP
+.I "End"
+take you to the end of the file.
+.TP
+.I "Up and Down arrows"
+up one line and down one line, respectively.
+.TP
+.I "G"
+In hex mode, "g"oto a specified byte. In text mode, "g"oto a specific line number.
+ Hex numbers are accepted by adding 0x in front, i.e.  0x3200
+.TP
+.I "Space"
+goes forward by a page.
+.TP
+.I "R"
+toggles the ruler.
+.TP
+.I "O"
+toggles the offset in hexmode between hexadecimal and decimal.  This also
+toggles the increments on the ruler between hex and decimal.
+.TP
+.\" I "I"
+.I "S"
+shows a status screen, showing some details about the file being looked at.
+.\" This may change to I(i) soon, because I want to use the S key for hex search
+.TP
+.I "/"
+searches forward for a string.
+.TP
+.I "\\"
+searches backward for a string.
+.TP
+.I "N" or Ctrl\-L
+repeats the search for the string in the same direction.
+.TP
+.I "7"
+Selects 7\-bit display, this should be the most portable, and will display on
+just about ANY machine.
+.TP
+.I "8"
+Selects 8\-bit display.  This might not be so portable, depending on the file
+being viewed and interaction with the display library.  Be aware the output
+from a non text file might look wierd.
+.TP
+.I "*"
+Shows the line endings with a period.  I haven't figured out how to display that
+funny char they use in MS\-DOS or biew yet.
+.TP
+.I "E"
+edits the file, if the file can be edited by the user running the list program.
+Be aware that the name of the editor will be what is defined in your EDITOR
+environment variable, if you have one defined.  Otherwise, the program will
+attempt to call the editor vi.
+.TP
+.I "W"
+starts a bugwrite feature \- just enter text into the blank screen, and it will
+be written to a temporary file in /tmp/list.debug, though the place for this
+file will change later.
+.PP
+.\"
+.\"
+.SH ENVIRONMENT VARIABLES
+.\"
+.B list
+may or may not use the following environment variables, but it is probably
+best to have them defined anyway.
+.TP
+.I "TERM"
+Used by curses to manage the display.  This should be set to your terminal
+type, for Linux console, this is usually
+.I linux
+but for running under X (as in xterm or rxvt) this will of course be
+different.
+.TP
+.I "TERMINFO"
+This may need to be set if the path to the \fIterminfo\fP database is
+different between the system the binary was compiled on and the one it
+is being run on.  For example, in older Slackware systems,
+the \fIterminfo\fP database resides in \fI/usr/lib/terminfo\fP.  On
+RedHat Linux, it is in \fI/usr/share/terminfo\fP.  If the program
+complains about the terminal type, and the value of \fITERM\fP is
+correct, check into this.  Also check if the output looks really wierd \- for
+example if you get funny looking 8 bit output on a system that you know can
+display 8 bit characters properly.
+.TP
+.I "EDITOR"
+This will be used by the
+.I "E"
+function, if it exists.  Otherwise,
+.I vi
+will be selected as the default editor.  Again, this will fall over if
+you don't actually
+.B have
+vi on the system.  I should ask the user for an editor to use, but haven't
+got there yet...
+.PP
+.\"
+.\"
+.\"
+.SH NOTES
+.\"
+The original \fBlist\fP program that I saw started out as a program under
+MS\-DOS, created by Vernon Buerg, to whom I acknowledge the initial idea.
+However, there was not an equivalent program under Linux, though people have
+tried.  There is a hexdump program, which provides something like what I
+wanted, but I also wanted to have a text display at the press of one key
+(without macros, please...)
+.PP
+This is (pretty much) all my own code, based on routines slipped in from
+the dequeue, hexdump and srchfile packages from SNIPPETS.
+It was first converted to run under DJGPP, and then again into a UNIX
+C/curses program.  A number of bugs appeared to have been squashed in this
+move, but, needless to say, several still remain.
+.PP
+.\"
+.\"
+.\"
+.SH BUGS, ERRORS AND OMISSIONS
+.\"
+.B list
+is most definitely still beta software. it is also only designed to reliably
+handle 7\-bit printable ASCII characters, at least under UNIX (this includes
+Linux).  8\-bit and non\-printing ASCII characters in files may not be correctly
+handled, though this will depend on what or where you compile and I have tried
+to sort out the worst offenders (those that would change screen positions).
+For porting back to MS\-DOS, I would suggest using pdcurses, and DJGPP.  Some
+byte sequences in binary files can cause ncurses to go crazy, possibly because
+these sequences match up with ANSI console commands.
+.PP
+I know for a fact that Tab characters will make the line display incorrectly.
+I haven't yet sorted this out, so bear with me while I learn how.  And yes, I
+know such a thing is in the first chapter of Kerninghan and Ritchie, I just
+haven't got it to work yet.
+.PP
+Also, when going to the End of a file with the End key, you need to go down an
+extra line to actually display the last line.
+.pp
+I haven't tried getting Colour curses modes to work well.  In
+particular, reverse video is not always rendered correctly on some
+terminal types, and xterms.  I have also noticed that xterms do not handle
+the ALT_GR charset well, unless a suitable font is used in the .Xdefaults
+file for xterm fonts.  But far be it for me to supply a suitable font \- let
+it suffice to say that I developed this originally to display IBM\-charset
+on the screen, and I exclusively use ASCII.  How I would convert to using
+under an EBCDIC system, I would have no idea about!  I have heard that a font
+called vga will display generally all of the correct high\-bit characters
+(those above 127) unless you have these re\-mapped, as most European languages
+do.
+.pp
+I have also not managed to reliably make the code accept input from STDIN,
+or from any sort of a pipe.  This requires expertise that I don't currently
+have, and my C language skills are limited enough, thank you.  Still, this
+is my first
+.B major
+project \- yeah, I would choose such a beast.  Wish me luck...
+.PP
+Also, it will throw a wobbly if you don't have vim on the system.
+.PP
+.\"
+.\"
+.\"
+.SH AUTHORS
+.\"
+Thanks to the author of the original MS\-DOS LIST program, Vernon Buerg, for
+providing me with an incentive to "roll my own" version of his program.
+Authors are of course, myself, and also Dion Bonner for debugging.
+Bob Stout and Paul Edwards provided some of the original routines in the
+SNIPPETS collection of public\-domain source code, which has been seriously
+hacked on just to provide what I wanted.  The rest is, of course, provided
+by me.
+.\"
+.\"
+.\"
+.SH THINGS TO ADD
+.\"
+.PP
+A filebrowser function, to show a list of files on the screen to choose
+from.
+.PP
+Better handling in xterms etc.  It can also be messy under a telnet session if
+the client hasn't been written well, to handle clearline and clearscreen or
+scrollscreen sequences.
+.PP
+Handle multiple files specified on the commandline.
+
+

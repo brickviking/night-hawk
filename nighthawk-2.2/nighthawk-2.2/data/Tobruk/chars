@@ -1,0 +1,101 @@
+type: Flag Ship
+floor: Bridge
+floor: Dock
+floor: Hull
+transport: Bridge  60 8   432 144 0
+transport: Hull    60 25  880 144 0
+transport: Dock   180 8  112 80   1
+transport: Hull   180 25 1712 144 1
+init: Dock 112 80
+droid: 275 Dock 48 112
+* w 50 0
+* g 48 48
+* g 112 48
+* w 20 0
+* g 48 48
+* g 48 112
+droid: 355 Dock 112 112
+* w 40 0
+* g 80 112
+* w 40 0
+* g 112 112
+droid: 467 Hull 48 112
+* w 50 0
+* g 112 48
+* w 50 0
+* g 48 48
+* w 50 0
+* g 112 112
+* w 50 0
+* g 48 112
+droid: 693 Hull 48 272
+* w 100 0
+* g 48 176
+* g 48 272
+droid: 820 Hull 336 144
+* w 30 0
+* g 336 80
+* g 336 240
+* g 336 144
+droid: 810 Hull 1424 240
+* w 100 0
+* g 1424 240
+droid: 805 Hull 1232 144
+* w 100 0
+* g 1232 144
+droid: 810 Hull 208 208
+* w 100 0
+* g 208 208
+droid: 805 Hull 272 240
+* w 100 0
+* g 272 240
+droid: 805 Hull 1424 80
+* w 100 0
+* g 1424 80
+droid: 810 Hull 976 80
+* w 100 0
+* g 976 80
+droid: 820 Hull 976 144
+* w 100 0
+* g 976 144
+droid: 820 Hull 976 208
+* w 100 0
+* g 976 208
+droid: 810 Hull 1296 144
+* w 100 0
+* g 1296 144
+droid: 820 Hull 336 176
+* w 120 0
+* g 336 176
+droid: 176 Hull 496 208
+* g 752 208
+* g 496 208
+droid: 820 Hull 656 144
+* w 100 0
+* g 656 144
+droid: 810 Hull 1168 176
+* w 100 0
+* g 1168 176
+droid: 805 Hull 1488 176
+* w 120 0
+* g 1488 176
+droid: 816 Hull 816 240
+* w 10 0
+* g 784 240
+* g 848 240
+* g 816 240
+droid: 799 Hull 1264 272
+droid: 799 Hull 176 272
+droid: 799 Hull 1584 240
+droid: 949 Hull 880 240
+droid: 933 Hull 1840 144
+droid: 933 Bridge 304 80
+droid: 933 Bridge 304 144 
+droid: 949 Bridge 208 144
+droid: 949 Bridge 208 80
+droid: 899 Bridge 112 80
+* w 100 0
+* g 48 144
+* w 20 0
+* g 112 80
+droid: 999 Bridge 112 144

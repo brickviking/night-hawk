@@ -1,0 +1,41 @@
+#!/bin/sh
+
+
+find_flat_dirs ()
+{
+    find -type d -mindepth 1 -maxdepth 1 | sort | sed 's,^\./,,;'
+}
+
+find_flat_files ()
+{
+    find -type f -mindepth 1 -maxdepth 1 -not -name 'Makefile*' \
+      -not -name 'genMakefileAM' \
+      -not -name '*,v' | sort | sed 's,^\./,,;$q;s,$, \\,'
+}
+
+make_makefile_am ()
+{
+    datasubdir="$1"; shift
+    extradist="$*"
+    exec 3>Makefile.am
+    echo >&3 "# automatically generated Makefile.am"
+    dirs="`find_flat_dirs`"
+    if test -n "$dirs"; then
+        echo >&3 "SUBDIRS = `echo $dirs`"
+    fi
+    files="`find_flat_files`"
+    if test -n "$files"; then
+        echo >&3 "nighthawkdir = \$(pkgdatadir)$datasubdir"
+        echo >&3 "nighthawk_DATA = $files"
+        echo >&3 "EXTRA_DIST = $extradist \$(nighthawk_DATA)"
+    fi
+    # this is for configure.in
+    echo "$datasubdir/Makefile" | cut -c 2-
+    for d in $dirs; do
+        ( cd $d; make_makefile_am "$datasubdir/$d"; )
+    done
+}
+
+echo "## add the following to AC_OUTPUT() in configure.in"
+make_makefile_am /data genMakefileAM
+echo "## add the previous to AC_OUTPUT() in configure.in"

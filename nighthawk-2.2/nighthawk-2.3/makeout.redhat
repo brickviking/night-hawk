@@ -1,0 +1,50 @@
+Makefile:114: warning: undefined variable `CONFIGURE_DEPENDENCIES'
+Makefile:177: warning: undefined variable `HEADERS'
+Makefile:177: warning: undefined variable `SOURCES'
+Makefile:177: warning: undefined variable `LISP'
+Makefile:181: warning: undefined variable `HEADERS'
+Makefile:181: warning: undefined variable `SOURCES'
+Makefile:181: warning: undefined variable `TAGS_DEPENDENCIES'
+Makefile:181: warning: undefined variable `LISP'
+Makefile:235: warning: undefined variable `SOURCES'
+Makefile:235: warning: undefined variable `HEADERS'
+Makefile:235: warning: undefined variable `TEXINFOS'
+make all-recursive
+make[1]: Entering directory `/home/users/v/vi/viking667/src/nighthawk-2.3'
+Makefile:114: warning: undefined variable `CONFIGURE_DEPENDENCIES'
+Makefile:177: warning: undefined variable `HEADERS'
+Makefile:177: warning: undefined variable `SOURCES'
+Makefile:177: warning: undefined variable `LISP'
+Makefile:181: warning: undefined variable `HEADERS'
+Makefile:181: warning: undefined variable `SOURCES'
+Makefile:181: warning: undefined variable `TAGS_DEPENDENCIES'
+Makefile:181: warning: undefined variable `LISP'
+Makefile:235: warning: undefined variable `SOURCES'
+Makefile:235: warning: undefined variable `HEADERS'
+Makefile:235: warning: undefined variable `TEXINFOS'
+Making all in src
+make[2]: Entering directory `/home/users/v/vi/viking667/src/nighthawk-2.3/src'
+Makefile:160: warning: undefined variable `ACLOCAL_M4'
+Makefile:237: warning: undefined variable `HEADERS'
+Makefile:237: warning: undefined variable `LISP'
+Makefile:241: warning: undefined variable `HEADERS'
+Makefile:241: warning: undefined variable `TAGS_DEPENDENCIES'
+Makefile:241: warning: undefined variable `LISP'
+Makefile:264: warning: undefined variable `HEADERS'
+Makefile:264: warning: undefined variable `TEXINFOS'
+c++ -DHAVE_CONFIG_H  -DINSTALL_DIR="\"/usr/local/share/nighthawk\"" -DSCORES_FILE="\".nighthawk.scores\"" -DLIBEXEC_DIR="\"/usr/local/libexec\"" -I.. -I..  -g -O2 -I/usr/X11R6/include -c floor.cc
+c++ -DHAVE_CONFIG_H  -DINSTALL_DIR="\"/usr/local/share/nighthawk\"" -DSCORES_FILE="\".nighthawk.scores\"" -DLIBEXEC_DIR="\"/usr/local/libexec\"" -I.. -I..  -g -O2 -I/usr/X11R6/include -c misc.cc
+c++ -DHAVE_CONFIG_H  -DINSTALL_DIR="\"/usr/local/share/nighthawk\"" -DSCORES_FILE="\".nighthawk.scores\"" -DLIBEXEC_DIR="\"/usr/local/libexec\"" -I.. -I..  -g -O2 -I/usr/X11R6/include -c object.cc
+c++ -DHAVE_CONFIG_H  -DINSTALL_DIR="\"/usr/local/share/nighthawk\"" -DSCORES_FILE="\".nighthawk.scores\"" -DLIBEXEC_DIR="\"/usr/local/libexec\"" -I.. -I..  -g -O2 -I/usr/X11R6/include -c ship.cc
+c++ -DHAVE_CONFIG_H  -DINSTALL_DIR="\"/usr/local/share/nighthawk\"" -DSCORES_FILE="\".nighthawk.scores\"" -DLIBEXEC_DIR="\"/usr/local/libexec\"" -I.. -I..  -g -O2 -I/usr/X11R6/include -c nighthawk.cc
+Makefile:230: warning: undefined variable `LDADD'
+c++ -g -O2 -I/usr/X11R6/include -L/usr/X11R6/lib -o nighthawk  floor.o misc.o object.o ship.o nighthawk.o  -lXext  -lSM -lICE -lX11   -lm 
+misc.o: In function `loadxpm(char *, tbm *)':
+/home/users/v/vi/viking667/src/nighthawk-2.3/src/misc.cc:591: undefined reference to `XpmReadFileToPixmap'
+/home/users/v/vi/viking667/src/nighthawk-2.3/src/misc.cc:601: undefined reference to `XpmCreateXpmImageFromPixmap'
+collect2: ld returned 1 exit status
+make[2]: *** [nighthawk] Error 1
+make[2]: Leaving directory `/home/users/v/vi/viking667/src/nighthawk-2.3/src'
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory `/home/users/v/vi/viking667/src/nighthawk-2.3'
+make: *** [all-recursive-am] Error 2

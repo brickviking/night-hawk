@@ -1,0 +1,17 @@
+Reading specs from /opt/sfw/lib/gcc-lib/sparc-sun-solaris2.8/2.95.3/specs
+gcc version 2.95.3 20010315 (release)
+ /opt/sfw/lib/gcc-lib/sparc-sun-solaris2.8/2.95.3/cpp0 -lang-c -v -D__GNUC__=2 -D__GNUC_MINOR__=95 -Dsparc -Dsun -Dunix -D__svr4__ -D__SVR4 -D__sparc__ -D__sun__ -D__unix__ -D__svr4__ -D__SVR4 -D__sparc -D__sun -D__unix -Asystem(unix) -Asystem(svr4) -Wall -W -pedantic -D__GCC_NEW_VARARGS__ -Acpu(sparc) -Amachine(sparc) list.c /var/tmp/ccLGp4vc.i
+GNU CPP version 2.95.3 20010315 (release) (sparc)
+#include "..." search starts here:
+#include <...> search starts here:
+ /opt/sfw/include
+ /opt/sfw/lib/gcc-lib/sparc-sun-solaris2.8/2.95.3/../../../../sparc-sun-solaris2.8/include
+ /opt/sfw/lib/gcc-lib/sparc-sun-solaris2.8/2.95.3/include
+ /usr/include
+End of search list.
+The following default directories have been omitted from the search path:
+ /opt/sfw/lib/gcc-lib/sparc-sun-solaris2.8/2.95.3/../../../../include/g++-3
+End of omitted list.
+list.c:304: lib.h: No such file or directory
+list.c:298: unterminated `#if' conditional
+<< End of Solaris gcc output of: gcc -Wall -W -pedantic list.c -v -v -v

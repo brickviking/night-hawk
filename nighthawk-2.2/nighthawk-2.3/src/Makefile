@@ -1,0 +1,365 @@
+# Generated automatically from Makefile.in by configure.
+# Makefile.in generated automatically by automake 1.3 from Makefile.am
+
+# Copyright (C) 1994, 1995, 1996, 1997, 1998 Free Software Foundation, Inc.
+# This Makefile.in is free software; the Free Software Foundation
+# gives unlimited permission to copy and/or distribute it,
+# with or without modifications, as long as this notice is preserved.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+# even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+############################################################################
+# NightHawk - By Jason Nunn(JsNO) - Sept 1996
+#
+############################################################################
+
+
+SHELL = /bin/sh
+
+srcdir = .
+top_srcdir = ..
+prefix = /usr/local
+exec_prefix = ${prefix}
+
+bindir = ${exec_prefix}/bin
+sbindir = ${exec_prefix}/sbin
+libexecdir = ${exec_prefix}/libexec
+datadir = ${prefix}/share
+sysconfdir = ${prefix}/etc
+sharedstatedir = ${prefix}/com
+localstatedir = ${prefix}/var
+libdir = ${exec_prefix}/lib
+infodir = ${prefix}/info
+mandir = ${prefix}/man
+includedir = ${prefix}/include
+oldincludedir = /usr/include
+
+DISTDIR =
+
+pkgdatadir = $(datadir)/nighthawk
+pkglibdir = $(libdir)/nighthawk
+pkgincludedir = $(includedir)/nighthawk
+
+top_builddir = ..
+
+ACLOCAL = aclocal
+AUTOCONF = autoconf
+AUTOMAKE = automake
+AUTOHEADER = autoheader
+
+INSTALL = /usr/bin/install -c
+INSTALL_PROGRAM = ${INSTALL}
+INSTALL_DATA = ${INSTALL} -m 644
+INSTALL_SCRIPT = ${INSTALL_PROGRAM}
+transform = s,x,x,
+
+NORMAL_INSTALL = :
+PRE_INSTALL = :
+POST_INSTALL = :
+NORMAL_UNINSTALL = :
+PRE_UNINSTALL = :
+POST_UNINSTALL = :
+host_alias = i686-pc-linux-gnu
+host_triplet = i686-pc-linux-gnu
+ADD_DEFS =  -DINSTALL_DIR="\"$(INSTALL_DIR)\"" -DSCORES_FILE="\"$(SCORES_FILE)\""
+CC = gcc
+CXX = c++
+CXXINCLUDES = 
+INCLUDES = -I$(top_builddir) -I$(top_srcdir)
+INSTALL_DIR = $(pkgdatadir)
+MAKEINFO = makeinfo
+NIGHTHAWK_SOUND = nighthawk_sound
+NIGHTHAWK_TOOLS = 
+PACKAGE = nighthawk
+SCORES_FILE = .nighthawk.scores
+VERSION = 2.2
+X_ALL_LIBS = -lXext  -lSM -lICE -lX11  
+X_EXT_LIBS = -lXext  -lSM -lICE -lX11  
+X_PLAIN_LIBS =  -lSM -lICE -lX11 
+
+DEFS = -DHAVE_CONFIG_H  -DINSTALL_DIR="\"$(INSTALL_DIR)\"" -DSCORES_FILE="\"$(SCORES_FILE)\"" -DLIBEXEC_DIR="\"$(libexecdir)\""
+# what a misnomer is X_LIBS? ;-)
+CXXFLAGS = -g -O2 $(X_CFLAGS)
+LDFLAGS = $(X_LIBS)
+LIBS = $(X_EXT_LIBS) -lm 
+
+bin_PROGRAMS = nighthawk
+noinst_PROGRAMS = 
+EXTRA_PROGRAMS = ned xpm_view
+
+EXTRA_DIST = \
+defs.h \
+icon_bm.h \
+misc.h \
+nighthawk_defs.h \
+tdoor.h \
+tdroid.h \
+tdroid_1xx.h \
+tdroid_2xx.h \
+tdroid_3xx.h \
+tdroid_4xx.h \
+tdroid_5xx.h \
+tdroid_6xx.h \
+tdroid_7xx.h \
+tdroid_8xx.h \
+tdroid_9xx.h \
+tedit_floor.h \
+tentity.h \
+tfloor.h \
+tlaser.h \
+tparadroid.h \
+tpower_bay.h \
+tship.h \
+tship_demo.h \
+scroll.inc
+
+nighthawk_SOURCES = floor.cc misc.cc object.cc ship.cc nighthawk.cc
+ned_SOURCES = floor.cc misc.cc ned.cc object.cc
+xpm_view_SOURCES = misc.cc floor.cc object.cc xpm_view.cc
+mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+CONFIG_HEADER = ../config.h
+CONFIG_CLEAN_FILES = 
+PROGRAMS =  $(bin_PROGRAMS) $(noinst_PROGRAMS)
+
+CPPFLAGS = 
+X_CFLAGS =  -I/usr/X11R6/include
+X_LIBS =  -L/usr/X11R6/lib
+X_EXTRA_LIBS = 
+X_PRE_LIBS =  -lSM -lICE
+ned_OBJECTS =  floor.o misc.o ned.o object.o
+ned_LDADD = $(LDADD)
+ned_DEPENDENCIES = 
+ned_LDFLAGS = 
+xpm_view_OBJECTS =  misc.o floor.o object.o xpm_view.o
+xpm_view_LDADD = $(LDADD)
+xpm_view_DEPENDENCIES = 
+xpm_view_LDFLAGS = 
+nighthawk_OBJECTS =  floor.o misc.o object.o ship.o nighthawk.o
+nighthawk_LDADD = $(LDADD)
+nighthawk_DEPENDENCIES = 
+nighthawk_LDFLAGS = 
+CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CXXFLAGS)
+CXXLINK = $(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@
+DIST_COMMON =  Makefile.am Makefile.in
+
+
+DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
+
+TAR = tar
+GZIP = --best
+SOURCES = $(ned_SOURCES) $(xpm_view_SOURCES) $(nighthawk_SOURCES)
+OBJECTS = $(ned_OBJECTS) $(xpm_view_OBJECTS) $(nighthawk_OBJECTS)
+
+all: Makefile $(PROGRAMS)
+
+.SUFFIXES:
+.SUFFIXES: .S .c .cc .o .s
+$(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4)
+	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps src/Makefile
+
+Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status
+	cd $(top_builddir) \
+	  && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
+
+
+mostlyclean-binPROGRAMS:
+
+clean-binPROGRAMS:
+	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+
+distclean-binPROGRAMS:
+
+maintainer-clean-binPROGRAMS:
+
+install-binPROGRAMS: $(bin_PROGRAMS)
+	@$(NORMAL_INSTALL)
+	$(mkinstalldirs) $(DESTDIR)$(bindir)
+	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+	  if test -f $$p; then \
+	    echo "  $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`"; \
+	     $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
+	  else :; fi; \
+	done
+
+uninstall-binPROGRAMS:
+	@$(NORMAL_UNINSTALL)
+	list='$(bin_PROGRAMS)'; for p in $$list; do \
+	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
+	done
+
+mostlyclean-noinstPROGRAMS:
+
+clean-noinstPROGRAMS:
+	-test -z "$(noinst_PROGRAMS)" || rm -f $(noinst_PROGRAMS)
+
+distclean-noinstPROGRAMS:
+
+maintainer-clean-noinstPROGRAMS:
+
+.c.o:
+	$(COMPILE) -c $<
+
+.s.o:
+	$(COMPILE) -c $<
+
+.S.o:
+	$(COMPILE) -c $<
+
+mostlyclean-compile:
+	-rm -f *.o core *.core
+
+clean-compile:
+
+distclean-compile:
+	-rm -f *.tab.c
+
+maintainer-clean-compile:
+
+ned: $(ned_OBJECTS) $(ned_DEPENDENCIES)
+	@rm -f ned
+	$(CXXLINK) $(ned_LDFLAGS) $(ned_OBJECTS) $(ned_LDADD) $(LIBS)
+
+xpm_view: $(xpm_view_OBJECTS) $(xpm_view_DEPENDENCIES)
+	@rm -f xpm_view
+	$(CXXLINK) $(xpm_view_LDFLAGS) $(xpm_view_OBJECTS) $(xpm_view_LDADD) $(LIBS)
+
+nighthawk: $(nighthawk_OBJECTS) $(nighthawk_DEPENDENCIES)
+	@rm -f nighthawk
+	$(CXXLINK) $(nighthawk_LDFLAGS) $(nighthawk_OBJECTS) $(nighthawk_LDADD) $(LIBS)
+.cc.o:
+	$(CXXCOMPILE) -c $<
+
+tags: TAGS
+
+ID: $(HEADERS) $(SOURCES) $(LISP)
+	here=`pwd` && cd $(srcdir) \
+	  && mkid -f$$here/ID $(SOURCES) $(HEADERS) $(LISP)
+
+TAGS:  $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) $(LISP)
+	tags=; \
+	here=`pwd`; \
+	list='$(SOURCES) $(HEADERS)'; \
+	unique=`for i in $$list; do echo $$i; done | \
+	  awk '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	test -z "$(ETAGS_ARGS)$$unique$(LISP)$$tags" \
+	  || (cd $(srcdir) && etags $(ETAGS_ARGS) $$tags  $$unique $(LISP) -o $$here/TAGS)
+
+mostlyclean-tags:
+
+clean-tags:
+
+distclean-tags:
+	-rm -f TAGS ID
+
+maintainer-clean-tags:
+
+distdir = $(top_builddir)/$(PACKAGE)-$(VERSION)/$(subdir)
+
+subdir = src
+
+distdir: $(DISTFILES)
+	@for file in $(DISTFILES); do \
+	  d=$(srcdir); \
+	  test -f $(distdir)/$$file \
+	  || ln $$d/$$file $(distdir)/$$file 2> /dev/null \
+	  || cp -p $$d/$$file $(distdir)/$$file; \
+	done
+floor.o: floor.cc nighthawk_defs.h defs.h ../options.h ../config.h \
+	../src_sound/nighthawk_sound.h misc.h tfloor.h tpower_bay.h \
+	tdoor.h
+misc.o: misc.cc nighthawk_defs.h defs.h ../options.h ../config.h \
+	../src_sound/nighthawk_sound.h icon_bm.h
+nighthawk.o: nighthawk.cc nighthawk_defs.h defs.h ../options.h \
+	../config.h ../src_sound/nighthawk_sound.h misc.h tship_demo.h \
+	tship.h tfloor.h tpower_bay.h tdoor.h tparadroid.h tdroid.h \
+	tentity.h tlaser.h tdroid_1xx.h tdroid_2xx.h tdroid_3xx.h \
+	tdroid_4xx.h tdroid_5xx.h tdroid_6xx.h tdroid_7xx.h \
+	tdroid_8xx.h tdroid_9xx.h scroll.inc
+object.o: object.cc nighthawk_defs.h defs.h ../options.h ../config.h \
+	../src_sound/nighthawk_sound.h misc.h tedit_floor.h tfloor.h \
+	tpower_bay.h tdoor.h tparadroid.h tdroid.h tentity.h tlaser.h \
+	tdroid_1xx.h tdroid_2xx.h tdroid_3xx.h tdroid_4xx.h \
+	tdroid_5xx.h tdroid_6xx.h tdroid_7xx.h tdroid_8xx.h \
+	tdroid_9xx.h
+ship.o: ship.cc nighthawk_defs.h defs.h ../options.h ../config.h \
+	../src_sound/nighthawk_sound.h misc.h tship_demo.h tship.h \
+	tfloor.h tpower_bay.h tdoor.h tparadroid.h tdroid.h tentity.h \
+	tlaser.h tdroid_1xx.h tdroid_2xx.h tdroid_3xx.h tdroid_4xx.h \
+	tdroid_5xx.h tdroid_6xx.h tdroid_7xx.h tdroid_8xx.h \
+	tdroid_9xx.h
+
+info:
+dvi:
+check: all
+	$(MAKE)
+installcheck:
+install-exec: install-binPROGRAMS
+	@$(NORMAL_INSTALL)
+
+install-data: 
+	@$(NORMAL_INSTALL)
+
+install: install-exec install-data all
+	@:
+
+uninstall: uninstall-binPROGRAMS
+
+install-strip:
+	$(MAKE) INSTALL_PROGRAM='$(INSTALL_PROGRAM) -s' INSTALL_SCRIPT='$(INSTALL_PROGRAM)' install
+installdirs:
+	$(mkinstalldirs)  $(DATADIR)$(bindir)
+
+
+mostlyclean-generic:
+	-test -z "$(MOSTLYCLEANFILES)" || rm -f $(MOSTLYCLEANFILES)
+
+clean-generic:
+	-test -z "$(CLEANFILES)" || rm -f $(CLEANFILES)
+
+distclean-generic:
+	-rm -f Makefile $(DISTCLEANFILES)
+	-rm -f config.cache config.log stamp-h stamp-h[0-9]*
+	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
+
+maintainer-clean-generic:
+	-test -z "$(MAINTAINERCLEANFILES)" || rm -f $(MAINTAINERCLEANFILES)
+	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
+mostlyclean:  mostlyclean-binPROGRAMS mostlyclean-noinstPROGRAMS \
+		mostlyclean-compile mostlyclean-tags \
+		mostlyclean-generic
+
+clean:  clean-binPROGRAMS clean-noinstPROGRAMS clean-compile clean-tags \
+		clean-generic mostlyclean
+
+distclean:  distclean-binPROGRAMS distclean-noinstPROGRAMS \
+		distclean-compile distclean-tags distclean-generic \
+		clean
+	-rm -f config.status
+
+maintainer-clean:  maintainer-clean-binPROGRAMS \
+		maintainer-clean-noinstPROGRAMS \
+		maintainer-clean-compile maintainer-clean-tags \
+		maintainer-clean-generic distclean
+	@echo "This command is intended for maintainers to use;"
+	@echo "it deletes files that may require special tools to rebuild."
+
+.PHONY: mostlyclean-binPROGRAMS distclean-binPROGRAMS clean-binPROGRAMS \
+maintainer-clean-binPROGRAMS uninstall-binPROGRAMS install-binPROGRAMS \
+mostlyclean-noinstPROGRAMS distclean-noinstPROGRAMS \
+clean-noinstPROGRAMS maintainer-clean-noinstPROGRAMS \
+mostlyclean-compile distclean-compile clean-compile \
+maintainer-clean-compile tags mostlyclean-tags distclean-tags \
+clean-tags maintainer-clean-tags distdir info dvi installcheck \
+install-exec install-data install uninstall all installdirs \
+mostlyclean-generic distclean-generic clean-generic \
+maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+
+#tools: ned xpm_view
+
+# Tell versions [3.59,3.63) of GNU make to not export all variables.
+# Otherwise a system limit (for SysV at least) may be exceeded.
+.NOEXPORT:

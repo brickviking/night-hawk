@@ -1,0 +1,43 @@
+#!/usr/bin/make -f
+
+# This script uses debhelper by Joey Hess
+export DH_VERBOSE=1
+
+build:	build-stamp
+
+build-stamp:
+	dh_testdir
+	$(MAKE) LOCAL_LDFLAGS=-g
+	touch build-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp
+	-$(MAKE) clean
+	dh_clean
+
+binary-indep:	build
+
+binary-arch:	build
+	dh_testdir
+	dh_testroot
+	dh_clean
+	dh_installdirs
+	dh_installdocs debian/README
+	dh_installmenu
+	dh_installchangelogs debian/upstream.changes
+	dh_installman debian/nighthawk.6
+	dh_fixperms
+	# move files into debian/tmp
+	$(MAKE) install
+	dh_strip
+	dh_compress
+	dh_installdeb
+	dh_shlibdeps
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary:	binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary

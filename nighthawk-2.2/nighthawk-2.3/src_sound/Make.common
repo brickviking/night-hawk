@@ -1,0 +1,29 @@
+# automake cannot handle these :-/ -*- Makefile -*-
+
+ifeq ($(OSTYPE),Linux)
+  HOSTDEF = -DLinux
+else
+  ifeq ($(OSTYPE),FreeBSD)
+    HOSTDEF = -DFreeBSD
+  else
+    HOSTDEF = -DLinux
+  endif
+endif
+
+HOST_SAFE = 0
+
+ifeq ($(HOSTTYPE),i386)
+  HOST_SAFE = 1
+endif
+
+ifeq ($(HOSTTYPE),i486)
+  HOST_SAFE = 1
+endif
+
+ifeq ($(HOSTTYPE),i586)
+  HOST_SAFE = 1
+endif
+
+ifeq ($(HOSTTYPE),i686)
+  HOST_SAFE = 1
+endif

@@ -1,0 +1,54 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:580: checking for a BSD compatible install
+configure:633: checking whether build environment is sane
+configure:690: checking whether make sets ${MAKE}
+configure:736: checking for working aclocal
+configure:749: checking for working autoconf
+configure:762: checking for working automake
+configure:775: checking for working autoheader
+configure:788: checking for working makeinfo
+configure:812: checking host system type
+configure:975: checking for gcc
+configure:1052: checking whether the C compiler (gcc  ) works
+configure:1066: gcc -o conftest    conftest.c  1>&5
+configure:1086: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:1091: checking whether we are using GNU C
+configure:1115: checking whether gcc accepts -g
+configure:1159: checking for c++
+configure:1190: checking whether the C++ compiler (c++  ) works
+configure:1204: c++ -o conftest    conftest.C  1>&5
+configure:1230: checking whether the C++ compiler (c++  ) is a cross-compiler
+configure:1235: checking whether we are using GNU C++
+configure:1259: checking whether c++ accepts -g
+configure:1303: checking that C++ compiler can compile simple program
+configure:1316: c++ -o conftest -g -O2   conftest.C  1>&5
+configure:1334: checking that C++ static constructors and destructors are called
+configure:1354: c++ -o conftest -g -O2   conftest.C  1>&5
+configure:1371: checking that header files support C++
+configure:1418: checking whether make sets ${MAKE}
+configure:1449: checking for sin in -lm
+configure:1496: checking how to run the C preprocessor
+configure:1561: checking for X
+configure:1875: checking for dnet_ntoa in -ldnet
+configure:1916: checking for dnet_ntoa in -ldnet_stub
+configure:1964: checking for gethostbyname
+configure:2062: checking for connect
+configure:2154: checking for remove
+configure:2246: checking for shmat
+configure:2347: checking for IceConnectionNumber in -lICE
+configure:2445: checking for XAllocColorCells in -lX11
+configure:2698: checking for XShapeCombineMask in -lXext
+configure:2742: checking for XpmCreateImageFromData in -lXpm
+configure:2792: checking for ANSI C header files
+configure:2899: checking for fcntl.h
+configure:2899: checking for malloc.h
+configure:2899: checking for sys/file.h
+configure:2899: checking for sys/ioctl.h
+configure:2899: checking for sys/time.h
+configure:2899: checking for unistd.h
+configure:2940: checking whether time.h and sys/time.h may both be included
+configure:2980: checking whether gcc needs -traditional
+configure:3026: checking return type of signal handlers
+configure:3069: checking for select

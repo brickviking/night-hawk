@@ -1,0 +1,631 @@
+Nighthawk  2.2 Install           Copyright (C) 97,98,1999 Jason Nunn (JsNO)
+           | \                   Nighthawk is under the GNU
+            \ Patch level        General Public License.
+              Version            Darwin, Northern Territory, Australia
+------------------------
+
+#####################
+See 2.2 notes below.
+#####################
+
+Synopsis
+
+Nighthawk is a tribute to one of the most playable and contagious games
+ever written- Paradroid by Andrew Braybrook. It was so good, it was worthy
+of my attention span for 6 straight months, and was the subject of
+conversation at school for many months as well. It was quite amazing seens
+that i've never really been into "playing games", the only other game that
+lifted my skirt was 3D-Wolfenstein (the pre-cursor to DOOM).
+
+It all started when i was in year 10 (1987). A friend of mine gave me a
+copy of Paradroid on a cassette tape (that was the common media for C-64's
+among my friends at the time), and that was it!, i was hooked.
+
+Nighthawk was named after the second ship (level) of the original game. It
+was extremely difficult to get to this level. If you could slate the
+Paradroid level AND Nighthawk level (let alone the other dozen levels),
+you were very good, and would have been highly regarded among the
+governing pimply faced C-64 evanglist aristocrary at my school (BTW, does
+anyone know the full set of ship names in the original game?).
+
+(Nb/ Here is a bit of useless but interesting trivia for you.  Adrian
+Bridgett, the Debian maintainer for this distribution noted to me that
+Paradroid was also very similar to Quazatron for the Z80 Spectrum, one of
+his favourite games. There's also an Amiga variation, and the acclaimed
+Paradroid-90 on the Atari-ST).
+
+In October 92 (during the end of my degree i was doing at the time), i
+attempted to write a Messydos PC game like this, but didn't have enough
+technical knowledge about real time programming and PC's etc. Four years
+later, in October 96, started working on this game. Over a period of a
+year, i worked on it on and off, to produce 1.0 that was released in
+December 97.
+
+Nighthawk has been exclusively written for the Unix/Linux X-Windows GUI,
+and have choosen it because it's the most popular, stable, and oldest GUI.
+Also, X-windows games are now very fashionable. Some say that
+Linux/Xwindows is the game developers preferred choice! (i think i read
+that in the Walnut Creek 1998 catalogue?), but i won't go that far yet
+anyway ;).
+
+
+Enjoy..
+
+:Jason Nunn
+ (19/12/97)
+
+
+ -------------------------------------------------------------------------
+
+2.2.x notes (May 99)
+
+- this is now a complete game. nothing more to be done.
+
+- i'm a bit disappointed that nobody (who i have talked to) has made it
+past level 3 (Anoyle). most people have said the game is too hard past
+level 1. ... rubbish.  you just have to know how to play it.  .. however,
+to make things a bit easier, i've added a "demo" to the game.. Don't say i
+don't think of you all ;). It was fucking hard to intergrate. I had to
+turn up side down my perfectly good way of getting Keyboard events from X
+and invent a (kludge) mezzianne input queue just so that it was possible
+to intergrate playback code capable of playing back events accurately, and
+due to possible variances in random routines across libc's of different
+platforms, and becuase X keyboard events are queued and processed both in
+realtime and in foreground, i can't guarrantee that the demo will playback
+perfectly on every platform out there. ... this was why i didn't put a
+demo in in the first place..
+
+- along with Vincents main song, i've added another song for the demo. this
+tune is called (funny enough) "Introtune" composed by 4-matt of anarchy a
+decade ago when the amiga scene (and 4-matt) was in it's hay day.
+
+(hmmm. a decade ago... that's a long time isn't it?... when life was less
+complicated... Hmmmmmm!)
+
+i have used it without his permission (*cringe* %-\ ) in this game as there
+is no way i can contact him. but anyway, i have credited him here and i
+have credited him in the game as well.
+
+- I believe alot of Paradroid "diehards" are critisizing the game too
+harshly (commentry on the Linux Game Tome). After all, the game _was_
+designed from memory. I haven't owned a 64 (let own used one), since 1988
+(and obivously i didn't know about C64 emulators for linux at the time of
+design back in 96), and i do state that it's "based" on the original
+game... infact, the story line is totally different from the original
+game, and uses a 002 droid instead of the 001 influence device in the
+first game.
+
+- I've added ship background noises. they aren't very good, but it's
+better than a kick in the teeth ;). most of them are just Korg/Roland
+sythesizer noises played at a really low frequency ;(.
+
+- i've made it so that doors are set to shut when entering a transport bay.
+
+- 720 "flack droid" has been renamed to it's proper "flank droid".
+
+- A special thanks to Nelson Minar <nelson@media.mit.edu> for his small
+patch, and Wolfgang Scherer <Wolfgang.Scherer@gmx.de> for vulcanising the
+build scripts and adding autoconf support. Also, a thanks goes out to Eero
+Tamminen <students.cc.tut.fi/~t150315>, for doing up a manual.
+
+- i had to remove an 820 droid from Tobruk as one was overlapping another.
+
+
+2.2 notes from Wolfgang Scherer:
+
+ - I added autoconf support. So the standard way to configure things
+   is now basically:
+
+    configure [OPTIONS]
+    make
+    make install
+
+ - Please, do not fiddle with INSTALL_DIR in options.h any more! This
+   is handled by `configure --prefix=<path>'.
+
+   The default prefix is `/usr/local'. This means, that the nighthawk
+   binary is installed in `/usr/local/bin' and the data is placed into
+   `/usr/local/share/nighthawk/data'. The sound driver is installed in
+   `/usr/local/libexec'.
+
+ - Sound is automatically enabled for i?86 machines.
+
+ - The default score file is now ".nighthawk.scores".  The user's home
+   directory ($HOME) is prepended at run-time.  If you set the score
+   file with configure to an absolute path (starting with a `/'), the
+   home directory is not prepended.
+
+ - Defaults have changed for:
+
+    sound stereo:      stereo
+    sound precision:   16 bit
+    sound sample rate: 22050 Hz
+
+ - It is still possible to do maintenance on the package, without
+   installing it. Say `sh maintainer-conf [CONFIGURE-OPTIONS]' and you
+   are set. Don't install it with this setup though! Say `make dist'
+   and compile/install from the generated tar archive.
+
+
+ -------------------------------------------------------------------------
+
+
+2.x notes..
+
+Hello,
+
+2.x is the sound and music version i promised in 1.0. i wasn't sure how
+popular 1.0 was going to be when i released it (or even if it would work
+on other peoples machines). I didn't get as many responses as expected,
+probably due to the lack of advertising (on the some of the major X11 game
+pages etc), but it's popular enough to warrant this new version.
+
+I've made some very small ammendments- like adding an up arrow to lift
+changes as insisted by many people, and having fixed some problems pointed
+out by Adrian Brigett. Infact Adrian was so impressed with 1.0, he went
+through the source code doing small ammendments and improvements (Nb/ from
+past experience, when somebody goes to the trouble of modifying your
+source code, then you know that it's going to be a popular piece of
+software with the rest of the masses! ;). I've updated his improvements in
+this version.
+
+Adrian now maintains Nighthawk for Debian Linux. If you are using a Debian
+Linux distribution and have problems getting Nighthawk running, then let
+Adrian straighten you out ;).
+
+Most of all though, i've added Starwars sound FX and asked Vincent Voois
+(a dutch muso from way back) to track a song for the game. The FX samples
+are from various Starwars sites. Alot can be said about having good fx
+samples. I have applied them well, but good samples make all the
+difference. I didn't get permission from Lucas Arts to use them (as you
+can imagine the difficulty in doing that), but there again, neither did
+the any of the sites. As Nighthawk is GNU freeware, i hope they look
+favourably before commiting any litigation against a humble nobody
+producing a free piece of software ;).
+
+Vincent did a fabulous job with the song. I would like to say at this
+point that i managed to push Vincent's buttons slightly. Due to a
+communication error on my part, there was some confusion over the note
+conversions from the XM format (that he originally tracked it in) to
+FunktrackerGOLD (the tracker that's used in the game), so as a result, his
+samples won't sound as good as can be.
+
+Apart from this, Vincent has done a very fine job. Well done! ;). Vincent
+is a fellow i have known for a while now. I regard him as a very talented
+person, and have enjoyed listening to many of his songs. Have a look at
+his home page for information on his works.
+
+I should also mention that i did the graphics with an old MessyDos
+graphics package called Autodesk Animator-Pro. I still regard this as a
+true "drawing program". In it's hay day, it was *the* application to use
+for PC demo/game graphics. Hopefully one day, a port will be made for
+Linux. Later in 2.x, i used the GIMP 0.99 to quantanise, and touchup some
+backdrop bitmaps. After all, everybody loves the GIMP ;).
+
+NB/ Some people find the game slows when theres alot of explosions on the
+screen. I've solved this by adding a REDUCED_SPRITES option you can
+include when compiling the game. This will omit some the more intensive
+bitmaps, making the game more playable on slow machines. The second thing
+is that people want to be able to configure the key arrangement. There
+isn't an agreement on what keys to use, therefore, i've created some
+pre-compiler directives for people to change. See the next section on how
+to configure this.
+
+see ya
+
+
+                         *      *       *      *
+
+Installation [ws]
+
+ - If you are used to the previous type of installation, READ THIS
+CAREFULLY. The package is using the standard
+    configure
+    make
+    make install
+sequence now!
+
+ - The basic system you should have is some form of Unix that's similar to
+Linux, and X11 installed with it. It will probably work on any Unix,
+providing you know how to port it. (The first step is already done,
+since autoconf has been employed. However, the configuration defines
+are not used in the source code yet).
+
+You'll also need XPM libraries (version 4.7), the latest autoconf, as well
+as all the development tools like make, gcc, ld etc.
+
+ - Firstly, move, unzip, and untar the distribution anywhere EXCEPT the final
+destination of the game. (i.e. /usr/src/packages or the like).
+
+ - Edit the options.h file, if you want to change the keys.  Only
+touch the KEY_* directives.
+Please, do NOT touch any of the #ifndef/#define options. Those are changed
+through ./configure now!
+
+ - Execute "./configure --help" to see the other compile time options.
+On i?86 machines, the sound support is automatically enabled. For other
+CPUs, sound is disabled.
+
+ - Do the common sequence:
+
+    configure
+    make
+    make install
+
+For sound- Abandon all hope ye who have None-Intel machines. The music
+(funktracker) format is Intel dependant, and i haven't yet written
+modifications to convert byte/word/double sex conversion. You won't be
+able to get far anyway. The Makefile won't let you compile the sound
+engine on a none intel machine.
+
+ - to run the game: type "nighthawk"
+
+ - to run the game with music: type "nighthawk -m"
+
+For example, you could use this command line string for SB16 cards:
+"nighthawk -m -P16 -S1 -s22050"
+
+ - to see your options: type "nighthawk -h"
+
+
+                         *      *       *      *
+
+
+How to Play (Expanded by Adrian Bridgett)
+
+
+
+Nighthawk - Paradroid Chapter II - The rescue from Vega
+=======================================================
+
+The Earth forces have ambushed an enemy fleet transporting captured Earth
+vessels bound for Vega. While crews were boarding these ships for repairs,
+surviving Vegarian crew destroyed each ships warp core. This has made the
+ships very radioactive, causing many of the droids on board these ships to
+go 'rogue'.  Our last contact with the crew indicated heavy loss of life.
+All attempts at contact or rescue have proved futile. We can only fear the
+worst..
+
+..However, we have depatched a Class 002 Paradroid. Improved over the 001
+class, the 002 will teleport to each ship and annihilate all droids.
+
+
+Game play
+---------
+
+The mission is simple- Slate all droids.
+
+You start out as a 002 Paradroid. In the original game, you controlled a
+001 Influence device. They differ in the way they control their hosts.
+The 001 droid was basically a helmet that fitted over the host droids
+head, and could control it for a certain length of time.  The 002 droid
+however actually transfers it's programs over to the new host, effectively
+'becoming' it, and destroying the old host it occupied.
+
+There are good and bad points to this.  The good point is that you can
+occupy the host droid for an unlimited length of time, the bad point is
+that you are stuck with the new hosts weaponary, speed and shields.
+
+
+Key Summary
+------------
+
+cursor keys - move
+left click  - fire
+right click - panic fire
+space       - activate (lift, computer, boost)
+t           - toggle transfer mode
+h           - toggle headsup mode (off by default).
+s           - display status
+p           - pause
+q           - quit
+
+
+Movement
+--------
+
+Use the cursor keys to move around each map. To open a door, either shoot
+it (see below) or move into it. Doors will close after a short time.
+
+To move around the ship, you must use the lifts (these look like squares
+with a cross through them, you normally start on one). To use a lift, move
+over it and press space. A map of the ship will appear, showing all the
+lifts and a square dot which represents your droid. Press up or down to
+the level you want to go to, and then press space to exit the lift.
+
+
+Attacking
+---------
+
+To shoot, click the left mouse button at the target you are aiming at. A
+right mouse click does a burst fire which sprays shots in all directions.
+
+The spin speed of a droid indicates how charged the shields of the droid
+are.  At full spin, the droid is fully charged. When a droid has less than
+1/4 shields green lights flash, and when they have less than 1/8 shields
+red lights flashes instead. To recharge shields, move over a recharging
+point (they have swirly bits in them) and press space.
+
+
+Transferring
+------------
+
+You won't get very far in nighthawk unless you learn to transfer to
+different droids. To transfer to a different droid, press "t" (white
+lights will start flashing and you will be unable to shoot) then click on
+a nearby droid (even one on the other side of a wall). The two droids will
+"negotiate" (what a euphemism!) to see which one lives. During
+negotiations, neither droid can shoot.
+
+During the negotiations a bar will appear - the green part represents your
+droid and the blue bar represents the enemy droid. The relative amounts of
+these bars will change as the droids battle each other. When the bar has
+turned one color, that droid wins. The negotiation will be broken off if
+the two droids move too far apart.
+
+As a general rule, don't negotiate with a droid that is more than two
+classes above you - e.g if you are in a 423, negotiating with a 606 is
+okay, but a 713 will probably kill you.
+
+
+Status
+------
+
+Pressing "s" will display the number of shields you have left and the
+number of droids left on the ship (assuming headsup is on). When something
+interesting happens, a status message will appear. Here are some:
+
+shields=10      you have 10 shields left
+droids=9        there are 9 droids left to kill
+002 d 107       002 droid destroyed 107 droid
+002 h 423(8)    002 droid hit 423 droid (who now has 8 shields left)
+600 captured    started negotiating with 600 droid
+lost contact    stopped negotiations (droids move too far apart)
+boost=15(+3)    shields were reacharged by 3 to 15
+
+
+Computers
+---------
+
+To find out information about your droid, go to a computer in the wall and
+press space. Use the cursor keys to look at different droids, you can find
+out:
+
+Type    -  droid number
+Name    -  title of the droid
+Entry   -  "negotiation" skills
+Height  -
+Weight  -  can it
+Brain   -  intelligence of the droid
+Arm     -  weapon (armament)
+Shield  -  current and maximum number of shields
+Speed   -  how fast the droid can move
+Attack  -  agressiveness of the droid
+
+
+Scoring
+-------
+
+Recharging shields   -10
+Hit droid            entry level
+Destroyed droid      25 x entry level
+Transferring         50 x entry level
+
+You get points for hitting/destroying a droid even if it was another droid
+that did the shooting!
+
+
+Weapon types
+------------
+                 Speed  Damage
+Linarite         8      4
+Crocoite-Benzol  10     10
+Uvarovite        12     20
+Tiger-Eye Quartz 9      50
+
+
+Droid types
+-----------
+
+0xx - Prototype Class
+
+These droids are prototype/ experimental class that vary in function
+considerably. Approach with caution.
+
+
+1xx - Cleaning Droids
+
+Mindless, slow, low shielded, unarmed droids that clean the ships.
+Harmless.
+
+
+2xx - Logistic/Servant Droids
+
+Again, brainless droids that do various tasks.  These type can vary in
+shield and strength.  This class is harmless as well.
+
+
+3xx - Messenger Droids
+
+Mindless, but very fast. Low shield rating, and are not armed.
+
+
+4xx - Maintenance Droids
+
+Designed to repair the ships. Vary in shield and speed ratings. Sometimes
+armed.
+
+
+5xx - Medical Droids
+
+These droids have a high entry level, and are difficult to crack. All of
+them are armed, but are not hostile. However, they will shoot at any
+droids that attack them.
+
+
+6xx - Sentinel Droids
+
+These droids 'guard' certain important area's of the ships like lifts,
+power bays and other droids. They vary in shield rating, speed and fire
+power, but all are armed and will attack.  Approach with caution.
+
+
+7xx - Battle Droids
+
+This class of droid 'hunts'.  When confronted, any will attack.  They
+vary in speed, shield rating and weaponary, but all are extremely
+dangerous.
+
+
+8xx - Crew Droids
+
+These are armed droids that control the ship.  These like the 5xx class
+are not hostile, but will become hostile to any droids that attack them.
+8xx's are armed with Uvarovite lasers, and pack a rather powerful wallop.
+
+
+9xx - Command Cyborgs
+
+Each ship will have one of these. They command the ships.  Extremely
+armed, extremely shielded, often very fast, and very deadly.
+
+
+Ships
+-----
+
+Ship          Type               Difficulty
+-------------------------------------------
+Haldeck       Fleet Support      Very easy
+Seafarer      Cargo Vessel       Moderate
+Anoyle        Attack Frigate     Difficult
+Esperence     Battle Cruiser     Tricky/Very difficult
+Ophukus       Medical Frigate    Moderate (lots of 5xx's)
+Mearkat       Scout Ship         Tricky/Difficult
+Friendship    Destroyer Class    Tricky/Difficult (lot's of 6xx's)
+Discovery     Scientific Frigate Difficult (lots of 8xx's)
+Zaxon         Battle Cruiser     Tricky/Very difficult (lots of 7xx's)
+Tobruk        Flag Ship          EXTREMELY difficult (but not impossible)
+
+
+To start at a particular ship, run nighthawk like this:
+
+  nighthawk -c<ship-number 0-9>
+
+Note that the high score table will treat this as cheating.
+
+
+Game tips
+---------
+
+If possible, create 'friendly fire'. This is very easy to do.  Get
+inbetween any two armed droids.  If one of them preemptively attacks,
+simply duck at the last minute (if not, then just shoot at one). Their
+laser fire will/should/hopefully hit the other droid. The other droid will
+then fire back at the droid that accidently attacked it.  When the
+attacking droid is hit, it will fire back at the droid firing at
+it....hence a shoot out will occur. The result is either two destroyed
+droids, or one left staying with a reduced shield.
+
+Another good thing about friendly fire is that it's an excellent
+distraction. Any 6xx,7xx, 9xx droids involved in one, won't be concerned
+with you at all; they will be too busy blowing away their mate.
+
+Always duck for cover when fired upon, and when you shoot a droid fitted
+with weapons, be ready to duck for cover.  Don't just take it. Armed
+droids will always return fire immediately with an equal or greater rate.
+
+Get into the habit of firing a 4-6 round volley, then ducking behind a
+wall, door, storage unit... or even another droid.  261's are excellent to
+hide behind.  These droids are industrial cargo movers. Being heavy
+machinery, they have a very high shield rating and can buffer many laser
+blows.  Medical Droids (5xx series) are another good example. Medical
+droids are armed but passive.  They won't attack anyone unless fired upon.
+When an attack droid is firing at you, duck behind a medical droid.  If
+the attacking droid hits the medic, then the medic will fire (one shot)
+back at the attacking droid (yet another 'friendly fire' example). The 599
+Surgeon droids are fitted with the powerful Uvarovite lasers, and will
+cheerfully sodomise any minor class 6xx's or 7xx's that accidently attack
+it.
+
+This game requires lots of lateral thinking. Simply blasting everything in
+sight is not going to get you very far (maybe the first and second ship if
+you're lucky). You have to rely on transferring to higher order droids
+inorder to conquer droids with more fire power than yourself or to go
+through walls. You have to shoot smart. Hostile droids will always attack
+with an equal or greater rate. With "head-on" shoot outs (that most
+newbies will tend to do), it's only a matter of who has the bigger shields
+and lasers who will win. Some droids are simply too risky to confront,
+like 799's, and 9xx's. It's far better to transfer to them through a wall
+(where you can't get shot at). In Ship "Zaxon" you are forced to confront
+7xx's head on as there are so many of them.
+
+On some ships, be selective with droids to destroy. You may need to
+transfer back through a wall inorder to return to the place you started.
+
+As a general rule, if a 6xx is shooting at you, don't shoot back, instead
+duck for cover, even if you sustain some hits doing it. Don't stand your
+ground and fire back. However, with 7xx's & 9xx's, because of their
+unpredictable behaviour and rapid fire power, the above tactic may not
+work.
+
+Nb/ that there is a systematic "nack" to completing the levels, and if
+people are having difficulty, i'll publish a guide on how to complete each
+level.
+
+
+                         *      *       *      *
+
+Contacts
+
+
+- My current email addresses are:
+
+       jsno@downunder.net.au
+
+- Read www.downunder.net.au/~jsno for furtherupdates on Nighthawk.
+
+- Snail:
+
+     Jason Nunn
+     32 Rothdale Rd
+     Moil NT 0810
+     Australia
+
+If you can, drop me a line and tell me what you think. I love feedback on
+distributions i author.
+
+
+- Vincent Voois (the musician) contacts:
+
+  - vvacme@worldonline.nl
+  - http://home.worldonline.nl/~vvacme
+
+
+- Debian Maintainer
+
+  Adrian Bridgett <adrian.bridgett@poboxes.com>  ???????????
+
+i'm not sure if he can be contacted here. i haven't heard from Adrian
+since about march 98.
+
+
+                         *      *       *      *
+
+
+Acknowledgements
+
+Vincent Voois...............  Rescue from Vega song
+Adrian Bridgett.............  Modifications and Debugging in 1.x
+                              Redid instructions etc.
+Nelson Minar................  some small code mods in 2.2.
+Eero Tamminen...............  Did up the manual.
+Wolfgang Scherer............  vulcanised build scripts in 2.2, added
+                              autoconf support.
+4-matt of anarchy...........  Introtune song (used in demo)
+
+
+                                   ooo0ooo
+
+Local Variables:
+mode: indented-text
+End:

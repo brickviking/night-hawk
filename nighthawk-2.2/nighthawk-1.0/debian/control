@@ -1,0 +1,17 @@
+Source: nighthawk
+Section: games
+Priority: optional
+Maintainer: Adrian Bridgett <bridgett@debian.org>
+Build-Depends: debhelper,xlibs-dev
+Standards-Version: 3.5.6.0
+
+Package: nighthawk
+Architecture: any
+Depends: ${shlibs:Depends}
+Conflicts: suidmanager (<< 0.50)
+Description: An improved version of Paradroid - a strategic shoot-em up.
+ You are a droid out to save the universe. To do this, you must do more
+ than simply blasting everything in sight - you have to transfer to better
+ droids in order to conquer more advanced droids, and go through walls to
+ reach parts other droids cannot reach.
+

@@ -1,0 +1,103 @@
+.TH NIGHTHAWK 6 2001-06-10
+.SH NAME
+nighthawk
+.SH SYNOPSIS
+.B nighthawk 
+.RB [\| \-h \||\| \-s \||\| \-c
+.IR ship \| number ]
+.SH DESCRIPTION
+.P
+Nighthawk is a tribute to one of the most playable and contagious games
+ever written - Paradroid by Andrew Braybrook.
+.P
+You are a droid out to save the universe. To do this, you must do more
+than simply blasting everything in sight - you have to transfer to better
+droids in order to conquer more advanced droids, and go through walls to
+reach parts other droids cannot reach. 
+.P
+You start out as a 002 Paradroid in a ship. You can destroy other droids,
+and you can also "transfer": this means transfering your identity to the
+other paradroid, so you'll have his "body", if you're succesfull. If you're
+not, you'll be destroyed.
+.P
+These are the droid types:
+ 0xx - Prototype Class
+       (experimental; vary in function; caution!)
+ 1xx - Cleaning Droids 
+       (mindless, slow, low shielded, unarmed)
+ 2xx - Logistic/Servant Droids 
+       (brainless, vary in shield and strength)
+ 3xx - Messenger Droids 
+       (mindless, fast, low shielded, unarmed)
+ 4xx - Maintenance Droids 
+       (vary in shield and speed; may be armed)
+ 5xx - Medical Droids 
+       (hard to crack, armed, not hostile)
+ 6xx - Sentinel Droids 
+       (vary in shield/speed/fire; armed; will attack)
+ 7xx - Battle Droids 
+       (vary in shield/speed/fire; dangerous)
+ 8xx - Crew Droids 
+       (armed, not hostile)
+ 9xx - Command Cyborgs 
+       (1 per ship; Extremely armed/shielded/fast; deadly)
+
+Notice that "not hostile" means the droid will not attack only until you attack
+them!
+.SH PLAYING
+To open a door, either shoot it or move into it. Doors will close after
+a short time.
+.P
+To move around the ship, you must use the lifts (these look like squares
+with a cross through them, you normally start on one). To use a lift, move
+over it and press space. A map of the ship will appear, showing all the
+lifts and a square dot which represents your droid. Press down until the
+square is over the level you want to go to, and then press space to exit the
+lift.
+.P
+To shoot, click the left mouse button at the target you are aiming at. A
+right mouse click does a burst fire which sprays shots in all directions.
+.P
+You won't get very far in nighthawk unless you learn to transfer to
+different droids. To transfer to a different droid, press "t" (white lights
+will start flashing and you will be unable to shoot) then click on a nearby
+droid (even one on the other side of a wall). The two droids will
+"negotiate" (what a euphemism!) to see which one lives. During negotiations,
+neither droid can shoot.
+.P
+To find out information about your droid, go to a computer in the wall and
+press space.
+.P
+Key summary:
+.P
+ cursor keys    move
+ left click     fire
+ right click    burst fire
+ space          activate (lift, computer, boost)
+ t              toggle transfer mode
+ s              display status
+ p              pause
+ q              quit
+.P
+See more information on how to play in /usr/share/doc/nighthawk/README.gz
+.SH OPTIONS
+Valid command line options:
+.TP
+.B \-h
+Displays help info
+.TP
+.B \-s
+Displays game scrolls
+.TP
+.B \-c N
+starts the game in the Nth ship. Note that the high 
+score table will treat this as cheating.
+.SH AUTHOR
+Nighthawk was written by Jason Nunn
+.br
+<jsno@dayworld.net.au>.
+.P
+This manual page was  written  by  Jeronimo  Pellegrini 
+<pellegrini@mpcnet.com.br>,
+using text from the README file by Jason Nunn, for the 
+Debian GNU/Linux system (but may be used by others).
