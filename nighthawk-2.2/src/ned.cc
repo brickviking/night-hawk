@@ -41,7 +41,7 @@ void fg_loop(void)
   while(!end_game)
   {
     XEvent event;
-
+    /* Some sort of sleep mode in here to slow things down a bit? */
     while(XPending(display))
     {
       XNextEvent(display,&event);
@@ -75,7 +75,10 @@ void print_help(void)
   printf("Usage: ned <options>\n"
           " -h            Display this help info\n"
           " -n Width Height Indice <floor_map>\n"
+          "    Create a new floor map of Width x Height, using Indice as\n"
+          "    the tile number to use to initialise the map with\n"
           " -l <floor_map>\n"
+          "    Load an existing Floor map\n"
           "\n");
 }
 
@@ -83,9 +86,10 @@ int main(int argc,char *argv[])
 {
   register int x,new_f = 1;
   int map_x_size = 2,map_y_size = 2;
-  char *map_filename = "";
+  char *map_filename = ""; /* Should this actually be '\0' so it triggers the if(!map_filename) down below? */
 
   printf("Welcome to NightHawk (Floor Editor) - By Jason Nunn\n");
+  printf("Updated by Eric Gillespie and others \n(viking at users dot sourceforge dot net)\n");
   if(argc == 1)
   {
     print_help();
@@ -103,6 +107,7 @@ int main(int argc,char *argv[])
           return 1;
         case 'n':
           new_f = 1;
+	  /* I note there's no testing of these values for validity */
           sscanf(argv[x + 1],"%d",&map_x_size);
           sscanf(argv[x + 2],"%d",&map_y_size);
           sscanf(argv[x + 3],"%d",&edit_floor.default_map_value);
