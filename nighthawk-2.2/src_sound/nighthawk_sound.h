@@ -1,5 +1,6 @@
 #define SONG1_FILE  INSTALL_DIR  "/data/music/Rescue_from_Vega.fnk"
 #define SONG2_FILE  INSTALL_DIR  "/data/music/introtune.fnk"
+#define SONG3_FILE  INSTALL_DIR  "/data/music/tune2.mod"
 
 #define PIPE_PACKET_SIZE 8
 

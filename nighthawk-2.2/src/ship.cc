@@ -617,18 +617,24 @@ void tship::level_check_event(void)
     {
       switch(state)
       {
-        case 0:
+        case 0:  // In the transporter bay
           switch(kp->val)
           {
+					case KEY_GRAB:
+						  nighthawk_mousegrab();
+					    break;   /* Added from UAE by ECG 3-Dec-2001 */
             case KEY_UP:
+            case KEY_KP_UP:
               transport_change_up();
               sound_engine_cmd(SND_CMD_FX,FX_SELECT,0xff,0x80);
               break;
             case KEY_DOWN:
+            case KEY_KP_DOWN:
               transport_change_dn();
               sound_engine_cmd(SND_CMD_FX,FX_SELECT,0xff,0x80);
               break;
             case KEY_SELECT:   //paradroid exits transport bay
+            case KEY_KP_SELECT:
               state = 1;
               set_ship_noise();  //switch on ship noise
               break;
@@ -637,11 +643,15 @@ void tship::level_check_event(void)
         case 1:
           switch(kp->val)
           {
+					case KEY_GRAB:
+						  nighthawk_mousegrab();
+					    break;   /* Added from UAE by ECG 3-Dec-2001 */
             case KEY_PAUSE:
               state = 3;
               sound_engine_cmd(SND_CMD_FX,FX_SELECT,0xff,0x80);
               break;
             case KEY_HEADSUP:
+            case KEY_KP_HEADSUP:
               headsup ^= 1;
               sound_engine_cmd(SND_CMD_FX,FX_SELECT,0xff,0x80);
               break;
@@ -664,14 +674,17 @@ void tship::level_check_event(void)
           switch(kp->val)
           {
             case KEY_SELECT:
+            case KEY_KP_SELECT:
               state = 1;
               break;
             case KEY_LEFT:
+						case KEY_KP_LEFT:
               if(console_ptr > 0)
                 console_ptr--;
               sound_engine_cmd(SND_CMD_FX,FX_SELECT,0xff,0x80);
               break;
             case KEY_RIGHT:
+						case KEY_KP_RIGHT:
               if(console_ptr < DROID_999)
                 console_ptr++;
               sound_engine_cmd(SND_CMD_FX,FX_SELECT,0xff,0x80);
@@ -783,6 +796,13 @@ void tship::print_info_sub(void)
     sprintf(str,"Floor: %s",curr_location->floor->name);
     XDrawString(display,render_screen,gc_dline,
       SCREEN_SIZE_X - 120,24,str,strlen(str));
+// These next three lines are to gain an x-y position on level
+    sprintf(str,"X: %d", (tparadroid *)droids[0]->spos_x);
+    XDrawString(display,render_screen,gc_dline,
+      SCREEN_SIZE_X - 280,10,str,strlen(str));
+    sprintf(str,"Y: %d",  (tparadroid *)droids[0]->spos_y);
+    XDrawString(display,render_screen,gc_dline,
+      SCREEN_SIZE_X - 240,10,str,strlen(str));
     for(x = 0;x < MAX_MESSAGES;x++)
       if(*((((tparadroid *)droids[0])->message + x)) != NULL)
       {
@@ -808,7 +828,7 @@ void tship::print_info(void)
   print_info_sub();
 #ifdef GOD_MODE
   {
-    char *message = "You fucking cheat!";
+    char *message = "You're a cheater!!";
 
     XDrawString(display,render_screen,gc_dline,
       110,70,message,strlen(message));
@@ -1014,3 +1034,23 @@ void tship_demo::level_run(void)
     level_run_sub();
   }
 }
+
+void nighthawk_mousegrab (void)
+{
+  int oldx, oldy;
+    if (grabbed) {
+	XUngrabPointer (display, CurrentTime);
+	XUndefineCursor (display, window);
+	grabbed = 0;
+    } else {
+	XGrabPointer (display, window, 1, 0, GrabModeAsync, GrabModeAsync,
+		      window, xhairCursor, CurrentTime);
+	// These values REALLY should be macros, not immediate
+	oldx = SCREEN_SIZE_X / 2;
+	oldy = SCREEN_SIZE_Y / 2;
+	XWarpPointer (display, None, window, 0, 0, 0, 0, oldx, oldy);
+	grabbed = 1;
+    }
+}
+
+

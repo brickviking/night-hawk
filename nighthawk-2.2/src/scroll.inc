@@ -24,6 +24,7 @@ char   *scroll_story =
 "class, the 002 will teleport to each"
 "ship and annihilate all droids.     "
 "                                    "
-"                                    "
 "        Hit Space to Start.         "
+"        Hit 'g' to lock the         "
+"   mouse pointer to this screen     "
 "         Hit 'd' for Demo.          ";

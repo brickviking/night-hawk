@@ -121,6 +121,8 @@ int tfloor::load(char *fn,char *fname)
             if(door[door_ptr] != NULL)
             {
               door[door_ptr]->init(sx,sy,t == 'h' ? 1 : 0);
+							// Added this line
+							printf("door: %d %d %c\n", door[door_ptr]->pos_x, door[door_ptr]->pos_y, (door[door_ptr]->bm==&doorh_bm) ? 'h' : 'v');
               door_ptr++;
             }
           }
@@ -131,8 +133,9 @@ int tfloor::load(char *fn,char *fname)
           {
             sscanf(str,"%*s %d %d",&sx,&sy);
             power_bay = new(tpower_bay);
-            if(power_bay != NULL)
+            if(power_bay != NULL) {
               power_bay->init(sx,sy);
+						}
           }
         }
         else if(!strcmp(amble,"transport:"))
@@ -287,14 +290,21 @@ int tedit_floor::create(char *fn,int x_size,int y_size)
 
 int tedit_floor::save(void)
 {
-  FILE *fp;
+  FILE *fp, *fpm;
   register int x,y;
-  char str[STR_LEN];
+  char str[STR_LEN], strm[STR_LEN];
 
   printf("Saving floor\n");
   strcpy(str,map_filename);
+  strcpy(strm,map_filename);
   strcat(str,".f");
+  strcat(strm,".m");
   if((fp = fopen(str,"w")) == NULL)
+  {
+    perror("tedit_floor::save() ");
+    return 0;
+  }
+  if((fpm = fopen(strm,"w")) == NULL)
   {
     perror("tedit_floor::save() ");
     return 0;
@@ -302,10 +312,104 @@ int tedit_floor::save(void)
   fprintf(fp,"%d %d\n",fmap_x_size,fmap_y_size);
   for(y = 0;y < fmap_y_size;y++)
   {
-    for(x = 0;x < fmap_x_size;x++)
+    for(x = 0;x < fmap_x_size;x++) {
+			switch(*(fmap + (y * fmap_x_size) + x)) {
+			  case 2: //doors (h)
+				  fprintf(fp,"%d\n", 21);  // Put a blank space in its place, the doors are already in an array
+	        fprintf(fpm, "door: %d %d %c\n",  ((x*32) + 16), ((y*32) + 16), 'h'  );
+	        printf("door: %d %d h\n",   ((x*32) + 16), ((y*32) + 16) );
+				  break;
+			  case 3: //doors (v)
+				  fprintf(fp,"%d\n", 21);  // Put a blank space in its place, the doors are already in an array
+	        fprintf(fpm, "door: %d %d %c\n",  ((x*32) + 16), ((y*32) + 16), 'v'  );
+	        printf("door: %d %d v\n",   ((x*32) + 16), ((y*32) + 16) );
+				  break;
+				case 15:  // transporter, which could be taken out due to needing the icon
+				  fprintf(fp,"%d\n",*(fmap + (y * fmap_x_size) + x));
+			    fprintf(fpm, "transport: %d %d\n",((x*32) + 16), ((y*32)+16));
+	        printf("transport: %d %d\n", ((x*32) + 16), ((y*32)+16));
+					break;
+				case 16: 
+				  fprintf(fp,"%d\n",*(fmap + (y * fmap_x_size) + x));
+				  fprintf(fpm,"console: %d %d\n", ((x*32) + 16), ((y*32)-16));
+	        printf("console: %d %d\n", ((x*32) + 16), ((y*32)+16));
+				  break;
+				case 17:
+				  fprintf(fp,"%d\n",*(fmap + (y * fmap_x_size) + x));
+				  fprintf(fpm,"console: %d %d\n", ((x*32) - 16), ((y*32)+16));
+	        printf("console: %d %d\n", ((x*32) + 16), ((y*32)+16));
+				  break;
+				case 19:
+				  fprintf(fp,"%d\n",*(fmap + (y * fmap_x_size) + x));
+				  fprintf(fpm,"console: %d %d\n", ((x*32) + 48), ((y*32)+16));
+	        printf("console: %d %d\n", ((x*32) + 16), ((y*32)+16));
+				  break;
+				case 20:
+				  fprintf(fp,"%d\n",*(fmap + (y * fmap_x_size) + x));
+				  fprintf(fpm,"console: %d %d\n", ((x*32) + 16), ((y*32)+48));
+	        printf("console: %d %d\n", ((x*32) + 16), ((y*32)+16));
+				  break;
+				//I'd LOVE to add in a power_bay here, as there doesn't seem to be a way of
+				// finding the number of assigned power_bays
+				case 28: // .. here goes...yuk yuk kludge kludge
+				  fprintf(fpm, "power_bay: %d %d\n", ((x*32) + 16), ((y*32)+16));
+          fprintf(fp,"%d\n",0);  // Clears out the space after writing out to the misc file
+	        printf("power_bay: %d %d\n", power_bay->pos_x, power_bay->pos_y);
+				  break;
+			  default:
+				  fprintf(fp,"%d\n",*(fmap + (y * fmap_x_size) + x));
+					break;
+			} //end of switch
+		} // end of for(x=...)
+  }  // end of for(y=...)
+/* Code needs to be added here to save the elements like doors and transports
+ * and power bays. For specific elements, write them out to the .m file via a case statement */
+/* We need a case for a door (v or h) */
+  for(x = 0; door[x] != NULL; x++)  { // Walk through the door[] array
+	  fprintf(fpm, "door: %d %d %c\n", door[x]->pos_x, door[x]->pos_y, (door[x]->bm == &doorh_bm) ? 'h' : 'v' );
+	  printf("door2: %d %d %c\n", door[x]->pos_x, door[x]->pos_y, (door[x]->bm == &doorh_bm) ? 'h' : 'v' );
+	}
+ // Walk through the transport[] array
+//  for(x = 0; (transport[x].x) != NULL; x++)  {
+//	  fprintf(fpm, "transport: %d %d\n", transport[x].x, transport[x].y );
+//	}
+
+/* one for a powerbay, - that could be tricky ... * /
+  for(x = power_bay_ptr; x > 0; x--)  {
+	  fprintf(fpm, "power_bay: %d %d\n", power_bay->pos_x, power_bay->pos_y );
+	  printf("power_bay: %d %d\n", power_bay->pos_x, power_bay->pos_y);
+	}/ * This loop is neverending...why? */
+
+
+/*			case 28:
+			  printf("Case 28 triggered: power_bay\n"); 
+				fprintf(fpm, "power_bay: %d %d\n", ((x*32) + 16), ((y*32)+16));
       fprintf(fp,"%d\n",*(fmap + (y * fmap_x_size) + x));
-  }
+				break;
+* and this one for a transport * /
+			case 15:
+			  printf("Case 15 triggered: transport\n");
+			  fprintf(fpm, "transport: %d %d\n",((x*32) + 16), ((y*32)+16));
+      fprintf(fp,"%d\n",*(fmap + (y * fmap_x_size) + x));
+				break;
+			default:
+		  break;
+			}
+			*/
+	// The only thing left is to sort out a random sound
+	if(ship_noise_vol > 0) {
+	  fprintf(fpm,"noise: %d %d %d\n", ship_noise_no, ship_noise_vol, ship_noise_freq);
+		printf("noise: %d %d %d\n", ship_noise_no, ship_noise_vol, ship_noise_freq);
+	}
+	else {
+	  ship_noise_no = 0;
+	  ship_noise_vol = 255;
+	  ship_noise_freq = 25;
+	  fprintf(fpm,"noise: %d %d %d\n", ship_noise_no, ship_noise_vol, ship_noise_freq);
+		printf("noise: %d %d %d\n", ship_noise_no, ship_noise_vol, ship_noise_freq);
+	}
   fclose(fp);
+	fclose(fpm);  // Whew - FINALLY remembered to close this
   return 1;
 }
 
@@ -386,10 +490,26 @@ void tedit_floor::action(XEvent *event)
         case KEY_RIGHT:
           spos_x += SPRITE_SIZE_X;
           break;
-        case XK_Page_Up:
+        case KEY_PPAGE:
+          spos_x += SPRITE_SIZE_X;
+          spos_y -= SPRITE_SIZE_Y;
+          break;
+        case KEY_NPAGE:
+          spos_x += SPRITE_SIZE_X;
+          spos_y += SPRITE_SIZE_Y;
+          break;
+        case KEY_HOME:
+          spos_x -= SPRITE_SIZE_X;
+          spos_y -= SPRITE_SIZE_Y;
+          break;
+        case KEY_END:
+          spos_x -= SPRITE_SIZE_X;
+          spos_y += SPRITE_SIZE_Y;
+          break;
+        case KEY_KP_MINUS:
           if(sprite_sel_ptr > 0) sprite_sel_ptr--;
           break;
-        case XK_Page_Down:
+        case KEY_KP_PLUS:
           if(sprite_sel_ptr < (sprites_size - 1)) sprite_sel_ptr++;
           break;
         case XK_Return:

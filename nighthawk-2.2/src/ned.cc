@@ -15,6 +15,7 @@
 ***************************************************************************/
 extern "C" {
 #include <stdio.h>
+#include <string.h>
 #include <X11/Xatom.h>
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
@@ -105,6 +106,11 @@ int main(int argc,char *argv[])
           sscanf(argv[x + 2],"%d",&map_y_size);
           sscanf(argv[x + 3],"%d",&edit_floor.default_map_value);
           map_filename = (char *)argv[x + 4];
+					if(!map_filename)  { // Oooops - we forgot to specify a filename value
+					  printf("Ooops - you forgot to specify a filename, didn't you?\n");
+						print_help();
+						return 1;
+						}
           break;
         case 'l':
           new_f = 0;
@@ -123,7 +129,13 @@ int main(int argc,char *argv[])
         edit_floor.init_colours();
         x = 1;
         if(new_f)
-        {
+        { // We really should check if the file exists already, and confirm 
+				  // if the user wishes to replace it with the new map
+					// So far, all we do is abort if file exists already
+					if(fopen(map_filename, "r"))  {
+					  printf("Ooops - the file already exists!\n");
+/*						fclose(map_filename); */
+					}
           if(!edit_floor.create(map_filename,map_x_size,map_y_size))
             x = 0;
         }

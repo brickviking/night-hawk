@@ -484,7 +484,8 @@ int x_init(void)
   XWMHints xwmhints;
   XVisualInfo visual_info;
   XGCValues gcv;
-  char *font_name = "-*-fixed-*-*-*-*-12-*-*-*-*-*-*-*";
+/*  char *font_name = "-*-fixed-*-*-*-*-12-*-*-*-*-*-*-*"; */
+  char *font_name = "-*-helvetica-medium-r-*-*-12-*-*-*-*-*-*-*";
   XSizeHints sizehints;
 
   if((host = (char *)getenv("DISPLAY")) == NULL)

@@ -23,6 +23,7 @@ extern "C" {
 #include <sys/types.h>
 #include <sys/file.h>
 #include <sys/stat.h>
+#include <time.h>
 #include <sys/time.h>
 #include <X11/Xatom.h>
 #include <X11/Xlib.h>
@@ -368,6 +369,7 @@ void main_logo_fg2(void)
 {
   char *mess =
     "0Space to play, 'q' to Quit,\n"
+    "0'g' to lock mouse to game,\n"
     "0or 'd' for a demo.\n";
 
   main_logo_fg();
@@ -553,6 +555,7 @@ void contacts_4_fg(void)
     "4Stick it up ya arse Billy Gates!\n"
     "4\n"
     "4Hit Space to Start.\n"
+		"4Hit 'g' to lock mouse to screen.\n"
     "4Hit 'd' for demo.\n";
 
   drawxpm_ani(&intro_back_bm[intro_back_bm_no],0,0,0,1);
@@ -646,6 +649,9 @@ int draw_intro(void)
         ch = XLookupKeysym((XKeyEvent *)&event,0);
         switch(ch)
         {
+          case KEY_GRAB:
+            nighthawk_mousegrab();
+            break;
           case KEY_QUIT:
             intro_f = 1;
             break;
@@ -867,7 +873,7 @@ void game(void)
             register int intro_f;
 
             intro_f = draw_intro();
-            if(intro_f == 2)
+            if(intro_f == 2)  /* Let's play!!! */
             {
               register int dead = 0;
 
@@ -906,6 +912,7 @@ void game(void)
                   break;
                 }
               }
+							sound_engine_cmd(SND_CMD_UNLOAD_SONG, 0, 0, 0);
             }
             else
               if(intro_f == 3)

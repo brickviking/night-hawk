@@ -12,7 +12,7 @@
 
 #define MAX_SHIPS      10
 
-#define UPDATE_DELAY   50000
+#define UPDATE_DELAY   50000 
 #define REALTIME_DELAY 50000
 
 #define SCREEN_SIZE_X  320
@@ -34,6 +34,8 @@
 #define MAX_DOORS      24
 #define MAX_TRANSPORTS 8
 #define MAX_DROIDS     65
+#define MAX_POWER      8
+#define MAX_CONSOLES   32
 
 #define POWER_BAY_SPD  8
 #define DOOR_SPD       16
@@ -128,3 +130,9 @@ typedef struct
 #define LASER_CROC_BENZ 2
 #define LASER_UVAROVITE 3
 #define LASER_TIGER_EYE 4
+
+/* Added by ECG to integrate mousegrabbing - got from uae xwin.c */
+static int grabbed;
+static Cursor blankCursor,  xhairCursor;
+void nighthawk_mousegrab(void);
+

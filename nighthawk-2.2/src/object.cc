@@ -17,6 +17,10 @@ extern "C" {
 #include <math.h>
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
+/******************
+ * Added this ECG *
+ ******************/
+#include <string.h>
 }
 #include "nighthawk_defs.h"
 #include "misc.h"
@@ -903,7 +907,8 @@ int tparadroid::within_capt_dist(void)
 }
 
 void tparadroid::bg_calc(void)
-{
+{ 
+  char Shield_str[STR_LABEL_LEN]; // Added by Dion Bonner, 14-Dec-2001 to feed Shields message
   tdroid::bg_calc();
   if(!state)
   {
@@ -973,6 +978,8 @@ void tparadroid::bg_calc(void)
               do_sound(FX_POWER_UP,40);
               transferring = 0;
               add_message("Transferred!!");
+							sprintf(Shield_str, "Shields: %d", stats.shielding); // Added by Dion Bonner, 14-Dec-2001
+							add_message(Shield_str);
               tdroid::display_nd();
             }
         }
@@ -1071,26 +1078,52 @@ int tparadroid::action(tkevent *kp)
       switch(kp->val)
       {
         case KEY_UP:
+        case KEY_KP_UP:
           pos_dx = 0;
           pos_dy = -stats.speed;
           break;
         case KEY_DOWN:
+        case KEY_KP_DOWN:
           pos_dx = 0;
           pos_dy = stats.speed;
           break;
         case KEY_LEFT:
+        case KEY_KP_LEFT:
           pos_dx = -stats.speed;
           pos_dy = 0;
           break;
         case KEY_RIGHT:
+        case KEY_KP_RIGHT:
           pos_dx = stats.speed;
           pos_dy = 0;
+          break;
+/* These next cases added to see if the diagonals will work reliably */
+        case KEY_END:
+        case KEY_KP_END:
+          pos_dx = -stats.speed;
+          pos_dy = stats.speed;
+					break;
+        case KEY_HOME:
+        case KEY_KP_HOME:
+          pos_dx = -stats.speed;
+          pos_dy = -stats.speed;
+          break;
+        case KEY_NPAGE:
+        case KEY_KP_NPAGE:
+          pos_dx = stats.speed;
+          pos_dy = stats.speed;
+          break;
+        case KEY_PPAGE:
+        case KEY_KP_PPAGE:
+          pos_dx = stats.speed;
+          pos_dy = -stats.speed;
           break;
         case KEY_STATUS:
           display_nd();
           sound_engine_cmd(SND_CMD_FX,FX_SELECT,0xff,0x80);
           break;
         case KEY_TRANSFER_MODE:
+        case KEY_KP_TRANSFER_MODE:
           if(captured_droid == NULL)
           {
             transferring ^= 1;
@@ -1112,6 +1145,8 @@ int tparadroid::action(tkevent *kp)
           }
           break;
         case KEY_SELECT:
+        case KEY_KP_SELECT:
+/* End of added keycases */
           if(captured_droid != NULL)
           {
             add_message("Can't trans.");
