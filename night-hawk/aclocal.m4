@@ -78,7 +78,7 @@ if test x"$enable_cxx" = xyes; then
         A() { i = 1; }
         ~A() { if (i == 1) _exit(0); } };
       A a;
-      void main() { exit (1); }],
+      int main() { exit (1); }],
       AC_MSG_RESULT(yes),
       AC_MSG_RESULT(no)
       AC_MSG_WARN([a working C++ compiler is required. disabling C++])
