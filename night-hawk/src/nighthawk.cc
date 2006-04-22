@@ -4,7 +4,7 @@
 *
 * NightHawk - By Jason Nunn - Oct 1996  (email viking for details)
 * Eric Gillespie and others - Jan 2003  (viking667 at users dot sourceforge dot net)
-* CopyRight GPL version 2, 2003.
+* Copyright GPL version 2, 2003.
 *
 * Xwindows (C++)
 *
@@ -56,6 +56,8 @@ static char* scores_file = NULL;
  ***************************************************************************/
 void kill_pipe(int)
 {
+  // This is somewhat inaccurate, as NightHawk shows this message if it can't
+  // start the engine, as well as when the engine dies.
   printf("Nb/ Sound engine just died.\n");
   sound_engine_fp = NULL;
 }

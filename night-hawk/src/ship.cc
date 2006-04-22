@@ -5,7 +5,7 @@
 *
 * NightHawk - By Jason Nunn - Oct 1996  (jsno at arafura dot net dot au)
 * Eric Gillespie and others - Jan 2003  (viking667 at users dot sourceforge dot net)
-* CopyRight GPL version 2, 2003.
+* Copyright GPL version 2, 2003.
 *
 * ==================================================================
 * ship object
@@ -348,7 +348,7 @@ void tship::unload(void)
     if(droids[x] != NULL)
       delete(droids[x]);
 }
-
+// woss these here for?
 #define LEVEL_DRAW_SIZE_X 260
 #define LEVEL_DRAW_SIZE_Y 150
 

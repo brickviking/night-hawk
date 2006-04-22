@@ -5,8 +5,8 @@
 *
 * NightHawk - By Jason Nunn - Oct 96
 * FREEWARE.
-*
-* Snail: 32 Rothdale Road, Moil, Darwin, NT, 0810, Australia
+* Eric Gillespie and others - Jan 2003  (viking667 at users dot sourceforge dot net)
+* Copyright GPL version 2, 2003.
 *
 * ==================================================================
 * floor object

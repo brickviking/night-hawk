@@ -2,6 +2,8 @@
 /***************************************************************************
  *
  * For viewing xpm's..
+ * Part of the NightHawk program by Jason Nunn, Eric Gillespie
+ * Copyright 2003 under GPL version 2
  *
  ***************************************************************************/
 extern "C" {
