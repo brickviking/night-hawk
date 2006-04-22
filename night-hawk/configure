@@ -1348,7 +1348,7 @@ extern "C" { void _exit(int); }
         A() { i = 1; }
         ~A() { if (i == 1) _exit(0); } };
       A a;
-      void main() { exit (1); }
+      int main() { exit (1); }
 EOF
 if { (eval echo configure:1354: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest && (./conftest; exit) 2>/dev/null
 then
