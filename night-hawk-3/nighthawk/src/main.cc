@@ -100,12 +100,22 @@ int main(int argc, char *argv[])
           return 0;
 
         case 'c':
-          if(i2 <= argc)
+                
+        if(i2 < argc) {
+          if(atoi(argv[i2]) != '\0') {
             ship_start = atoi(argv[i2]);
-          if(ship_start < 0) ship_start = 0;
-          if(ship_start > 9) ship_start = 9;
-          printf("Starting at level %d (Nb/ High scores will note "
-                 "that you have cheated)\n", ship_start);
+            printf("Starting at level %d (Nb/ High scores will note "
+                   "that you have cheated)\n", ship_start);
+	  }
+	  else {
+	    ship_start = 0;
+	    break;
+	  }
+        }
+
+        if(ship_start < 0) ship_start = 0;
+        if(ship_start > 9) ship_start = 9;
+
           break;
 
         case 'u':
