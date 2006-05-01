@@ -23,7 +23,9 @@ extern "C" {
  ***************************************************************************/
 int main(void)
 {
-  if(x_init())
+  // This fails because x_init returns either 1 or -1
+  // BAD: if(x_init())
+  if(1 == x_init())
 		{
 			tbm bm;
 

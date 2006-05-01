@@ -17,6 +17,7 @@
  ***************************************************************************/
 extern "C" {
 #include <stdio.h>
+#include <unistd.h>
 #include <string.h>
 #include <X11/Xatom.h>
 #include <X11/Xlib.h>
@@ -43,6 +44,7 @@ void fg_loop(void)
     {
       XEvent event;
       /* Some sort of sleep mode in here to slow things down a bit? */
+      usleep(UPDATE_DELAY);
       while(XPending(display))
 	{
 	  XNextEvent(display,&event);
@@ -53,6 +55,7 @@ void fg_loop(void)
 	      switch(XLookupKeysym((XKeyEvent *)&event,0))
 		{
 		case KEY_QUIT:
+      // This doesn't allow for saving, just quits - boom.
 		  end_game = 1;
 		  break;
 		}
@@ -126,7 +129,9 @@ int main(int argc,char *argv[])
 	    }
 	}
     }
-  if(x_init())
+  // This is incorrect, as x_init only returns 1 or -1
+  //BAD: if (x_init())
+  if(1 == x_init())
     {
       XAutoRepeatOn(display);
       if(load_flr_xpms())

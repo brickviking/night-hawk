@@ -17,6 +17,8 @@ extern "C" {
 #include <string.h>
 #include <stdlib.h>
 #include <string.h>
+/* Included to get me a errno */
+#include <errno.h>
 #include <X11/Xlib.h>
 #include <X11/Xatom.h>
 #include <X11/xpm.h>
@@ -480,7 +482,7 @@ void sound_engine_cmd(char cmd,int sam,int vol,int bal)
  ***************************************************************************/
 int x_init(void)
 {
-  char *error_m = "x_init() ";
+  char *error_m = "x_init() failed";
   char *wname = "Nighthawk " VERSION;
   Pixmap iconPixmap;
   XWMHints xwmhints;
@@ -492,11 +494,13 @@ int x_init(void)
 
   if((host = (char *)getenv("DISPLAY")) == NULL)
 		{
+      errno=61;
 			perror(error_m);
 			return -1;
 		}
   if((display = XOpenDisplay(host)) == NULL) 
 		{
+      errno=61;
 			perror(error_m);
 			return -1;
 		}
