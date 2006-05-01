@@ -877,7 +877,9 @@ void game(void)
   if(load_demo())
 		{
 #endif
-			if(x_init())
+      // This condition test is incorrect, as x_init errors with -1
+//BAD:if(x_init())
+      if(1 == x_init())
 				{
 					init();
 					init_colours();
@@ -1015,6 +1017,8 @@ int main(int argc,char *argv[])
 #ifdef REDUCED_SPRITES
   printf("Reduced sprites mode (for slow machines)\n");
 #endif
+  // We should try starting the X layer FIRST, 
+  // if that succeeds, THEN we can start the sound engine.
   if(sound)
 		{
 			fflush(stdout);
