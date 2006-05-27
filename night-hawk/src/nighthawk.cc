@@ -118,10 +118,19 @@ int get_ctrl_file(void)
 FILE *lopen(char *filename,char *mode)
 {
   FILE *fp;
+  int retval;
 
   if((fp = fopen(filename,mode)) != NULL)
 /* ECG: 'nother bug nailed by the FreeBSD porters - only thing NOW puzzling me is - where does "flock() come from? */					
-		flock(fileno(fp),LOCK_EX);
+/*		flock(fileno(fp),LOCK_EX);  */
+    /* TODO: I have to sanity-check this for errors: namely EAGAIN */
+  retval=lockf(fileno(fp), F_LOCK, 0);
+  switch(retval) {
+    case 0: // she works, let's get out of here
+      break;
+    default: // anything else is an error, let's fall out, saying we can't lock the scorefile
+      break;
+  }
   return fp;
 }
 
