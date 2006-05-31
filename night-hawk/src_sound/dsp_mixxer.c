@@ -19,10 +19,10 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/ioctl.h>
-#ifdef Linux
+#if defined(Linux) || defined( FreeBSD) || defined(__DragonFly__)
  #include <sys/soundcard.h>
-#elif FreeBSD
- #include <machine/soundcard.h>
+#elif defined(__NetBSD__)
+ #include <soundcard.h>
 #endif
 #include "funktracker_defs.h"
 #include "funktracker.h"
