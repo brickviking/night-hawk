@@ -15,7 +15,7 @@
 ***************************************************************************/
 #include <stdio.h>
 #include <string.h>
-#include <malloc.h>
+#include <stdlib.h>
 #include "funktracker_defs.h"
 #include "dsp_mixxer.h"
 #include "funktracker.h"
