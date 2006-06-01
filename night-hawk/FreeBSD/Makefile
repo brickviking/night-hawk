@@ -2,23 +2,23 @@
 # Date created:				Apr 4, 2001
 # Whom:					Mark Pulford <mark@kyne.com.au>
 #
-# $FreeBSD: /repoman/r/pcvs/ports/games/nighthawk/Makefile,v 1.8 2003/02/22 17:14:29 markp Exp $
+# $FreeBSD: ports/games/nighthawk/Makefile,v 1.12 2006/05/07 23:45:25 edwin Exp $
 #
 
 PORTNAME=	nighthawk
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://lothar.arafura.net.au/~jsno/rel/unix_projects/
+		http://jsno.leal.com.au/rel/unix_projects/
 MASTER_SITE_SUBDIR=	games/arcade
 EXTRACT_SUFX=	-1.tar.gz
 
-MAINTAINER=	markp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 shoot-'em up which requires some lateral thinking
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-scores=/var/games/nighthawk.scores --enable-sound
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
