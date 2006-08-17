@@ -21,7 +21,7 @@
 #include <sys/ioctl.h>
 #if defined(Linux) || defined( FreeBSD) || defined(__DragonFly__)
  #include <sys/soundcard.h>
-#elif defined(__NetBSD__ || __OpenBSD__)
+#elif defined(__NetBSD__ || OpenBSD)
  #include <soundcard.h>
 #endif
 #include "funktracker_defs.h"
