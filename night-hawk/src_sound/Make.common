@@ -6,7 +6,15 @@ else
   ifeq ($(OSTYPE),FreeBSD)
     HOSTDEF = -DFreeBSD
   else
-    HOSTDEF = -DLinux
+    ifeq ($(OSTYPE),OpenBSD)
+      HOSTDEF = -DOpenBSD
+    else
+      ifeq ($(OSTYPE),NetBSD)
+        HOSTDEF = -DNetBSD
+      else
+        HOSTDEF = -DLinux
+      endif
+    endif
   endif
 endif
 
