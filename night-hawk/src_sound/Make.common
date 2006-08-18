@@ -5,12 +5,15 @@ ifeq ($(OSTYPE),Linux)
 else
   ifeq ($(OSTYPE),FreeBSD)
     HOSTDEF = -DFreeBSD
+    LIBS = -lm -lossaudio
   else
     ifeq ($(OSTYPE),OpenBSD)
       HOSTDEF = -DOpenBSD
+      LIBS = -lm -lossaudio
     else
       ifeq ($(OSTYPE),NetBSD)
         HOSTDEF = -DNetBSD
+        LIBS = -lm -lossaudio
       else
         HOSTDEF = -DLinux
       endif
