@@ -134,6 +134,11 @@ XFree86-devel-4.2.0-10mdk.i586.rpm
 For FreeBSD, I have to investigate further.  I'd think that gmake would be a
 prerequisite. I guess I will have to put the other requirements in later.
 
+++++++++ Audio Files ++++++++
+On the subject of the audio files, yes, Mary, they are samples.
+Currently, the *.8 files are 8khz resampled to 11khz to play them back a bit
+faster. I've converted them over into wav files in new_stuff, so we can work
+on them a bit.
 
 2.2.x notes (May 99)
 
