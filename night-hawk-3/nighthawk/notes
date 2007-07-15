@@ -13,6 +13,5 @@
   on_exit(3) man page: 
     Avoid this function, and use the standard atexit(3) instead.
   Guess that's another substitute. When we do change, I'll have to modify and
-  wraptest the return from atexit. It also only takes one parameter
-  (name_of_func) not two.
+  wraptest the return from atexit. It seems to take weird args
 
