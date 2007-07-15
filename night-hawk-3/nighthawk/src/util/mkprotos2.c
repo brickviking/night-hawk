@@ -7,7 +7,9 @@
 ****************************************************************************/
 #include <stdio.h>
 #include <string.h>
+/* we'll comment this out, as it's probably no longer needed
 #include <malloc.h>
+*/
 #include <stdlib.h>
 
 FILE *fp_in;
