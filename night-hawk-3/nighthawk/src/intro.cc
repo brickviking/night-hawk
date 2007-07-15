@@ -209,7 +209,7 @@ PRIVATE void credit_8_fg(void)
                        "A.Bridgett, E.Tamminen, W.Scherer\n"
                        "N.Minar, R.Laboissiere, T.Kulaots\n",
               *mess3 = "= Night-Hawk development members =\n",
-              *mess5 = "viking667@users.sourceforge.net,\n"
+              *mess4 = "viking667@users.sourceforge.net,\n"
                        "dionb@users.sourceforge.net &\n"
                        "zerodogg@users.sourceforge.net\n";
 
