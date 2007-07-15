@@ -416,6 +416,8 @@ PUBLIC void end_game(int code)
     XkbSetAutoRepeatRate(x_display, XkbUseCoreKbd, xkb_delay, xkb_rate);
   }
 
+  on_exit_h(0, 0);
+
   exit(code);
 }
 
@@ -577,9 +579,8 @@ PRIVATE void main_draw_h(void)
 PUBLIC void opengl_init(int argc, char *argv[], int mode)
 {
   int x, fs_f = 0;
-/* PRIVATE void on_exit_h(int code, void *arg) // atexit(void (*function)(void)); */
-/*  atexit(on_exit_h(0,0));    Okay, this is something I'm going to have to research. */
-  on_exit(on_exit_h,0);
+// ECG: Commented out, as we're now calling it from within end_game()
+//  on_exit(on_exit_h,0);
   glutInit(&argc, argv);
   glutInitDisplayMode(mode);
 
