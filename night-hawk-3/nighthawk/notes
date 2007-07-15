@@ -1,0 +1,18 @@
+2007-01-27 17:40 NZDT
+! Seems to sigsev on 640x480 if I don't get mouse click right, or I try to move.
+  If I hit a wall, the wall-detection code doesn't seem to get it right. I get
+  bounced off the right hand side, then end up killing game with sigsev.
+! On fast video systems, it doesn't really happen but can be simulated with
+  the commandline param for "frames per second" being set deliberately low.
+2007-07-15 17:05 NZST
+! Dion found he had to add -I/usr/X11R6/include  to the CC_FLAGS in config.user
+  This will be system-dependent, and is why we used configure/autoconf to begin
+  with. *sigh*
+~ Changed mess5 for mess4 in src/intro.cc
+! on_exit should be changed (src/opengl.cc:581) for this reason from the
+  on_exit(3) man page: 
+    Avoid this function, and use the standard atexit(3) instead.
+  Guess that's another substitute. When we do change, I'll have to modify and
+  wraptest the return from atexit. It also only takes one parameter
+  (name_of_func) not two.
+
