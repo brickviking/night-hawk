@@ -1,17 +1,17 @@
 include config.user
 
 all:
-	(cd src ; make)
+	(cd src ; ${MAKE})
 
 prep:
-	(cd src ; make prep)
+	(cd src ; ${MAKE} prep)
 
 install:
-	(cd src ; make install)
+	(cd src ; ${MAKE} install)
 
 remove:
-	(cd src ; make remove)
+	(cd src ; ${MAKE} remove)
 
 clean:
-	(cd src ; make clean)
+	(cd src ; ${MAKE} clean)
 	rm -f nighthawk

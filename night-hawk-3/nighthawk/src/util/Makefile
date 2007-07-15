@@ -2,7 +2,7 @@ GCC=gcc
 CFLAGS=-Wall -O2
 
 all:
-	make mkprotos2
+	${MAKE} mkprotos2
 
 OBJ	= mkprotos2.o
 

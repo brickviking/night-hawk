@@ -4,21 +4,21 @@ MKPROTOS	= util/mkprotos2
 
 ######################################################################
 all:
-	make protos
-	make nighthawk
+	${MAKE} protos
+	${MAKE} nighthawk
 
 ######################################################################
 prep:
-	make all
+	${MAKE} all
 	cp -f nighthawk ..
-	make clean
+	${MAKE} clean
 
 ######################################################################
 DEPS_LIB	= xpm_loader.cc misc.cc opengl.cc bm_loader.cc \
 		score.cc intro.cc game.cc main.cc
 
 protos:
-	(cd util ; make)
+	(cd util ; ${MAKE})
 	$(MKPROTOS) $(DEPS_LIB) > protos.p
 
 ######################################################################
@@ -43,7 +43,7 @@ remove:
 ######################################################################
 clean:
 	rm -f ts *.o *.p nighthawk test
-	(cd util ; make clean)
+	(cd util ; ${MAKE} clean)
 
 ######################################################################
 %.o: %.c
