@@ -58,6 +58,14 @@ Enjoy..
 
 
  -------------------------------------------------------------------------
+2.3.x notes (August 2007)
+- Only the addition of compiling under OpenBSD, as it should, of course.
+I've noticed some issues with the OpenBSD Xorg server, in that it sometimes
+seems to the server that a key is stuck, basically, you'll have to hammer a
+key somewhere until something unfreezes. Not a showstopper, but something you
+should know about before compiling under OpenBSD. True for 3.9 and 4.1.
+
+
 2.3.x notes (April 2003)
 
 - Most of the relevant stuff from below is still very applicable, and it is a
