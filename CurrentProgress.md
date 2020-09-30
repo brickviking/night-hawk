@@ -1,25 +1,25 @@
 
 # Table of Contents
 
-1.  [Problems with ned4](#orgb335d71)
-    1.  [there's no -? switch, easily fixed](#orga6dfa1a)
-    2.  [Failure saving file when directory doesn't exist](#org4db39d7)
-    3.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones](#org5dd74c4)
-    4.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#org0df6ba7)
-    5.  [ned4's "b" command sends ned into a tailspin, refuses to respond afterwards](#orga87e5d8)
-2.  [Things that work with ned4](#org8998b30)
-    1.  [loading files from disk works, unless previously saved from ned 1.0/2.x/3.0](#org191f435)
-    2.  [placing floor tiles works (anything selectable from the palette)](#org0c79f39)
-    3.  [save file works](#org40aef5c)
+1.  [Problems with ned4](#org700e979)
+    1.  [there's no -? switch, easily fixed](#orgfb3b086)
+    2.  [Failure saving file when directory doesn't exist](#org20d94c5)
+    3.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones](#orgcc8bbc7)
+    4.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#org387be19)
+    5.  [ned4's "b" command sends ned into a tailspin, refuses to respond afterwards](#orgc832ee3)
+2.  [Things that work with ned4](#org6201248)
+    1.  [loading files from disk works, unless previously saved from ned 1.0/2.x/3.0](#orgc1ecdc1)
+    2.  [placing floor tiles works (anything selectable from the palette)](#org488762d)
+    3.  [save file works](#org9d6b36d)
 
 
 
-<a id="orgb335d71"></a>
+<a id="org700e979"></a>
 
 # Problems with ned4
 
 
-<a id="orga6dfa1a"></a>
+<a id="orgfb3b086"></a>
 
 ## there's no -? switch, easily fixed
 
@@ -35,7 +35,7 @@
     			case 'u':
 
 
-<a id="org4db39d7"></a>
+<a id="org20d94c5"></a>
 
 ## Failure saving file when directory doesn't exist
 
@@ -70,17 +70,16 @@
 -   Creating the directory before running ned allows the file to be saved.
 
 
-<a id="org5dd74c4"></a>
+<a id="orgcc8bbc7"></a>
 
 ## ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones
 
 -   Loading a game file (something.f) from previous versions of NightHawk displays black squares instead of doors or recharge ports
+-   ned3 loads the same file and displays all the relevant tiles, including active tiles
+-   A file created with ned4 retains whatever tiles (including doors) were loaded
 
-<del>+ ned3 loads the same file and displays all the relevant tiles, including active tiles
-+</del> A file created with ned4 retains whatever tiles (including doors) were loaded
 
-
-<a id="org0df6ba7"></a>
+<a id="org387be19"></a>
 
 ## ned4 doesn't seem to use the mouse, even though a pointer is visible
 
@@ -89,29 +88,29 @@
     ++ could use the same code as for nighthawk's pause mode
 
 
-<a id="orga87e5d8"></a>
+<a id="orgc832ee3"></a>
 
 ## ned4's "b" command sends ned into a tailspin, refuses to respond afterwards
 
 
-<a id="org8998b30"></a>
+<a id="org6201248"></a>
 
 # Things that work with ned4
 
 
-<a id="org191f435"></a>
+<a id="orgc1ecdc1"></a>
 
 ## loading files from disk works, unless previously saved from ned 1.0/2.x/3.0
 
 -   If level was saved using previous version of ned, doors and power chargers display only as black squares
 
 
-<a id="org0c79f39"></a>
+<a id="org488762d"></a>
 
 ## placing floor tiles works (anything selectable from the palette)
 
 
-<a id="org40aef5c"></a>
+<a id="org9d6b36d"></a>
 
 ## save file works
 
