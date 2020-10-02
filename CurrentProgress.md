@@ -1,25 +1,27 @@
 
 # Table of Contents
 
-1.  [Problems with ned4](#orgf815df7)
-    1.  [there's no -? switch, easily fixed](#orgc47b2c3)
-    2.  [Failure saving file when directory doesn't exist](#org0b5f929)
-    3.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#org3705c21)
-    4.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#orgdf88c36)
-    5.  [ned4's "b" command sends ned into a tailspin, refuses to respond afterwards](#orge685e8d)
-2.  [Things that work with ned4](#orgf3aed15)
-    1.  [loading files from disk works](#orge04622e)
-    2.  [placing floor tiles works (anything selectable from the palette)](#org84bacb9)
-    3.  [save file works](#orgafcb0a4)
+1.  [Problems with ned4](#org048f159)
+    1.  [there's no -? switch, easily fixed](#orgdbc6960)
+    2.  [Failure saving file when directory doesn't exist](#org34b223e)
+    3.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#orgeed944f)
+    4.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#org613cdfc)
+    5.  [ned4's "b" command sends ned into a tailspin, refuses to respond afterwards](#org9bf165d)
+2.  [Things that work with ned4](#orgbe59c70)
+    1.  [loading files from disk works](#org36dd4c9)
+    2.  [placing floor tiles works (anything selectable from the palette)](#org92d4977)
+    3.  [save file works](#orga29f344)
+3.  [nighthawk4 issues](#org67a64a6)
+    1.  [Sound for 6xx/7xx/8xx<sub>voice</sub> plays too high for 11025, sounds more like 14,000.](#orga7733c1)
 
 
 
-<a id="orgf815df7"></a>
+<a id="org048f159"></a>
 
 # Problems with ned4
 
 
-<a id="orgc47b2c3"></a>
+<a id="orgdbc6960"></a>
 
 ## there's no -? switch, easily fixed
 
@@ -35,7 +37,7 @@
     			case 'u':
 
 
-<a id="org0b5f929"></a>
+<a id="org34b223e"></a>
 
 ## Failure saving file when directory doesn't exist
 
@@ -70,7 +72,7 @@
 -   Creating the directory before running ned allows the file to be saved.
 
 
-<a id="org3705c21"></a>
+<a id="orgeed944f"></a>
 
 ## ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added
 
@@ -79,7 +81,7 @@
 -   A file created with ned4 retains whatever tiles (including doors) were loaded. Static doors confuse things but are available as tiles. Animated doors are sprites.
 
 
-<a id="orgdf88c36"></a>
+<a id="org613cdfc"></a>
 
 ## ned4 doesn't seem to use the mouse, even though a pointer is visible
 
@@ -88,31 +90,43 @@
     ++ could use the same code as for nighthawk's pause mode
 
 
-<a id="orge685e8d"></a>
+<a id="org9bf165d"></a>
 
 ## ned4's "b" command sends ned into a tailspin, refuses to respond afterwards
 
 
-<a id="orgf3aed15"></a>
+<a id="orgbe59c70"></a>
 
 # Things that work with ned4
 
 
-<a id="orge04622e"></a>
+<a id="org36dd4c9"></a>
 
 ## loading files from disk works
 
 -   If level was saved using previous version of ned, doors and power chargers display only as black squares, because those are active sprites, so don't get loaded as tiles by ned4 [worksasimplemented]
 
 
-<a id="org84bacb9"></a>
+<a id="org92d4977"></a>
 
 ## placing floor tiles works (anything selectable from the palette)
 
 
-<a id="orgafcb0a4"></a>
+<a id="orga29f344"></a>
 
 ## save file works
 
 -   need to create directory **first**, or ned4 bombs
+
+
+<a id="org67a64a6"></a>
+
+# nighthawk4 issues
+
+
+<a id="orga7733c1"></a>
+
+## Sound for 6xx/7xx/8xx<sub>voice</sub> plays too high for 11025, sounds more like 14,000.
+
+I'm rather wondering whether the sound was recorded at 8,000 and played back at 11025?
 
