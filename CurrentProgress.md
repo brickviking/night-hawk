@@ -1,25 +1,25 @@
 
 # Table of Contents
 
-1.  [Problems with ned4](#org700e979)
-    1.  [there's no -? switch, easily fixed](#orgfb3b086)
-    2.  [Failure saving file when directory doesn't exist](#org20d94c5)
-    3.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones](#orgcc8bbc7)
-    4.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#org387be19)
-    5.  [ned4's "b" command sends ned into a tailspin, refuses to respond afterwards](#orgc832ee3)
-2.  [Things that work with ned4](#org6201248)
-    1.  [loading files from disk works, unless previously saved from ned 1.0/2.x/3.0](#orgc1ecdc1)
-    2.  [placing floor tiles works (anything selectable from the palette)](#org488762d)
-    3.  [save file works](#org9d6b36d)
+1.  [Problems with ned4](#orgf815df7)
+    1.  [there's no -? switch, easily fixed](#orgc47b2c3)
+    2.  [Failure saving file when directory doesn't exist](#org0b5f929)
+    3.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#org3705c21)
+    4.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#orgdf88c36)
+    5.  [ned4's "b" command sends ned into a tailspin, refuses to respond afterwards](#orge685e8d)
+2.  [Things that work with ned4](#orgf3aed15)
+    1.  [loading files from disk works](#orge04622e)
+    2.  [placing floor tiles works (anything selectable from the palette)](#org84bacb9)
+    3.  [save file works](#orgafcb0a4)
 
 
 
-<a id="org700e979"></a>
+<a id="orgf815df7"></a>
 
 # Problems with ned4
 
 
-<a id="orgfb3b086"></a>
+<a id="orgc47b2c3"></a>
 
 ## there's no -? switch, easily fixed
 
@@ -29,13 +29,13 @@
     
     		switch (argv[i][1]) {
     			case 'h':
-    +      case '?':
+    +			case '?':
     			print_help_and_quit();
     
     			case 'u':
 
 
-<a id="org20d94c5"></a>
+<a id="org0b5f929"></a>
 
 ## Failure saving file when directory doesn't exist
 
@@ -70,16 +70,16 @@
 -   Creating the directory before running ned allows the file to be saved.
 
 
-<a id="orgcc8bbc7"></a>
+<a id="org3705c21"></a>
 
-## ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones
+## ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added
 
--   Loading a game file (something.f) from previous versions of NightHawk displays black squares instead of doors or recharge ports
--   ned3 loads the same file and displays all the relevant tiles, including active tiles
--   A file created with ned4 retains whatever tiles (including doors) were loaded
+-   Loading a game file (something.f) from previous versions of NightHawk displays black squares instead of doors or recharge ports, as they're active sprites and not tiles
+-   ned3 loads the same file and displays all the relevant tiles, including active sprites
+-   A file created with ned4 retains whatever tiles (including doors) were loaded. Static doors confuse things but are available as tiles. Animated doors are sprites.
 
 
-<a id="org387be19"></a>
+<a id="orgdf88c36"></a>
 
 ## ned4 doesn't seem to use the mouse, even though a pointer is visible
 
@@ -88,31 +88,31 @@
     ++ could use the same code as for nighthawk's pause mode
 
 
-<a id="orgc832ee3"></a>
+<a id="orge685e8d"></a>
 
 ## ned4's "b" command sends ned into a tailspin, refuses to respond afterwards
 
 
-<a id="org6201248"></a>
+<a id="orgf3aed15"></a>
 
 # Things that work with ned4
 
 
-<a id="orgc1ecdc1"></a>
+<a id="orge04622e"></a>
 
-## loading files from disk works, unless previously saved from ned 1.0/2.x/3.0
+## loading files from disk works
 
--   If level was saved using previous version of ned, doors and power chargers display only as black squares
+-   If level was saved using previous version of ned, doors and power chargers display only as black squares, because those are active sprites, so don't get loaded as tiles by ned4 [worksasimplemented]
 
 
-<a id="org488762d"></a>
+<a id="org84bacb9"></a>
 
 ## placing floor tiles works (anything selectable from the palette)
 
 
-<a id="org9d6b36d"></a>
+<a id="orgafcb0a4"></a>
 
 ## save file works
 
--   need to create directory **first**
+-   need to create directory **first**, or ned4 bombs
 
