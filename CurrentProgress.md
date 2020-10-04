@@ -1,43 +1,29 @@
 
 # Table of Contents
 
-1.  [Problems with ned4](#org048f159)
-    1.  [there's no -? switch, easily fixed](#orgdbc6960)
-    2.  [Failure saving file when directory doesn't exist](#org34b223e)
-    3.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#orgeed944f)
-    4.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#org613cdfc)
-    5.  [ned4's "b" command sends ned into a tailspin, refuses to respond afterwards](#org9bf165d)
-2.  [Things that work with ned4](#orgbe59c70)
-    1.  [loading files from disk works](#org36dd4c9)
-    2.  [placing floor tiles works (anything selectable from the palette)](#org92d4977)
-    3.  [save file works](#orga29f344)
-3.  [nighthawk4 issues](#org67a64a6)
-    1.  [Sound for 6xx/7xx/8xx<sub>voice</sub> plays too high for 11025, sounds more like 14,000.](#orga7733c1)
+1.  [Problems with ned4](#org938894c)
+    1.  [Failure saving file when directory doesn't exist](#org535f674)
+    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#orga8efc90)
+    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#orgf570ec3)
+2.  [Things that work with ned4](#org1009738)
+    1.  [loading files from disk works](#org8e10f54)
+    2.  [placing floor tiles works (anything selectable from the palette)](#org8ed30e8)
+    3.  [the b (blank) key works, toggles palette and splash text](#org048d3da)
+    4.  [save file works](#org1d67944)
+3.  [nighthawk4 issues](#orge283299)
+    1.  [Sound for 6xx/7xx/8xx<sub>voice</sub> plays too high for 11025, sounds more like 14,000.](#orga3d0ddc)
+    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#orgf51a8c9)
+4.  [Stuff that works with nighthawk](#orgbd6e985)
+    1.  [Fleet support](#org5a3a03b)
 
 
 
-<a id="org048f159"></a>
+<a id="org938894c"></a>
 
 # Problems with ned4
 
 
-<a id="orgdbc6960"></a>
-
-## there's no -? switch, easily fixed
-
-    --- nighthawk-4.0/src/ned.cc~	2020-09-28 01:22:41.000000000 +1000
-    +++ nighthawk-4.0/src/ned.cc	2020-09-30 09:13:55.808026798 +1300
-    @@ -125,6 +125,7 @@
-    
-    		switch (argv[i][1]) {
-    			case 'h':
-    +			case '?':
-    			print_help_and_quit();
-    
-    			case 'u':
-
-
-<a id="org34b223e"></a>
+<a id="org535f674"></a>
 
 ## Failure saving file when directory doesn't exist
 
@@ -72,7 +58,7 @@
 -   Creating the directory before running ned allows the file to be saved.
 
 
-<a id="orgeed944f"></a>
+<a id="orga8efc90"></a>
 
 ## ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added
 
@@ -81,7 +67,7 @@
 -   A file created with ned4 retains whatever tiles (including doors) were loaded. Static doors confuse things but are available as tiles. Animated doors are sprites.
 
 
-<a id="org613cdfc"></a>
+<a id="orgf570ec3"></a>
 
 ## ned4 doesn't seem to use the mouse, even though a pointer is visible
 
@@ -90,43 +76,60 @@
     ++ could use the same code as for nighthawk's pause mode
 
 
-<a id="org9bf165d"></a>
-
-## ned4's "b" command sends ned into a tailspin, refuses to respond afterwards
-
-
-<a id="orgbe59c70"></a>
+<a id="org1009738"></a>
 
 # Things that work with ned4
 
 
-<a id="org36dd4c9"></a>
+<a id="org8e10f54"></a>
 
 ## loading files from disk works
 
 -   If level was saved using previous version of ned, doors and power chargers display only as black squares, because those are active sprites, so don't get loaded as tiles by ned4 [worksasimplemented]
 
 
-<a id="org92d4977"></a>
+<a id="org8ed30e8"></a>
 
 ## placing floor tiles works (anything selectable from the palette)
 
 
-<a id="orga29f344"></a>
+<a id="org048d3da"></a>
+
+## the b (blank) key works, toggles palette and splash text
+
+
+<a id="org1d67944"></a>
 
 ## save file works
 
 -   need to create directory **first**, or ned4 bombs
 
 
-<a id="org67a64a6"></a>
+<a id="orge283299"></a>
 
 # nighthawk4 issues
 
 
-<a id="orga7733c1"></a>
+<a id="orga3d0ddc"></a>
 
 ## Sound for 6xx/7xx/8xx<sub>voice</sub> plays too high for 11025, sounds more like 14,000.
 
 I'm rather wondering whether the sound was recorded at 8,000 and played back at 11025?
+
+
+<a id="orgf51a8c9"></a>
+
+## Fleet comment rendered too wide. Max length is 12 chars??
+
+
+<a id="orgbd6e985"></a>
+
+# Stuff that works with nighthawk
+
+
+<a id="org5a3a03b"></a>
+
+## Fleet support
+
+-   Need to create better icons (xpm format)
 
