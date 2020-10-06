@@ -127,11 +127,11 @@ I'm rather wondering whether the sound was recorded at 8,000 and played back at 
 
 ## Misprint when asking for a ship in a fleet
 
-nighthawk -d <datadir> -f Nighthawk -c Zaxon results in
-  Finding Fleet Nighthawk
-      Found !
-  Finding fleet Zaxon.  <<&#x2013; should read "Finding ship Zaxon."
-      Found ! (8)
+-   nighthawk -d <datadir> -f Nighthawk -c Zaxon results in
+    Finding Fleet Nighthawk
+        Found !
+    Finding fleet Zaxon.  <<&#x2013; should read "Finding ship Zaxon."
+        Found ! (8)
 
 
 <a id="orge6deb8b"></a>
