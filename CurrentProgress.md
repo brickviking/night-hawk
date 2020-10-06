@@ -1,31 +1,31 @@
 
 # Table of Contents
 
-1.  [Problems with ned4](#orga98e19b)
-    1.  [Failure saving file when directory doesn't exist](#org203afd0)
-    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#orgfc16f68)
-    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#org8dfa39b)
-2.  [Things that work with ned4](#orgeec9bb8)
-    1.  [loading files from disk works](#orgbfdacd2)
-    2.  [placing floor tiles works (anything selectable from the palette)](#org358ab24)
-    3.  [the b (blank) key works, toggles palette and splash text](#orgd31a406)
-    4.  [save file works](#org6e4cc6a)
-3.  [nighthawk4 issues](#org5cb066b)
-    1.  [Sound for 6xx/7xx/8xx<sub>voice</sub> plays too high for 11025, sounds more like 14,000.](#org016e4a3)
-    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#org70c22ca)
-    3.  [Misprint when asking for a ship in a fleet](#org4a4a382)
-    4.  [Segfault when loading fleet from -f switch](#org4a120a5)
-4.  [Stuff that works with nighthawk](#orgf2744e1)
-    1.  [Fleet support](#org52044e8)
+1.  [Problems with ned4](#org6c7db9a)
+    1.  [Failure saving file when directory doesn't exist](#org3f145d5)
+    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#org1c66f15)
+    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#orgb173207)
+2.  [Things that work with ned4](#org6e411f6)
+    1.  [loading files from disk works](#org07e24e9)
+    2.  [placing floor tiles works (anything selectable from the palette)](#orgbb826b0)
+    3.  [the b (blank) key works, toggles palette and splash text](#orga7aab17)
+    4.  [save file works](#org357a2da)
+3.  [nighthawk4 issues](#orga39da73)
+    1.  [Sound for 6xx/7xx/8xx<sub>voice</sub> plays too high for 11025, sounds more like 14,000.](#orgb89ca84)
+    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#orgaa59a98)
+    3.  [Misprint when asking for a ship in a fleet](#org1dbb799)
+    4.  [Segfault when loading fleet from -f switch](#org006b086)
+4.  [Stuff that works with nighthawk](#org859d23e)
+    1.  [Fleet support](#orgbd5c8e8)
 
 
 
-<a id="orga98e19b"></a>
+<a id="org6c7db9a"></a>
 
 # Problems with ned4
 
 
-<a id="org203afd0"></a>
+<a id="org3f145d5"></a>
 
 ## Failure saving file when directory doesn't exist
 
@@ -60,7 +60,7 @@
 -   Creating the directory before running ned allows the file to be saved.
 
 
-<a id="orgfc16f68"></a>
+<a id="org1c66f15"></a>
 
 ## ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added
 
@@ -69,7 +69,7 @@
 -   A file created with ned4 retains whatever tiles (including doors) were loaded. Static doors confuse things but are available as tiles. Animated doors are sprites.
 
 
-<a id="org8dfa39b"></a>
+<a id="orgb173207"></a>
 
 ## ned4 doesn't seem to use the mouse, even though a pointer is visible
 
@@ -78,53 +78,53 @@
     ++ could use the same code as for nighthawk's pause mode
 
 
-<a id="orgeec9bb8"></a>
+<a id="org6e411f6"></a>
 
 # Things that work with ned4
 
 
-<a id="orgbfdacd2"></a>
+<a id="org07e24e9"></a>
 
 ## loading files from disk works
 
 -   If level was saved using previous version of ned, doors and power chargers display only as black squares, because those are active sprites, so don't get loaded as tiles by ned4 [worksasimplemented]
 
 
-<a id="org358ab24"></a>
+<a id="orgbb826b0"></a>
 
 ## placing floor tiles works (anything selectable from the palette)
 
 
-<a id="orgd31a406"></a>
+<a id="orga7aab17"></a>
 
 ## the b (blank) key works, toggles palette and splash text
 
 
-<a id="org6e4cc6a"></a>
+<a id="org357a2da"></a>
 
 ## save file works
 
 -   need to create directory **first**, or ned4 bombs
 
 
-<a id="org5cb066b"></a>
+<a id="orga39da73"></a>
 
 # nighthawk4 issues
 
 
-<a id="org016e4a3"></a>
+<a id="orgb89ca84"></a>
 
 ## Sound for 6xx/7xx/8xx<sub>voice</sub> plays too high for 11025, sounds more like 14,000.
 
 I'm rather wondering whether the sound was recorded at 8,000 and played back at 11025?
 
 
-<a id="org70c22ca"></a>
+<a id="orgaa59a98"></a>
 
 ## Fleet comment rendered too wide. Max length is 12 chars??
 
 
-<a id="org4a4a382"></a>
+<a id="org1dbb799"></a>
 
 ## Misprint when asking for a ship in a fleet
 
@@ -138,30 +138,30 @@ nighthawk -d <datadir> -f Nighthawk -g -c Zaxon results in
 
 It's an easy fix:
 
-    --- nighthawk-4.0/src/misc.c	2020-10-07 10:39:39.559699300 +1300
-    +++ nighthawk-4.0/src/misc.c~	2020-10-04 19:53:55.165569756 +1000
+    --- nighthawk-4.0/src/misc.c~	2020-10-04 19:53:55.165569756 +1000
+    +++ nighthawk-4.0/src/misc.c	2020-10-07 10:39:39.559699300 +1300
     @@ -499,7 +499,7 @@
     	int i;
     
     	if (verbose_logging == TRUE)
-    -		printf("Finding ship %s.\n", entry);
-    +		printf("Finding fleet %s.\n", entry);
+    -		printf("Finding fleet %s.\n", entry);
+    +		printf("Finding ship %s.\n", entry);
     
     	for (i = 0; *p != NULL; p++, i++) {
     		if (!strcmp(*p, entry)) {
 
 
-<a id="org4a120a5"></a>
+<a id="org006b086"></a>
 
 ## Segfault when loading fleet from -f switch
 
 
-<a id="orgf2744e1"></a>
+<a id="org859d23e"></a>
 
 # Stuff that works with nighthawk
 
 
-<a id="org52044e8"></a>
+<a id="orgbd5c8e8"></a>
 
 ## Fleet support
 
