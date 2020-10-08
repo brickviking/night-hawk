@@ -1,32 +1,32 @@
 
 # Table of Contents
 
-1.  [Problems with ned4](#org34c805c)
-    1.  [Failure saving file when directory doesn't exist](#org5729998)
-    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#orgac350f5)
-    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#orge670df6)
-2.  [Things that work with ned4](#org8e64954)
-    1.  [loading files from disk works](#orge003e6e)
-    2.  [placing floor tiles works (anything selectable from the palette)](#org51e132e)
-    3.  [the b (blank) key works, toggles palette and splash text](#orgcd9117e)
-    4.  [save file works](#org1f9f9fb)
-3.  [nighthawk4 issues](#org270d4a1)
-    1.  [Sound for 6xx/7xx/8xx<sub>voice</sub> plays too high for 11025, sounds more like 14,000.](#orgd3511bb)
-    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#org9c29c14)
-    3.  [Misprint when asking for a ship in a fleet](#org88dc4af)
-    4.  [Segfault when loading fleet from -f switch](#org7a5a8da)
-    5.  [Wonky comment in misc.c](#orgcd9d168)
-4.  [Stuff that works with nighthawk](#org41503f9)
-    1.  [Fleet support](#org3fc7415)
+1.  [Problems with ned4](#org36a3caa)
+    1.  [Failure saving file when directory doesn't exist](#orgfe32d2f)
+    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#org7e1e08a)
+    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#org36cc1b2)
+2.  [Things that work with ned4](#org8c1c191)
+    1.  [loading files from disk works](#org3d6e121)
+    2.  [placing floor tiles works (anything selectable from the palette)](#orgd49185f)
+    3.  [the b (blank) key works, toggles palette and splash text](#org4ba358c)
+    4.  [save file works](#org5202601)
+3.  [nighthawk4 issues](#orgc0799a8)
+    1.  [Sound for 6xx/7xx/8xx<sub>voice</sub> plays too high for 11025, sounds more like 14,000.](#org985ad24)
+    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#org1394b92)
+    3.  [Misprint when asking for a ship in a fleet](#org2c99aca)
+    4.  [Segfault when loading fleet from -f switch](#org3387a0f)
+    5.  [Wonky comment in misc.c](#orgffa9d21)
+4.  [Stuff that works with nighthawk](#orgff76a7c)
+    1.  [Fleet support](#org990efe8)
 
 
 
-<a id="org34c805c"></a>
+<a id="org36a3caa"></a>
 
 # Problems with ned4
 
 
-<a id="org5729998"></a>
+<a id="orgfe32d2f"></a>
 
 ## Failure saving file when directory doesn't exist
 
@@ -61,7 +61,7 @@
 -   Creating the directory before running ned allows the file to be saved.
 
 
-<a id="orgac350f5"></a>
+<a id="org7e1e08a"></a>
 
 ## ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added
 
@@ -70,7 +70,7 @@
 -   A file created with ned4 retains whatever tiles (including doors) were loaded. Static doors confuse things but are available as tiles. Animated doors are sprites.
 
 
-<a id="orge670df6"></a>
+<a id="org36cc1b2"></a>
 
 ## ned4 doesn't seem to use the mouse, even though a pointer is visible
 
@@ -79,53 +79,53 @@
     ++ could use the same code as for nighthawk's pause mode
 
 
-<a id="org8e64954"></a>
+<a id="org8c1c191"></a>
 
 # Things that work with ned4
 
 
-<a id="orge003e6e"></a>
+<a id="org3d6e121"></a>
 
 ## loading files from disk works
 
 -   If level was saved using previous version of ned, doors and power chargers display only as black squares, because those are active sprites, so don't get loaded as tiles by ned4 [worksasimplemented]
 
 
-<a id="org51e132e"></a>
+<a id="orgd49185f"></a>
 
 ## placing floor tiles works (anything selectable from the palette)
 
 
-<a id="orgcd9117e"></a>
+<a id="org4ba358c"></a>
 
 ## the b (blank) key works, toggles palette and splash text
 
 
-<a id="org1f9f9fb"></a>
+<a id="org5202601"></a>
 
 ## save file works
 
 -   need to create directory **first**, or ned4 bombs
 
 
-<a id="org270d4a1"></a>
+<a id="orgc0799a8"></a>
 
 # nighthawk4 issues
 
 
-<a id="orgd3511bb"></a>
+<a id="org985ad24"></a>
 
 ## Sound for 6xx/7xx/8xx<sub>voice</sub> plays too high for 11025, sounds more like 14,000.
 
 I'm rather wondering whether the sound was recorded at 8,000 and played back at 11025?
 
 
-<a id="org9c29c14"></a>
+<a id="org1394b92"></a>
 
 ## Fleet comment rendered too wide. Max length is 12 chars??
 
 
-<a id="org88dc4af"></a>
+<a id="org2c99aca"></a>
 
 ## Misprint when asking for a ship in a fleet
 
@@ -152,16 +152,16 @@ It's an easy fix:
     		if (!strcmp(*p, entry)) {
 
 
-<a id="org7a5a8da"></a>
+<a id="org3387a0f"></a>
 
 ## Segfault when loading fleet from -f switch
 
 
-<a id="orgcd9d168"></a>
+<a id="orgffa9d21"></a>
 
 ## Wonky comment in misc.c
 
-Comment for test<sub>mouse</sub><sub>pos</sub> is duplicated from find<sub>fleet</sub><sub>entry</sub>()
+Comment for `test_mouse_pos` is duplicated from `find_fleet_entry()`
 
     --- nighthawk-4.0/src/misc.c~	2020-10-03 21:34:01.000000000 +1300
     +++ nighthawk-4.0/src/misc.c	2020-10-07 12:11:22.011444416 +1300
@@ -176,12 +176,12 @@ Comment for test<sub>mouse</sub><sub>pos</sub> is duplicated from find<sub>fleet
      {
 
 
-<a id="org41503f9"></a>
+<a id="orgff76a7c"></a>
 
 # Stuff that works with nighthawk
 
 
-<a id="org3fc7415"></a>
+<a id="org990efe8"></a>
 
 ## Fleet support
 
