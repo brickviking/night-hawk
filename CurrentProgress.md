@@ -161,7 +161,7 @@ It's an easy fix:
 
 ## Wonky comment in misc.c
 
-Comment for test<sub>mouse</sub><sub>pos</sub> is duplicated from find<sub>fleet</sub><sub>entry</sub>()
+Comment for test_mouse_pos is duplicated from find_fleet_entry()
 
     --- nighthawk-4.0/src/misc.c~	2020-10-03 21:34:01.000000000 +1300
     +++ nighthawk-4.0/src/misc.c	2020-10-07 12:11:22.011444416 +1300
