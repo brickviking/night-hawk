@@ -1,36 +1,36 @@
 
 # Table of Contents
 
-1.  [Problems with ned4](#org280ae91)
-    1.  [Failure saving file when directory doesn't exist](#orgabf8d14)
-    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#org721478c)
-    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#orgce7fb00)
-    4.  [Missing help screen (never coded)](#orga328bd5)
-    5.  [Can't compile ned,](#org4fbc464)
-    6.  [No protection against level already being present](#orgac69714)
-2.  [Things that work with ned4](#orgf04d1f8)
-    1.  [loading files from disk works](#org0768c6e)
-    2.  [placing floor tiles works (anything selectable from the palette)](#orgc1b7480)
-    3.  [the b (blank) key works, toggles palette and splash text](#org8c7c82a)
-    4.  [save file works](#orgd1f4d85)
-3.  [nighthawk4 issues](#orga33df02)
-    1.  [Sound for 6xx/7xx/8xx<sub>voice</sub> plays too high for 11025, sounds more like 14,000.](#org0bf30ab)
-    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#orge8714f7)
-    3.  [Misprint when asking for a ship in a fleet](#org03938ce)
-    4.  [Segfault when loading fleet from -f switch](#org4cef89c)
-    5.  [Game locks up when specifying both a fleet and a ship](#org2d67841)
-    6.  [Wonky comment in misc.c](#orgf95c8db)
-4.  [Stuff that works with nighthawk](#orgbf905ad)
-    1.  [Fleet support](#org296558e)
+1.  [Problems with ned4](#org9d87757)
+    1.  [Failure saving file when directory doesn't exist](#org066702b)
+    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#orgbe9cae4)
+    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#org4dc08dd)
+    4.  [Missing help screen (never coded)](#org633dfd9)
+    5.  [Can't compile ned,](#org026e40d)
+    6.  [No protection against level already being present](#orgeaf2883)
+2.  [Things that work with ned4](#org12ffbcd)
+    1.  [loading files from disk works](#org4492011)
+    2.  [placing floor tiles works (anything selectable from the palette)](#org2c34d7f)
+    3.  [the b (blank) key works, toggles palette and splash text](#org8eb965f)
+    4.  [save file works](#org363749f)
+3.  [nighthawk4 issues](#org2ba550c)
+    1.  [Sound for 6xx/7xx/8xx<sub>voice</sub> plays too high for 11025, sounds more like 14,000.](#org9aa9eda)
+    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#org19544c0)
+    3.  [Misprint when asking for a ship in a fleet](#org954089b)
+    4.  [Segfault when loading fleet from -f switch](#org430b3d2)
+    5.  [Game locks up when specifying both a fleet and a ship](#orgee121a9)
+    6.  [Wonky comment in misc.c](#orgbd67f8d)
+4.  [Stuff that works with nighthawk](#org1a12e8b)
+    1.  [Fleet support](#org38c3e5f)
 
 
 
-<a id="org280ae91"></a>
+<a id="org9d87757"></a>
 
 # Problems with ned4
 
 
-<a id="orgabf8d14"></a>
+<a id="org066702b"></a>
 
 ## Failure saving file when directory doesn't exist
 
@@ -65,7 +65,7 @@
 -   Creating the directory before running ned allows the file to be saved.
 
 
-<a id="org721478c"></a>
+<a id="orgbe9cae4"></a>
 
 ## ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added
 
@@ -75,21 +75,21 @@
     -   Should the doors be removed from placeable tiles in ned?
 
 
-<a id="orgce7fb00"></a>
+<a id="org4dc08dd"></a>
 
 ## ned4 doesn't seem to use the mouse, even though a pointer is visible
 
 Only keyboard commands seem to be able to be used (Space, Enter, Save, Quit). Probably works as intended.
 
 
-<a id="orga328bd5"></a>
+<a id="org633dfd9"></a>
 
 ## Missing help screen (never coded)
 
 This could use the same code as for nighthawk's pause mode
 
 
-<a id="org4fbc464"></a>
+<a id="org026e40d"></a>
 
 ## Can't compile ned,
 
@@ -107,7 +107,7 @@ Makefile doesn't include png<sub>loader.o</sub> for OBJS<sub>NED</sub>, causing 
     	door.o \
 
 
-<a id="orgac69714"></a>
+<a id="orgeaf2883"></a>
 
 ## No protection against level already being present
 
@@ -115,53 +115,53 @@ I can create a level, save it, quit the program, and create that level again. If
 This may work as intended, but there's no "Are you sure" confirmation prompt.
 
 
-<a id="orgf04d1f8"></a>
+<a id="org12ffbcd"></a>
 
 # Things that work with ned4
 
 
-<a id="org0768c6e"></a>
+<a id="org4492011"></a>
 
 ## loading files from disk works
 
 -   If level was saved using previous version of ned, doors and power chargers display only as black squares, because those are active sprites, so don't get loaded as tiles by ned4 [worksasimplemented]
 
 
-<a id="orgc1b7480"></a>
+<a id="org2c34d7f"></a>
 
 ## placing floor tiles works (anything selectable from the palette)
 
 
-<a id="org8c7c82a"></a>
+<a id="org8eb965f"></a>
 
 ## the b (blank) key works, toggles palette and splash text
 
 
-<a id="orgd1f4d85"></a>
+<a id="org363749f"></a>
 
 ## save file works
 
 -   need to create directory **first**, or ned4 bombs
 
 
-<a id="orga33df02"></a>
+<a id="org2ba550c"></a>
 
 # nighthawk4 issues
 
 
-<a id="org0bf30ab"></a>
+<a id="org9aa9eda"></a>
 
 ## Sound for 6xx/7xx/8xx<sub>voice</sub> plays too high for 11025, sounds more like 14,000.
 
 I'm rather wondering whether the sound was recorded at 8,000 and played back at 11025?
 
 
-<a id="orge8714f7"></a>
+<a id="org19544c0"></a>
 
 ## Fleet comment rendered too wide. Max length is 12 chars??
 
 
-<a id="org03938ce"></a>
+<a id="org954089b"></a>
 
 ## Misprint when asking for a ship in a fleet
 
@@ -188,12 +188,12 @@ It's an easy fix:
     		if (!strcmp(*p, entry)) {
 
 
-<a id="org4cef89c"></a>
+<a id="org430b3d2"></a>
 
 ## Segfault when loading fleet from -f switch
 
 Game loads ship list, then dies some time after that with a segfault.
-0x000000000041462a in game<sub>cont</sub><sub>draw</sub> () at intro.cc:257
+0x000000000041462a in `game_cont_draw` () at intro.cc:257
 
     247  static void game_cont_draw(void)
     248  {
@@ -220,7 +220,7 @@ Game loads ship list, then dies some time after that with a segfault.
     ...
 
 
-<a id="org2d67841"></a>
+<a id="orgee121a9"></a>
 
 ## Game locks up when specifying both a fleet and a ship
 
@@ -374,7 +374,7 @@ Game loads ship list, then dies some time after that with a segfault.
     Adjusting OpenGL 2D mapping 1170x878.
 
 
-<a id="orgf95c8db"></a>
+<a id="orgbd67f8d"></a>
 
 ## Wonky comment in misc.c
 
@@ -393,12 +393,12 @@ Comment for `test_mouse_pos` is duplicated from `find_fleet_entry()`
      {
 
 
-<a id="orgbf905ad"></a>
+<a id="org1a12e8b"></a>
 
 # Stuff that works with nighthawk
 
 
-<a id="org296558e"></a>
+<a id="org38c3e5f"></a>
 
 ## Fleet support
 
