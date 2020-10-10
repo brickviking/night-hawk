@@ -1,34 +1,35 @@
 
 # Table of Contents
 
-1.  [Problems with ned4](#org2169620)
-    1.  [Failure saving file when directory doesn't exist](#org3e448f5)
-    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#org6217e21)
-    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#org3ca20c0)
-    4.  [Missing help screen (never coded)](#orga354fe0)
-    5.  [Can't compile ned,](#orgf9fb99c)
-    6.  [No protection against level already being present](#org985d446)
-2.  [Things that work with ned4](#org0deafbb)
-    1.  [loading files from disk works](#org1e3a1aa)
-    2.  [placing floor tiles works (anything selectable from the palette)](#orgcb27bbc)
-    3.  [the b (blank) key works, toggles palette and splash text](#orgd548b65)
-    4.  [save file works](#org32329f9)
-3.  [nighthawk4 issues](#org6b4790a)
-    1.  [Sound for `6xx/7xx/8xx_voice` plays too high for 11025, sounds more like 14,000.](#orgada28ca)
-    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#org5e6715f)
-    3.  [Wonky comment in misc.c](#org8a297be)
-    4.  [Bug when completing game](#org9348c21)
-4.  [Stuff that works with nighthawk](#orgde84f2a)
-    1.  [Fleet support](#org7e9e0b1)
+1.  [Problems with ned4](#org302caed)
+    1.  [Failure saving file when directory doesn't exist](#org62ad6c8)
+    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#orgd8bd297)
+    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#orgd822898)
+    4.  [Missing help screen (never coded)](#org17c142e)
+    5.  [Can't compile ned,](#org8815866)
+    6.  [No protection against level already being present](#orgc3351ab)
+2.  [Things that work with ned4](#org18299d2)
+    1.  [loading files from disk works](#org68d9ba8)
+    2.  [placing floor tiles works (anything selectable from the palette)](#org7a4e80d)
+    3.  [the b (blank) key works, toggles palette and splash text](#org5694e19)
+    4.  [save file works](#org9729cda)
+3.  [nighthawk4 issues](#org26f1682)
+    1.  [Sound for `6xx/7xx/8xx_voice` plays too high for 11025, sounds more like 14,000.](#org9d3fd4a)
+    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#org6ca6fc0)
+    3.  [Wonky comment in misc.c](#orgd7bae29)
+    4.  [Bug when completing game](#org3fcc940)
+        1.  [I need to recompile with debugging enabled, set a breakpoint on game<sub>finale</sub><sub>draw</sub>, and watch the good times dra&#x2026; roll.](#orgc7bcd8e)
+4.  [Stuff that works with nighthawk](#org19f3a75)
+    1.  [Fleet support](#orga21ed13)
 
 
 
-<a id="org2169620"></a>
+<a id="org302caed"></a>
 
 # Problems with ned4
 
 
-<a id="org3e448f5"></a>
+<a id="org62ad6c8"></a>
 
 ## Failure saving file when directory doesn't exist
 
@@ -63,7 +64,7 @@
 -   Creating the directory before running ned allows the file to be saved.
 
 
-<a id="org6217e21"></a>
+<a id="orgd8bd297"></a>
 
 ## ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added
 
@@ -73,21 +74,21 @@
     -   Should the doors be removed from placeable tiles in ned?
 
 
-<a id="org3ca20c0"></a>
+<a id="orgd822898"></a>
 
 ## ned4 doesn't seem to use the mouse, even though a pointer is visible
 
 Only keyboard commands seem to be able to be used (Space, Enter, Save, Quit). Probably works as intended.
 
 
-<a id="orga354fe0"></a>
+<a id="org17c142e"></a>
 
 ## Missing help screen (never coded)
 
 This could use the same code as for nighthawk's pause mode
 
 
-<a id="orgf9fb99c"></a>
+<a id="org8815866"></a>
 
 ## Can't compile ned,
 
@@ -105,7 +106,7 @@ Makefile doesn't include `png_loader.o` for `OBJS_NED`, causing a linking error;
     	door.o \
 
 
-<a id="org985d446"></a>
+<a id="orgc3351ab"></a>
 
 ## No protection against level already being present
 
@@ -113,53 +114,53 @@ I can create a level, save it, quit the program, and create that level again. If
 This may work as intended, but there's no "Are you sure" confirmation prompt.
 
 
-<a id="org0deafbb"></a>
+<a id="org18299d2"></a>
 
 # Things that work with ned4
 
 
-<a id="org1e3a1aa"></a>
+<a id="org68d9ba8"></a>
 
 ## loading files from disk works
 
 -   If level was saved using previous version of ned, doors and power chargers display only as black squares, because those are active sprites, so don't get loaded as tiles by ned4 [worksasimplemented]
 
 
-<a id="orgcb27bbc"></a>
+<a id="org7a4e80d"></a>
 
 ## placing floor tiles works (anything selectable from the palette)
 
 
-<a id="orgd548b65"></a>
+<a id="org5694e19"></a>
 
 ## the b (blank) key works, toggles palette and splash text
 
 
-<a id="org32329f9"></a>
+<a id="org9729cda"></a>
 
 ## save file works
 
 -   need to create directory **first**, or ned4 bombs
 
 
-<a id="org6b4790a"></a>
+<a id="org26f1682"></a>
 
 # nighthawk4 issues
 
 
-<a id="orgada28ca"></a>
+<a id="org9d3fd4a"></a>
 
 ## Sound for `6xx/7xx/8xx_voice` plays too high for 11025, sounds more like 14,000.
 
 I'm rather wondering whether the sound was recorded at 8,000 and played back at 11025?
 
 
-<a id="org5e6715f"></a>
+<a id="org6ca6fc0"></a>
 
 ## Fleet comment rendered too wide. Max length is 12 chars??
 
 
-<a id="org8a297be"></a>
+<a id="orgd7bae29"></a>
 
 ## Wonky comment in misc.c
 
@@ -178,11 +179,11 @@ Comment for `test_mouse_pos` is duplicated from `find_fleet_entry()`
      {
 
 
-<a id="org9348c21"></a>
+<a id="org3fcc940"></a>
 
 ## Bug when completing game
 
-If I complete a whole fleet of ships, I get a congratulation message. I also get "Press Space to continue", but this does nothing. I can't quit with q either.
+If I complete a whole fleet of ships, I get a congratulation message from game<sub>finale</sub><sub>draw</sub>(). I also get "Press Space to continue", but this does nothing.
 In the verbose debug log, I get lots of the following lines:
 
     Loading scores file /var/tmp/nighthawk.scores,
@@ -191,12 +192,17 @@ In the verbose debug log, I get lots of the following lines:
     Saving scores file /var/tmp/nighthawk.scores.
 
 
-<a id="orgde84f2a"></a>
+<a id="orgc7bcd8e"></a>
+
+### TODO I need to recompile with debugging enabled, set a breakpoint on game<sub>finale</sub><sub>draw</sub>, and watch the good times dra&#x2026; roll.
+
+
+<a id="org19f3a75"></a>
 
 # Stuff that works with nighthawk
 
 
-<a id="org7e9e0b1"></a>
+<a id="orga21ed13"></a>
 
 ## Fleet support
 
