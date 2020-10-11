@@ -1,34 +1,34 @@
 
 # Table of Contents
 
-1.  [Problems with ned4](#org88b4871)
-    1.  [Failure saving file when directory doesn't exist](#org9c0c282)
-    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#orgdabd061)
-    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#org0f1fb55)
-    4.  [Missing help screen (never coded)](#orgd9694eb)
-    5.  [No protection against level already being present](#org935cade)
-2.  [Things that work with ned4](#org3b31225)
-    1.  [loading files from disk works](#org8ad78ab)
-    2.  [placing floor tiles works (anything selectable from the palette)](#orgc7b95da)
-    3.  [the b (blank) key works, toggles palette and splash text](#orgea1c0d9)
-    4.  [save file works](#orge49cfe5)
-3.  [nighthawk4 issues](#orgc11408a)
-    1.  [Sound for `6xx/7xx/8xx_voice` plays too high for 11025, sounds more like 14,000.](#orga6cd2fd)
-    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#orge3a0aca)
-    3.  [Wonky comment in misc.c](#org0b45ce4)
-    4.  [Bug when completing game](#org0202664)
-        1.  [I need to recompile with debugging enabled, set a breakpoint on game.cc:game<sub>finale</sub><sub>draw</sub>, and watch the good times dra&#x2026; roll.](#org05fad8e)
-4.  [Stuff that works with nighthawk](#org85a8a3b)
-    1.  [Fleet support](#org4b35b68)
+1.  [Problems with ned4](#orga66254b)
+    1.  [Failure saving file when directory doesn't exist](#org81e3599)
+    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#org3eaf9d5)
+    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#orgc9b32a0)
+    4.  [Missing help screen (never coded)](#org36c1b59)
+    5.  [No protection against level already being present](#org0366fda)
+2.  [Things that work with ned4](#org8753060)
+    1.  [loading files from disk works](#org1001917)
+    2.  [placing floor tiles works (anything selectable from the palette)](#org30dc51e)
+    3.  [the b (blank) key works, toggles palette and splash text](#orga3aa115)
+    4.  [save file works](#org83d6a70)
+3.  [nighthawk4 issues](#org6355989)
+    1.  [Sound for `6xx/7xx/8xx_voice` plays too high for 11025, sounds more like 14,000.](#org0091719)
+    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#org147d196)
+    3.  [Wonky comment in misc.c](#org5b3bd99)
+    4.  [Bug when completing game](#org697b780)
+        1.  [I need to recompile with debugging enabled, set a breakpoint on `game.cc:game_finale_draw`, and watch the good times dra&#x2026; roll.](#org8bb395a)
+4.  [Stuff that works with nighthawk](#org6df44d5)
+    1.  [Fleet support](#org33a2618)
 
 
 
-<a id="org88b4871"></a>
+<a id="orga66254b"></a>
 
 # Problems with ned4
 
 
-<a id="org9c0c282"></a>
+<a id="org81e3599"></a>
 
 ## Failure saving file when directory doesn't exist
 
@@ -63,7 +63,7 @@
 -   Creating the directory before running ned allows the file to be saved.
 
 
-<a id="orgdabd061"></a>
+<a id="org3eaf9d5"></a>
 
 ## ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added
 
@@ -73,21 +73,21 @@
     -   Should the doors be removed from placeable tiles in ned?
 
 
-<a id="org0f1fb55"></a>
+<a id="orgc9b32a0"></a>
 
 ## ned4 doesn't seem to use the mouse, even though a pointer is visible
 
 Only keyboard commands seem to be able to be used (Space, Enter, Save, Quit). Probably works as intended.
 
 
-<a id="orgd9694eb"></a>
+<a id="org36c1b59"></a>
 
 ## Missing help screen (never coded)
 
 This could use the same code as for nighthawk's pause mode
 
 
-<a id="org935cade"></a>
+<a id="org0366fda"></a>
 
 ## No protection against level already being present
 
@@ -95,55 +95,55 @@ I can create a level, save it, quit the program, and create that level again. If
 This may work as intended, but there's no "Are you sure" confirmation prompt.
 
 
-<a id="org3b31225"></a>
+<a id="org8753060"></a>
 
 # Things that work with ned4
 
 
-<a id="org8ad78ab"></a>
+<a id="org1001917"></a>
 
 ## loading files from disk works
 
 -   If level was saved using previous version of ned, doors and power chargers display only as black squares, because those are active sprites, so don't get loaded as tiles by ned4 [worksasimplemented]
 
 
-<a id="orgc7b95da"></a>
+<a id="org30dc51e"></a>
 
 ## placing floor tiles works (anything selectable from the palette)
 
 I shouldn't be able to place doors, but they're in the tiles.
 
 
-<a id="orgea1c0d9"></a>
+<a id="orga3aa115"></a>
 
 ## the b (blank) key works, toggles palette and splash text
 
 
-<a id="orge49cfe5"></a>
+<a id="org83d6a70"></a>
 
 ## save file works
 
 -   need to create directory **first**, or ned4 bombs
 
 
-<a id="orgc11408a"></a>
+<a id="org6355989"></a>
 
 # nighthawk4 issues
 
 
-<a id="orga6cd2fd"></a>
+<a id="org0091719"></a>
 
 ## Sound for `6xx/7xx/8xx_voice` plays too high for 11025, sounds more like 14,000.
 
 I'm rather wondering whether the sound was recorded at 8,000 and played back at 11025?
 
 
-<a id="orge3a0aca"></a>
+<a id="org147d196"></a>
 
 ## Fleet comment rendered too wide. Max length is 12 chars??
 
 
-<a id="org0b45ce4"></a>
+<a id="org5b3bd99"></a>
 
 ## Wonky comment in misc.c
 
@@ -162,7 +162,7 @@ Comment for `test_mouse_pos` is duplicated from `find_fleet_entry()`
      {
 
 
-<a id="org0202664"></a>
+<a id="org697b780"></a>
 
 ## Bug when completing game
 
@@ -170,9 +170,9 @@ If I complete a whole fleet of ships, I get a congratulation message from game.c
 I also get "Press Space to continue", but the game appears to do nothing except spin up Loading scores a lot of times.
 
 
-<a id="org05fad8e"></a>
+<a id="org8bb395a"></a>
 
-### TODO I need to recompile with debugging enabled, set a breakpoint on game.cc:game<sub>finale</sub><sub>draw</sub>, and watch the good times dra&#x2026; roll.
+### TODO I need to recompile with debugging enabled, set a breakpoint on `game.cc:game_finale_draw`, and watch the good times dra&#x2026; roll.
 
 And something now seems wrong with the score table, with my name ending up in the last 7 slots of the table, for the exact same game.
 
@@ -198,12 +198,12 @@ In the verbose debug log, I get lots of the following lines:
 My score should only end up being added once, not fill the remainder of the table.
 
 
-<a id="org85a8a3b"></a>
+<a id="org6df44d5"></a>
 
 # Stuff that works with nighthawk
 
 
-<a id="org4b35b68"></a>
+<a id="org33a2618"></a>
 
 ## Fleet support
 
