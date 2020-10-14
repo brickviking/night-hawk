@@ -7,3 +7,7 @@ Sourceforge link is at https://sourceforge.net/projects/night-hawk/ by [viking66
 The Gitlab mirror is currently at https://gitlab.com/osgames/night-hawk/.
 
 A neat introduction is at https://night-hawk.sourceforge.net/
+
+## Development version
+
+We are currently working behind the scenes on nighthawk-4.0alpha, but while you wait, the previous versions are available in [old_versions]. We'd like to see some serious bugtesting on 4.0 when we upload it, issues and other suggestions can be reported here at [Issues](the issues link).
