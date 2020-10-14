@@ -1,32 +1,33 @@
 
 # Table of Contents
 
-1.  [Problems with ned4](#org3594677)
-    1.  [Failure saving file when directory doesn't exist](#org0cc8768)
-    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#org302655e)
-    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#orgc4a2172)
-    4.  [Missing help screen (never coded)](#org2d6423f)
-    5.  [No protection against level already being present](#org7df65f9)
-2.  [Things that work with ned4](#org9919155)
-    1.  [loading files from disk works](#org05567db)
-    2.  [placing floor tiles works (anything selectable from the palette)](#org3d54491)
-    3.  [the b (blank) key works, toggles palette and splash text](#org79e3e25)
-    4.  [save file works](#orgebf5331)
-3.  [nighthawk4 issues](#org0e1d918)
-    1.  [Sound for `6xx/7xx/8xx_voice` plays too high for 11025, sounds more like 14,000.](#orgccf3ffb)
-    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#org34e9298)
-    3.  [Sound of dead droid haunts us by playing](#org994f61d)
-4.  [Stuff that works with nighthawk](#org200fe7a)
-    1.  [Fleet support](#orge50943a)
+1.  [Problems with ned4](#org8502fbe)
+    1.  [Failure saving file when directory doesn't exist](#orgd4f23b7)
+    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#orgf126767)
+    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#org2e86b59)
+    4.  [Missing help screen (never coded)](#org6feac1d)
+    5.  [No protection against level already being present](#org7de9ef2)
+2.  [Things that work with ned4](#org50c18c6)
+    1.  [loading files from disk works](#org055cdce)
+    2.  [placing floor tiles works (anything selectable from the palette)](#orgd47bf23)
+    3.  [the b (blank) key works, toggles palette and splash text](#org5cf5ad8)
+    4.  [save file works](#org890c792)
+3.  [nighthawk4 issues](#org122755a)
+    1.  [Some sound issues](#org8e663fd)
+        1.  [Sound for `6xx/7xx/8xx_voice` plays too high for 11025, sounds more like 14,000.](#orgbeedba4)
+        2.  [Sound isn't multi-threaded?](#org47c3592)
+    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#org5286ed5)
+4.  [Stuff that works with nighthawk](#org34ca329)
+    1.  [Fleet support](#org7c0d538)
 
 
 
-<a id="org3594677"></a>
+<a id="org8502fbe"></a>
 
 # Problems with ned4
 
 
-<a id="org0cc8768"></a>
+<a id="orgd4f23b7"></a>
 
 ## Failure saving file when directory doesn't exist
 
@@ -61,7 +62,7 @@
 -   Creating the directory before running ned allows the file to be saved.
 
 
-<a id="org302655e"></a>
+<a id="orgf126767"></a>
 
 ## ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added
 
@@ -71,21 +72,21 @@
     -   Should the doors be removed from placeable tiles in ned?
 
 
-<a id="orgc4a2172"></a>
+<a id="org2e86b59"></a>
 
 ## ned4 doesn't seem to use the mouse, even though a pointer is visible
 
 Only keyboard commands seem to be able to be used (Space, Enter, Save, Quit). Probably works as intended.
 
 
-<a id="org2d6423f"></a>
+<a id="org6feac1d"></a>
 
 ## Missing help screen (never coded)
 
 This could use the same code as for nighthawk's pause mode
 
 
-<a id="org7df65f9"></a>
+<a id="org7de9ef2"></a>
 
 ## No protection against level already being present
 
@@ -93,68 +94,80 @@ I can create a level, save it, quit the program, and create that level again. If
 This may work as intended, but there's no "Are you sure" confirmation prompt.
 
 
-<a id="org9919155"></a>
+<a id="org50c18c6"></a>
 
 # Things that work with ned4
 
 
-<a id="org05567db"></a>
+<a id="org055cdce"></a>
 
 ## loading files from disk works
 
 -   If level was saved using previous version of ned, doors and power chargers display only as black squares, because those are active sprites, so don't get loaded as tiles by ned4 [worksasimplemented]
 
 
-<a id="org3d54491"></a>
+<a id="orgd47bf23"></a>
 
 ## placing floor tiles works (anything selectable from the palette)
 
 I shouldn't be able to place doors, but they're in the tiles.
 
 
-<a id="org79e3e25"></a>
+<a id="org5cf5ad8"></a>
 
 ## the b (blank) key works, toggles palette and splash text
 
 
-<a id="orgebf5331"></a>
+<a id="org890c792"></a>
 
 ## save file works
 
 -   need to create directory **first**, or ned4 bombs
 
 
-<a id="org0e1d918"></a>
+<a id="org122755a"></a>
 
 # nighthawk4 issues
 
 
-<a id="orgccf3ffb"></a>
+<a id="org8e663fd"></a>
 
-## Sound for `6xx/7xx/8xx_voice` plays too high for 11025, sounds more like 14,000.
+## Some sound issues
+
+
+<a id="orgbeedba4"></a>
+
+### Sound for `6xx/7xx/8xx_voice` plays too high for 11025, sounds more like 14,000.
 
 I'm rather wondering whether the sound was recorded at 8,000 and played back at 11025?
 
 
-<a id="org34e9298"></a>
+<a id="org47c3592"></a>
 
-## Fleet comment rendered too wide. Max length is 12 chars??
+### Sound isn't multi-threaded?
+
+1.  Sound for theme tune disappears as soon as I hit "g" (grab)
+
+    When I start up a game, I like to lock the screen if in windowed mode. If I lock while theme tune is playing, then
+    theme tune stops, and the sound effect for "lock" is played.
+
+2.  Sound of dead droid haunts us by playing
+
+    A droid notices me and calls out, I shoot it, it dies, but the warning sound continues to play until it's complete.
+    It's weird to hear "Disarm and disengage" when the droid's no longer around.
 
 
-<a id="org994f61d"></a>
+<a id="org5286ed5"></a>
 
-## Sound of dead droid haunts us by playing
-
-A droid notices me and calls out, I shoot it, it dies, but the warning sound continues to play until it's complete.
-It's weird to hear "Disarm and disengage" when the droid's no longer around.
+## TODO Fleet comment rendered too wide. Max length is 12 chars??
 
 
-<a id="org200fe7a"></a>
+<a id="org34ca329"></a>
 
 # Stuff that works with nighthawk
 
 
-<a id="orge50943a"></a>
+<a id="org7c0d538"></a>
 
 ## Fleet support
 
