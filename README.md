@@ -10,4 +10,6 @@ A neat introduction is at https://night-hawk.sourceforge.net/
 
 ## Development version
 
-We are currently working behind the scenes on nighthawk-4.0alpha, but while you wait, the previous versions are available in [old_versions]. We'd like to see some serious bugtesting on 4.0 when we upload it, issues and other suggestions can be reported here at [Issues](the issues link).
+We are currently working behind the scenes on nighthawk-4.0alpha, but while you wait, the previous versions are available in [old_versions]. We'd like to see some serious bugtesting on 4.0 when we upload it, issues and other suggestions can be reported here at [the issues link](https://github.com/brickviking/night-hawk/issues).
+
+This new version finally reintegrates sound back into Nighthawk; we've also updated the soundfiles to remove samples from Star Wars so that Debian users can finally play this game with sound.  Package maintainers will be able to update their copies to the latest version. We're also working on removing all the bugs we found.
