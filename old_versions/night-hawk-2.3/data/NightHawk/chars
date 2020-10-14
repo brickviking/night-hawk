@@ -1,0 +1,160 @@
+type: Fleet Support
+floor: Bridge2
+floor: NutHouse
+floor: Quarters
+floor: Engineering
+floor: Bridge
+transport: Bridge      89   19  432 208   0
+transport: NutHouse       89  31  464 144   0
+transport: NutHouse       47  31   48 496  1
+transport: Quarters    47  41   144 80   1
+transport: Engineering 153 42   48  80   2
+transport: NutHouse       153 31   912 240  2
+transport: Bridge2        59 10 48 48 3
+transport: Bridge         59 20  432 48 3
+transport: Engineering   160 42 272 208 4
+transport: NutHouse       160 31 48 240 4
+transport: Engineering    168 41 336 272 5
+transport: NutHouse       168 31 912 48 5
+init: Engineering 48 80
+droid: 108 Engineering 144 48
+* w 50   0
+* g 48   48
+* w 50   0
+* g 528  48
+* w 50   0
+* g 528  112
+* w 50   0
+* g 528 48
+* g 48 48
+droid: 108 Quarters 48 48
+* g 144 48
+* g 48  48 
+* g 48  112
+* g 144 112
+* g 48  112
+droid: 108 NutHouse 304 80
+* g 368 80
+* g 368 240
+* g 144 240
+* g 144 112
+* g 368 112
+* g 368 272
+* g 304 272
+* g 304 80
+droid: 176 NutHouse 80 176
+* w 50  0
+* g 48 48
+* w 50  0
+droid: 261 NutHouse 240 112
+* g 240 240
+* g 176 240
+* w 60  0
+* g 240 240
+* g 240 112
+* w 60  0
+droid: 355 NutHouse 176 176
+* w 200 0
+* g 144 144
+* g 80  144
+* g 80  240
+* w 200 0
+* g 80  48
+* g 80 144
+* g 144 144
+* g 400 208
+* g 528 208
+* g 528 48
+* w 100 0
+* g 592 48
+* g 592 336
+* g 496 336
+* g 496 304
+* g 528 304
+* g 528 208
+* g 400 208
+* g 176 176
+droid: 176 Bridge 432 80
+* w 30  0
+* g 432 48
+* g 80  48
+* g 432 48
+* g 432 80
+droid: 108 Bridge 176 80
+* g 176 208
+* g 176 80
+droid: 513 Bridge 80 112
+* w 300 0
+* g 80  144
+* w 300 0
+* g 80  112
+* w 10  0
+* g 80  144
+* w 100 0
+* g 80  112
+droid: 719 NutHouse 720 272
+* w 100 0
+* g 528 272
+* w 100 0
+* g 720 272
+droid: 720 NutHouse 848 80
+* w 100 0
+* g 528 80
+* w 100 0
+* g 848 80
+droid: 899 Bridge 208 80
+* w 100 0
+* g 208 176
+* w 100 0
+* g 208 80
+droid: 606 NutHouse 464 112
+* w 100 0
+* g 464 48
+* w 20 0
+* g 464 112
+droid: 275 NutHouse 912 48
+* g 848 48
+* w 20 0
+* g 912 48
+* w 20 0
+droid: 606 Engineering 496 464
+* w 100 0
+* g 48 464
+* w 20 0
+* g 48 400
+* g 336 400
+* w 20 0
+* g 48 400
+* g 48 464
+* g 496 464
+droid: 606 NutHouse 176 272
+* w 8  0
+* g 368 272
+* w 8  0
+* g 176 272
+droid: 606 Bridge2 496 48
+* g 688 48
+* g 496 48
+* g 496 176
+* g 496 48
+droid: 933 Bridge2 528 304
+* w 10 0
+* g 624 304
+* w 10 0
+* g 624 368
+* w 20 0
+* g 624 304
+* w 10 0
+droid: 949 Engineering 240 208
+* w 10 0
+* g 304 208
+* w 10 0
+* g 304 176
+* w 20 0
+* g 304 208
+* w 10 0
+* g 240 208
+* w 10 0
+droid: 999 Bridge2 336 48
+* g 336 176
+* g 336 48

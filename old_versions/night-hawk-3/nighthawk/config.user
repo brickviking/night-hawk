@@ -1,0 +1,19 @@
+# distination directory
+#
+#INSTALL_DIR=/usr/local/games/nighthawk
+#SCORES_FILE=/var/tmp/nighthawk.scores
+
+# test location
+#
+INSTALL_DIR=.
+SCORES_FILE=/var/tmp/nighthawk.scores
+
+CC		= gcc
+CPP		= g++
+
+CC_FLAGS	= -Wall -pipe -O2 \
+		-DINSTALL_DIR='"$(INSTALL_DIR)"' \
+		-DSCORES_FILE='"$(SCORES_FILE)"' \
+		-I/usr/X11R6/include
+
+LIB_FLAGS       = -lm -L/usr/X11R6/lib -lX11 -lGL -lGLU -lglut

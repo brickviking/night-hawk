@@ -1,0 +1,308 @@
+type: Scientific Frigate
+floor: Astronomy1
+floor: Astronomy2
+floor: Astrophys
+floor: Botany1
+floor: Botany2
+floor: Botany3
+floor: Botany4
+floor: Bridge
+floor: Defense
+floor: Engineering
+transport: Bridge      61 8  48 208    0
+transport: Defense     61 26 176 272   0
+transport: Astrophys   61 42 48 304    0
+transport: Defense     43 26 48 272    1 
+transport: Botany1     43 42  368 112  1
+transport: Botany2     43 57  240 112  1
+transport: Botany3     43 74  272 112  1
+transport: Botany4     43 89  240 80   1
+transport: Astrophys   172 41  848 336 2
+transport: Astronomy1  172 58  208 112 2
+transport: Astronomy1  156 57  112 80  3
+transport: Astronomy2  156 73  208 112 3
+transport: Astronomy2  141 73  80 80   4
+transport: Engineering 141 90 592 144  4
+init: Engineering 592 144
+droid: 810 Engineering 144 144
+* w 30 0
+* g 144 176
+* g 240 176
+* g 144 176
+* g 144 144
+droid: 693 Engineering 304 80
+* g 80 80
+* g 80 240
+* g 304 240
+* g 304 80
+droid: 693 Engineering 80 240
+* g 304 240
+* g 304 80
+* g 80 80
+* g 80 240
+droid: 693 Engineering 464 176
+* w 100 0
+* g 464 176
+droid: 693 Engineering 592 208
+* w 40 0
+* g 592 272
+* g 592 208
+droid: 489 Engineering 464 80
+* g 496 112
+* g 336 112
+* g 400 48
+* w 100 0
+* g 464 48
+* g 464 80
+droid: 805 Engineering 48 144
+* w 56 0
+* g 48 208
+* g 48 112
+* w 10 0
+* g 48 144
+droid: 820 Astronomy2  144 48
+* w 200 0
+* g 144 144
+* g 48 144
+* g 48 80
+* w 30 0
+* g 48 144
+* g 144 144
+* g 144 48
+droid: 820 Astronomy2 48 48
+* w 100 0
+* g 48 48
+droid: 820 Astronomy1 144 80
+* w 50 0
+* g 144 144
+* g 48 144
+* g 48 112
+* w 50 0
+* g 48 48
+* g 144 48
+* g 144 80
+droid: 820 Astronomy1 208 144
+* w 100 0
+* g 208 144
+droid: 820 Astrophys  144 144
+* w 40 0
+* g 240 144
+* g 240 176
+* w 20 0
+* g 240 144
+* g 144 144
+droid: 820 Astrophys  112 176
+* g 112 208
+* g 208 208
+* w 50 0
+* g 112 208
+* g 112 176
+droid: 693 Astrophys  240 304
+* g 272 304
+* g 240 304
+droid: 820 Astrophys  144 368
+* w 100 0
+* g 240 368
+* g 144 368
+droid: 820 Astrophys  112 400
+* g 112 432
+* g 208 432
+* g 208 400
+* g 208 432
+* g 112 432
+* g 112 400
+droid: 693 Astrophys 272 464
+* g 144 464
+* g 272 464
+droid: 693 Astrophys 816 528
+* g 752 528
+* w 20 0
+* g 816 528
+droid: 693 Astrophys 48 592
+* w 100 0
+* g 48 336
+* g 48 592
+droid: 693 Astrophys 48 48
+* g 688 48
+* g 48 48
+droid: 820 Astrophys 688 240
+* g 496 240
+* g 496 176
+* g 688 176
+* g 688 240
+droid: 820 Astrophys 624 208
+* g 560 208
+* g 624 208
+droid: 693 Astrophys 688 272
+* g 400 272
+* g 688 272
+droid: 820 Astrophys 464 400
+* g 400 400
+* g 400 336
+* g 464 336
+* g 464 400
+droid: 820 Astrophys 592 368
+* w 70 0
+* g 592 432
+* w 40 0
+* g 592 368
+droid: 820 Astrophys 656 464
+* g 560 464
+* g 560 336
+* g 656 336
+* g 656 464
+droid: 693 Astrophys 112 528
+* g 688 528
+* g 112 528
+droid: 275 Astrophys 752 48
+* g 816 48
+* g 816 176
+* g 752 48
+droid: 693 Astrophys 944 240
+* g 752 240
+* g 752 432
+* g 944 432
+* g 944 240
+droid: 799 Astrophys 336 176
+droid: 108 Defense   48 208
+* w 100 0
+* g 48 48
+* w 100 0
+* g 48 208
+droid: 368 Defense   688 336
+* w 200 0
+* g 688 304
+* g 752 304
+* g 752 432
+* g 48 432
+* g 48 528
+* w 200 0
+* g 48 432
+* g 752 432
+* g 752 304
+* g 688 304
+* g 688 336
+droid: 489 Defense   80 48
+* g 240 48
+* g 208 80
+* g 112 80
+* g 80 48
+droid: 261 Defense   688 112
+* g 624 112
+* g 624 144
+* g 688 144
+* g 688 112
+droid: 355 Defense 272 208
+* w 200 0
+* g 272 144
+* g 400 144
+* g 464 176
+* g 528 176
+* g 528 208
+* w 200 0
+* g 528 176
+* g 432 176
+* g 336 144
+* g 272 144
+* g 272 208
+droid: 799 Defense 48 48
+droid: 693 Defense 272 496
+* w 200 0
+* g 48 496
+* g 272 496
+droid: 799 Defense 112 432
+droid: 693 Defense 560 528
+* g 752 528
+* g 560 528
+droid: 719 Defense 368 368
+droid: 513 Defense 432 304
+* w 40 0
+* g 432 336
+* g 592 336
+* w 100 0
+* g 432 336
+* g 432 304
+droid: 766 Defense 592 432
+droid: 820 Botany1 176 144
+* w 30 0
+* g 208 144
+* g 208 176
+* w 30 0
+* g 208 176
+* g 208 144
+* g 176 144
+droid: 820 Botany1 144 176
+* w 20 0
+* g 144 208
+* g 304 208
+* g 304 112
+* g 240 112
+* w 200 0
+* g 144 112
+* g 240 112
+* w 20 0
+* g 304 112
+* g 304 208
+* g 144 208
+* g 144 176
+droid: 693 Botany1 368 48
+* w 100 0
+* g 368 48
+droid: 693 Botany1 368 272
+* w 100 0
+* g 368 272
+droid: 693 Botany1 48 272
+* w 100 0
+* g 48 272
+droid: 693 Botany1 48 48
+* w 100 0
+* g 48 48
+droid: 820 Botany2 48 144
+* w 100 0
+* g 48 48
+* g 112 48
+* g 112 112
+* g 80 112
+* g 80 240
+* g 48 240
+* g 48 144
+droid: 820 Botany2 112 240
+* g 112 144
+* g 112 240
+droid: 820 Botany3 48 208
+* w 20 0
+* g 48 80
+* g 80 80
+* w 200 0
+* g 48 80
+* g 48 208
+droid: 820 Botany3 112 80
+* w 220 0
+* g 144 80
+* g 144 48
+* g 48 48
+* g 112 48
+* g 112 80
+droid: 176 Botany3 112 176
+* w 70 0
+* g 80 208
+* g 112 208
+* g 112 176
+droid: 820 Botany4 48 48
+* w 200 0
+* g 48 144
+* g 48 48
+droid: 820 Botany4 80 112
+* g 80 48
+* g 144 48
+* g 144 112
+* g 80 112
+droid: 693 Botany4 144 144
+* g 80 144
+* g 144 144
+droid: 899 Bridge 48 80
+* w 100 0
+* g 48 144
+* g 48 80
+droid: 949 Bridge 208 80
+droid: 933 Bridge 208 176

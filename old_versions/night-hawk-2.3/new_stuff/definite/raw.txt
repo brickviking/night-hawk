@@ -1,0 +1,608 @@
+File: /usr/local/src/night-hawk/new_stuff/definite/low_shields.8
+Testing float
+prec=0 endian=0 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=0
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=1
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=2
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=3
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=4
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=5
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=6
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=7
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=0
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=1
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=2
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=3
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=4
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=5
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=6
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=7
+finite: 11/11 maxmin: 0/11 smooth: nan
+evenMSBVote: 6 oddMSBVote: 5
+vote8: 11 vote16: 0
+8-bit
+sign: 0 unsign: 22
+unsigned
+stereo: 11 mono: 0
+stereo
+File: /usr/local/src/night-hawk/new_stuff/definite/low_shields.8
+Testing float
+prec=0 endian=0 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=0
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=1
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=2
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=3
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=4
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=5
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=6
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=7
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=0
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=1
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=2
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=3
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=4
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=5
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=6
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=7
+finite: 11/11 maxmin: 0/11 smooth: nan
+evenMSBVote: 6 oddMSBVote: 5
+vote8: 11 vote16: 0
+8-bit
+sign: 0 unsign: 22
+unsigned
+stereo: 11 mono: 0
+stereo
+File: /usr/local/src/night-hawk/new_stuff/definite/bananas.raw
+Testing float
+prec=0 endian=0 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=0
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=1
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=2
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=3
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=4
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=5
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=6
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=7
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=0
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=1
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=2
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=3
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=4
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=5
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=6
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=7
+finite: 11/11 maxmin: 0/11 smooth: nan
+evenMSBVote: 2 oddMSBVote: 9
+vote8: 11 vote16: 0
+8-bit
+sign: 0 unsign: 22
+unsigned
+stereo: 11 mono: 0
+stereo
+File: /usr/local/src/night-hawk/data/fx/explosion_1.8
+Testing float
+prec=0 endian=0 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=0
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=1
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=2
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=3
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=4
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=5
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=6
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=7
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=0
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=1
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=2
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=3
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=4
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=5
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=6
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=7
+finite: 11/11 maxmin: 0/11 smooth: nan
+Both appear random: 0.20, 0.20.
+Both appear random: 0.20, 0.20.
+Both appear random: 0.19, 0.19.
+Both appear random: 0.19, 0.19.
+Both appear random: 0.18, 0.18.
+Both appear random: 0.17, 0.17.
+Both appear random: 0.16, 0.16.
+evenMSBVote: 0 oddMSBVote: 11
+vote8: 4 vote16: 0
+8-bit
+sign: 0 unsign: 22
+unsigned
+stereo: 0 mono: 11
+redundant: 0.583728
+redundant: 0.593590
+redundant: 0.603452
+redundant: 0.605727
+redundant: 0.619382
+redundant: 0.615210
+redundant: 0.614072
+redundant: 0.606107
+redundant: 0.600797
+redundant: 0.594349
+redundant: 0.590176
+rstereo: 0 rmono: 11
+mono
+File: /usr/local/src/night-hawk/new_stuff/definite/bananas2.raw
+Testing float
+prec=0 endian=0 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=0
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=1
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=2
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=3
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=4
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=5
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=6
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=7
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=0
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=1
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=2
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=3
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=4
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=5
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=6
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=7
+finite: 11/11 maxmin: 0/11 smooth: nan
+Both appear random: 0.22, 0.22.
+Both appear random: 0.21, 0.21.
+Both appear random: 0.21, 0.21.
+Both appear random: 0.20, 0.20.
+Both appear random: 0.19, 0.19.
+Both appear random: 0.18, 0.18.
+Both appear random: 0.17, 0.17.
+Both appear random: 0.17, 0.17.
+Both appear random: 0.16, 0.16.
+Both appear random: 0.15, 0.15.
+evenMSBVote: 11 oddMSBVote: 0
+vote8: 1 vote16: 0
+8-bit
+sign: 0 unsign: 22
+unsigned
+stereo: 0 mono: 11
+redundant: 0.307544
+redundant: 0.310767
+redundant: 0.303675
+redundant: 0.304320
+redundant: 0.302386
+redundant: 0.301741
+redundant: 0.301741
+redundant: 0.295938
+redundant: 0.292714
+redundant: 0.290135
+redundant: 0.286267
+rstereo: 0 rmono: 11
+mono
+File: /usr/local/src/night-hawk/new_stuff/definite/bananas3.raw
+Testing float
+prec=0 endian=0 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=4
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=5
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=6
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=7
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=4
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=5
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=6
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=7
+finite: 0/11 maxmin: 0/11 smooth: nan
+Both appear random: 0.30, 0.30.
+Both appear random: 0.31, 0.31.
+Both appear random: 0.30, 0.30.
+Both appear random: 0.30, 0.29.
+Both appear random: 0.29, 0.29.
+Both appear random: 0.28, 0.28.
+Both appear random: 0.27, 0.27.
+Both appear random: 0.26, 0.26.
+Both appear random: 0.26, 0.26.
+Both appear random: 0.25, 0.25.
+Both appear random: 0.24, 0.24.
+evenMSBVote: 4 oddMSBVote: 7
+vote8: 0 vote16: 0
+16-bit
+sign: 0 unsign: 22
+unsigned
+stereoVotes: 0 monoVotes: 11
+rstereoVotes: 0 rmonoVotes: 11
+mono
+evenMSB: 0 BE: 0
+former: 0.000000 latter: 0.000000
+former: 0.000000 latter: 0.000000
+former: 0.000000 latter: 0.000000
+former: 0.000000 latter: 0.000000
+former: 0.000000 latter: 0.000000
+former: 0.000000 latter: 0.000000
+former: 0.000000 latter: 0.000000
+former: 0.000000 latter: 0.000000
+former: 0.000000 latter: 0.000000
+former: 0.000000 latter: 0.000000
+former: 0.000000 latter: 0.000000
+former (BE/LE): 11 latter (LE+/BE+): 0
+little endian
+no byte offset
+File: /usr/local/share/nighthawk/data/fx/explosion_1.8
+Testing float
+prec=0 endian=0 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=0
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=1
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=2
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=3
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=4
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=5
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=6
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=7
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=0
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=1
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=2
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=3
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=4
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=5
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=6
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=7
+finite: 11/11 maxmin: 0/11 smooth: nan
+evenMSBVote: 3 oddMSBVote: 8
+vote8: 11 vote16: 0
+8-bit
+sign: 0 unsign: 22
+unsigned
+stereo: 11 mono: 0
+stereo
+File: /usr/local/src/night-hawk/new_stuff/definite/explosion_1.raw
+Testing float
+prec=0 endian=0 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=1
+finite: 0/11 maxmin: 0/11 smooth: inf
+prec=0 endian=0 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=0
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=1
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=2
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=3
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=4
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=5
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=6
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=7
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=0
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=1
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=2
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=3
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=4
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=5
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=6
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=7
+finite: 11/11 maxmin: 0/11 smooth: nan
+Both appear random: 0.18, 0.18.
+Both appear random: 0.19, 0.19.
+Both appear random: 0.19, 0.19.
+Both appear random: 0.19, 0.19.
+Both appear random: 0.19, 0.19.
+Both appear random: 0.19, 0.19.
+Both appear random: 0.19, 0.19.
+Both appear random: 0.18, 0.18.
+Both appear random: 0.17, 0.17.
+Both appear random: 0.16, 0.16.
+Both appear random: 0.16, 0.16.
+evenMSBVote: 4 oddMSBVote: 7
+vote8: 0 vote16: 0
+16-bit
+sign: 0 unsign: 22
+unsigned
+stereoVotes: 0 monoVotes: 11
+rstereoVotes: 0 rmonoVotes: 11
+mono
+evenMSB: 0 BE: 0
+former: 0.000122 latter: 0.133087
+former: 0.000122 latter: 0.093994
+former: 0.000061 latter: 0.039154
+former: 0.000000 latter: 0.015625
+former: 0.000000 latter: 0.015625
+former: 0.000000 latter: 0.015625
+former: 0.000000 latter: 0.031281
+former: -0.000031 latter: 0.046906
+former: -0.000092 latter: 0.054749
+former: -0.000092 latter: 0.062561
+former: -0.000092 latter: 0.062561
+former (BE/LE): 11 latter (LE+/BE+): 0
+little endian
+no byte offset
+File: /usr/local/src/night-hawk/new_stuff/definite/explosion_1.raw
+Testing float
+prec=0 endian=0 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=0 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=0
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=1
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=2
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=0 endian=1 offset=3
+finite: 0/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=0
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=1
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=2
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=3
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=4
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=5
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=6
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=0 offset=7
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=0
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=1
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=2
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=3
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=4
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=5
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=6
+finite: 11/11 maxmin: 0/11 smooth: nan
+prec=1 endian=1 offset=7
+finite: 11/11 maxmin: 0/11 smooth: nan
+evenMSBVote: 6 oddMSBVote: 5
+vote8: 11 vote16: 0
+8-bit
+sign: 0 unsign: 22
+unsigned
+stereo: 11 mono: 0
+stereo

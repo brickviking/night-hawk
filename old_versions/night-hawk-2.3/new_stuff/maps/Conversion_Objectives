@@ -1,0 +1,9 @@
+First, understand what each number in the maps means... i.e. 33 means empty
+space, etc.
+Second, throw away or remap any numbers not present under NightHawk.
+Third, convert file into series of .f maps, one for each "level" or "area".
+Fourth, figure out how to choose droids to fill these areas.
+  .m files contain doors and elevator positions, as well as transport, power
+	bays, and consoles. Noise I haven't figured out yet. but it seems to be:
+	  noise_nr   vol  time_to_play
+	

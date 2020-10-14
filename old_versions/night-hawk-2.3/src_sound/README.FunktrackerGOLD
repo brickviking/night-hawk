@@ -1,0 +1,458 @@
+FunktrackerGOLD 1.5 Install      Copyright (C) 1994,96,98 Jason Nunn (JsNO)
+                                 FunktrackerGOLD now comes under the GNU
+                                 General Public License.
+                                 Darwin, Northern Territory, Australia
+---------------------------
+
+Well, i'm surprised that this distribution is still "alive and well". 
+People do actually use it!.
+
+In the original release, i didn't supply an email address, and never got
+any feedback about 1.0. Nearly 2 years elapsed before i decided to make
+audio mixing pre-emptive (threaded)- hence 1.1.
+
+I'm also very surprised that this tracker is still the only tracker to
+exist for unix. I would have thought that somebody would have written a
+MOD, XM and IT tracker by now. I did hear of somebody developing a
+xwindows MOD editor (i think i even talked to the guy heading it at one
+time, even before funktrackergold was thought of), but nothing became of
+it. This has also made me "put off" developing funktrackergold any
+further.
+
+Now that I know people do use it, I have done some small improvements, and
+fixed some bugs. It now has colour, so it will be more pleasant to use.
+Keys have been simpified, and i have improved the manual. Read the "What's
+new" for information about changes.
+
+Happy tracking.
+
+:Jason Nunn
+Friday 13th Feb, 1998
+
+------------------------------------------------------------------------
+How to Make
+-----------
+
+You will find that Funktrackergold is one of the easier distributions to
+compile. It uses very common system functions. You shouldn't experience
+problems compiling, unless your system/setup is brain damaged.  The area
+people fall into is not having an up-to-date copy of the curses libraries. 
+See as follows: 
+
+- You need to get hold of the pthreads libraries (0.7 or better) and
+curses (1.9.9e or better) libraries if you don't already have them. Do a
+search on the web for it- "pthreads". The guy who maintains the pthreads
+libraries for Linux is Xavier.Leroy@inria.fr. The curses libraries can be
+obtained off sunsite.  Look in the /pub/Linux/develop/stackware?? path or
+somewhere like that, or do a search for it on the web.
+
+- Read the options.h file. Most of the stuff you can leave alone, but if
+you want to change the keys, then you can modify the key assignments in
+this file.
+
+Users with keyboard layouts other than Jason's (where SHIFT-2 is '@') 
+might want to change the keys defined in options.h too.  If you got a
+'scandinavian' keyboard, you could just add -DSCANDINAVIAN_KBD to options
+in Makefile and 'make clean; make'.  Besides changing the sequence editor
+key, this will change octave changing to ',' and '.' keys and pattern /
+sample changing to '/', '*', '-' and '+' keys (use the keypad!).  ++Eero
+
+(NB/ re-making the entire program over and over again with different 
+settings may take ages.. so i've taken the initiative of putting the
+options.h stuff in the command line (do a 'funkgold -h' for more 
+details). So, simply play with the settings at the command line level, 
+and when you have a perfect set of options that make FunktrackerGOLD run 
+beautifully on your machine, put them in your 'options.h' and recompile 
+to make them default.)
+
+d) type in "make clean; make". Output should be nice and clean as follows:
+
+
+-) Run "funkgold" or "funkgold -h" if you want command line help.
+
+
+Attention None Intel people
+---------------------------
+
+If you're using an Intel based PC (ie 386, 486, Pentium, PPro,PII etc),
+then ignore this message. If not, then read on..
+
+Because the ordinal fields in the funk file are in intel x86 byte sex
+(LSF), anyone running this on something else (ie, a SUN, SGI, DEC) will
+find that it will go hay wire (i can only guess what it will do?), so, at
+the moment, you can only use this on an intel based machine. 
+
+NB/ If you are a bit of a programmer, and you are running linux on your
+DEC ALPHA, SUN box, or SGI machine etc, then maybe you could go through
+the "funkload.c" and "funkgold_misc.c" files, and ammend all the routines
+that load, save, modify FNK and MOD files so that it converts all the
+words and doubles to your machines sex etc, and maybe send me a patch. I
+would do this, but i don't have your machine type. 
+
+
+------------------------------------------------------------------------
+Contact
+-------
+
+- My current email addresses are:
+
+       jsno@arafura.net.au
+
+
+- Read http://jsno.arafuraconnect.com.au/proj_linux/funk.html for further updates on
+FunktrackerGOLD.
+
+- Snail:
+
+     Jason Nunn
+     32 Rothdale Rd
+     Moil NT 0810
+     Australia
+
+This snailmail address may no longer be current by the time you read this, so
+- email me if you really want to know.
+If you can, drop me a line and tell me what you think. I love feedback on
+distributions i author.
+
+
+
+------------------------------------------------------------------------
+Contributors & Acknowledgements
+-------------------------------
+
+FreeBSD port................Brian Nielsen <norman@iesd.auc.dk>
+Interface Enhancement.......Michael.Will@student.uni-tuebingen.de
+"...........................Stephane DUBON <twinsen@etca.fr>
+Scandinavian patch..........Eero Tammerin <t150315@students.cc.tut.fi>
+
+General Support.............eric <eric@CS.Princeton.EDU>
+
+
+------------------------------------------------------------------------
+Manual
+------
+
+A little Funktracker History..
+
+The whole "Funktracker" thing started out in July 94 (this was back when i
+used to write PC demos). I had just learnt protected mode assembly
+programming, and i had no p-mode music code to use with my new demos... so
+i looked around for an editor with source code.  After about 2 weeks
+looking around, and asking people, I was sure there existed no such
+tracker. The only ones i could see were in "closed" (no source code) 
+projects like ST3 and MTM. So, I then went to work writing the brand new
+module format using Adam Seychells DOS32 Protected Mode extender.
+
+The DOS32 editor was great for what it was intended for. I have used
+Funktracker for two demos to date- The Music Contest 3 demo (April 95),
+and my last demo before leaving the demo scene- From Real 2 SuperReal (Jan
+96).
+
+The specification itself allowed for both 8 and 16 bit samples, with
+multichannel editing and playback, yet the DOS32 editor would only allow
+you to create 8 channel, 8 bit modules. As i encompassed the format around
+the PAS16 and SB16 cards, i wanted demos to run as fast as possible using
+this playback code. So, 8 channels, become fixed for efficiency reasons. 
+
+With the transferring over to Linux, The DOS32 Funktracker project is in
+limbo right now. I don't intend to update it.
+
+
+
+Instructions for Use
+--------------------
+
+Even though this manual is a 100% improvement over information provided in
+1.0 and 1.1, it is still very concise. The reason why i'm not bothering to
+make a detailed manual is because most users of this distribution already
+have a background with MOD and 669 formats, and there is alot of good
+documentation of modules and trackers on the net (ftp.cdrom.com/
+pub/demos/music) for people who are not. What follows is a very brief
+guide, and assumes you have a basic knowledge/aptitude of trackers. To
+suppliment this, please read the FORMAT.FunktrackerGOLD file as well.
+
+
+The Root Menu
+-------------
+
+When "funkgold" is run, the root menu is displayed. The menu items are as
+follows:
+
+"NEW SONG"- Create a new song.
+
+"LOAD SONG"- Load a file from the fs.
+
+"SET SNG DIR"- This allows you to set the song directory prior
+to loading it.
+
+"OPTIMISE"- It will make the module as small as possible by removing any
+unused patterns/samples and tracks.
+
+"CHG TRCKS"- Allows you to add more tracks, or to remove tracks from a
+module.  Tracks for both the above functions are added/deducted on the
+right side.
+
+"08bit -> 16"- Allows you to convert 8 bit modules to 16 bit modules and
+
+"16bit -> 08" allows you to convert 8 bit to 16 bit modules.
+
+All these functions will save the new song will a "*", so that you can
+always revert back to a prevously converted/washed module.
+
+"QUIT"- Exit editor.
+
+
+Loading a song and playing a song
+---------------------------------
+
+ - Goto the "LOAD MENU" item, and hit enter.
+
+ - A file selection screen should then appear. Select song with sticky bar
+   (select either *.Funk or *.fnk, they are the same thing), and press
+   ENTER. the Song should then load.
+
+   (NB/ with the file loader, you can also rename files. See instructions
+   on the screen)
+
+ - The "Sample Editor" will a appear, displaying sample information about
+   the song. You can press either 'O' or 'P' to play the song. 'O' plays
+   the song from the very start. 'P' plays the song from the current
+   sequence number that you have highlighted in the "Sequence Editor" (see
+   later)
+
+ - Once the song is playing, you can toggle the type of display by hitting
+   the SPACE key. I'll let you have a play with this yourself to see what
+   you can get.
+
+ - press any other key to stop playing the song.
+
+
+
+Creating a new song
+-------------------
+
+ - In the root menu, select the "NEW SONG" item and hit enter.
+
+ - To the right, information will pop up asking you the characteristics of
+   your new module. 
+
+   - "Name:" is the name of the new song. Hit enter to change this name.
+     Omit the extension (ie ".fnk" or ".Funk"), it will put it in for you.
+
+   - "Precision:"- selected whether you want a 8 bit module (with 8 bit
+     samples), or a 16 bit module (for 16 bit samples). hit ENTER to
+     toggle between these settings.
+
+   - "Channels:"- Sets the number of channels your module will have. Use
+      the left and right arrow keys to change.
+
+ - Go down to the "OK" selection, hit enter. The sample editor for the new
+   song will appear.
+
+
+Editing a song
+--------------
+
+- General keys
+
+  SHIFT-'q'- Quit out of something
+
+  SHIFT-'1'- Goto Sample Editor
+  SHIFT-'2'- Goto Sequence Editor
+  SHIFT-'3'- Goto Pattern Editor
+
+  Nb/ The editor has three parts- The Sample editor, the Sequence Editor,
+  and the Sample Editor. The Sample Editor allows you to add, delete,
+  twig and play samples in the module. The Pattern Editor allows you to
+  edit patterns, and the Sequence Editor allows you to "sequence" patterns
+  in the Order list, so that patterns can be played.
+
+
+  SHIFT-'s'- Save the song in Funktracker format
+  SHIFT-'a'- Save the song in Protracker/Fasttracker format
+
+  Nb/ The MOD conversion (when it's being saved) is as rough as gutts.
+  This is due to the differences in how Protracker and Funktracker work.
+
+
+- key note layout:
+
+C    C#   D    D#   E        F    F#   G    G#   A    A#   B
+|    |    |    |    |        |    |    |    |    |    |    |
+
+     s         d                  g         h         j
+z         x         c        v         b         n         m
+
+';'  - Decrease Octave of key notes
+'''  - Increase Octave of key notes
+
+You can use these keys in the Pattern and Sample editor.
+
+
+The Sample Editor
+-----------------
+
+If you're not already there, then Hit SHIFT-'1'.
+
+Here you can load, delete and test samples. Following describes how to
+load a new sample: 
+
+
+Loading a sample
+----------------
+
+- Hit SPACE bar. As you saw when loading a song, the file selector will
+appear. Select a sample the same way you would select a song (*.wav,*.raw
+or *.snd file). You can also play samples before loading them by using the
+keyboard keys, and rename them. Refer to the instructions on screen. 
+
+- Once ENTER is hit, a resampling box will appear. This allows you to
+resample the sample to be loaded. A value less than 1.000000 will make the
+sample smaller, a value greater than 1 will make it bigger. Once you have
+selected the resample value, hit enter, and the sample will load. 
+
+The sample editor table may need explaining. Follows are descriptions of
+each column.
+
+No          : Sample Number. Information only. Samples will range from 00
+              to 3F (63).
+
+Sample Name : Sample Name
+
+Length      : Length of sample in units (not bytes)
+
+Start       : Start of sample loopback.  If this value is FFFFFFFF, then
+              sample won't loop. The channel will stop playing the sample
+              when it reaches the end of the samples. If it is anything
+              other than FFFFFFFF, the channel will loopback to this point
+              in the sample when it has reached the end of the sample.
+
+
+Vl          : volume of the sample (00 - FF (255)
+
+
+Bl          : Sample balance 00 (right) to 80 (middle) to FF(left)
+
+
+Port        : Portamento type- Curved (Amiga MOD) porting, or Linear (669)
+              porting. (used by commands Axx, Bxx, Cxx etc)
+
+S           : Used by Command Mxx to calculate Sample offset. See the
+              FORMAT.FunktrackerGOLD file for a detailed explaination on
+              this.
+
+Vib         : Changes the Vibrato waveform (used by Command's Dxx,Exx &
+              Fxx etc)
+
+Trm         : Changes the Tremolo waveform (used by Command Kxx)
+
+
+R           : Number of Retrigs. Sets the number of times Command ODx will
+              retrig a sample.
+
+A           : Sets the Arpeggio Speed (Command Lxx) for the sample.
+
+
+You can change these values by hitting ENTER. You can delete and insert
+sample entries by using the SHIFT-D and SHIFT-I keys respectively. 
+
+
+
+The Pattern Editor
+------------------
+
+The pattern editor allows you to edit any of the 128 patterns of a song. 
+Pressing SHIFT-'3' will take you to the pattern editor. I recommend you
+load a song up a few songs and examine some patterns to see what they look
+like. Refer to the FORMAT.FunktrackerGOLD for descriptions for Full, Null,
+Sample Only, and RLO slots.
+
+
+- For "Full Slots", use these keys:
+
+C    C#   D    D#   E        F    F#   G    G#   A    A#   B
+|    |    |    |    |        |    |    |    |    |    |    |
+
+     s         d                  g         h         j
+z         x         c        v         b         n         m
+
+      (Nb/ ';' & ''' to change octave)
+
+- Use the SPACE key to rewrite current slot with a "Null Slot".
+
+- '[' edits the sample number of a slot. Entering a sample number in a
+  blank slot will produce a "Sample Only Slot".
+
+- '`' enters a RLO slot.
+
+- SHIFT-'d' will delete slot in a channel
+
+- SHIFT-'i' will insert a blank slot in a channel
+
+- SHIFT-'g' will set the pattern break to the current pattern position.
+
+- SHIFT-'t' toggles the channel on/off (for playback purposes)..
+
+- '-' & '=' changes the current pattern
+
+- ';' & ''' changes the current octave (as described)
+
+- ',' & '.' changes the current sample number that will be used when
+  entering Full Slots.
+
+- Copying procedures as follows:
+  
+  - Press SHIFT-'b' to set the begining of a block to be marked.
+  - Then press SHIFT-'e' to set the end of the block to be marked.
+
+  Once a block has been marked, it will be highlighted. You can now
+  either copy the block or delete it:
+
+  - SHIFT-'z' will delete the currently marked block
+  - SHIFT-'c' will copy the currently marked block
+
+  If marked block has been copied, you can then use:
+
+  - SHIFT-'v' to paste a copied block
+
+
+- SHIFT-'m' activates the user command helper. This is used to help you
+  enter slot command effects.
+
+- SHIFT-'j' allows you to jump straight to a pattern. A small box will
+  appear prompting you to type in the pattern number you wish to jump to.
+
+
+The Sequence Editor
+-------------------
+
+SHIFT-'2' will take you to the Sequence Editor. The sequence editor allow
+you to arrange patterns in a given playing order:
+
+Sequence No   Pattern No
+00            0A
+01            01
+02            04
+03            0A
+04            02
+
+
+- Use '[' to enter/change a pattern number in the current sequence entry
+
+- SHIFT-'d' will delete a pattern number in the sequence table
+
+- SHIFT-'i' will insert a pattern number in the sequence table
+
+- SHIFT-'g' sets the loop back point. This is the point where playback
+  will jump back too when it reaches the end of the table. An '*' next to
+  the sequence number indicates the loopback point.
+
+- SHIFT-'n' sets the loopback point to FF, which switches off sequence
+  looping. The same thing can be achieved by scrolling down to sequence
+  FF and hitting ENTER.
+
+- SHIFT-'t' allows you to change the BPM (beats per minute) rate
+
+
+
+                                 ooo0ooo
