@@ -1,33 +1,34 @@
 
 # Table of Contents
 
-1.  [Problems with ned4](#org8502fbe)
-    1.  [Failure saving file when directory doesn't exist](#orgd4f23b7)
-    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#orgf126767)
-    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#org2e86b59)
-    4.  [Missing help screen (never coded)](#org6feac1d)
-    5.  [No protection against level already being present](#org7de9ef2)
-2.  [Things that work with ned4](#org50c18c6)
-    1.  [loading files from disk works](#org055cdce)
-    2.  [placing floor tiles works (anything selectable from the palette)](#orgd47bf23)
-    3.  [the b (blank) key works, toggles palette and splash text](#org5cf5ad8)
-    4.  [save file works](#org890c792)
-3.  [nighthawk4 issues](#org122755a)
-    1.  [Some sound issues](#org8e663fd)
-        1.  [Sound for `6xx/7xx/8xx_voice` plays too high for 11025, sounds more like 14,000.](#orgbeedba4)
-        2.  [Sound isn't multi-threaded?](#org47c3592)
-    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#org5286ed5)
-4.  [Stuff that works with nighthawk](#org34ca329)
-    1.  [Fleet support](#org7c0d538)
+1.  [Problems with ned4](#org8ec7c3e)
+    1.  [Failure saving file when directory doesn't exist](#orge47712e)
+    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#org269023b)
+    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#orgcdf0e5e)
+    4.  [Missing help screen (never coded)](#org0af3fe9)
+    5.  [No protection against level already being present](#orga1511d5)
+2.  [Things that work with ned4](#org57cf8f6)
+    1.  [loading files from disk works](#org50ea2d8)
+    2.  [placing floor tiles works (anything selectable from the palette)](#org101a8bb)
+    3.  [the b (blank) key works, toggles palette and splash text](#org336765c)
+    4.  [save file works](#org40bfa7f)
+3.  [nighthawk4 issues](#org310cb5e)
+    1.  [Some sound issues](#org1270a2a)
+        1.  [Sound for `6xx/7xx/8xx_voice` plays too high for 11025, sounds more like 14,000.](#org619379e)
+        2.  [Sound isn't multi-threaded?](#org48971a6)
+    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#orgf62e7fc)
+    3.  [Graphics don't render in centre of maximized/fullscreen](#orgc72ce60)
+4.  [Stuff that works with nighthawk](#org7a951c9)
+    1.  [Fleet support](#orgb5e8ad1)
 
 
 
-<a id="org8502fbe"></a>
+<a id="org8ec7c3e"></a>
 
 # Problems with ned4
 
 
-<a id="orgd4f23b7"></a>
+<a id="orge47712e"></a>
 
 ## Failure saving file when directory doesn't exist
 
@@ -62,7 +63,7 @@
 -   Creating the directory before running ned allows the file to be saved.
 
 
-<a id="orgf126767"></a>
+<a id="org269023b"></a>
 
 ## ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added
 
@@ -72,21 +73,21 @@
     -   Should the doors be removed from placeable tiles in ned?
 
 
-<a id="org2e86b59"></a>
+<a id="orgcdf0e5e"></a>
 
 ## ned4 doesn't seem to use the mouse, even though a pointer is visible
 
 Only keyboard commands seem to be able to be used (Space, Enter, Save, Quit). Probably works as intended.
 
 
-<a id="org6feac1d"></a>
+<a id="org0af3fe9"></a>
 
 ## Missing help screen (never coded)
 
 This could use the same code as for nighthawk's pause mode
 
 
-<a id="org7de9ef2"></a>
+<a id="orga1511d5"></a>
 
 ## No protection against level already being present
 
@@ -94,55 +95,55 @@ I can create a level, save it, quit the program, and create that level again. If
 This may work as intended, but there's no "Are you sure" confirmation prompt.
 
 
-<a id="org50c18c6"></a>
+<a id="org57cf8f6"></a>
 
 # Things that work with ned4
 
 
-<a id="org055cdce"></a>
+<a id="org50ea2d8"></a>
 
 ## loading files from disk works
 
 -   If level was saved using previous version of ned, doors and power chargers display only as black squares, because those are active sprites, so don't get loaded as tiles by ned4 [worksasimplemented]
 
 
-<a id="orgd47bf23"></a>
+<a id="org101a8bb"></a>
 
 ## placing floor tiles works (anything selectable from the palette)
 
 I shouldn't be able to place doors, but they're in the tiles.
 
 
-<a id="org5cf5ad8"></a>
+<a id="org336765c"></a>
 
 ## the b (blank) key works, toggles palette and splash text
 
 
-<a id="org890c792"></a>
+<a id="org40bfa7f"></a>
 
 ## save file works
 
 -   need to create directory **first**, or ned4 bombs
 
 
-<a id="org122755a"></a>
+<a id="org310cb5e"></a>
 
 # nighthawk4 issues
 
 
-<a id="org8e663fd"></a>
+<a id="org1270a2a"></a>
 
 ## Some sound issues
 
 
-<a id="orgbeedba4"></a>
+<a id="org619379e"></a>
 
 ### Sound for `6xx/7xx/8xx_voice` plays too high for 11025, sounds more like 14,000.
 
 I'm rather wondering whether the sound was recorded at 8,000 and played back at 11025?
 
 
-<a id="org47c3592"></a>
+<a id="org48971a6"></a>
 
 ### Sound isn't multi-threaded?
 
@@ -157,17 +158,25 @@ I'm rather wondering whether the sound was recorded at 8,000 and played back at 
     It's weird to hear "Disarm and disengage" when the droid's no longer around.
 
 
-<a id="org5286ed5"></a>
+<a id="orgf62e7fc"></a>
 
 ## TODO Fleet comment rendered too wide. Max length is 12 chars??
 
 
-<a id="org34ca329"></a>
+<a id="orgc72ce60"></a>
+
+## Graphics don't render in centre of maximized/fullscreen
+
+[Issue 11](<https://github.com/brickviking/night-hawk/issues/11>) the TL;DR is, viewport is tied
+to bottom left of window, even if viewport doesn't fill the window.
+
+
+<a id="org7a951c9"></a>
 
 # Stuff that works with nighthawk
 
 
-<a id="org7c0d538"></a>
+<a id="orgb5e8ad1"></a>
 
 ## Fleet support
 
