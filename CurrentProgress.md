@@ -1,42 +1,42 @@
 
 # Table of Contents
 
-1.  [Problems with ned4](#org123c781)
-    1.  [Failure saving file when directory doesn't exist](#org0e19c13)
-    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#org1b336b1)
-    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#org5333179)
-    4.  [Missing help screen (never coded)](#org9166e60)
-    5.  [No protection against level already being present](#orgdad7053)
-2.  [Things that work with ned4](#org9c38481)
-    1.  [loading files from disk works](#orga3fb4b4)
-    2.  [placing floor tiles works (anything selectable from the palette)](#orgedd5c11)
-    3.  [the b (blank) key works, toggles palette and splash text](#orgcac9698)
-    4.  [save file works](#orgd0601f3)
-3.  [nighthawk4 issues](#org30a2139)
-    1.  [Some sound issues](#org445649b)
-        1.  [Sound for `6xx/7xx/8xx_voice` plays too high for 11025, sounds more like 14,000.](#orgeaa467a)
-        2.  [Sound isn't multi-threaded?](#orgdbdee85)
-    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#orgdb4dc94)
-    3.  [Graphics don't render in centre of maximized/fullscreen](#org9b5270a)
-4.  [Stuff that works with nighthawk](#org33a2941)
-    1.  [Fleet support](#org006ec8e)
-5.  [Stuff I tried](#org7cf8686)
-    1.  [Changed `WINDOW_SCREEN_X/Y` and `SCREEN_SIZE_X/Y`](#org95ffe70)
-        1.  [The aspect ratio is off with the new figures for both Nighthawk and Ned.](#org67aa85d)
-    2.  [Doors have this strange "pulling" effect](#org180e9e9)
-    3.  [Several droid beats are going to have to be realigned for Haldeck](#org4bb5829)
-    4.  [If I switch away from game while static plays, static continues playing](#org705c28b)
-    5.  [I should work on `eric_mouse.png`](#org1928ac7)
-    6.  [I want to put the `M_SCR` logo to the left of the score.](#org081f132)
+1.  [Problems with ned4](#org829e71d)
+    1.  [Failure saving file when directory doesn't exist](#org63c4497)
+    2.  [ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added](#org85be6c0)
+    3.  [ned4 doesn't seem to use the mouse, even though a pointer is visible](#orga559d53)
+    4.  [Missing help screen (never coded)](#org1d26c62)
+    5.  [No protection against level already being present](#org71336fd)
+2.  [Things that work with ned4](#orge9bf8d7)
+    1.  [loading files from disk works](#org9fb524b)
+    2.  [placing floor tiles works (anything selectable from the palette)](#orge1c2741)
+    3.  [the b (blank) key works, toggles palette and splash text](#org7fa8160)
+    4.  [save file works](#org7dac5d7)
+3.  [nighthawk4 issues](#orgc9c9c43)
+    1.  [Some sound issues](#orgdaf7eb3)
+        1.  [Sound for `6xx/7xx/8xx_voice` plays too high for 11025, sounds more like 14,000.](#orgbd0a72e)
+        2.  [Sound isn't multi-threaded?](#org1978208)
+    2.  [Fleet comment rendered too wide. Max length is 12 chars??](#orgd1b3621)
+    3.  [Graphics don't render in centre of maximized/fullscreen](#orgd372ba2)
+    4.  [Doors have this strange "pulling" effect](#orgf82bf6d)
+    5.  [Several droid beats are going to have to be realigned for Haldeck](#orgcfaaf9f)
+    6.  [If I switch away from game while static plays, static continues playing](#org33412b7)
+4.  [Stuff that works with nighthawk](#org1f09eb0)
+    1.  [Fleet support](#orgd17933e)
+5.  [Stuff I tried](#orgf6dec1e)
+    1.  [Changed `WINDOW_SCREEN_X/Y` and `SCREEN_SIZE_X/Y`](#org7f4ffa4)
+        1.  [The aspect ratio is off with the new figures for both Nighthawk and Ned.](#org5c3db39)
+    2.  [I should work on `eric_mouse.png`](#org21ceee1)
+    3.  [I want to put the `M_SCR` logo to the left of the score.](#org8ae0b4e)
 
 
 
-<a id="org123c781"></a>
+<a id="org829e71d"></a>
 
 # Problems with ned4
 
 
-<a id="org0e19c13"></a>
+<a id="org63c4497"></a>
 
 ## Failure saving file when directory doesn't exist
 
@@ -71,7 +71,7 @@
 -   Creating the directory before running ned allows the file to be saved.
 
 
-<a id="org1b336b1"></a>
+<a id="org85be6c0"></a>
 
 ## ned4 shows black squares in the place of active tiles when loading old maps, but not newly created ones with static door tiles added
 
@@ -81,21 +81,21 @@
     -   Should the doors be removed from placeable tiles in ned?
 
 
-<a id="org5333179"></a>
+<a id="orga559d53"></a>
 
 ## ned4 doesn't seem to use the mouse, even though a pointer is visible
 
 Only keyboard commands seem to be able to be used (Space, Enter, Save, Quit). Probably works as intended.
 
 
-<a id="org9166e60"></a>
+<a id="org1d26c62"></a>
 
 ## Missing help screen (never coded)
 
 This could use the same code as for nighthawk's pause mode
 
 
-<a id="orgdad7053"></a>
+<a id="org71336fd"></a>
 
 ## No protection against level already being present
 
@@ -103,55 +103,55 @@ I can create a level, save it, quit the program, and create that level again. If
 This may work as intended, but there's no "Are you sure" confirmation prompt.
 
 
-<a id="org9c38481"></a>
+<a id="orge9bf8d7"></a>
 
 # Things that work with ned4
 
 
-<a id="orga3fb4b4"></a>
+<a id="org9fb524b"></a>
 
 ## loading files from disk works
 
 -   If level was saved using previous version of ned, doors and power chargers display only as black squares, because those are active sprites, so don't get loaded as tiles by ned4 [worksasimplemented]
 
 
-<a id="orgedd5c11"></a>
+<a id="orge1c2741"></a>
 
 ## placing floor tiles works (anything selectable from the palette)
 
 I shouldn't be able to place doors, but they're in the tiles.
 
 
-<a id="orgcac9698"></a>
+<a id="org7fa8160"></a>
 
 ## the b (blank) key works, toggles palette and splash text
 
 
-<a id="orgd0601f3"></a>
+<a id="org7dac5d7"></a>
 
 ## save file works
 
 -   need to create directory **first**, or ned4 bombs
 
 
-<a id="org30a2139"></a>
+<a id="orgc9c9c43"></a>
 
 # nighthawk4 issues
 
 
-<a id="org445649b"></a>
+<a id="orgdaf7eb3"></a>
 
 ## Some sound issues
 
 
-<a id="orgeaa467a"></a>
+<a id="orgbd0a72e"></a>
 
 ### Sound for `6xx/7xx/8xx_voice` plays too high for 11025, sounds more like 14,000.
 
 I'm rather wondering whether the sound was recorded at 8,000 and played back at 11025?
 
 
-<a id="orgdbdee85"></a>
+<a id="org1978208"></a>
 
 ### Sound isn't multi-threaded?
 
@@ -166,12 +166,12 @@ I'm rather wondering whether the sound was recorded at 8,000 and played back at 
     It's weird to hear "Disarm and disengage" when the droid's no longer around.
 
 
-<a id="orgdb4dc94"></a>
+<a id="orgd1b3621"></a>
 
 ## TODO Fleet comment rendered too wide. Max length is 12 chars??
 
 
-<a id="org9b5270a"></a>
+<a id="orgd372ba2"></a>
 
 ## Graphics don't render in centre of maximized/fullscreen
 
@@ -179,27 +179,51 @@ I'm rather wondering whether the sound was recorded at 8,000 and played back at 
 to bottom left of window, even if viewport doesn't fill the window.
 
 
-<a id="org33a2941"></a>
+<a id="orgf82bf6d"></a>
+
+## Doors have this strange "pulling" effect
+
+-   If me (002) is next to a door, as it opens, it centres me on the door so I can go through.
+-   The effect seems to be quite wide, and seems to happen if any part of the collision box for the
+    droid collides with the collision box for the door.
+
+
+<a id="orgcfaaf9f"></a>
+
+## Several droid beats are going to have to be realigned for Haldeck
+
+-   Lots of droids are banging into each other on Cargo (606E/423, 606W/108, 355/108)
+-   Analyse all beats (perhaps pretty graphic here would do)
+
+
+<a id="org33412b7"></a>
+
+## If I switch away from game while static plays, static continues playing
+
+All other sounds I've tried don't seem to have this glitch.
+
+
+<a id="org1f09eb0"></a>
 
 # Stuff that works with nighthawk
 
 
-<a id="org006ec8e"></a>
+<a id="orgd17933e"></a>
 
 ## Fleet support
 
 
-<a id="org7cf8686"></a>
+<a id="orgf6dec1e"></a>
 
 # Stuff I tried
 
 
-<a id="org95ffe70"></a>
+<a id="org7f4ffa4"></a>
 
 ## Changed `WINDOW_SCREEN_X/Y` and `SCREEN_SIZE_X/Y`
 
 
-<a id="org67aa85d"></a>
+<a id="org5c3db39"></a>
 
 ### The aspect ratio is off with the new figures for both Nighthawk and Ned.
 
@@ -222,31 +246,7 @@ to normal aspect ratio.
 -   At least for xmonad's "monocle" view, the game doesn't get a choice of what size it thinks it is.
 
 
-<a id="org180e9e9"></a>
-
-## Doors have this strange "pulling" effect
-
--   If me (002) is next to a door, as it opens, it centres me on the door so I can go through.
--   The effect seems to be quite wide, and seems to happen if any part of the collision box for the
-    droid collides with the collision box for the door.
-
-
-<a id="org4bb5829"></a>
-
-## Several droid beats are going to have to be realigned for Haldeck
-
--   Lots of droids are banging into each other on Cargo (606E/423, 606W/108, 355/108)
--   Analyse all beats (perhaps pretty graphic here would do)
-
-
-<a id="org705c28b"></a>
-
-## If I switch away from game while static plays, static continues playing
-
-All other sounds I've tried don't seem to have this glitch.
-
-
-<a id="org1928ac7"></a>
+<a id="org21ceee1"></a>
 
 ## DONE I should work on `eric_mouse.png`
 
@@ -255,7 +255,7 @@ All other sounds I've tried don't seem to have this glitch.
     from the font itself, makes the job much easier.
 
 
-<a id="org081f132"></a>
+<a id="org8ae0b4e"></a>
 
 ## DONE I want to put the `M_SCR` logo to the left of the score.
 
