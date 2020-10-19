@@ -1,0 +1,333 @@
+type: Battle Cruiser
+floor: Bridge
+floor: Gunnery1
+floor: Gunnery2
+floor: Gunnery3
+floor: Cargo
+floor: Hull
+floor: Dock
+floor: Engineering
+transport: Bridge     144    7   880  176 0
+transport: Gunnery3   144   25   1584 176 0
+transport: Hull       144   41   1840 240 5
+transport: Cargo      144   59   1840 176 5
+transport: Gunnery3    42   24   112  208 1
+transport: Hull        42   41  368   112 1
+transport: Hull       217   40   2288 272 2
+transport: Dock       217   24   48   112 2
+transport: Gunnery2   217   59   112  112 2
+transport: Cargo       96   57   1040 240 3
+transport: Engineering 96   74   912  144 3
+transport: Engineering 44   74    80 208  4
+transport: Gunnery1    44   90    80  48  4
+init: Dock 48 112
+droid: 606 Dock 48 48
+* w 100 0
+* g 208 48
+* g 208 144
+* g 208 48
+* g 48 48
+droid: 275 Dock 48 144
+* g 208 144
+* g 48 144
+droid: 275 Hull 48 48
+* w 450 0
+* g 48  304
+* g 112 304
+* g 112 368
+* w 300 0
+* g 112 304
+* g 48  304
+* g 48  48
+droid: 693 Gunnery1 144 48
+* w 100 0
+* g 144 48
+droid: 805 Gunnery1 240 80
+* g 272 80
+* g 240 80
+droid: 368 Gunnery2 208 208
+* w 100 0
+* g 208 48
+* g 48 48
+* g 48 208
+* g 112 208
+* g 112 144
+* g 112 208
+* g 48  208
+* g 48 48
+* g 272 48
+* w 10 0
+* g 272 144
+* g 208 144
+* g 208 208
+droid: 820 Gunnery2 240 144
+* w 100 0
+* g 240 144
+droid: 691 Gunnery2 176 80
+* g 176 208
+* g 176 80
+droid: 799 Hull 1008 336
+droid: 520 Hull 1168 144
+* g 1072 144
+* g 1168 144
+droid: 693 Hull 1168 208
+* g 1072 208
+* w 20 0
+* g 1168 208
+droid: 368 Hull 2000 176
+* w 300 0
+* g 2000 112
+* g 2160 112
+* g 2160 272
+* g 1904 272
+* g 1904 432
+* g 1840 432
+* g 1840 48
+* g 1776 48
+* g 1680 144
+* g 1680 432
+* g 48 432
+* w 500 0
+* g 1776 432
+* g 1776 48
+* g 1840 48
+* g 1840 432
+* g 1904 432
+* g 1904 48
+* g 2160 48
+* g 2352 144
+* g 2352 368
+* g 2192 368
+* g 2192 112
+* g 2000 112
+* g 2000 176
+droid: 820 Hull 1552 336
+* w 100 0
+* g 1456 336
+* w 40 0
+* g 1456 208
+* g 1392 208
+* g 1392 368
+* g 1552 368
+* g 1552 336
+droid: 606 Hull 1360 80
+* g 1456 80
+* g 1360 80
+droid: 489 Hull 2512 432
+* g 1904 432
+* g 1904 48
+* g 2192 48
+* g 2192 432
+* w 1000 0
+* g 2512 432
+droid: 176 Hull 2384 80
+* w 25 0
+* g 2224 80
+* w 50 0
+* g 2320 144
+* w 50 0
+* g 2384 80
+droid: 693 Hull 1072 336
+* w 25 0
+* g 1072 400
+* w 25 0
+* g 1072 336
+droid: 606 Hull 1712 176
+* w 100 0
+* g 1712 176
+droid: 691 Hull 1616 112
+* w 100 0
+* g 1616 48
+* g 1520 144
+* g 1616 112
+droid: 606 Hull 2384 368
+* w 200 0
+* g 2192 368
+* g 2384 368
+droid: 693 Hull 112 144
+* w 100 0
+* g 112 240
+* g 112 144
+droid: 693 Hull 336 304
+* w 100 0
+* g 432 368
+* g 464 368
+* w 100 0
+* g 560 368
+* w 100 0
+* g 336 368
+* g 336 304
+droid: 467 Hull 816 240
+* w 40 0
+* g 816 304
+* g 816 272
+droid: 810 Hull 720 272
+* w 20 0
+* g 752 272
+* w 40 0
+* g 720 272
+droid: 513 Hull 880 208
+* g 880 336
+* g 880 208
+droid: 691 Hull 752 112
+* w 20 0
+* g 752 144
+* g 752 112
+droid: 693 Hull 304 112
+* w 100 0
+* g 304 48
+* w 10 0
+* g 304 112
+droid: 261 Cargo 1840 80
+* g 1648 112
+* w 100 0
+* g 1104 112
+* w 100 0
+* g 1648 112
+* g 1840 80
+droid: 261 Cargo 880 48
+* g 1232 48
+* w 200 0
+* g 880 48
+droid: 261 Cargo 240 80
+* w 20 0
+* g 464 80
+* w 20 0
+* g 240 80
+droid: 261 Cargo 144 336
+* w 50 0
+* g 624 336
+* g 624 368
+* g 688 368
+* g 688 336
+* w 40 0
+* g 688 304
+* g 624 304
+* g 592 336
+* g 144 336
+droid: 261 Cargo 336 304
+* w 100 0
+* g 1488 304
+* w 100 0
+* g 336 304
+droid: 108 Cargo 1776 368
+* g 1296 368
+* g 1776 368
+droid: 513 Cargo 48 208
+* w 100 0
+* g 48 176
+* g 272 176
+* g 272 240
+* g 48 240
+* g 48 208
+droid: 606 Cargo 1296 240
+* w 100 0
+* g 1296 240
+droid: 606 Cargo 528 176
+* w 100 0
+* g 528 176
+droid: 355 Cargo 1744 208
+* w 80 0
+* g 1584 176
+* g 944 176
+* g 592 208
+* g 336 208
+* w 80 0
+* g 336 208
+* g 592 208
+* g 944 176
+* g 1584 176
+* g 1744 208
+droid: 810 Engineering 816 272
+* g 912 272
+* w 20 0
+* g 816 272
+droid: 810 Engineering 208 48
+* g 912 48
+* g 208 48
+droid: 606 Engineering 880 80
+* w 100 0
+* g 880 80
+droid: 810 Engineering 80 112
+* w 50 0
+* g 80 48
+* g 80 112
+droid: 606 Engineering 48 176
+* w 100 0
+* g 48 272
+* g 48 176
+droid: 719 Engineering 816 80
+droid: 467 Engineering 336 240
+* g 336 272
+* g 560 272
+* w 560 240
+* w 30 0
+* g 560 272
+* g 336 272
+* g 336 240
+droid: 720 Engineering 720 208
+droid: 176 Engineering 240 208
+* g 656 208
+* g 656 240
+* g 816 240
+* w 100 0
+* g 560 240
+* g 560 208
+* g 240 208
+* w 100 0
+droid: 606 Gunnery3 48 144
+* w 10 0
+* g 144 144
+* g 48 144
+droid: 820 Gunnery3 368 144
+* w 100 0
+droid: 820 Gunnery3 368 272
+* w 100 0
+droid: 766 Gunnery3 464 208
+droid: 693 Gunnery3 912 112
+* w 100 0
+* g 912 112
+droid: 693 Gunnery3 848 208
+* w 100 0
+* g 848 208
+droid: 805 Gunnery3 1296 112
+* w 50 0
+* g 1104 112
+* w 50 0
+* g 1296 112
+droid: 691 Gunnery3 1360 272
+* w 100 0
+* g 1392 272
+* g 1360 272
+droid: 693 Gunnery3 1136 272
+* w 80 0
+* g 1136 208
+* g 1136 336
+* g 1136 272
+droid: 606 Gunnery3 1680 304
+* w 100 0
+* g 1680 304
+droid: 691 Gunnery3 1712 80
+* w 100 0
+* g 1712 80
+droid: 693 Gunnery3 1680 176
+* w 100 0
+* g 1680 176
+droid: 693 Gunnery3 1520 240
+* w 40 0
+* g 1520 176
+* g 1520 240
+droid: 899 Bridge 80 112
+* g 48 144
+* g 80 112
+* w 40 0
+droid: 949 Bridge 176 144
+droid: 693 Bridge 720 176
+* w 100 0
+* g 720 176
+droid: 799 Bridge 688 80
+droid: 275 Bridge 272 240
+* g 144 240
+* g 144 80
+* g 272 80
+* g 272 240

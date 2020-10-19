@@ -1,0 +1,573 @@
+##############################################################################
+# Nb/ Bug tracking is here: https://github.com/brickviking/night-hawk/issues #
+##############################################################################
+
+What's new ?
+------------
+
+4.0 Notes (October 2020) - Coded by Jason Nunn (JsNO).
+
+- Fixed arrow keys bug that caused uncommanded movement when game lost
+focus and then focus returned (in desktop).
+
+- Tweaked the tdroid_719::move() to stop 9xx droids in Mearkat getting 
+knotted up. The 7xx and 9xx droid behaviour looks very good now. It's 
+how it should be.
+
+- Plugged in block_detect() function to 7xx and 9xx classes, as they are 
+prone to get stuck on things like door ways. This will stop all that.
+
+- Added CMake build scripts.
+
+- Eric found a bug in game.c:game_finale_draw(). So, gave this game 
+state a bit of a make over. Thanks for the pickup Eric :). 
+Details/Caveats are in https://github.com/brickviking/night-hawk/issues.
+
+- Eric's suggestion: Profile code with gprof. Applied some optimisations to
+font bitmap blitting code and the font loader to remove a few instructions.
+
+- Discovered a bug in xpm_loader.c with larger bitmaps. Could not be 
+bothered fixing it, so decided to add PNG support with png_loader.c to 
+accomodate larger bit maps. (particularly the logo.png pics that are 
+large). Converted some of the transparent xpm files in xpm directory to 
+PNG.
+
+- Fixed 'b' key (blank) bug in ned.
+
+- Mission/story selector screen, make the game accommodate more than one 
+fleet.
+
+- Lasers are freely rotating now based on firing angle (this greatly 
+simplifed the laser.cc code.
+
+- ned fixes as requested by Eric: "-?" added as a help cmd line switch, 
+and make mouse pointer is normal.
+
+- Changed depreciated signal() handling to POSIX sigaction() for better 
+portability.
+
+- 1xx to 6xx and 8xx Droid block detection. If droid is blocked by 
+obstacle or droid, it will wait for 5 seconds, and then excute it's next 
+instruction. This with 7xx and 9xx avoidance, will fix most knot ups with
+droids now.
+
+- 7xx and 9xx avoidance code. (to stop these guys pushing other types 
+into obstacles and getting them stuck.
+
+- At Eric's request, restored ned (nighthawk floor editor).
+
+- Enhanced colision detection. The doors were complex to deal with and 
+never looked realistic. Now fixed, and wow, big improvement now !
+
+- Added another droid hit FX. Added floor down FX.
+
+- Replaced starwars FX. New FX mixed, processed/mixed using Audacity 
+2.2.2. Modules sample ripped using SchismTracker 20190801.
+
+FX				keep/replace
+-----------------------------------------------
+
+6xx_voice.8		Replaced. My voice. (Audacity Vocoder function. Turns 
+7xx_voice.8		Replaced. My voice.  nt mudane voice into Electric Light 
+8xx_voice.8		Replaced. My voice.  Orchestra's 'Mr Blue Sky Whhhhyy' 
+9xx_voice.s8		Created.  My voice.  effect :D)
+droid_evase.8		Replaced. Air compressor sound (from my workshop)
+door_open.8		Replaced. KTM 990SMT fuel pump
+droid_hit_2.8		Created.  Me hitting a steel bowl 
+laser_crocoite_benzol.8	Replaced. Combined FX from MECH8.3SM and ac-pb.it 
+laser_linarite.8	Replaced. Sample from aws_aq16.xm mixed with my electric drill.
+laser_tiger_eye.8	Replaced. Drum sample from SATELL.S3M
+laser_uvarovite.8	Replaced. Combined sample from MECH8.S3M mixed with another fx I've forgotten the source of
+low_shields.8		Replaced. A beeper in my workshop.
+no_weapon.8		Replaced. Sample from elw-sick.xm
+power_up.8		Replaced. Sample from jn_rigo.669 
+floor_complete.s8	Created.  Me hitting a cup with a cloths peg. 
+trans_terminated.8	Replaced. Sample from 2470-JourneyToNeptune.xm 
+ship_complete.8		Replaced. Sample from 2470-JourneyToNeptune.xm
+
+FX Kept
+-------
+alert_siren.8
+droid_hit_1.8
+explosion_1.8
+explosion_2.8
+laser_buzz.8
+rand.8
+select.8
+weapon_reload.8
+snoise1.raw
+snoise2.raw
+snoise3.raw
+snoise4.raw
+snoise5.raw
+snoise6.raw
+snoise7_science.raw
+
+- Fixed an unpredictability bug when the game's window went out of focus 
+(ie: changed virtual desktops). GLUT would halt draw_h() function that 
+rendered the graphics and played the audio sounds, but the background 
+code would still run. When game's window looses visibility, the 
+background code is also halted.
+
+- Tidied transport lift indicator positions. Some of them were a little 
+off.
+
+- Bug found in data/Discovery/Botany2.m. Door definition missing a "v" 
+parameter.
+
+- Status now displays alive droids on floor stats as well as total on ship.
+
+- Fixed a floor complete bug: If floor is cleared and paranoid quits, 
+floor complete sound and message is indicated again.
+
+- Fixed a bug that has been in the code since 1.0 but never noticed it.
+A Laser will no longer buzz you when on a different floor to the laser.
+
+- Added usleep(100000) in game.c::delete_ship() to fix a possible synchronsy
+bug. This delay gives the background code enough time to react to the ship end
+state and exit out. Finger's crossed the bug is fixed :)
+
+- Music and sound FX re-integration using OpenAL library (this is a 
+really cool audio library :)
+
+- Bug: Random core dumping. I think I've fixed this bug. It was in the 
+game continuence code and the background code freeing the 
+preserve_session structure half way through the foreground processing 
+using it. I should use semaphores on all background and foreground code, but
+I'm careful and have used them where they are needed.
+
+- Added semaphore in input queue/dequeue code - *_kb_event() funcs. This 
+is a maybe fix to random crashing.  (Nope.. still random core dumps)
+
+- Doubled scoring (to give players more points for transferring in 
+higher levels):
+  Hit: stats.entry * 2
+  Kill: stats.entry * 50
+  Xfer: stats.entry * 100
+
+- NEW FEATURE: Screen flashes when laser buzzes (white) or hits (red) 
+paradroid.
+
+- Fixed bug in data/Anoyle/chars. "droid: 712 Engineerig 400 80". A 
+unknown droid on an unknown floor. Deleted entry to keep the original 
+game.
+
+- NEW FEATURE: Converted pause screen to helper screen that describes 
+the game keys.
+
+- Fixed OpenGL bug in intro. When changing virtual desktop, forground code 
+stops running and this breaks the intro. Fixed this bug.
+
+- Fixed up sound in recharge (this will have to be reworked for surround 
+sound anyway.
+
+- Converted score (and other related variables) from int to unsigned 
+int. Based score font to game's base font.
+
+- NEW FEATURE: Game continuance. This is a bit like Tanel Kulaots's level 
+continuence, accept this feature is run only at the very start of the 
+game. When a ship is completed, the game saves the score and ship to a 
+file called ~/.nighthawk.preserve. If you accept to continue, then the 
+preserved score and ship is restored. With Tanel's feature you had to 
+leave your game running if you wanted a break from the game. This feature 
+allows you to quit the game and continue playing it at a future date.
+
+- 2.3 FEATURE: Based on Eric's description of a mouse grabber, I 
+implemented one in OpenGL. Same key as in v2.3 - the 'g' key.
+
+	-> Eric tweaked this code to remove the mouse icon and replaced with
+	simple label at top of screen indicating when this function is active.
+
+- NEW GAME FEATURE: Screen now shakes when lots of explosions occur.
+
+- NEW FEATURE. Eric's request: Specify your own data filepath. You can 
+now copy the nighthawk data directory to your own home account and 
+customise it at will.
+
+- NEW FEATURE: For those that create their own ships (levels), you can 
+have any number of ships now. Before you had 10 ships (the names were 
+stored in a table in the program and its size was fixed).
+
+- Game "discovers" sets window size to 800x600 as default. When changing 
+window size, it will enforce 4:3 aspect. This is because the game was 
+developed in the 90s on CRT displays.
+
+- Fixed up the key handling for the transmission terminated screen. Add
+the 'q' key to this so it can quit you right now at this point of the game.
+
+- Had the rearrange the fields on the Ship Computer to fit anything in
+due to font size changing (Nb/ from v3.0 and on, the game uses it's own
+fonts).
+
+- Game now starts with a space bar, and not any input event other than 
+the 'q' key. When running the intro, the game would enter when flipping 
+virtual desktops.
+
+- NEW GAME FEATURE: A flashy spinny transport indicator. Added some 
+keyboard instructions in the transport change screen.
+
+- Investigate bug: When floor cleared, press 'q', and floor cleared is 
+printed again. ---- This bug is too hard to remove, because this message 
+is queued in tdroid(), and this class isn't able to access the droid 
+object table in tship() to determine if it is paranoid. To fix issue I 
+would have to rework to paranoid to modify this behaviour. The squeeze 
+isn't worth the juice.
+
+- Removed reduced spirits function. I doubt there would be computers that
+couldn't run this simple arcade game now (even with hardware acceleration
+set to off).
+
+- Calculation functions to a background timer call back function (how it 
+was in v2.2). This fixed random crashes in v3.0 when virtual desktop was 
+changed. Also the tdroid::friction() method wasn't not real time, so the 
+droids would have moved differently on different computers with 
+different CPU speeds.
+
+- Moved glutPostRedisplay() into main_draw_h(). Removed full screen 
+mode. This is a 4:3 aspect game like on the old CRT monitors.
+
+- Found a bug I added in v3.0 in tship::level_check_event(). Accidently 
+deleted break;
+
+- Updated fonts. Double resolution.
+
+- Fix god mode message. Not positioned on screen properly.
+
+- Updated/sanitised some of the credits and titles. I don't want the 
+game banned a 2nd time round.... :(
+
+- 2.3 FEATURE: Added Eric's keypad control as well as having the ENTER 
+key as an alternative to the 't' key (tranferring). Because Xlib has 
+been ditched, none of Eric's original code could be copied from v2.3 
+unforunately, as his added code was based on Xlib key mechanisms. But, 
+his idea is there.
+
+- Removed the last bit of Xlib support (this is to aid supporting other 
+platforms etc). v3.0 only needed Xlib to set the keyboard repeat rate. 
+Arrow keys are handled differently in this version.
+
+- Cropped xpm following files in .//data/xpm/standard: 
+ship_complete.xpm, paused.xpm, ntitle.xpm and neg.xpm. This bitmaps had 
+a lot of white space. I'm suprised I missed that. This would have made 
+the game run slower on machines in the 90s. Pity that. Removed 
+demo_mode.xpm.
+
+- "By JsNO Nighhawk" logo is now faded to improve game visibility.
+
+- Removed Esc key introduced in v3.0. A dangerous key to accidently boot 
+yourself out of a game.
+
+- Slightly updated score board list of contributors to Nighthawk 
+project. See scores_init() in scores.c
+
+- Optimised tfloor::draw() and game will have a slight performance 
+increase now. It would have been good to do this in the 90s when 
+machines were slower (and poor old Eric with his old PC). But anyway, 
+I've put things right now.
+
+- Converted 5 recursive linked lists in ship.cc and droid.cc to 
+iterative linked lists. During my degree in the early 90s, I got taught 
+recursive data structures. This was pretty elegant coding back then, and 
+I thought it was pretty cool. But it's considered bad practice now. Some 
+safety standards ban recursive code.
+
+- Overhauled the scores.c file. Wolfgang Scherer added a few bugs to 
+this file. But all fixed up now. Did a functional check of lopen() and 
+fclose(). Changed update_score() to save_score() and which_scores_file() 
+to select_scores_file() to make code more readable.
+
+- Converted as much as the code to C, as C++ Extension has turned into a 
+complete arse :(
+
+- Made code safer by replacing sprintf() functions with snprintf() functions.
+
+- Made code safer by replacing strcpy with my own strncpy2() function.
+
+- Removed hacky code in load_flr_xpms() that used rewind() function.
+
+- Verbose logging option. This is very verbose to identify bugs.
+
+- Slightly changed the error reporting functions.
+
+- Fixed g++ requested to change char * constants to const char * 
+constants.
+
+- This version is based on 3.0. This code compiled right out the box 
+after 16 years since I last used it (lots of C++ warnings though, and a 
+couple of easy fix errors).
+
+-----------------------------------------------------------------------
+3.0 notes (June 2004). Coded by Jason Nunn (JsNO)
+
+(Postscript/ This version was written in early June 2004 as a proof of 
+concept - no sound, no build scripts, very limited testing - to 
+demonstrate a scalable graphics library candidate for the sourceforge 
+maintainer (Eric Gillespie). I had limited time for this project and it 
+was a real rush job. Looking at the v3.0 code now, my work was a 
+substantial undertaking. Not only was OpenGL added, but a lot of code 
+improvements happened in this version. When I presented v3.0 to Eric, he 
+was not able to run it on his computer and I remember he was not very 
+impressed by this effort. "Oh well", and so I uploaded v3.0 on my 
+personal web site and moved on in life. Eric went onto nickname this 
+version "Greylight" and got to like it. But it was in a poor state to be 
+considered a useable game and had no proper build scripts. JN 27AUG20)
+
+  - OpenGL port
+     - Being an OpenGL creature, you can have any window size you like. 
+However, here are some extra command line options-
+
+           -3  320x200 mode
+           -6  640x480 mode  (but you can change these by dragging out
+           -1  1024x768 mode                               the window)
+           -f  full screen mode like god intended (keeewwl...)
+
+  - If you use the -u command line option, you can change the refresh 
+(frames per second) rate... but i would just leave it at it's default.
+
+  - The "-g" god mode command line parameter has been added... no damage 
+no score. Primary used to walk though levels for testing.
+
+  - You only have to move over power bays to be recharged now (just like 
+the original game).
+
+  - Game has it's own fonts now (does not use Xlib or freefont etc).
+
+  - Headup toggle removed... it's now comes up automatically when 
+messages are added, and then fades.
+
+  - When a floor is cleared, it fades to dark (just like original). This
+wasn't possible to do under Xlib (ie: the version I developed Nighthawk
+on).
+
+  - In the game, if you hit "f", you get a FPS display on the bottom of
+the screen.
+
+  - Added 'r' key for reduced sprites toggled at run time rather than 
+compile time.
+
+  - The 'q' key quits you out of current game, then program. the ESC key 
+ends program immediately.
+
+  - You'll also notice some alpha texturing happening there (keeewwl..).
+Nb/ that it uses the most basic OpenGL facilities. No Z-buffering or
+transformations are done. Everything is flat 2D orthogonal... so fast
+software rendering is hopefully possible on the slower machines still in
+use.
+
+  - Added 2 patches (mentioned above)
+
+  - Removed demo (sorry. it's a dead duck -- Due to randomisation and
+timing didosynchronisy problems between libc's).
+
+  - Removed sound and music (As explained above).
+
+  - Eric's mouse patch not ported...  but should be easy to port over
+though... I haven't really looked into it.. as I'm running out of time
+now... Eric.
+
+  - There was a 816 droid (non-existant class) in the last level. Fuck
+knows how it got past my testing stages in May 1999... but anyway, I've
+changed this to a 810.
+
+  - Timing is slightly different from last version due to real time
+calculations being calculated differently (the way OpenGL likes it)...
+also the low update rate of the background timer in older versions looks
+bad on a bigger screen. I've done most of the tuning, but Eric (and
+team) probably needs to do some fine tweaking.
+
+  - I've added an Xlib key rate function to decrease keyboard delay... 
+this is to stop that delay when you move the arrow key. This is really a
+hack... technically, I should write proper keydown/keyup detection of
+arrow keys... but fuck it. This should do for now (this is the one
+advantage of using SDL as it has a good keyboard handling mechanism).
+
+Nb/ If you are compiling for another OS, or you are having 
+problems, then you can remove this code and the game will still 
+run. Comment out instances (and associated code for function 
+XkbGetAutoRepeatRate() and XkbSetAutoRepeatRate(). Also uncomment
+-lX11 in config.user, and #include <GL/glx.h>
+
+  - I've also rerranged, tidied up code a little bit. Modular bits have 
+been placed in seperate files etc.
+
+Finally, Eric now heads this project. For any patches or interests to
+contribute, please contact him... although, I'm happy to receive general
+feedback about the game. I may take a peripheral role in this project
+now...  maybe i'll find time to do further developments with Eric. We'll
+see.
+
+Cheers ;)
+
+:Jason Nunn
+Sat Jun 12 01:02:25 CST 2004
+
+-----------------------------------------------------------------------
+2.3 (May 2004) - Updated by Eric Gillespie:
+
+  - Diagonal keys and numpad key control.
+  - Added nighthawk_mousegrab() function added. This function was taken
+    from a project called "UAE".
+  - Sounds added. Some of these sounds have been taken from the 
+    FreeDroidRPG game.
+  - Released on sourceforge web site.
+
+-----------------------------------------------------------------------
+2.2.x notes (May 99) - By Jason Nunn:
+
+- this is now a complete game. nothing more to be done.
+
+- i'm a bit disappointed that nobody (who i have talked to) has made it
+past level 3 (Anoyle). most people have said the game is too hard past
+level 1. ... rubbish.  you just have to know how to play it.  .. however,
+to make things a bit easier, i've added a "demo" to the game.. Don't say i
+don't think of you all ;). It was fucking hard to intergrate. I had to
+turn up side down my perfectly good way of getting Keyboard events from X
+and invent a (kludge) mezzianne input queue just so that it was possible
+to intergrate playback code capable of playing back events accurately, and
+due to possible variances in random routines across libc's of different
+platforms, and becuase X keyboard events are queued and processed both in
+realtime and in foreground, i can't guarrantee that the demo will playback
+perfectly on every platform out there. ... this was why i didn't put a
+demo in in the first place..
+
+- along with Vincents main song, i've added another song for the demo. this
+tune is called (funny enough) "Introtune" composed by 4-matt of anarchy a
+decade ago when the amiga scene (and 4-matt) was in it's hay day.
+
+(hmmm. a decade ago... that's a long time isn't it?... when life was less
+complicated... Hmmmmmm!)
+
+i have used it without his permission (*cringe* %-\ ) in this game as there
+is no way i can contact him. but anyway, i have credited him here and i
+have credited him in the game as well.
+
+- I believe alot of Paradroid "diehards" are critisizing the game too
+harshly (commentry on the Linux Game Tome). After all, the game _was_
+designed from memory. I haven't owned a 64 (let own used one), since 1988
+(and obivously i didn't know about C64 emulators for linux at the time of
+design back in 96), and i do state that it's "based" on the original
+game... infact, the story line is totally different from the original
+game, and uses a 002 droid instead of the 001 influence device in the
+first game.
+
+- I've added ship background noises. they aren't very good, but it's
+better than a kick in the teeth ;). most of them are just Korg/Roland
+sythesizer noises played at a really low frequency ;(.
+
+- i've made it so that doors are set to shut when entering a transport bay.
+
+- 720 "flack droid" has been renamed to it's proper "flank droid".
+
+- A special thanks to Nelson Minar <nelson@media.mit.edu> for his small
+patch, and Wolfgang Scherer <Wolfgang.Scherer@gmx.de> for vulcanising the
+build scripts and adding autoconf support. Also, a thanks goes out to Eero
+Tamminen <students.cc.tut.fi/~t150315>, for doing up a manual.
+
+- i had to remove an 820 droid from Tobruk as one was overlapping another.
+
+
+2.2 notes from Wolfgang Scherer:
+
+ - I added autoconf support. So the standard way to configure things
+   is now basically:
+
+    configure [OPTIONS]
+    make
+    make install
+
+ - Please, do not fiddle with INSTALL_DIR in options.h any more! This
+   is handled by `configure --prefix=<path>'.
+
+   The default prefix is `/usr/local'. This means, that the nighthawk
+   binary is installed in `/usr/local/bin' and the data is placed into
+   `/usr/local/share/nighthawk/data'. The sound driver is installed in
+   `/usr/local/libexec'.
+
+ - Sound is automatically enabled for i?86 machines.
+
+ - The default score file is now ".nighthawk.scores".  The user's home
+   directory ($HOME) is prepended at run-time.  If you set the score
+   file with configure to an absolute path (starting with a `/'), the
+   home directory is not prepended.
+
+ - Defaults have changed for:
+
+    sound stereo:      stereo
+    sound precision:   16 bit
+    sound sample rate: 22050 Hz
+
+ - It is still possible to do maintenance on the package, without
+   installing it. Say `sh maintainer-conf [CONFIGURE-OPTIONS]' and you
+   are set. Don't install it with this setup though! Say `make dist'
+   and compile/install from the generated tar archive.
+
+
+ -------------------------------------------------------------------------
+2.x notes (Jun 1998) - By Jason Nunn:
+
+Hello,
+
+2.x is the sound and music version i promised in 1.0. i wasn't sure how
+popular 1.0 was going to be when i released it (or even if it would work
+on other peoples machines). I didn't get as many responses as expected,
+probably due to the lack of advertising (on the some of the major X11 game
+pages etc), but it's popular enough to warrant this new version.
+
+I've made some very small ammendments- like adding an up arrow to lift
+changes as insisted by many people, and having fixed some problems pointed
+out by Adrian Brigett. Infact Adrian was so impressed with 1.0, he went
+through the source code doing small ammendments and improvements (Nb/ from
+past experience, when somebody goes to the trouble of modifying your
+source code, then you know that it's going to be a popular piece of
+software with the rest of the masses! ;). I've updated his improvements in
+this version.
+
+Adrian now maintains Nighthawk for Debian Linux. If you are using a Debian
+Linux distribution and have problems getting Nighthawk running, then let
+Adrian straighten you out ;).
+
+Most of all though, i've added Starwars sound FX and asked Vincent Voois
+(a dutch muso from way back) to track a song for the game. The FX samples
+are from various Starwars sites. Alot can be said about having good fx
+samples. I have applied them well, but good samples make all the
+difference. I didn't get permission from Lucas Arts to use them (as you
+can imagine the difficulty in doing that), but there again, neither did
+the any of the sites. As Nighthawk is GNU freeware, i hope they look
+favourably before commiting any litigation against a humble nobody
+producing a free piece of software ;).
+
+Vincent did a fabulous job with the song. I would like to say at this
+point that i managed to push Vincent's buttons slightly. Due to a
+communication error on my part, there was some confusion over the note
+conversions from the XM format (that he originally tracked it in) to
+FunktrackerGOLD (the tracker that's used in the game), so as a result, his
+samples won't sound as good as can be.
+
+Apart from this, Vincent has done a very fine job. Well done! ;). Vincent
+is a fellow i have known for a while now. I regard him as a very talented
+person, and have enjoyed listening to many of his songs. Have a look at
+his home page for information on his works.
+
+I should also mention that i did the graphics with an old MessyDos
+graphics package called Autodesk Animator-Pro. I still regard this as a
+true "drawing program". In it's hay day, it was *the* application to use
+for PC demo/game graphics. Hopefully one day, a port will be made for
+Linux. Later in 2.x, i used the GIMP 0.99 to quantanise, and touchup some
+backdrop bitmaps. After all, everybody loves the GIMP ;).
+
+NB/ Some people find the game slows when theres alot of explosions on the
+screen. I've solved this by adding a REDUCED_SPRITES option you can
+include when compiling the game. This will omit some the more intensive
+bitmaps, making the game more playable on slow machines. The second thing
+is that people want to be able to configure the key arrangement. There
+isn't an agreement on what keys to use, therefore, i've created some
+pre-compiler directives for people to change. See the next section on how
+to configure this.
+
+see ya
+
+-----------------------------------------------------------------------
+v1.0 notes - By Jason Nunn:
+
+- Inital release on Tuesday evening 16 Dec 1997 at the LinuxSA club 
+meeting in Adelaide CBD.

@@ -1,0 +1,263 @@
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Nighthawk V4.0 Readme        Nighthawk Copyright (C) 1997 Jason Nunn (JsNO)
+                                          Sourceforge Admin: Eric Gillespie
+                                                 night-hawk.sourceforge.net
+					  github.com/brickviking/night-hawk
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+v4.0 Intro
+----------
+
+This is a restored Unix/Xwindows arcade game I released in the 90s. 
+Apart from a few small FX additions, enhancements and bug fixes, the 
+game is still the same. Xlib and obsolete OSS support has been replaced 
+with OpenGL and OpenAL support. The Starwars sound FX have been replaced 
+with my own FX.
+
+It was 26 years ago in October 1996 that I started this project. I 
+decided to revise it because I was sad that it had become derelict on 
+Eric Gillespie's Sourceforge web site. I felt it was unfinished business 
+that it wasn't properly distributed.
+
+Unfortunately, I released versions 2.x with Starwars sound FX, which 
+were only meant to be temporally in order to aid me writing the game. I 
+struggled with producing FX. To my error, I left these FX in the game. 
+This prevented the game being distributed due to IP violations. This was 
+the start of Nighthawk's demise.
+
+A note about Eric Gillespie, his involvement in the project, and where 
+he fits in. Eric contacted me mid-2003 and asked if he could take over 
+the project. I agreed as I had moved on in life and had no intention of 
+maintaining Nighthawk. So Eric is the curator/promoter/point of contact 
+of this game. He's also the administrator for the Sourceforge and git 
+repository sites. Eric isn't a programmer, but has done a lot of good 
+work to promote the game on sourceforge. He maintains an excellent 
+sourceforge web site and has put a lot of effort into creating it. He is 
+also a user and a tester for this project. Eric also seeded the idea of 
+the game having a developmental style. When I released nighthawk's floor 
+editor (ned) in version 1.0, I had no idea that this editor would appeal 
+to certain users to be able to build their own floors and ships. I 
+originally left the editor in the source tree for future reference. Eric 
+asked me to restore the editor in this version, which I have done. This 
+editor is still a developmental tool, but in future versions, this 
+editor could be polished for the general public ?. In this version, 
+there is a fleet selector for the purposes of users being able to create 
+their own fleets (this idea came to life during one of our email 
+discussions about ship creation). This feature compliments the floor 
+editor.
+
+Restoring this arcade game has been the most addictive personal project 
+I have undertaken in years. It's been very satisfying work (more so than 
+my electronic projects, as I'm exclusively a hardware man now days. Have 
+a look at my web page if you're interested). I think I have left the 
+game in a good state for future developers to maintain it's currency on 
+modern platforms.
+
+Jason Nunn
+Friday 16 Oct 2020
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+v1.0 Synopsis
+
+Nighthawk is a tribute to one of the most playable and contagious games
+ever written- Paradroid by Andrew Braybrook. It was so good, it was worthy
+of my attention span for 6 straight months, and was the subject of
+conversation at school for many months as well. It was quite amazing seens
+that i've never really been into "playing games", the only other game that
+lifted my skirt was 3D-Wolfenstein (the pre-cursor to DOOM).
+
+It all started when i was in year 10 (1987). A friend of mine gave me a
+copy of Paradroid on a cassette tape (that was the common media for C-64's
+among my friends at the time), and that was it!, i was hooked.
+
+Nighthawk was named after the second ship (level) of the original game. It
+was extremely difficult to get to this level. If you could slate the
+Paradroid level AND Nighthawk level (let alone the other dozen levels),
+you were very good, and would have been highly regarded among the
+governing pimply faced C-64 evanglist aristocrary at my school (BTW, does
+anyone know the full set of ship names in the original game?).
+
+(Nb/ Here is a bit of useless but interesting trivia for you.  Adrian
+Bridgett, the Debian maintainer for this distribution noted to me that
+Paradroid was also very similar to Quazatron for the Z80 Spectrum, one of
+his favourite games. There's also an Amiga variation, and the acclaimed
+Paradroid-90 on the Atari-ST).
+
+In October 92 (during the end of my degree i was doing at the time), i
+attempted to write a Messydos PC game like this, but didn't have enough
+technical knowledge about real time programming and PC's etc. Four years
+later, in October 96, started working on this game. Over a period of a
+year, i worked on it on and off, to produce 1.0 that was released in
+December 97.
+
+Nighthawk has been exclusively written for the Unix/Linux X-Windows GUI,
+and have choosen it because it's the most popular, stable, and oldest GUI.
+Also, X-windows games are now very fashionable. Some say that
+Linux/Xwindows is the game developers preferred choice! (i think i read
+that in the Walnut Creek 1998 catalogue?), but i won't go that far yet
+anyway ;).
+
+
+Enjoy..
+
+:Jason Nunn
+ (19/12/97)
+
+                         *      *       *      *
+
+System Requirements
+-------------------
+
+Nighthawk 4.0 was developed using the following libraries on a Mint Linux 
+19.2 system. Consider them minimum requirements:
+
+ - cmake 3.13.4
+ - ccmake 3.13.4 (optional, to tweak compiler/build settings, enable ned)
+ - glibc 2.28 (pthreads and maths library)
+ - pkg-config 0.29.1
+ - libpng 1.6.36
+ - OpenGL/GLU 1.3
+ - FreeGLUT 3.2.1
+ - Ogg Vorbis 1.3.6
+ - OpenAL 1.19.1
+
+The FreeGLUT (OpenGL Utility Toolkit) library is a bit of a funny one. 
+This is a very good and very old library, but support has never been 
+great on Linux distributions.
+
+If your operating system's software management system isn't able satisfy 
+the CMake build scripts, then try downloading the source code from 
+sourceforge.net/projects/freeglut. It's a very small and simple source 
+tree. It will build on anything.
+
+
+Installation procedure:
+-----------------------
+
+Nighthawk uses the cmake build system. Install game using the following 
+guidance (Nb/ This is a tarball example, if the download is a zip file, 
+then using unzip etc):
+
+ - Extract tarball/zip file:
+
+	cd ~
+	mv ~/download/nighthawk-4.0.tar.xz .
+	tar -xf nighthawk-4.0.tar.xz
+
+ - Create build directory and go into it:
+
+	mkdir build
+	cd build
+
+- Create makefiles and build game:
+
+	cmake ../nighthawk-4.0
+
+	ccmake .		(Nb/ optional to edit build settings)
+
+	cmake --build . (or make)
+
+- Install game
+
+	sudo cmake --install .  (or sudo make install)
+
+- To run the game, type: "nighthawk"
+
+- To see command line options, type "nighthawk -h"
+
+- To build the floor editor (ned), run "ccmake ." and toogle the 
+BUILD_NED option, and then 'make' and 'make install' etc.
+
+
+Full list of cmd lines (including developer cmds):
+--------------------------------------------------
+
+ -h or -?         Display this help info.
+ -u <ms>          Display Delay (1 to 100ms) (Developer function).
+ -f <Fleet name>  Start at a given fleet.
+ -c <Ship name>   Start at a given ship.
+ -g               God Mode (No damage, no scores. Developer function).
+ -d <filepath>    Specify your own game data filepath (Developer function).
+ -s <filepath>    Specify/override user account filepath.
+ -v               Verbose logging (Developer function).
+
+
+Instructions
+------------
+
+See man page or sourceforge web site.
+
+
+Contacts
+--------
+
+Sourceforge/git Admin, curation, PR, bug reports:
+   Eric Gillespie (BrickViking, DrSmokey)
+   Christchurch, New Zealand
+   Email: viking667@users.sourceforge.net
+   Web: night-hawk.sourceforge.net
+   Git: github.com/brickviking/night-hawk
+
+Author:
+   Jason Nunn (JsNO)
+   Adelaide, South Australia
+   Email: jsno8192@gmail.com
+   Web: It's around !. It seems like everytime I put a URL in software,
+	a few months later, I change ISPs :(. Do a google for "Latest 
+	Projects by jsno" and "tinkerings and hacks" and you should come
+	across my web page.
+
+Music Author:
+   Vincent Voois
+   The Netherlands
+   Web: www.vincentvoois.com
+
+   Nb/ Vincent's original IT music module file (rescue from vega.it) is 
+in the data/music directory of the project. This file was converted to 
+OGG format using Extended Module Player 4.1.0.
+
+
+Acknowledgements
+----------------
+
+Version 4.0
+
+Eric Gillespie........................	Testing, Support,
+					New fleet (in the works)
+
+Sound FX created using music module samples from:
+ MECH8.3SM............... By necros / five musicians
+ ac-pb.it................ By Milan Kolarovic (Acumen)
+ SATELL.S3M.............. By Purple Motion / Future Crew
+ elw-sick.xm............. By Jussi Salmela (ELWOOD)
+ 2470-JourneyToNeptune.xm By Anders Akerheden
+ jn_rigo.669..............My own 669 module I composed in 1994.
+
+ ./data/Nighthawk/logo.png created using Blender and KolourPaint.
+
+
+Version 3.0dev (Nicknamed "Greylight")
+
+Eric Gillespie...........................  Sourceforge Admin and PR
+Rafael Laboissiere.......................  "Cascade" mode
+Tanel Kulaots............................  Level continuence
+
+
+Version 2.x
+
+Vincent Voois (www.vincentvoois.com) ....  Rescue from Vega song
+Nelson Minar.............................  Some small code mods in 2.2.
+Eero Tamminen............................  Created manual.
+Wolfgang Scherer.........................  Code, autoconfig/automake scripts
+                                           in 2.2 
+4-matt of anarchy........................  Introtune song (used in demo. 
+                                           Not included in later versions)
+
+Version 1.x
+
+Adrian Bridgett..........................  Modifications and Debugging in 1.x
+                                           revised instructions etc.
+
+
+                                   ooo0ooo
