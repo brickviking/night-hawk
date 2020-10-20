@@ -1,0 +1,4 @@
+This is a cut down version of the game - the noise/static screen when 
+you die in the game, in order to investigate an OpenGL/GLUT rendering 
+artefact. This has been faulted down to either a library bug or hardware 
+bug on my notebook. Code kept here for future reference. JN, 20OCT20

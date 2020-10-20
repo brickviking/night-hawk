@@ -1,0 +1,1748 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  us/call  us/call  name    
+ 28.57      0.08     0.08  3369413     0.02     0.02  blit_bm_font
+ 10.71      0.11     0.03    57749     0.52     1.37  print_str_len
+ 10.71      0.14     0.03                             sound_process_fg
+  7.14      0.16     0.02   595715     0.03     0.03  blit_bm
+  7.14      0.18     0.02     5112     3.91    17.83  tship::play_draw()
+  7.14      0.20     0.02     5012     3.99    19.80  draw_scroll_fg()
+  7.14      0.22     0.02     3680     5.44     7.13  display_message
+  3.57      0.23     0.01    45871     0.22     0.57  print_str
+  3.57      0.24     0.01     5112     1.96     1.97  tdroid::draw_laser(tfloor*, int, int)
+  3.57      0.25     0.01     5112     1.96     5.19  tfloor::draw()
+  3.57      0.26     0.01     5112     1.96     4.79  console_message_display
+  3.57      0.27     0.01      261    38.32    38.32  put_snd_event
+  3.57      0.28     0.01                             draw_h
+  0.00      0.28     0.00    81266     0.00     0.00  tentity::snap_shot()
+  0.00      0.28     0.00    78737     0.00     0.00  tdroid::snap_shot()
+  0.00      0.28     0.00    73935     0.00     0.00  blit_rect
+  0.00      0.28     0.00    73625     0.00     0.00  tdroid::draw(tfloor*, int, int)
+  0.00      0.28     0.00    39707     0.00     0.09  tdroid::bg_calc_laser()
+  0.00      0.28     0.00    39707     0.00     0.02  tdroid::bg_calc()
+  0.00      0.28     0.00    36702     0.00     0.00  tdroid_108::block_detect()
+  0.00      0.28     0.00    36702     0.00     0.00  tdroid_108::bg_calc()
+  0.00      0.28     0.00    26545     0.00     0.00  tpower_bay::draw(int, int)
+  0.00      0.28     0.00    24684     0.00     0.00  tentity::colision_floor()
+  0.00      0.28     0.00    23666     0.00     0.04  tentity::colision_detect()
+  0.00      0.28     0.00    23666     0.00     0.04  tentity::bg_calc()
+  0.00      0.28     0.00    23631     0.00     0.04  tentity::colision_doors()
+  0.00      0.28     0.00    23585     0.00     0.00  tentity::colision_droids()
+  0.00      0.28     0.00    23486     0.00     0.00  tdroid::recharge()
+  0.00      0.28     0.00    22621     0.00     0.13  tdroid::draw_droid(int, int)
+  0.00      0.28     0.00    14613     0.00     0.00  get_kb_event
+  0.00      0.28     0.00    12783     0.00     0.00  tdroid_108::set_dir_vect(float, float)
+  0.00      0.28     0.00    10907     0.00     0.00  tdoor::bg_calc()
+  0.00      0.28     0.00    10861     0.00     0.11  tdroid_513::bg_calc()
+  0.00      0.28     0.00    10411     0.00     0.00  tdroid::friction()
+  0.00      0.28     0.00     8536     0.00    15.80  intro_draw()
+  0.00      0.28     0.00     6071     0.00     0.04  tdroid_606::attack()
+  0.00      0.28     0.00     5568     0.00    17.50  game_run_draw()
+  0.00      0.28     0.00     5568     0.00     0.75  tship::level_check_event()
+  0.00      0.28     0.00     5568     0.00    16.75  tship::level_run()
+  0.00      0.28     0.00     5245     0.00     0.00  tship::draw_ntitle()
+  0.00      0.28     0.00     5245     0.00     0.19  tship::print_score()
+  0.00      0.28     0.00     5112     0.00     2.11  tparadroid::draw()
+  0.00      0.28     0.00     5112     0.00     6.15  tship::print_info()
+  0.00      0.28     0.00     5112     0.00     0.00  tfloor::set_pos(int, int)
+  0.00      0.28     0.00     3571     0.00     0.00  read_ln
+  0.00      0.28     0.00     2808     0.00     1.86  tship::level_bg_calc()
+  0.00      0.28     0.00     2808     0.00     0.00  shake_calc
+  0.00      0.28     0.00     2639     0.00     0.00  tdroid_805::attack()
+  0.00      0.28     0.00     2578     0.00     0.01  tdroid_513::attack()
+  0.00      0.28     0.00     2578     0.00     0.23  tparadroid::bg_calc()
+  0.00      0.28     0.00     2578     0.00     0.00  tfloor::bg_calc()
+  0.00      0.28     0.00     2532     0.00     0.00  get_special_key_state
+  0.00      0.28     0.00     2526     0.00     0.03  tlaser::draw(tfloor*, int, int)
+  0.00      0.28     0.00     2474     0.00     0.00  tpower_bay::bg_calc()
+  0.00      0.28     0.00     2346     0.00     3.13  print_str_hazey
+  0.00      0.28     0.00     2031     0.00     0.00  alloc_mem
+  0.00      0.28     0.00     1323     0.00     2.61  tlaser::bg_calc()
+  0.00      0.28     0.00     1018     0.00     2.41  tlaser::colision_detect()
+  0.00      0.28     0.00      992     0.00     0.00  tlaser::colision_doors()
+  0.00      0.28     0.00      992     0.00     2.47  tlaser::colision_droids()
+  0.00      0.28     0.00      962     0.00     5.76  display_scores_fg()
+  0.00      0.28     0.00      588     0.00     0.00  blit_line
+  0.00      0.28     0.00      440     0.00     9.43  main_logo_fg()
+  0.00      0.28     0.00      427     0.00     0.00  tdroid_719::move()
+  0.00      0.28     0.00      427     0.00     0.11  tdroid_719::bg_calc()
+  0.00      0.28     0.00      419     0.00     0.00  tdroid_719::detect_avoid_condition()
+  0.00      0.28     0.00      321     0.00     7.16  credit_8_fg()
+  0.00      0.28     0.00      321     0.00     7.16  contacts_1_fg()
+  0.00      0.28     0.00      321     0.00    21.42  contacts_2_fg()
+  0.00      0.28     0.00      321     0.00     0.03  contacts_4_fg()
+  0.00      0.28     0.00      321     0.00     0.64  tship::get_ready_draw()
+  0.00      0.28     0.00      296     0.00     0.00  blit_rect_hollow
+  0.00      0.28     0.00      293     0.00    12.56  credit_7_fg()
+  0.00      0.28     0.00      291     0.00     0.00  read_ogg_file
+  0.00      0.28     0.00      236     0.00     0.57  display_final_score()
+  0.00      0.28     0.00      236     0.00     1.69  game_term_draw()
+  0.00      0.28     0.00      234     0.00     0.00  convert_2_tex
+  0.00      0.28     0.00      222     0.00    38.32  sound_cmd
+  0.00      0.28     0.00      217     0.00     0.00  tentity::do_sound(int, float, float)
+  0.00      0.28     0.00      194     0.00     0.00  tdroid_108::append_cmd(int, int, int)
+  0.00      0.28     0.00      182     0.00     0.00  put_kb_event
+  0.00      0.28     0.00      173     0.00    20.92  tparadroid::action(tkevent*)
+  0.00      0.28     0.00      162     0.00     0.95  tship::get_ready_calc()
+  0.00      0.28     0.00      149     0.00     0.00  strncpy2
+  0.00      0.28     0.00      147     0.00     3.13  credit_2_fg()
+  0.00      0.28     0.00      147     0.00     0.00  credit_6_fg()
+  0.00      0.28     0.00      146     0.00     3.13  credit_1_fg()
+  0.00      0.28     0.00      141     0.00     0.00  tentity::init(tfloor*, bm_t*, tentity**, int, float, float)
+  0.00      0.28     0.00      137     0.00     0.00  tentity::tentity()
+  0.00      0.28     0.00      136     0.00     0.00  tentity::~tentity()
+  0.00      0.28     0.00      134     0.00     0.00  tdroid::draw_droid_ls(int, int)
+  0.00      0.28     0.00      133     0.00    14.51  tship::diagram_draw()
+  0.00      0.28     0.00      121     0.00     0.00  tlaser3::init(tfloor*, tentity**, float, float, int, int, tentity*)
+  0.00      0.28     0.00      106     0.00     0.00  concat_filepaths
+  0.00      0.28     0.00      104     0.00     0.00  atan3f
+  0.00      0.28     0.00      102     0.00     0.00  game_noise_draw()
+  0.00      0.28     0.00       96     0.00     0.00  tdroid_606::target_not_hidden(tentity*)
+  0.00      0.28     0.00       96     0.00     0.00  console_message_add
+  0.00      0.28     0.00       90     0.00    38.32  tdroid::create_laser(int, int)
+  0.00      0.28     0.00       90     0.00     0.00  tlaser::init(tfloor*, tentity**, float, float, int, int, tentity*)
+  0.00      0.28     0.00       88     0.00     0.00  rel_to_abs_filepath
+  0.00      0.28     0.00       82     0.00     0.00  tlaser1::init(tfloor*, tentity**, float, float, int, int, tentity*)
+  0.00      0.28     0.00       82     0.00     0.00  tlaser1::tlaser1()
+  0.00      0.28     0.00       81     0.00     0.00  tlaser1::~tlaser1()
+  0.00      0.28     0.00       68     0.00    14.25  game_cont_draw()
+  0.00      0.28     0.00       64     0.00    38.32  tdroid::hit(tlaser*)
+  0.00      0.28     0.00       47     0.00     0.00  tdroid::tdroid()
+  0.00      0.28     0.00       46     0.00     0.00  tentity::open_door(tdoor*)
+  0.00      0.28     0.00       45     0.00     0.00  tdroid_108::init_cmds()
+  0.00      0.28     0.00       45     0.00     0.00  tdroid_108::tdroid_108()
+  0.00      0.28     0.00       45     0.00     0.00  tdroid_108::~tdroid_108()
+  0.00      0.28     0.00       45     0.00     0.00  tdroid::init(tfloor*, tentity**, float, float)
+  0.00      0.28     0.00       43     0.00     0.00  load_xpm
+  0.00      0.28     0.00       41     0.00     0.00  strip_leading_whitespace
+  0.00      0.28     0.00       35     0.00     0.00  load_bm
+  0.00      0.28     0.00       34     0.00     0.00  tdoor::open()
+  0.00      0.28     0.00       34     0.00     0.00  load_fx_sub
+  0.00      0.28     0.00       30     0.00    18.85  fleet_select_draw()
+  0.00      0.28     0.00       30     0.00     0.00  blit_bm_scale
+  0.00      0.28     0.00       28     0.00     0.00  tpower_bay::tpower_bay()
+  0.00      0.28     0.00       28     0.00     0.00  realloc_mem
+  0.00      0.28     0.00       24     0.00     0.00  tdroid_513::tdroid_513()
+  0.00      0.28     0.00       24     0.00     0.00  tdoor::init(int, int, int)
+  0.00      0.28     0.00       24     0.00     0.00  tdoor::tdoor()
+  0.00      0.28     0.00       22     0.00     0.00  tdroid_606::tdroid_606()
+  0.00      0.28     0.00       21     0.00    40.14  sound_cmd_primary
+  0.00      0.28     0.00       19     0.00     0.00  calc_norm_accel
+  0.00      0.28     0.00       16     0.00     0.00  tdroid::display_nd()
+  0.00      0.28     0.00       15     0.00     0.00  tship::create_transport(char*, int, int, int, int, int)
+  0.00      0.28     0.00       13     0.00     0.00  rel_to_abs_filepath_fleet
+  0.00      0.28     0.00       12     0.00     0.00  tdroid_606::~tdroid_606()
+  0.00      0.28     0.00       11     0.00     0.00  load_bm_png
+  0.00      0.28     0.00       11     0.00     0.00  load_png
+  0.00      0.28     0.00       11     0.00    38.32  sound_cmd_simple
+  0.00      0.28     0.00       10     0.00     0.00  tship::create_floor(char*)
+  0.00      0.28     0.00       10     0.00     0.00  tfloor::load_floor_map(char*)
+  0.00      0.28     0.00       10     0.00     0.00  tfloor::load_floor_misc(char*)
+  0.00      0.28     0.00       10     0.00     0.00  tfloor::load(char*, char*)
+  0.00      0.28     0.00       10     0.00     0.00  tfloor::unload()
+  0.00      0.28     0.00       10     0.00     0.00  tfloor::tfloor()
+  0.00      0.28     0.00        7     0.00     0.00  tdroid_719::tdroid_719()
+  0.00      0.28     0.00        7     0.00     0.00  tlaser2::init(tfloor*, tentity**, float, float, int, int, tentity*)
+  0.00      0.28     0.00        7     0.00     0.00  tlaser2::tlaser2()
+  0.00      0.28     0.00        7     0.00     0.00  tlaser2::~tlaser2()
+  0.00      0.28     0.00        7     0.00     0.00  load_bm_ani
+  0.00      0.28     0.00        6     0.00     0.00  tdroid_108::~tdroid_108()
+  0.00      0.28     0.00        6     0.00     0.00  tparadroid::init(tfloor*, tentity**, float, float)
+  0.00      0.28     0.00        6     0.00     0.00  tship::set_ship_noise()
+  0.00      0.28     0.00        6     0.00    38.32  sound_cmd_snoise
+  0.00      0.28     0.00        5     0.00     0.00  tdroid_719::~tdroid_719()
+  0.00      0.28     0.00        5     0.00     0.00  lclose
+  0.00      0.28     0.00        5     0.00     0.00  lopen
+  0.00      0.28     0.00        4     0.00     0.00  tparadroid::capture_droid(int, int)
+  0.00      0.28     0.00        4     0.00     0.00  tpower_bay::init(int, int)
+  0.00      0.28     0.00        4     0.00     0.00  tship::transport_set()
+  0.00      0.28     0.00        4     0.00     0.00  tfloor::reinit()
+  0.00      0.28     0.00        4     0.00     0.00  ramp_colour
+  0.00      0.28     0.00        3     0.00     0.00  tdroid_261::tdroid_261()
+  0.00      0.28     0.00        3     0.00     0.00  tdroid_261::~tdroid_261()
+  0.00      0.28     0.00        3     0.00     0.00  tdroid_275::tdroid_275()
+  0.00      0.28     0.00        3     0.00     0.00  tdroid_275::~tdroid_275()
+  0.00      0.28     0.00        3     0.00     0.00  tdroid_355::tdroid_355()
+  0.00      0.28     0.00        3     0.00     0.00  tdroid_355::~tdroid_355()
+  0.00      0.28     0.00        3     0.00     0.00  tdroid_423::tdroid_423()
+  0.00      0.28     0.00        3     0.00     0.00  tdroid_423::~tdroid_423()
+  0.00      0.28     0.00        3     0.00     0.00  tdroid_805::tdroid_805()
+  0.00      0.28     0.00        3     0.00     0.00  tship::transport_change_up()
+  0.00      0.28     0.00        2     0.00     0.00  intro_start_reinit()
+  0.00      0.28     0.00        2     0.00     0.00  delete_ship()
+  0.00      0.28     0.00        2     0.00    38.32  game_ship_start()
+  0.00      0.28     0.00        2     0.00     0.00  tdroid_176::tdroid_176()
+  0.00      0.28     0.00        2     0.00     0.00  tdroid_176::~tdroid_176()
+  0.00      0.28     0.00        2     0.00     0.00  tdroid_513::~tdroid_513()
+  0.00      0.28     0.00        2     0.00     0.00  tdroid_899::tdroid_899()
+  0.00      0.28     0.00        2     0.00     0.00  tdroid_899::~tdroid_899()
+  0.00      0.28     0.00        2     0.00     0.00  tparadroid::display_nd()
+  0.00      0.28     0.00        2     0.00     0.00  tparadroid::tparadroid()
+  0.00      0.28     0.00        2     0.00     0.00  tparadroid::~tparadroid()
+  0.00      0.28     0.00        2     0.00     0.00  tship::find_transport(char*, int, int)
+  0.00      0.28     0.00        2     0.00     0.00  tship::free_all_floor()
+  0.00      0.28     0.00        2     0.00     0.00  tship::transport_change_dn()
+  0.00      0.28     0.00        2     0.00     0.00  tship::load(char const*)
+  0.00      0.28     0.00        2     0.00     0.00  tship::unload()
+  0.00      0.28     0.00        2     0.00     0.00  tship::tship()
+  0.00      0.28     0.00        2     0.00     0.00  delete_tex
+  0.00      0.28     0.00        2     0.00     0.00  load_scores
+  0.00      0.28     0.00        2     0.00     0.00  stop_music
+  0.00      0.28     0.00        1     0.00     0.00  intro_start_init()
+  0.00      0.28     0.00        1     0.00     0.00  fleet_select_init()
+  0.00      0.28     0.00        1     0.00    38.32  game_ship_start_init()
+  0.00      0.28     0.00        1     0.00     0.00  reset_game()
+  0.00      0.28     0.00        1     0.00     0.00  tdroid_489::tdroid_489()
+  0.00      0.28     0.00        1     0.00     0.00  tdroid_489::~tdroid_489()
+  0.00      0.28     0.00        1     0.00     0.00  tdroid_720::tdroid_720()
+  0.00      0.28     0.00        1     0.00     0.00  tdroid_720::~tdroid_720()
+  0.00      0.28     0.00        1     0.00     0.00  tdroid_810::tdroid_810()
+  0.00      0.28     0.00        1     0.00     0.00  tdroid_810::~tdroid_810()
+  0.00      0.28     0.00        1     0.00     0.00  tdroid_933::tdroid_933()
+  0.00      0.28     0.00        1     0.00     0.00  tdroid_933::~tdroid_933()
+  0.00      0.28     0.00        1     0.00    38.32  tparadroid::hit(tlaser*)
+  0.00      0.28     0.00        1     0.00     0.00  tship::setup_flash_screen(float, float, float, float)
+  0.00      0.28     0.00        1     0.00     0.00  tlaser0::init(tfloor*, tentity**, float, float, int, int, tentity*)
+  0.00      0.28     0.00        1     0.00     0.00  tlaser0::tlaser0()
+  0.00      0.28     0.00        1     0.00     0.00  tlaser0::~tlaser0()
+  0.00      0.28     0.00        1     0.00     0.00  create_filepaths
+  0.00      0.28     0.00        1     0.00     0.00  dump_scores
+  0.00      0.28     0.00        1     0.00     0.00  end_game
+  0.00      0.28     0.00        1     0.00     0.00  free_ship_table
+  0.00      0.28     0.00        1     0.00     0.00  free_textures
+  0.00      0.28     0.00        1     0.00     0.00  get_score_time
+  0.00      0.28     0.00        1     0.00     0.00  get_score_username
+  0.00      0.28     0.00        1     0.00     0.00  init_background_timer
+  0.00      0.28     0.00        1     0.00     0.00  init_kb_event
+  0.00      0.28     0.00        1     0.00     0.00  init_scores
+  0.00      0.28     0.00        1     0.00     0.00  init_sound
+  0.00      0.28     0.00        1     0.00     0.00  load_fleet_logos
+  0.00      0.28     0.00        1     0.00     0.00  load_fleet_table
+  0.00      0.28     0.00        1     0.00     0.00  load_flr_xpms
+  0.00      0.28     0.00        1     0.00     0.00  load_font
+  0.00      0.28     0.00        1     0.00     0.00  load_preserved_session
+  0.00      0.28     0.00        1     0.00     0.00  load_ship_table
+  0.00      0.28     0.00        1     0.00     0.00  load_sprite_xpms
+  0.00      0.28     0.00        1     0.00     0.00  opengl_init
+  0.00      0.28     0.00        1     0.00     0.00  play_music
+  0.00      0.28     0.00        1     0.00     0.00  preserve_session
+  0.00      0.28     0.00        1     0.00     0.00  save_scores
+  0.00      0.28     0.00        1     0.00     0.00  shake_reset
+  0.00      0.28     0.00        1     0.00     0.00  shutdown_sound
+  0.00      0.28     0.00        1     0.00     0.00  test_mouse_pos
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 3.57% of 0.28 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     87.3    0.01    0.23                 draw_h [1]
+                0.00    0.13    8536/8536        intro_draw() [2]
+                0.00    0.10    5568/5568        game_run_draw() [4]
+                0.00    0.00      68/68          game_cont_draw() [41]
+                0.00    0.00      30/30          fleet_select_draw() [48]
+                0.00    0.00     236/236         game_term_draw() [52]
+                0.00    0.00       2/2           game_ship_start() [58]
+                0.00    0.00       1/11          sound_cmd_simple [51]
+                0.00    0.00     102/102         game_noise_draw() [183]
+-----------------------------------------------
+                0.00    0.13    8536/8536        draw_h [1]
+[2]     48.2    0.00    0.13    8536         intro_draw() [2]
+                0.02    0.08    5012/5012        draw_scroll_fg() [3]
+                0.01    0.00    1577/3680        display_message [12]
+                0.00    0.01     321/321         contacts_2_fg() [21]
+                0.00    0.01     962/962         display_scores_fg() [23]
+                0.00    0.00     293/293         credit_7_fg() [27]
+                0.00    0.00     321/321         contacts_1_fg() [37]
+                0.00    0.00     321/321         credit_8_fg() [36]
+                0.00    0.00     147/440         main_logo_fg() [26]
+                0.00    0.00     440/2346        print_str_hazey [20]
+                0.00    0.00     147/147         credit_2_fg() [49]
+                0.00    0.00     146/146         credit_1_fg() [50]
+                0.00    0.00       1/1           game_ship_start_init() [62]
+                0.00    0.00     321/321         contacts_4_fg() [65]
+                0.00    0.00    8536/14613       get_kb_event [67]
+                0.00    0.00     147/147         credit_6_fg() [177]
+-----------------------------------------------
+                0.02    0.08    5012/5012        intro_draw() [2]
+[3]     35.4    0.02    0.08    5012         draw_scroll_fg() [3]
+                0.03    0.05   57689/57749       print_str_len [8]
+-----------------------------------------------
+                0.00    0.10    5568/5568        draw_h [1]
+[4]     34.8    0.00    0.10    5568         game_run_draw() [4]
+                0.00    0.09    5568/5568        tship::level_run() [5]
+                0.00    0.00    5568/5568        tship::level_check_event() [25]
+                0.00    0.00       1/11          sound_cmd_simple [51]
+                0.00    0.00       2/2           delete_ship() [233]
+                0.00    0.00       1/1           preserve_session [119]
+-----------------------------------------------
+                0.00    0.09    5568/5568        game_run_draw() [4]
+[5]     33.3    0.00    0.09    5568         tship::level_run() [5]
+                0.02    0.07    5112/5112        tship::play_draw() [6]
+                0.00    0.00     133/133         tship::diagram_draw() [38]
+                0.00    0.00     321/321         tship::get_ready_draw() [55]
+                0.00    0.00      10/73935       blit_rect [66]
+-----------------------------------------------
+                0.02    0.07    5112/5112        tship::level_run() [5]
+[6]     32.5    0.02    0.07    5112         tship::play_draw() [6]
+                0.00    0.03    5112/5112        tship::print_info() [9]
+                0.01    0.02    5112/5112        tfloor::draw() [11]
+                0.00    0.01    5112/5112        tparadroid::draw() [16]
+                0.00    0.00   17598/22621       tdroid::draw_droid(int, int) [32]
+                0.00    0.00   73625/73625       tdroid::draw(tfloor*, int, int) [64]
+                0.00    0.00     328/595715      blit_bm [15]
+                0.00    0.00   78737/78737       tdroid::snap_shot() [157]
+                0.00    0.00    5112/5112        tfloor::set_pos(int, int) [168]
+                0.00    0.00     588/73935       blit_rect [66]
+-----------------------------------------------
+                0.00    0.00   41960/3369413     tship::print_score() [40]
+                0.01    0.00  262240/3369413     display_message [12]
+                0.01    0.00  309395/3369413     print_str_hazey [20]
+                0.02    0.00  678954/3369413     print_str [13]
+                0.05    0.00 2076864/3369413     print_str_len [8]
+[7]     28.6    0.08    0.00 3369413         blit_bm_font [7]
+-----------------------------------------------
+                0.00    0.00      60/57749       fleet_select_draw() [48]
+                0.03    0.05   57689/57749       draw_scroll_fg() [3]
+[8]     28.3    0.03    0.05   57749         print_str_len [8]
+                0.05    0.00 2076864/3369413     blit_bm_font [7]
+-----------------------------------------------
+                0.00    0.03    5112/5112        tship::play_draw() [6]
+[9]     11.2    0.00    0.03    5112         tship::print_info() [9]
+                0.01    0.01    5112/5112        console_message_display [14]
+                0.00    0.00   10224/45871       print_str [13]
+                0.00    0.00    5112/5245        tship::print_score() [40]
+                0.00    0.00    5313/595715      blit_bm [15]
+                0.00    0.00    5112/5245        tship::draw_ntitle() [167]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]    10.7    0.03    0.00                 sound_process_fg [10]
+                0.00    0.00     287/291         read_ogg_file [74]
+                0.00    0.00       2/2           stop_music [98]
+                0.00    0.00       1/1           play_music [118]
+                0.00    0.00       1/34          load_fx_sub [85]
+-----------------------------------------------
+                0.01    0.02    5112/5112        tship::play_draw() [6]
+[11]     9.5    0.01    0.02    5112         tfloor::draw() [11]
+                0.02    0.00  491684/595715      blit_bm [15]
+                0.00    0.00   26545/26545       tpower_bay::draw(int, int) [160]
+-----------------------------------------------
+                0.00    0.00      36/3680        game_term_draw() [52]
+                0.00    0.00      60/3680        fleet_select_draw() [48]
+                0.00    0.00     136/3680        game_cont_draw() [41]
+                0.00    0.00     266/3680        tship::diagram_draw() [38]
+                0.00    0.00     321/3680        contacts_1_fg() [37]
+                0.00    0.00     321/3680        credit_8_fg() [36]
+                0.01    0.00     963/3680        contacts_2_fg() [21]
+                0.01    0.00    1577/3680        intro_draw() [2]
+[12]     9.4    0.02    0.01    3680         display_message [12]
+                0.01    0.00  262240/3369413     blit_bm_font [7]
+-----------------------------------------------
+                0.00    0.00      30/45871       fleet_select_draw() [48]
+                0.00    0.00     236/45871       display_final_score() [57]
+                0.00    0.00     321/45871       tship::get_ready_draw() [55]
+                0.00    0.00    9620/45871       display_scores_fg() [23]
+                0.00    0.00   10224/45871       tship::print_info() [9]
+                0.01    0.01   25440/45871       console_message_display [14]
+[13]     9.3    0.01    0.02   45871         print_str [13]
+                0.02    0.00  678954/3369413     blit_bm_font [7]
+-----------------------------------------------
+                0.01    0.01    5112/5112        tship::print_info() [9]
+[14]     8.7    0.01    0.01    5112         console_message_display [14]
+                0.01    0.01   25440/45871       print_str [13]
+-----------------------------------------------
+                0.00    0.00      94/595715      tdroid::draw(tfloor*, int, int) [64]
+                0.00    0.00     236/595715      game_term_draw() [52]
+                0.00    0.00     266/595715      tship::diagram_draw() [38]
+                0.00    0.00     321/595715      contacts_4_fg() [65]
+                0.00    0.00     321/595715      contacts_2_fg() [21]
+                0.00    0.00     321/595715      contacts_1_fg() [37]
+                0.00    0.00     321/595715      credit_8_fg() [36]
+                0.00    0.00     328/595715      tship::play_draw() [6]
+                0.00    0.00     440/595715      main_logo_fg() [26]
+                0.00    0.00     515/595715      tdroid::draw_laser(tfloor*, int, int) [17]
+                0.00    0.00     588/595715      tparadroid::draw() [16]
+                0.00    0.00     642/595715      tship::get_ready_draw() [55]
+                0.00    0.00    1917/595715      tlaser::draw(tfloor*, int, int) [59]
+                0.00    0.00    1924/595715      display_scores_fg() [23]
+                0.00    0.00    5313/595715      tship::print_info() [9]
+                0.00    0.00   90484/595715      tdroid::draw_droid(int, int) [32]
+                0.02    0.00  491684/595715      tfloor::draw() [11]
+[15]     7.1    0.02    0.00  595715         blit_bm [15]
+-----------------------------------------------
+                0.00    0.01    5112/5112        tship::play_draw() [6]
+[16]     3.8    0.00    0.01    5112         tparadroid::draw() [16]
+                0.01    0.00    5112/5112        tdroid::draw_laser(tfloor*, int, int) [17]
+                0.00    0.00    5023/22621       tdroid::draw_droid(int, int) [32]
+                0.00    0.00     588/595715      blit_bm [15]
+                0.00    0.00    7388/73935       blit_rect [66]
+                0.00    0.00     588/588         blit_line [72]
+-----------------------------------------------
+                0.01    0.00    5112/5112        tparadroid::draw() [16]
+[17]     3.6    0.01    0.00    5112         tdroid::draw_laser(tfloor*, int, int) [17]
+                0.00    0.00    2177/2526        tlaser::draw(tfloor*, int, int) [59]
+                0.00    0.00     515/595715      blit_bm [15]
+-----------------------------------------------
+                0.00    0.00       6/261         sound_cmd_snoise [54]
+                0.00    0.00      11/261         sound_cmd_simple [51]
+                0.00    0.00      22/261         sound_cmd_primary [46]
+                0.01    0.00     222/261         sound_cmd [19]
+[18]     3.6    0.01    0.00     261         put_snd_event [18]
+-----------------------------------------------
+                0.00    0.00       1/222         tship::level_check_event() [25]
+                0.00    0.00       2/222         tdroid_606::attack() [53]
+                0.00    0.00       2/222         tship::get_ready_calc() [56]
+                0.00    0.00       5/222         tship::level_bg_calc() [24]
+                0.00    0.00       8/222         tparadroid::bg_calc() [47]
+                0.00    0.00      24/222         tentity::colision_doors() [45]
+                0.00    0.00      26/222         tlaser::bg_calc() [30]
+                0.00    0.00      64/222         tdroid::hit(tlaser*) [35]
+                0.00    0.00      90/222         tdroid::create_laser(int, int) [31]
+[19]     3.0    0.00    0.01     222         sound_cmd [19]
+                0.01    0.00     222/261         put_snd_event [18]
+-----------------------------------------------
+                0.00    0.00     146/2346        credit_1_fg() [50]
+                0.00    0.00     147/2346        credit_2_fg() [49]
+                0.00    0.00     293/2346        credit_7_fg() [27]
+                0.00    0.00     440/2346        intro_draw() [2]
+                0.00    0.00    1320/2346        main_logo_fg() [26]
+[20]     2.6    0.00    0.01    2346         print_str_hazey [20]
+                0.01    0.00  309395/3369413     blit_bm_font [7]
+-----------------------------------------------
+                0.00    0.01     321/321         intro_draw() [2]
+[21]     2.5    0.00    0.01     321         contacts_2_fg() [21]
+                0.01    0.00     963/3680        display_message [12]
+                0.00    0.00     321/595715      blit_bm [15]
+-----------------------------------------------
+                                                 <spontaneous>
+[22]     2.0    0.00    0.01                 game_run_calc() [22]
+                0.00    0.01    2808/2808        tship::level_bg_calc() [24]
+                0.00    0.00       6/21          sound_cmd_primary [46]
+                0.00    0.00     162/162         tship::get_ready_calc() [56]
+                0.00    0.00    2808/2808        shake_calc [69]
+-----------------------------------------------
+                0.00    0.01     962/962         intro_draw() [2]
+[23]     2.0    0.00    0.01     962         display_scores_fg() [23]
+                0.00    0.00    9620/45871       print_str [13]
+                0.00    0.00    1924/595715      blit_bm [15]
+-----------------------------------------------
+                0.00    0.01    2808/2808        game_run_calc() [22]
+[24]     1.9    0.00    0.01    2808         tship::level_bg_calc() [24]
+                0.00    0.00   25841/39707       tdroid::bg_calc_laser() [29]
+                0.00    0.00   10861/10861       tdroid_513::bg_calc() [39]
+                0.00    0.00   25841/39707       tdroid::bg_calc() [42]
+                0.00    0.00    2578/2578        tparadroid::bg_calc() [47]
+                0.00    0.00    6071/6071        tdroid_606::attack() [53]
+                0.00    0.00       5/222         sound_cmd [19]
+                0.00    0.00     427/427         tdroid_719::bg_calc() [60]
+                0.00    0.00    2578/2578        tdroid_513::attack() [61]
+                0.00    0.00       1/11          sound_cmd_simple [51]
+                0.00    0.00   25841/36702       tdroid_108::bg_calc() [159]
+                0.00    0.00    2639/2639        tdroid_805::attack() [169]
+                0.00    0.00    2578/2578        tfloor::bg_calc() [170]
+                0.00    0.00       4/16          tdroid::display_nd() [201]
+                0.00    0.00       4/96          console_message_add [80]
+-----------------------------------------------
+                0.00    0.00    5568/5568        game_run_draw() [4]
+[25]     1.5    0.00    0.00    5568         tship::level_check_event() [25]
+                0.00    0.00     173/173         tparadroid::action(tkevent*) [28]
+                0.00    0.00       5/21          sound_cmd_primary [46]
+                0.00    0.00       4/11          sound_cmd_simple [51]
+                0.00    0.00       4/6           sound_cmd_snoise [54]
+                0.00    0.00       1/222         sound_cmd [19]
+                0.00    0.00    5742/14613       get_kb_event [67]
+                0.00    0.00       4/141         tentity::init(tfloor*, bm_t*, tentity**, int, float, float) [178]
+                0.00    0.00       4/6           tparadroid::init(tfloor*, tentity**, float, float) [215]
+                0.00    0.00       4/6           tship::set_ship_noise() [216]
+                0.00    0.00       4/4           tship::transport_set() [220]
+                0.00    0.00       3/3           tship::transport_change_up() [231]
+                0.00    0.00       2/2           tship::transport_change_dn() [244]
+-----------------------------------------------
+                0.00    0.00     147/440         intro_draw() [2]
+                0.00    0.00     293/440         credit_7_fg() [27]
+[26]     1.5    0.00    0.00     440         main_logo_fg() [26]
+                0.00    0.00    1320/2346        print_str_hazey [20]
+                0.00    0.00     440/595715      blit_bm [15]
+-----------------------------------------------
+                0.00    0.00     293/293         intro_draw() [2]
+[27]     1.3    0.00    0.00     293         credit_7_fg() [27]
+                0.00    0.00     293/440         main_logo_fg() [26]
+                0.00    0.00     293/2346        print_str_hazey [20]
+-----------------------------------------------
+                0.00    0.00     173/173         tship::level_check_event() [25]
+[28]     1.3    0.00    0.00     173         tparadroid::action(tkevent*) [28]
+                0.00    0.00      84/90          tdroid::create_laser(int, int) [31]
+                0.00    0.00      10/21          sound_cmd_primary [46]
+                0.00    0.00       4/4           tparadroid::capture_droid(int, int) [218]
+-----------------------------------------------
+                0.00    0.00     427/39707       tdroid_719::bg_calc() [60]
+                0.00    0.00    2578/39707       tparadroid::bg_calc() [47]
+                0.00    0.00   10861/39707       tdroid_513::bg_calc() [39]
+                0.00    0.00   25841/39707       tship::level_bg_calc() [24]
+[29]     1.2    0.00    0.00   39707         tdroid::bg_calc_laser() [29]
+                0.00    0.00    1323/1323        tlaser::bg_calc() [30]
+                0.00    0.00     121/121         tlaser3::init(tfloor*, tentity**, float, float, int, int, tentity*) [182]
+                0.00    0.00      81/81          tlaser1::~tlaser1() [188]
+                0.00    0.00       7/7           tlaser2::~tlaser2() [213]
+                0.00    0.00       1/1           tlaser0::~tlaser0() [262]
+-----------------------------------------------
+                0.00    0.00    1323/1323        tdroid::bg_calc_laser() [29]
+[30]     1.2    0.00    0.00    1323         tlaser::bg_calc() [30]
+                0.00    0.00    1018/1018        tlaser::colision_detect() [33]
+                0.00    0.00      26/222         sound_cmd [19]
+                0.00    0.00      26/217         tentity::do_sound(int, float, float) [175]
+-----------------------------------------------
+                0.00    0.00       1/90          tdroid_513::attack() [61]
+                0.00    0.00       5/90          tdroid_606::attack() [53]
+                0.00    0.00      84/90          tparadroid::action(tkevent*) [28]
+[31]     1.2    0.00    0.00      90         tdroid::create_laser(int, int) [31]
+                0.00    0.00      90/222         sound_cmd [19]
+                0.00    0.00      90/217         tentity::do_sound(int, float, float) [175]
+                0.00    0.00      82/82          tlaser1::init(tfloor*, tentity**, float, float, int, int, tentity*) [186]
+                0.00    0.00      82/82          tlaser1::tlaser1() [187]
+                0.00    0.00       7/7           tlaser2::init(tfloor*, tentity**, float, float, int, int, tentity*) [211]
+                0.00    0.00       7/7           tlaser2::tlaser2() [212]
+                0.00    0.00       1/1           tlaser0::init(tfloor*, tentity**, float, float, int, int, tentity*) [260]
+                0.00    0.00       1/1           tlaser0::tlaser0() [261]
+-----------------------------------------------
+                0.00    0.00    5023/22621       tparadroid::draw() [16]
+                0.00    0.00   17598/22621       tship::play_draw() [6]
+[32]     1.1    0.00    0.00   22621         tdroid::draw_droid(int, int) [32]
+                0.00    0.00   90484/595715      blit_bm [15]
+                0.00    0.00     134/134         tdroid::draw_droid_ls(int, int) [181]
+-----------------------------------------------
+                0.00    0.00    1018/1018        tlaser::bg_calc() [30]
+[33]     0.9    0.00    0.00    1018         tlaser::colision_detect() [33]
+                0.00    0.00     992/992         tlaser::colision_droids() [34]
+                0.00    0.00    1018/24684       tentity::colision_floor() [161]
+                0.00    0.00     992/992         tlaser::colision_doors() [172]
+-----------------------------------------------
+                0.00    0.00     992/992         tlaser::colision_detect() [33]
+[34]     0.9    0.00    0.00     992         tlaser::colision_droids() [34]
+                0.00    0.00      63/64          tdroid::hit(tlaser*) [35]
+                0.00    0.00       1/1           tparadroid::hit(tlaser*) [63]
+-----------------------------------------------
+                0.00    0.00       1/64          tparadroid::hit(tlaser*) [63]
+                0.00    0.00      63/64          tlaser::colision_droids() [34]
+[35]     0.9    0.00    0.00      64         tdroid::hit(tlaser*) [35]
+                0.00    0.00      64/222         sound_cmd [19]
+                0.00    0.00      64/96          console_message_add [80]
+                0.00    0.00      64/217         tentity::do_sound(int, float, float) [175]
+                0.00    0.00      10/16          tdroid::display_nd() [201]
+                0.00    0.00       1/1           tship::setup_flash_screen(float, float, float, float) [259]
+-----------------------------------------------
+                0.00    0.00     321/321         intro_draw() [2]
+[36]     0.8    0.00    0.00     321         credit_8_fg() [36]
+                0.00    0.00     321/3680        display_message [12]
+                0.00    0.00     321/595715      blit_bm [15]
+-----------------------------------------------
+                0.00    0.00     321/321         intro_draw() [2]
+[37]     0.8    0.00    0.00     321         contacts_1_fg() [37]
+                0.00    0.00     321/3680        display_message [12]
+                0.00    0.00     321/595715      blit_bm [15]
+-----------------------------------------------
+                0.00    0.00     133/133         tship::level_run() [5]
+[38]     0.7    0.00    0.00     133         tship::diagram_draw() [38]
+                0.00    0.00     266/3680        display_message [12]
+                0.00    0.00     133/5245        tship::print_score() [40]
+                0.00    0.00     266/595715      blit_bm [15]
+                0.00    0.00     266/296         blit_rect_hollow [73]
+                0.00    0.00     133/5245        tship::draw_ntitle() [167]
+                0.00    0.00     133/73935       blit_rect [66]
+-----------------------------------------------
+                0.00    0.00   10861/10861       tship::level_bg_calc() [24]
+[39]     0.4    0.00    0.00   10861         tdroid_513::bg_calc() [39]
+                0.00    0.00   10861/39707       tdroid::bg_calc_laser() [29]
+                0.00    0.00   10861/39707       tdroid::bg_calc() [42]
+                0.00    0.00   10861/36702       tdroid_108::bg_calc() [159]
+-----------------------------------------------
+                0.00    0.00     133/5245        tship::diagram_draw() [38]
+                0.00    0.00    5112/5245        tship::print_info() [9]
+[40]     0.4    0.00    0.00    5245         tship::print_score() [40]
+                0.00    0.00   41960/3369413     blit_bm_font [7]
+-----------------------------------------------
+                0.00    0.00      68/68          draw_h [1]
+[41]     0.3    0.00    0.00      68         game_cont_draw() [41]
+                0.00    0.00     136/3680        display_message [12]
+                0.00    0.00      68/14613       get_kb_event [67]
+                0.00    0.00       1/1           fleet_select_init() [249]
+-----------------------------------------------
+                0.00    0.00     427/39707       tdroid_719::bg_calc() [60]
+                0.00    0.00    2578/39707       tparadroid::bg_calc() [47]
+                0.00    0.00   10861/39707       tdroid_513::bg_calc() [39]
+                0.00    0.00   25841/39707       tship::level_bg_calc() [24]
+[42]     0.3    0.00    0.00   39707         tdroid::bg_calc() [42]
+                0.00    0.00   23666/23666       tentity::bg_calc() [44]
+                0.00    0.00   23486/23486       tdroid::recharge() [163]
+-----------------------------------------------
+                0.00    0.00   23666/23666       tentity::bg_calc() [44]
+[43]     0.3    0.00    0.00   23666         tentity::colision_detect() [43]
+                0.00    0.00   23631/23631       tentity::colision_doors() [45]
+                0.00    0.00   23666/24684       tentity::colision_floor() [161]
+-----------------------------------------------
+                0.00    0.00   23666/23666       tdroid::bg_calc() [42]
+[44]     0.3    0.00    0.00   23666         tentity::bg_calc() [44]
+                0.00    0.00   23666/23666       tentity::colision_detect() [43]
+                0.00    0.00   23585/23585       tentity::colision_droids() [162]
+-----------------------------------------------
+                0.00    0.00   23631/23631       tentity::colision_detect() [43]
+[45]     0.3    0.00    0.00   23631         tentity::colision_doors() [45]
+                0.00    0.00      24/222         sound_cmd [19]
+                0.00    0.00      46/46          tentity::open_door(tdoor*) [190]
+                0.00    0.00      27/217         tentity::do_sound(int, float, float) [175]
+                0.00    0.00      19/19          calc_norm_accel [88]
+-----------------------------------------------
+                0.00    0.00       5/21          tship::level_check_event() [25]
+                0.00    0.00       6/21          game_run_calc() [22]
+                0.00    0.00      10/21          tparadroid::action(tkevent*) [28]
+[46]     0.3    0.00    0.00      21         sound_cmd_primary [46]
+                0.00    0.00      22/261         put_snd_event [18]
+-----------------------------------------------
+                0.00    0.00    2578/2578        tship::level_bg_calc() [24]
+[47]     0.2    0.00    0.00    2578         tparadroid::bg_calc() [47]
+                0.00    0.00       8/222         sound_cmd [19]
+                0.00    0.00    2578/39707       tdroid::bg_calc_laser() [29]
+                0.00    0.00    2578/39707       tdroid::bg_calc() [42]
+                0.00    0.00    2532/10411       tdroid::friction() [166]
+                0.00    0.00    2532/2532        get_special_key_state [70]
+                0.00    0.00       8/217         tentity::do_sound(int, float, float) [175]
+                0.00    0.00       4/96          console_message_add [80]
+-----------------------------------------------
+                0.00    0.00      30/30          draw_h [1]
+[48]     0.2    0.00    0.00      30         fleet_select_draw() [48]
+                0.00    0.00      60/3680        display_message [12]
+                0.00    0.00      60/57749       print_str_len [8]
+                0.00    0.00       1/11          sound_cmd_simple [51]
+                0.00    0.00      30/45871       print_str [13]
+                0.00    0.00      31/14613       get_kb_event [67]
+                0.00    0.00      30/30          blit_bm_scale [86]
+                0.00    0.00      30/296         blit_rect_hollow [73]
+                0.00    0.00       2/2           intro_start_reinit() [232]
+                0.00    0.00       1/1           test_mouse_pos [123]
+-----------------------------------------------
+                0.00    0.00     147/147         intro_draw() [2]
+[49]     0.2    0.00    0.00     147         credit_2_fg() [49]
+                0.00    0.00     147/2346        print_str_hazey [20]
+-----------------------------------------------
+                0.00    0.00     146/146         intro_draw() [2]
+[50]     0.2    0.00    0.00     146         credit_1_fg() [50]
+                0.00    0.00     146/2346        print_str_hazey [20]
+-----------------------------------------------
+                0.00    0.00       1/11          draw_h [1]
+                0.00    0.00       1/11          tship::level_bg_calc() [24]
+                0.00    0.00       1/11          fleet_select_draw() [48]
+                0.00    0.00       1/11          game_run_draw() [4]
+                0.00    0.00       1/11          game_ship_start_init() [62]
+                0.00    0.00       2/11          game_ship_start() [58]
+                0.00    0.00       4/11          tship::level_check_event() [25]
+[51]     0.2    0.00    0.00      11         sound_cmd_simple [51]
+                0.00    0.00      11/261         put_snd_event [18]
+-----------------------------------------------
+                0.00    0.00     236/236         draw_h [1]
+[52]     0.1    0.00    0.00     236         game_term_draw() [52]
+                0.00    0.00      36/3680        display_message [12]
+                0.00    0.00     236/236         display_final_score() [57]
+                0.00    0.00     236/595715      blit_bm [15]
+                0.00    0.00     236/14613       get_kb_event [67]
+                0.00    0.00       1/5           lclose [93]
+                0.00    0.00       1/1           save_scores [120]
+                0.00    0.00       1/1           end_game [101]
+-----------------------------------------------
+                0.00    0.00    6071/6071        tship::level_bg_calc() [24]
+[53]     0.1    0.00    0.00    6071         tdroid_606::attack() [53]
+                0.00    0.00       5/90          tdroid::create_laser(int, int) [31]
+                0.00    0.00       2/222         sound_cmd [19]
+                0.00    0.00      96/96          tdroid_606::target_not_hidden(tentity*) [184]
+                0.00    0.00       2/217         tentity::do_sound(int, float, float) [175]
+-----------------------------------------------
+                0.00    0.00       2/6           tship::get_ready_calc() [56]
+                0.00    0.00       4/6           tship::level_check_event() [25]
+[54]     0.1    0.00    0.00       6         sound_cmd_snoise [54]
+                0.00    0.00       6/261         put_snd_event [18]
+-----------------------------------------------
+                0.00    0.00     321/321         tship::level_run() [5]
+[55]     0.1    0.00    0.00     321         tship::get_ready_draw() [55]
+                0.00    0.00     321/45871       print_str [13]
+                0.00    0.00     642/595715      blit_bm [15]
+-----------------------------------------------
+                0.00    0.00     162/162         game_run_calc() [22]
+[56]     0.1    0.00    0.00     162         tship::get_ready_calc() [56]
+                0.00    0.00       2/222         sound_cmd [19]
+                0.00    0.00       2/6           sound_cmd_snoise [54]
+                0.00    0.00       2/6           tship::set_ship_noise() [216]
+-----------------------------------------------
+                0.00    0.00     236/236         game_term_draw() [52]
+[57]     0.0    0.00    0.00     236         display_final_score() [57]
+                0.00    0.00     236/45871       print_str [13]
+-----------------------------------------------
+                0.00    0.00       2/2           draw_h [1]
+[58]     0.0    0.00    0.00       2         game_ship_start() [58]
+                0.00    0.00       2/11          sound_cmd_simple [51]
+                0.00    0.00       2/2           tship::tship() [247]
+                0.00    0.00       2/2           tship::load(char const*) [245]
+-----------------------------------------------
+                0.00    0.00     349/2526        tdroid::draw(tfloor*, int, int) [64]
+                0.00    0.00    2177/2526        tdroid::draw_laser(tfloor*, int, int) [17]
+[59]     0.0    0.00    0.00    2526         tlaser::draw(tfloor*, int, int) [59]
+                0.00    0.00    1917/595715      blit_bm [15]
+-----------------------------------------------
+                0.00    0.00     427/427         tship::level_bg_calc() [24]
+[60]     0.0    0.00    0.00     427         tdroid_719::bg_calc() [60]
+                0.00    0.00     427/39707       tdroid::bg_calc_laser() [29]
+                0.00    0.00     427/39707       tdroid::bg_calc() [42]
+                0.00    0.00     427/427         tdroid_719::move() [173]
+-----------------------------------------------
+                0.00    0.00    2578/2578        tship::level_bg_calc() [24]
+[61]     0.0    0.00    0.00    2578         tdroid_513::attack() [61]
+                0.00    0.00       1/90          tdroid::create_laser(int, int) [31]
+-----------------------------------------------
+                0.00    0.00       1/1           intro_draw() [2]
+[62]     0.0    0.00    0.00       1         game_ship_start_init() [62]
+                0.00    0.00       1/11          sound_cmd_simple [51]
+-----------------------------------------------
+                0.00    0.00       1/1           tlaser::colision_droids() [34]
+[63]     0.0    0.00    0.00       1         tparadroid::hit(tlaser*) [63]
+                0.00    0.00       1/64          tdroid::hit(tlaser*) [35]
+-----------------------------------------------
+                0.00    0.00   73625/73625       tship::play_draw() [6]
+[64]     0.0    0.00    0.00   73625         tdroid::draw(tfloor*, int, int) [64]
+                0.00    0.00     349/2526        tlaser::draw(tfloor*, int, int) [59]
+                0.00    0.00      94/595715      blit_bm [15]
+-----------------------------------------------
+                0.00    0.00     321/321         intro_draw() [2]
+[65]     0.0    0.00    0.00     321         contacts_4_fg() [65]
+                0.00    0.00     321/595715      blit_bm [15]
+-----------------------------------------------
+                0.00    0.00      10/73935       tship::level_run() [5]
+                0.00    0.00     133/73935       tship::diagram_draw() [38]
+                0.00    0.00     536/73935       tdroid::draw_droid_ls(int, int) [181]
+                0.00    0.00     588/73935       tship::play_draw() [6]
+                0.00    0.00    7388/73935       tparadroid::draw() [16]
+                0.00    0.00   65280/73935       game_noise_draw() [183]
+[66]     0.0    0.00    0.00   73935         blit_rect [66]
+-----------------------------------------------
+                0.00    0.00      31/14613       fleet_select_draw() [48]
+                0.00    0.00      68/14613       game_cont_draw() [41]
+                0.00    0.00     236/14613       game_term_draw() [52]
+                0.00    0.00    5742/14613       tship::level_check_event() [25]
+                0.00    0.00    8536/14613       intro_draw() [2]
+[67]     0.0    0.00    0.00   14613         get_kb_event [67]
+-----------------------------------------------
+                0.00    0.00    3571/3571        load_xpm [82]
+[68]     0.0    0.00    0.00    3571         read_ln [68]
+-----------------------------------------------
+                0.00    0.00    2808/2808        game_run_calc() [22]
+[69]     0.0    0.00    0.00    2808         shake_calc [69]
+-----------------------------------------------
+                0.00    0.00    2532/2532        tparadroid::bg_calc() [47]
+[70]     0.0    0.00    0.00    2532         get_special_key_state [70]
+-----------------------------------------------
+                0.00    0.00       1/2031        load_preserved_session [114]
+                0.00    0.00       7/2031        load_bm_ani [92]
+                0.00    0.00      10/2031        tfloor::load_floor_map(char*) [205]
+                0.00    0.00      10/2031        tship::create_floor(char*) [204]
+                0.00    0.00      15/2031        tship::create_transport(char*, int, int, int, int, int) [202]
+                0.00    0.00      32/2031        load_fx_sub [85]
+                0.00    0.00      86/2031        load_xpm [82]
+                0.00    0.00      96/2031        console_message_add [80]
+                0.00    0.00     128/2031        load_font [113]
+                0.00    0.00     194/2031        tdroid_108::append_cmd(int, int, int) [176]
+                0.00    0.00     234/2031        convert_2_tex [75]
+                0.00    0.00    1218/2031        load_png [91]
+[71]     0.0    0.00    0.00    2031         alloc_mem [71]
+-----------------------------------------------
+                0.00    0.00     588/588         tparadroid::draw() [16]
+[72]     0.0    0.00    0.00     588         blit_line [72]
+-----------------------------------------------
+                0.00    0.00      30/296         fleet_select_draw() [48]
+                0.00    0.00     266/296         tship::diagram_draw() [38]
+[73]     0.0    0.00    0.00     296         blit_rect_hollow [73]
+-----------------------------------------------
+                0.00    0.00       4/291         play_music [118]
+                0.00    0.00     287/291         sound_process_fg [10]
+[74]     0.0    0.00    0.00     291         read_ogg_file [74]
+-----------------------------------------------
+                0.00    0.00      11/234         load_bm_png [90]
+                0.00    0.00      35/234         load_bm [84]
+                0.00    0.00      60/234         load_bm_ani [92]
+                0.00    0.00     128/234         load_font [113]
+[75]     0.0    0.00    0.00     234         convert_2_tex [75]
+                0.00    0.00     234/2031        alloc_mem [71]
+-----------------------------------------------
+                0.00    0.00      18/182         keyboard_h [139]
+                0.00    0.00      75/182         special_h [152]
+                0.00    0.00      89/182         mouse_h [143]
+[76]     0.0    0.00    0.00     182         put_kb_event [76]
+-----------------------------------------------
+                0.00    0.00       3/149         preserve_session [119]
+                0.00    0.00       4/149         tship::load(char const*) [245]
+                0.00    0.00      10/149         tfloor::load(char*, char*) [207]
+                0.00    0.00      36/149         init_scores [108]
+                0.00    0.00      96/149         console_message_add [80]
+[77]     0.0    0.00    0.00     149         strncpy2 [77]
+-----------------------------------------------
+                0.00    0.00       1/106         load_flr_xpms [112]
+                0.00    0.00       1/106         play_music [118]
+                0.00    0.00       2/106         create_filepaths [99]
+                0.00    0.00       3/106         load_fleet_table [111]
+                0.00    0.00      11/106         load_png [91]
+                0.00    0.00      13/106         rel_to_abs_filepath_fleet [89]
+                0.00    0.00      32/106         load_fx_sub [85]
+                0.00    0.00      43/106         load_xpm [82]
+[78]     0.0    0.00    0.00     106         concat_filepaths [78]
+-----------------------------------------------
+                0.00    0.00      14/104         tdroid_719::detect_avoid_condition() [174]
+                0.00    0.00      90/104         tlaser::init(tfloor*, tentity**, float, float, int, int, tentity*) [185]
+[79]     0.0    0.00    0.00     104         atan3f [79]
+-----------------------------------------------
+                0.00    0.00       2/96          tparadroid::display_nd() [239]
+                0.00    0.00       2/96          tship::load(char const*) [245]
+                0.00    0.00       4/96          tparadroid::bg_calc() [47]
+                0.00    0.00       4/96          tparadroid::capture_droid(int, int) [218]
+                0.00    0.00       4/96          tship::level_bg_calc() [24]
+                0.00    0.00      16/96          tdroid::display_nd() [201]
+                0.00    0.00      64/96          tdroid::hit(tlaser*) [35]
+[80]     0.0    0.00    0.00      96         console_message_add [80]
+                0.00    0.00      96/2031        alloc_mem [71]
+                0.00    0.00      96/149         strncpy2 [77]
+-----------------------------------------------
+                0.00    0.00       1/88          load_flr_xpms [112]
+                0.00    0.00       1/88          play_music [118]
+                0.00    0.00      11/88          load_png [91]
+                0.00    0.00      32/88          load_fx_sub [85]
+                0.00    0.00      43/88          load_xpm [82]
+[81]     0.0    0.00    0.00      88         rel_to_abs_filepath [81]
+-----------------------------------------------
+                0.00    0.00       1/43          load_font [113]
+                0.00    0.00       7/43          load_bm_ani [92]
+                0.00    0.00      35/43          load_bm [84]
+[82]     0.0    0.00    0.00      43         load_xpm [82]
+                0.00    0.00    3571/3571        read_ln [68]
+                0.00    0.00      86/2031        alloc_mem [71]
+                0.00    0.00      43/106         concat_filepaths [78]
+                0.00    0.00      43/88          rel_to_abs_filepath [81]
+-----------------------------------------------
+                0.00    0.00       2/41          tship::load(char const*) [245]
+                0.00    0.00      10/41          load_ship_table [115]
+                0.00    0.00      29/41          load_fleet_table [111]
+[83]     0.0    0.00    0.00      41         strip_leading_whitespace [83]
+-----------------------------------------------
+                0.00    0.00       2/35          tship::load(char const*) [245]
+                0.00    0.00       5/35          load_sprite_xpms [116]
+                0.00    0.00      28/35          load_flr_xpms [112]
+[84]     0.0    0.00    0.00      35         load_bm [84]
+                0.00    0.00      35/43          load_xpm [82]
+                0.00    0.00      35/234         convert_2_tex [75]
+-----------------------------------------------
+                0.00    0.00       1/34          stop_music [98]
+                0.00    0.00       1/34          sound_process_fg [10]
+                0.00    0.00       1/34          init(int, char**) [278]
+                0.00    0.00      31/34          init_sound [109]
+[85]     0.0    0.00    0.00      34         load_fx_sub [85]
+                0.00    0.00      32/106         concat_filepaths [78]
+                0.00    0.00      32/88          rel_to_abs_filepath [81]
+                0.00    0.00      32/2031        alloc_mem [71]
+-----------------------------------------------
+                0.00    0.00      30/30          fleet_select_draw() [48]
+[86]     0.0    0.00    0.00      30         blit_bm_scale [86]
+-----------------------------------------------
+                0.00    0.00      28/28          load_flr_xpms [112]
+[87]     0.0    0.00    0.00      28         realloc_mem [87]
+-----------------------------------------------
+                0.00    0.00      19/19          tentity::colision_doors() [45]
+[88]     0.0    0.00    0.00      19         calc_norm_accel [88]
+-----------------------------------------------
+                0.00    0.00       1/13          load_ship_table [115]
+                0.00    0.00       2/13          tship::load(char const*) [245]
+                0.00    0.00      10/13          tship::create_floor(char*) [204]
+[89]     0.0    0.00    0.00      13         rel_to_abs_filepath_fleet [89]
+                0.00    0.00      13/106         concat_filepaths [78]
+-----------------------------------------------
+                0.00    0.00       1/11          load_fleet_logos [110]
+                0.00    0.00       1/11          init(int, char**) [278]
+                0.00    0.00       9/11          load_sprite_xpms [116]
+[90]     0.0    0.00    0.00      11         load_bm_png [90]
+                0.00    0.00      11/11          load_png [91]
+                0.00    0.00      11/234         convert_2_tex [75]
+-----------------------------------------------
+                0.00    0.00      11/11          load_bm_png [90]
+[91]     0.0    0.00    0.00      11         load_png [91]
+                0.00    0.00    1218/2031        alloc_mem [71]
+                0.00    0.00      11/106         concat_filepaths [78]
+                0.00    0.00      11/88          rel_to_abs_filepath [81]
+-----------------------------------------------
+                0.00    0.00       7/7           load_sprite_xpms [116]
+[92]     0.0    0.00    0.00       7         load_bm_ani [92]
+                0.00    0.00      60/234         convert_2_tex [75]
+                0.00    0.00       7/43          load_xpm [82]
+                0.00    0.00       7/2031        alloc_mem [71]
+-----------------------------------------------
+                0.00    0.00       1/5           save_scores [120]
+                0.00    0.00       1/5           preserve_session [119]
+                0.00    0.00       1/5           load_preserved_session [114]
+                0.00    0.00       1/5           game_term_draw() [52]
+                0.00    0.00       1/5           init(int, char**) [278]
+[93]     0.0    0.00    0.00       5         lclose [93]
+-----------------------------------------------
+                0.00    0.00       1/5           save_scores [120]
+                0.00    0.00       1/5           preserve_session [119]
+                0.00    0.00       1/5           load_preserved_session [114]
+                0.00    0.00       2/5           load_scores [97]
+[94]     0.0    0.00    0.00       5         lopen [94]
+-----------------------------------------------
+                0.00    0.00       4/4           init(int, char**) [278]
+[95]     0.0    0.00    0.00       4         ramp_colour [95]
+-----------------------------------------------
+                0.00    0.00       2/2           tship::unload() [246]
+[96]     0.0    0.00    0.00       2         delete_tex [96]
+-----------------------------------------------
+                0.00    0.00       1/2           save_scores [120]
+                0.00    0.00       1/2           init(int, char**) [278]
+[97]     0.0    0.00    0.00       2         load_scores [97]
+                0.00    0.00       2/5           lopen [94]
+-----------------------------------------------
+                0.00    0.00       2/2           sound_process_fg [10]
+[98]     0.0    0.00    0.00       2         stop_music [98]
+                0.00    0.00       1/34          load_fx_sub [85]
+-----------------------------------------------
+                0.00    0.00       1/1           init(int, char**) [278]
+[99]     0.0    0.00    0.00       1         create_filepaths [99]
+                0.00    0.00       2/106         concat_filepaths [78]
+-----------------------------------------------
+                0.00    0.00       1/1           init(int, char**) [278]
+[100]    0.0    0.00    0.00       1         dump_scores [100]
+-----------------------------------------------
+                0.00    0.00       1/1           game_term_draw() [52]
+[101]    0.0    0.00    0.00       1         end_game [101]
+                0.00    0.00       1/1           free_textures [103]
+                0.00    0.00       1/1           shutdown_sound [122]
+-----------------------------------------------
+                0.00    0.00       1/1           reset_game() [250]
+[102]    0.0    0.00    0.00       1         free_ship_table [102]
+-----------------------------------------------
+                0.00    0.00       1/1           end_game [101]
+[103]    0.0    0.00    0.00       1         free_textures [103]
+-----------------------------------------------
+                0.00    0.00       1/1           preserve_session [119]
+[104]    0.0    0.00    0.00       1         get_score_time [104]
+-----------------------------------------------
+                0.00    0.00       1/1           preserve_session [119]
+[105]    0.0    0.00    0.00       1         get_score_username [105]
+-----------------------------------------------
+                0.00    0.00       1/1           init(int, char**) [278]
+[106]    0.0    0.00    0.00       1         init_background_timer [106]
+-----------------------------------------------
+                0.00    0.00       1/1           init(int, char**) [278]
+[107]    0.0    0.00    0.00       1         init_kb_event [107]
+-----------------------------------------------
+                0.00    0.00       1/1           init(int, char**) [278]
+[108]    0.0    0.00    0.00       1         init_scores [108]
+                0.00    0.00      36/149         strncpy2 [77]
+-----------------------------------------------
+                0.00    0.00       1/1           init(int, char**) [278]
+[109]    0.0    0.00    0.00       1         init_sound [109]
+                0.00    0.00      31/34          load_fx_sub [85]
+-----------------------------------------------
+                0.00    0.00       1/1           init(int, char**) [278]
+[110]    0.0    0.00    0.00       1         load_fleet_logos [110]
+                0.00    0.00       1/11          load_bm_png [90]
+-----------------------------------------------
+                0.00    0.00       1/1           init(int, char**) [278]
+[111]    0.0    0.00    0.00       1         load_fleet_table [111]
+                0.00    0.00      29/41          strip_leading_whitespace [83]
+                0.00    0.00       3/106         concat_filepaths [78]
+-----------------------------------------------
+                0.00    0.00       1/1           init(int, char**) [278]
+[112]    0.0    0.00    0.00       1         load_flr_xpms [112]
+                0.00    0.00      28/28          realloc_mem [87]
+                0.00    0.00      28/35          load_bm [84]
+                0.00    0.00       1/106         concat_filepaths [78]
+                0.00    0.00       1/88          rel_to_abs_filepath [81]
+-----------------------------------------------
+                0.00    0.00       1/1           init(int, char**) [278]
+[113]    0.0    0.00    0.00       1         load_font [113]
+                0.00    0.00     128/2031        alloc_mem [71]
+                0.00    0.00     128/234         convert_2_tex [75]
+                0.00    0.00       1/43          load_xpm [82]
+-----------------------------------------------
+                0.00    0.00       1/1           init(int, char**) [278]
+[114]    0.0    0.00    0.00       1         load_preserved_session [114]
+                0.00    0.00       1/5           lopen [94]
+                0.00    0.00       1/2031        alloc_mem [71]
+                0.00    0.00       1/5           lclose [93]
+-----------------------------------------------
+                0.00    0.00       1/1           reset_game() [250]
+[115]    0.0    0.00    0.00       1         load_ship_table [115]
+                0.00    0.00      10/41          strip_leading_whitespace [83]
+                0.00    0.00       1/13          rel_to_abs_filepath_fleet [89]
+-----------------------------------------------
+                0.00    0.00       1/1           init(int, char**) [278]
+[116]    0.0    0.00    0.00       1         load_sprite_xpms [116]
+                0.00    0.00       9/11          load_bm_png [90]
+                0.00    0.00       7/7           load_bm_ani [92]
+                0.00    0.00       5/35          load_bm [84]
+-----------------------------------------------
+                0.00    0.00       1/1           init(int, char**) [278]
+[117]    0.0    0.00    0.00       1         opengl_init [117]
+-----------------------------------------------
+                0.00    0.00       1/1           sound_process_fg [10]
+[118]    0.0    0.00    0.00       1         play_music [118]
+                0.00    0.00       4/291         read_ogg_file [74]
+                0.00    0.00       1/106         concat_filepaths [78]
+                0.00    0.00       1/88          rel_to_abs_filepath [81]
+-----------------------------------------------
+                0.00    0.00       1/1           game_run_draw() [4]
+[119]    0.0    0.00    0.00       1         preserve_session [119]
+                0.00    0.00       3/149         strncpy2 [77]
+                0.00    0.00       1/5           lopen [94]
+                0.00    0.00       1/1           get_score_username [105]
+                0.00    0.00       1/1           get_score_time [104]
+                0.00    0.00       1/5           lclose [93]
+-----------------------------------------------
+                0.00    0.00       1/1           game_term_draw() [52]
+[120]    0.0    0.00    0.00       1         save_scores [120]
+                0.00    0.00       1/5           lclose [93]
+                0.00    0.00       1/2           load_scores [97]
+                0.00    0.00       1/5           lopen [94]
+-----------------------------------------------
+                0.00    0.00       1/1           game_noise_calc() [271]
+[121]    0.0    0.00    0.00       1         shake_reset [121]
+-----------------------------------------------
+                0.00    0.00       1/1           end_game [101]
+[122]    0.0    0.00    0.00       1         shutdown_sound [122]
+-----------------------------------------------
+                0.00    0.00       1/1           fleet_select_draw() [48]
+[123]    0.0    0.00    0.00       1         test_mouse_pos [123]
+-----------------------------------------------
+                0.00    0.00   81266/81266       tdroid::snap_shot() [157]
+[156]    0.0    0.00    0.00   81266         tentity::snap_shot() [156]
+-----------------------------------------------
+                0.00    0.00   78737/78737       tship::play_draw() [6]
+[157]    0.0    0.00    0.00   78737         tdroid::snap_shot() [157]
+                0.00    0.00   81266/81266       tentity::snap_shot() [156]
+-----------------------------------------------
+                0.00    0.00   36702/36702       tdroid_108::bg_calc() [159]
+[158]    0.0    0.00    0.00   36702         tdroid_108::block_detect() [158]
+-----------------------------------------------
+                0.00    0.00   10861/36702       tdroid_513::bg_calc() [39]
+                0.00    0.00   25841/36702       tship::level_bg_calc() [24]
+[159]    0.0    0.00    0.00   36702         tdroid_108::bg_calc() [159]
+                0.00    0.00   36702/36702       tdroid_108::block_detect() [158]
+                0.00    0.00   12783/12783       tdroid_108::set_dir_vect(float, float) [164]
+                0.00    0.00    7452/10411       tdroid::friction() [166]
+-----------------------------------------------
+                0.00    0.00   26545/26545       tfloor::draw() [11]
+[160]    0.0    0.00    0.00   26545         tpower_bay::draw(int, int) [160]
+-----------------------------------------------
+                0.00    0.00    1018/24684       tlaser::colision_detect() [33]
+                0.00    0.00   23666/24684       tentity::colision_detect() [43]
+[161]    0.0    0.00    0.00   24684         tentity::colision_floor() [161]
+-----------------------------------------------
+                0.00    0.00   23585/23585       tentity::bg_calc() [44]
+[162]    0.0    0.00    0.00   23585         tentity::colision_droids() [162]
+-----------------------------------------------
+                0.00    0.00   23486/23486       tdroid::bg_calc() [42]
+[163]    0.0    0.00    0.00   23486         tdroid::recharge() [163]
+-----------------------------------------------
+                0.00    0.00   12783/12783       tdroid_108::bg_calc() [159]
+[164]    0.0    0.00    0.00   12783         tdroid_108::set_dir_vect(float, float) [164]
+-----------------------------------------------
+                0.00    0.00   10907/10907       tfloor::bg_calc() [170]
+[165]    0.0    0.00    0.00   10907         tdoor::bg_calc() [165]
+-----------------------------------------------
+                0.00    0.00     427/10411       tdroid_719::move() [173]
+                0.00    0.00    2532/10411       tparadroid::bg_calc() [47]
+                0.00    0.00    7452/10411       tdroid_108::bg_calc() [159]
+[166]    0.0    0.00    0.00   10411         tdroid::friction() [166]
+-----------------------------------------------
+                0.00    0.00     133/5245        tship::diagram_draw() [38]
+                0.00    0.00    5112/5245        tship::print_info() [9]
+[167]    0.0    0.00    0.00    5245         tship::draw_ntitle() [167]
+-----------------------------------------------
+                0.00    0.00    5112/5112        tship::play_draw() [6]
+[168]    0.0    0.00    0.00    5112         tfloor::set_pos(int, int) [168]
+-----------------------------------------------
+                0.00    0.00    2639/2639        tship::level_bg_calc() [24]
+[169]    0.0    0.00    0.00    2639         tdroid_805::attack() [169]
+-----------------------------------------------
+                0.00    0.00    2578/2578        tship::level_bg_calc() [24]
+[170]    0.0    0.00    0.00    2578         tfloor::bg_calc() [170]
+                0.00    0.00   10907/10907       tdoor::bg_calc() [165]
+                0.00    0.00    2474/2474        tpower_bay::bg_calc() [171]
+-----------------------------------------------
+                0.00    0.00    2474/2474        tfloor::bg_calc() [170]
+[171]    0.0    0.00    0.00    2474         tpower_bay::bg_calc() [171]
+-----------------------------------------------
+                0.00    0.00     992/992         tlaser::colision_detect() [33]
+[172]    0.0    0.00    0.00     992         tlaser::colision_doors() [172]
+-----------------------------------------------
+                0.00    0.00     427/427         tdroid_719::bg_calc() [60]
+[173]    0.0    0.00    0.00     427         tdroid_719::move() [173]
+                0.00    0.00     427/10411       tdroid::friction() [166]
+                0.00    0.00     419/419         tdroid_719::detect_avoid_condition() [174]
+-----------------------------------------------
+                0.00    0.00     419/419         tdroid_719::move() [173]
+[174]    0.0    0.00    0.00     419         tdroid_719::detect_avoid_condition() [174]
+                0.00    0.00      14/104         atan3f [79]
+-----------------------------------------------
+                0.00    0.00       2/217         tdroid_606::attack() [53]
+                0.00    0.00       8/217         tparadroid::bg_calc() [47]
+                0.00    0.00      26/217         tlaser::bg_calc() [30]
+                0.00    0.00      27/217         tentity::colision_doors() [45]
+                0.00    0.00      64/217         tdroid::hit(tlaser*) [35]
+                0.00    0.00      90/217         tdroid::create_laser(int, int) [31]
+[175]    0.0    0.00    0.00     217         tentity::do_sound(int, float, float) [175]
+-----------------------------------------------
+                0.00    0.00     194/194         tship::load(char const*) [245]
+[176]    0.0    0.00    0.00     194         tdroid_108::append_cmd(int, int, int) [176]
+                0.00    0.00     194/2031        alloc_mem [71]
+-----------------------------------------------
+                0.00    0.00     147/147         intro_draw() [2]
+[177]    0.0    0.00    0.00     147         credit_6_fg() [177]
+-----------------------------------------------
+                0.00    0.00       4/141         tship::level_check_event() [25]
+                0.00    0.00      47/141         tship::load(char const*) [245]
+                0.00    0.00      90/141         tlaser::init(tfloor*, tentity**, float, float, int, int, tentity*) [185]
+[178]    0.0    0.00    0.00     141         tentity::init(tfloor*, bm_t*, tentity**, int, float, float) [178]
+-----------------------------------------------
+                0.00    0.00       1/137         tlaser0::tlaser0() [261]
+                0.00    0.00       7/137         tlaser2::tlaser2() [212]
+                0.00    0.00      47/137         tdroid::tdroid() [189]
+                0.00    0.00      82/137         tlaser1::tlaser1() [187]
+[179]    0.0    0.00    0.00     137         tentity::tentity() [179]
+-----------------------------------------------
+                0.00    0.00       1/136         tlaser0::~tlaser0() [262]
+                0.00    0.00       1/136         tdroid_489::~tdroid_489() [252]
+                0.00    0.00       1/136         tdroid_720::~tdroid_720() [254]
+                0.00    0.00       1/136         tdroid_933::~tdroid_933() [258]
+                0.00    0.00       1/136         tdroid_810::~tdroid_810() [256]
+                0.00    0.00       2/136         tdroid_176::~tdroid_176() [235]
+                0.00    0.00       2/136         tdroid_513::~tdroid_513() [236]
+                0.00    0.00       2/136         tdroid_899::~tdroid_899() [238]
+                0.00    0.00       2/136         tparadroid::~tparadroid() [241]
+                0.00    0.00       3/136         tdroid_261::~tdroid_261() [223]
+                0.00    0.00       3/136         tdroid_275::~tdroid_275() [225]
+                0.00    0.00       3/136         tdroid_355::~tdroid_355() [227]
+                0.00    0.00       3/136         tdroid_423::~tdroid_423() [229]
+                0.00    0.00       5/136         tdroid_719::~tdroid_719() [217]
+                0.00    0.00       6/136         tdroid_108::~tdroid_108() [214]
+                0.00    0.00       7/136         tlaser2::~tlaser2() [213]
+                0.00    0.00      12/136         tdroid_606::~tdroid_606() [203]
+                0.00    0.00      81/136         tlaser1::~tlaser1() [188]
+[180]    0.0    0.00    0.00     136         tentity::~tentity() [180]
+-----------------------------------------------
+                0.00    0.00     134/134         tdroid::draw_droid(int, int) [32]
+[181]    0.0    0.00    0.00     134         tdroid::draw_droid_ls(int, int) [181]
+                0.00    0.00     536/73935       blit_rect [66]
+-----------------------------------------------
+                0.00    0.00     121/121         tdroid::bg_calc_laser() [29]
+[182]    0.0    0.00    0.00     121         tlaser3::init(tfloor*, tentity**, float, float, int, int, tentity*) [182]
+-----------------------------------------------
+                0.00    0.00     102/102         draw_h [1]
+[183]    0.0    0.00    0.00     102         game_noise_draw() [183]
+                0.00    0.00   65280/73935       blit_rect [66]
+-----------------------------------------------
+                0.00    0.00      96/96          tdroid_606::attack() [53]
+[184]    0.0    0.00    0.00      96         tdroid_606::target_not_hidden(tentity*) [184]
+-----------------------------------------------
+                0.00    0.00       1/90          tlaser0::init(tfloor*, tentity**, float, float, int, int, tentity*) [260]
+                0.00    0.00       7/90          tlaser2::init(tfloor*, tentity**, float, float, int, int, tentity*) [211]
+                0.00    0.00      82/90          tlaser1::init(tfloor*, tentity**, float, float, int, int, tentity*) [186]
+[185]    0.0    0.00    0.00      90         tlaser::init(tfloor*, tentity**, float, float, int, int, tentity*) [185]
+                0.00    0.00      90/104         atan3f [79]
+                0.00    0.00      90/141         tentity::init(tfloor*, bm_t*, tentity**, int, float, float) [178]
+-----------------------------------------------
+                0.00    0.00      82/82          tdroid::create_laser(int, int) [31]
+[186]    0.0    0.00    0.00      82         tlaser1::init(tfloor*, tentity**, float, float, int, int, tentity*) [186]
+                0.00    0.00      82/90          tlaser::init(tfloor*, tentity**, float, float, int, int, tentity*) [185]
+-----------------------------------------------
+                0.00    0.00      82/82          tdroid::create_laser(int, int) [31]
+[187]    0.0    0.00    0.00      82         tlaser1::tlaser1() [187]
+                0.00    0.00      82/137         tentity::tentity() [179]
+-----------------------------------------------
+                0.00    0.00      81/81          tdroid::bg_calc_laser() [29]
+[188]    0.0    0.00    0.00      81         tlaser1::~tlaser1() [188]
+                0.00    0.00      81/136         tentity::~tentity() [180]
+-----------------------------------------------
+                0.00    0.00       2/47          tparadroid::tparadroid() [240]
+                0.00    0.00      45/47          tdroid_108::tdroid_108() [192]
+[189]    0.0    0.00    0.00      47         tdroid::tdroid() [189]
+                0.00    0.00      47/137         tentity::tentity() [179]
+-----------------------------------------------
+                0.00    0.00      46/46          tentity::colision_doors() [45]
+[190]    0.0    0.00    0.00      46         tentity::open_door(tdoor*) [190]
+                0.00    0.00      34/34          tdoor::open() [195]
+-----------------------------------------------
+                0.00    0.00      45/45          tship::load(char const*) [245]
+[191]    0.0    0.00    0.00      45         tdroid_108::init_cmds() [191]
+-----------------------------------------------
+                0.00    0.00       1/45          tdroid_489::tdroid_489() [251]
+                0.00    0.00       2/45          tdroid_176::tdroid_176() [234]
+                0.00    0.00       3/45          tdroid_261::tdroid_261() [222]
+                0.00    0.00       3/45          tdroid_275::tdroid_275() [224]
+                0.00    0.00       3/45          tdroid_355::tdroid_355() [226]
+                0.00    0.00       3/45          tdroid_423::tdroid_423() [228]
+                0.00    0.00       6/45          tship::load(char const*) [245]
+                0.00    0.00      24/45          tdroid_513::tdroid_513() [197]
+[192]    0.0    0.00    0.00      45         tdroid_108::tdroid_108() [192]
+                0.00    0.00      45/47          tdroid::tdroid() [189]
+-----------------------------------------------
+                0.00    0.00       1/45          tdroid_489::~tdroid_489() [252]
+                0.00    0.00       1/45          tdroid_720::~tdroid_720() [254]
+                0.00    0.00       1/45          tdroid_933::~tdroid_933() [258]
+                0.00    0.00       1/45          tdroid_810::~tdroid_810() [256]
+                0.00    0.00       2/45          tdroid_176::~tdroid_176() [235]
+                0.00    0.00       2/45          tdroid_513::~tdroid_513() [236]
+                0.00    0.00       2/45          tdroid_899::~tdroid_899() [238]
+                0.00    0.00       3/45          tdroid_261::~tdroid_261() [223]
+                0.00    0.00       3/45          tdroid_275::~tdroid_275() [225]
+                0.00    0.00       3/45          tdroid_355::~tdroid_355() [227]
+                0.00    0.00       3/45          tdroid_423::~tdroid_423() [229]
+                0.00    0.00       5/45          tdroid_719::~tdroid_719() [217]
+                0.00    0.00       6/45          tdroid_108::~tdroid_108() [214]
+                0.00    0.00      12/45          tdroid_606::~tdroid_606() [203]
+[193]    0.0    0.00    0.00      45         tdroid_108::~tdroid_108() [193]
+-----------------------------------------------
+                0.00    0.00      45/45          tship::load(char const*) [245]
+[194]    0.0    0.00    0.00      45         tdroid::init(tfloor*, tentity**, float, float) [194]
+-----------------------------------------------
+                0.00    0.00      34/34          tentity::open_door(tdoor*) [190]
+[195]    0.0    0.00    0.00      34         tdoor::open() [195]
+-----------------------------------------------
+                0.00    0.00       4/28          tfloor::load_floor_misc(char*) [206]
+                0.00    0.00      24/28          tdoor::tdoor() [199]
+[196]    0.0    0.00    0.00      28         tpower_bay::tpower_bay() [196]
+-----------------------------------------------
+                0.00    0.00       2/24          tship::load(char const*) [245]
+                0.00    0.00      22/24          tdroid_606::tdroid_606() [200]
+[197]    0.0    0.00    0.00      24         tdroid_513::tdroid_513() [197]
+                0.00    0.00      24/45          tdroid_108::tdroid_108() [192]
+-----------------------------------------------
+                0.00    0.00      24/24          tfloor::load_floor_misc(char*) [206]
+[198]    0.0    0.00    0.00      24         tdoor::init(int, int, int) [198]
+-----------------------------------------------
+                0.00    0.00      24/24          tfloor::load_floor_misc(char*) [206]
+[199]    0.0    0.00    0.00      24         tdoor::tdoor() [199]
+                0.00    0.00      24/28          tpower_bay::tpower_bay() [196]
+-----------------------------------------------
+                0.00    0.00       3/22          tdroid_805::tdroid_805() [230]
+                0.00    0.00       7/22          tdroid_719::tdroid_719() [210]
+                0.00    0.00      12/22          tship::load(char const*) [245]
+[200]    0.0    0.00    0.00      22         tdroid_606::tdroid_606() [200]
+                0.00    0.00      22/24          tdroid_513::tdroid_513() [197]
+-----------------------------------------------
+                0.00    0.00       2/16          tparadroid::display_nd() [239]
+                0.00    0.00       4/16          tship::level_bg_calc() [24]
+                0.00    0.00      10/16          tdroid::hit(tlaser*) [35]
+[201]    0.0    0.00    0.00      16         tdroid::display_nd() [201]
+                0.00    0.00      16/96          console_message_add [80]
+-----------------------------------------------
+                0.00    0.00      15/15          tship::load(char const*) [245]
+[202]    0.0    0.00    0.00      15         tship::create_transport(char*, int, int, int, int, int) [202]
+                0.00    0.00      15/2031        alloc_mem [71]
+-----------------------------------------------
+                0.00    0.00      12/12          tship::unload() [246]
+[203]    0.0    0.00    0.00      12         tdroid_606::~tdroid_606() [203]
+                0.00    0.00      12/136         tentity::~tentity() [180]
+                0.00    0.00      12/45          tdroid_108::~tdroid_108() [193]
+-----------------------------------------------
+                0.00    0.00      10/10          tship::load(char const*) [245]
+[204]    0.0    0.00    0.00      10         tship::create_floor(char*) [204]
+                0.00    0.00      10/2031        alloc_mem [71]
+                0.00    0.00      10/10          tfloor::tfloor() [209]
+                0.00    0.00      10/13          rel_to_abs_filepath_fleet [89]
+                0.00    0.00      10/10          tfloor::load_floor_misc(char*) [206]
+                0.00    0.00      10/10          tfloor::load(char*, char*) [207]
+-----------------------------------------------
+                0.00    0.00      10/10          tfloor::load(char*, char*) [207]
+[205]    0.0    0.00    0.00      10         tfloor::load_floor_map(char*) [205]
+                0.00    0.00      10/2031        alloc_mem [71]
+-----------------------------------------------
+                0.00    0.00      10/10          tship::create_floor(char*) [204]
+[206]    0.0    0.00    0.00      10         tfloor::load_floor_misc(char*) [206]
+                0.00    0.00      24/24          tdoor::tdoor() [199]
+                0.00    0.00      24/24          tdoor::init(int, int, int) [198]
+                0.00    0.00       4/28          tpower_bay::tpower_bay() [196]
+                0.00    0.00       4/4           tpower_bay::init(int, int) [219]
+-----------------------------------------------
+                0.00    0.00      10/10          tship::create_floor(char*) [204]
+[207]    0.0    0.00    0.00      10         tfloor::load(char*, char*) [207]
+                0.00    0.00      10/10          tfloor::load_floor_map(char*) [205]
+                0.00    0.00      10/149         strncpy2 [77]
+-----------------------------------------------
+                0.00    0.00      10/10          tship::free_all_floor() [243]
+[208]    0.0    0.00    0.00      10         tfloor::unload() [208]
+-----------------------------------------------
+                0.00    0.00      10/10          tship::create_floor(char*) [204]
+[209]    0.0    0.00    0.00      10         tfloor::tfloor() [209]
+-----------------------------------------------
+                0.00    0.00       1/7           tdroid_720::tdroid_720() [253]
+                0.00    0.00       1/7           tdroid_933::tdroid_933() [257]
+                0.00    0.00       5/7           tship::load(char const*) [245]
+[210]    0.0    0.00    0.00       7         tdroid_719::tdroid_719() [210]
+                0.00    0.00       7/22          tdroid_606::tdroid_606() [200]
+-----------------------------------------------
+                0.00    0.00       7/7           tdroid::create_laser(int, int) [31]
+[211]    0.0    0.00    0.00       7         tlaser2::init(tfloor*, tentity**, float, float, int, int, tentity*) [211]
+                0.00    0.00       7/90          tlaser::init(tfloor*, tentity**, float, float, int, int, tentity*) [185]
+-----------------------------------------------
+                0.00    0.00       7/7           tdroid::create_laser(int, int) [31]
+[212]    0.0    0.00    0.00       7         tlaser2::tlaser2() [212]
+                0.00    0.00       7/137         tentity::tentity() [179]
+-----------------------------------------------
+                0.00    0.00       7/7           tdroid::bg_calc_laser() [29]
+[213]    0.0    0.00    0.00       7         tlaser2::~tlaser2() [213]
+                0.00    0.00       7/136         tentity::~tentity() [180]
+-----------------------------------------------
+                0.00    0.00       6/6           tship::unload() [246]
+[214]    0.0    0.00    0.00       6         tdroid_108::~tdroid_108() [214]
+                0.00    0.00       6/136         tentity::~tentity() [180]
+                0.00    0.00       6/45          tdroid_108::~tdroid_108() [193]
+-----------------------------------------------
+                0.00    0.00       2/6           tship::load(char const*) [245]
+                0.00    0.00       4/6           tship::level_check_event() [25]
+[215]    0.0    0.00    0.00       6         tparadroid::init(tfloor*, tentity**, float, float) [215]
+-----------------------------------------------
+                0.00    0.00       2/6           tship::get_ready_calc() [56]
+                0.00    0.00       4/6           tship::level_check_event() [25]
+[216]    0.0    0.00    0.00       6         tship::set_ship_noise() [216]
+-----------------------------------------------
+                0.00    0.00       5/5           tship::unload() [246]
+[217]    0.0    0.00    0.00       5         tdroid_719::~tdroid_719() [217]
+                0.00    0.00       5/136         tentity::~tentity() [180]
+                0.00    0.00       5/45          tdroid_108::~tdroid_108() [193]
+-----------------------------------------------
+                0.00    0.00       4/4           tparadroid::action(tkevent*) [28]
+[218]    0.0    0.00    0.00       4         tparadroid::capture_droid(int, int) [218]
+                0.00    0.00       4/96          console_message_add [80]
+-----------------------------------------------
+                0.00    0.00       4/4           tfloor::load_floor_misc(char*) [206]
+[219]    0.0    0.00    0.00       4         tpower_bay::init(int, int) [219]
+-----------------------------------------------
+                0.00    0.00       4/4           tship::level_check_event() [25]
+[220]    0.0    0.00    0.00       4         tship::transport_set() [220]
+                0.00    0.00       4/4           tfloor::reinit() [221]
+-----------------------------------------------
+                0.00    0.00       4/4           tship::transport_set() [220]
+[221]    0.0    0.00    0.00       4         tfloor::reinit() [221]
+-----------------------------------------------
+                0.00    0.00       3/3           tship::load(char const*) [245]
+[222]    0.0    0.00    0.00       3         tdroid_261::tdroid_261() [222]
+                0.00    0.00       3/45          tdroid_108::tdroid_108() [192]
+-----------------------------------------------
+                0.00    0.00       3/3           tship::unload() [246]
+[223]    0.0    0.00    0.00       3         tdroid_261::~tdroid_261() [223]
+                0.00    0.00       3/136         tentity::~tentity() [180]
+                0.00    0.00       3/45          tdroid_108::~tdroid_108() [193]
+-----------------------------------------------
+                0.00    0.00       3/3           tship::load(char const*) [245]
+[224]    0.0    0.00    0.00       3         tdroid_275::tdroid_275() [224]
+                0.00    0.00       3/45          tdroid_108::tdroid_108() [192]
+-----------------------------------------------
+                0.00    0.00       3/3           tship::unload() [246]
+[225]    0.0    0.00    0.00       3         tdroid_275::~tdroid_275() [225]
+                0.00    0.00       3/136         tentity::~tentity() [180]
+                0.00    0.00       3/45          tdroid_108::~tdroid_108() [193]
+-----------------------------------------------
+                0.00    0.00       3/3           tship::load(char const*) [245]
+[226]    0.0    0.00    0.00       3         tdroid_355::tdroid_355() [226]
+                0.00    0.00       3/45          tdroid_108::tdroid_108() [192]
+-----------------------------------------------
+                0.00    0.00       3/3           tship::unload() [246]
+[227]    0.0    0.00    0.00       3         tdroid_355::~tdroid_355() [227]
+                0.00    0.00       3/136         tentity::~tentity() [180]
+                0.00    0.00       3/45          tdroid_108::~tdroid_108() [193]
+-----------------------------------------------
+                0.00    0.00       3/3           tship::load(char const*) [245]
+[228]    0.0    0.00    0.00       3         tdroid_423::tdroid_423() [228]
+                0.00    0.00       3/45          tdroid_108::tdroid_108() [192]
+-----------------------------------------------
+                0.00    0.00       3/3           tship::unload() [246]
+[229]    0.0    0.00    0.00       3         tdroid_423::~tdroid_423() [229]
+                0.00    0.00       3/136         tentity::~tentity() [180]
+                0.00    0.00       3/45          tdroid_108::~tdroid_108() [193]
+-----------------------------------------------
+                0.00    0.00       1/3           tdroid_810::tdroid_810() [255]
+                0.00    0.00       2/3           tdroid_899::tdroid_899() [237]
+[230]    0.0    0.00    0.00       3         tdroid_805::tdroid_805() [230]
+                0.00    0.00       3/22          tdroid_606::tdroid_606() [200]
+-----------------------------------------------
+                0.00    0.00       3/3           tship::level_check_event() [25]
+[231]    0.0    0.00    0.00       3         tship::transport_change_up() [231]
+-----------------------------------------------
+                0.00    0.00       2/2           fleet_select_draw() [48]
+[232]    0.0    0.00    0.00       2         intro_start_reinit() [232]
+                0.00    0.00       1/1           reset_game() [250]
+-----------------------------------------------
+                0.00    0.00       2/2           game_run_draw() [4]
+[233]    0.0    0.00    0.00       2         delete_ship() [233]
+                0.00    0.00       2/2           tship::unload() [246]
+-----------------------------------------------
+                0.00    0.00       2/2           tship::load(char const*) [245]
+[234]    0.0    0.00    0.00       2         tdroid_176::tdroid_176() [234]
+                0.00    0.00       2/45          tdroid_108::tdroid_108() [192]
+-----------------------------------------------
+                0.00    0.00       2/2           tship::unload() [246]
+[235]    0.0    0.00    0.00       2         tdroid_176::~tdroid_176() [235]
+                0.00    0.00       2/136         tentity::~tentity() [180]
+                0.00    0.00       2/45          tdroid_108::~tdroid_108() [193]
+-----------------------------------------------
+                0.00    0.00       2/2           tship::unload() [246]
+[236]    0.0    0.00    0.00       2         tdroid_513::~tdroid_513() [236]
+                0.00    0.00       2/136         tentity::~tentity() [180]
+                0.00    0.00       2/45          tdroid_108::~tdroid_108() [193]
+-----------------------------------------------
+                0.00    0.00       2/2           tship::load(char const*) [245]
+[237]    0.0    0.00    0.00       2         tdroid_899::tdroid_899() [237]
+                0.00    0.00       2/3           tdroid_805::tdroid_805() [230]
+-----------------------------------------------
+                0.00    0.00       2/2           tship::unload() [246]
+[238]    0.0    0.00    0.00       2         tdroid_899::~tdroid_899() [238]
+                0.00    0.00       2/136         tentity::~tentity() [180]
+                0.00    0.00       2/45          tdroid_108::~tdroid_108() [193]
+-----------------------------------------------
+                0.00    0.00       2/2           tship::load(char const*) [245]
+[239]    0.0    0.00    0.00       2         tparadroid::display_nd() [239]
+                0.00    0.00       2/16          tdroid::display_nd() [201]
+                0.00    0.00       2/96          console_message_add [80]
+-----------------------------------------------
+                0.00    0.00       2/2           tship::load(char const*) [245]
+[240]    0.0    0.00    0.00       2         tparadroid::tparadroid() [240]
+                0.00    0.00       2/47          tdroid::tdroid() [189]
+-----------------------------------------------
+                0.00    0.00       2/2           tship::unload() [246]
+[241]    0.0    0.00    0.00       2         tparadroid::~tparadroid() [241]
+                0.00    0.00       2/136         tentity::~tentity() [180]
+-----------------------------------------------
+                0.00    0.00       2/2           tship::load(char const*) [245]
+[242]    0.0    0.00    0.00       2         tship::find_transport(char*, int, int) [242]
+-----------------------------------------------
+                0.00    0.00       2/2           tship::unload() [246]
+[243]    0.0    0.00    0.00       2         tship::free_all_floor() [243]
+                0.00    0.00      10/10          tfloor::unload() [208]
+-----------------------------------------------
+                0.00    0.00       2/2           tship::level_check_event() [25]
+[244]    0.0    0.00    0.00       2         tship::transport_change_dn() [244]
+-----------------------------------------------
+                0.00    0.00       2/2           game_ship_start() [58]
+[245]    0.0    0.00    0.00       2         tship::load(char const*) [245]
+                0.00    0.00     194/194         tdroid_108::append_cmd(int, int, int) [176]
+                0.00    0.00      47/141         tentity::init(tfloor*, bm_t*, tentity**, int, float, float) [178]
+                0.00    0.00      45/45          tdroid::init(tfloor*, tentity**, float, float) [194]
+                0.00    0.00      45/45          tdroid_108::init_cmds() [191]
+                0.00    0.00      15/15          tship::create_transport(char*, int, int, int, int, int) [202]
+                0.00    0.00      12/22          tdroid_606::tdroid_606() [200]
+                0.00    0.00      10/10          tship::create_floor(char*) [204]
+                0.00    0.00       6/45          tdroid_108::tdroid_108() [192]
+                0.00    0.00       5/7           tdroid_719::tdroid_719() [210]
+                0.00    0.00       4/149         strncpy2 [77]
+                0.00    0.00       3/3           tdroid_355::tdroid_355() [226]
+                0.00    0.00       3/3           tdroid_261::tdroid_261() [222]
+                0.00    0.00       3/3           tdroid_275::tdroid_275() [224]
+                0.00    0.00       3/3           tdroid_423::tdroid_423() [228]
+                0.00    0.00       2/13          rel_to_abs_filepath_fleet [89]
+                0.00    0.00       2/35          load_bm [84]
+                0.00    0.00       2/96          console_message_add [80]
+                0.00    0.00       2/2           tparadroid::display_nd() [239]
+                0.00    0.00       2/41          strip_leading_whitespace [83]
+                0.00    0.00       2/2           tship::find_transport(char*, int, int) [242]
+                0.00    0.00       2/2           tparadroid::tparadroid() [240]
+                0.00    0.00       2/6           tparadroid::init(tfloor*, tentity**, float, float) [215]
+                0.00    0.00       2/2           tdroid_176::tdroid_176() [234]
+                0.00    0.00       2/24          tdroid_513::tdroid_513() [197]
+                0.00    0.00       2/2           tdroid_899::tdroid_899() [237]
+                0.00    0.00       1/1           tdroid_489::tdroid_489() [251]
+                0.00    0.00       1/1           tdroid_720::tdroid_720() [253]
+                0.00    0.00       1/1           tdroid_933::tdroid_933() [257]
+                0.00    0.00       1/1           tdroid_810::tdroid_810() [255]
+-----------------------------------------------
+                0.00    0.00       2/2           delete_ship() [233]
+[246]    0.0    0.00    0.00       2         tship::unload() [246]
+                0.00    0.00      12/12          tdroid_606::~tdroid_606() [203]
+                0.00    0.00       6/6           tdroid_108::~tdroid_108() [214]
+                0.00    0.00       5/5           tdroid_719::~tdroid_719() [217]
+                0.00    0.00       3/3           tdroid_355::~tdroid_355() [227]
+                0.00    0.00       3/3           tdroid_423::~tdroid_423() [229]
+                0.00    0.00       3/3           tdroid_261::~tdroid_261() [223]
+                0.00    0.00       3/3           tdroid_275::~tdroid_275() [225]
+                0.00    0.00       2/2           tship::free_all_floor() [243]
+                0.00    0.00       2/2           delete_tex [96]
+                0.00    0.00       2/2           tdroid_513::~tdroid_513() [236]
+                0.00    0.00       2/2           tdroid_899::~tdroid_899() [238]
+                0.00    0.00       2/2           tparadroid::~tparadroid() [241]
+                0.00    0.00       2/2           tdroid_176::~tdroid_176() [235]
+                0.00    0.00       1/1           tdroid_933::~tdroid_933() [258]
+                0.00    0.00       1/1           tdroid_720::~tdroid_720() [254]
+                0.00    0.00       1/1           tdroid_489::~tdroid_489() [252]
+                0.00    0.00       1/1           tdroid_810::~tdroid_810() [256]
+-----------------------------------------------
+                0.00    0.00       2/2           game_ship_start() [58]
+[247]    0.0    0.00    0.00       2         tship::tship() [247]
+-----------------------------------------------
+                0.00    0.00       1/1           init(int, char**) [278]
+[248]    0.0    0.00    0.00       1         intro_start_init() [248]
+-----------------------------------------------
+                0.00    0.00       1/1           game_cont_draw() [41]
+[249]    0.0    0.00    0.00       1         fleet_select_init() [249]
+-----------------------------------------------
+                0.00    0.00       1/1           intro_start_reinit() [232]
+[250]    0.0    0.00    0.00       1         reset_game() [250]
+                0.00    0.00       1/1           load_ship_table [115]
+                0.00    0.00       1/1           free_ship_table [102]
+-----------------------------------------------
+                0.00    0.00       1/1           tship::load(char const*) [245]
+[251]    0.0    0.00    0.00       1         tdroid_489::tdroid_489() [251]
+                0.00    0.00       1/45          tdroid_108::tdroid_108() [192]
+-----------------------------------------------
+                0.00    0.00       1/1           tship::unload() [246]
+[252]    0.0    0.00    0.00       1         tdroid_489::~tdroid_489() [252]
+                0.00    0.00       1/136         tentity::~tentity() [180]
+                0.00    0.00       1/45          tdroid_108::~tdroid_108() [193]
+-----------------------------------------------
+                0.00    0.00       1/1           tship::load(char const*) [245]
+[253]    0.0    0.00    0.00       1         tdroid_720::tdroid_720() [253]
+                0.00    0.00       1/7           tdroid_719::tdroid_719() [210]
+-----------------------------------------------
+                0.00    0.00       1/1           tship::unload() [246]
+[254]    0.0    0.00    0.00       1         tdroid_720::~tdroid_720() [254]
+                0.00    0.00       1/136         tentity::~tentity() [180]
+                0.00    0.00       1/45          tdroid_108::~tdroid_108() [193]
+-----------------------------------------------
+                0.00    0.00       1/1           tship::load(char const*) [245]
+[255]    0.0    0.00    0.00       1         tdroid_810::tdroid_810() [255]
+                0.00    0.00       1/3           tdroid_805::tdroid_805() [230]
+-----------------------------------------------
+                0.00    0.00       1/1           tship::unload() [246]
+[256]    0.0    0.00    0.00       1         tdroid_810::~tdroid_810() [256]
+                0.00    0.00       1/136         tentity::~tentity() [180]
+                0.00    0.00       1/45          tdroid_108::~tdroid_108() [193]
+-----------------------------------------------
+                0.00    0.00       1/1           tship::load(char const*) [245]
+[257]    0.0    0.00    0.00       1         tdroid_933::tdroid_933() [257]
+                0.00    0.00       1/7           tdroid_719::tdroid_719() [210]
+-----------------------------------------------
+                0.00    0.00       1/1           tship::unload() [246]
+[258]    0.0    0.00    0.00       1         tdroid_933::~tdroid_933() [258]
+                0.00    0.00       1/136         tentity::~tentity() [180]
+                0.00    0.00       1/45          tdroid_108::~tdroid_108() [193]
+-----------------------------------------------
+                0.00    0.00       1/1           tdroid::hit(tlaser*) [35]
+[259]    0.0    0.00    0.00       1         tship::setup_flash_screen(float, float, float, float) [259]
+-----------------------------------------------
+                0.00    0.00       1/1           tdroid::create_laser(int, int) [31]
+[260]    0.0    0.00    0.00       1         tlaser0::init(tfloor*, tentity**, float, float, int, int, tentity*) [260]
+                0.00    0.00       1/90          tlaser::init(tfloor*, tentity**, float, float, int, int, tentity*) [185]
+-----------------------------------------------
+                0.00    0.00       1/1           tdroid::create_laser(int, int) [31]
+[261]    0.0    0.00    0.00       1         tlaser0::tlaser0() [261]
+                0.00    0.00       1/137         tentity::tentity() [179]
+-----------------------------------------------
+                0.00    0.00       1/1           tdroid::bg_calc_laser() [29]
+[262]    0.0    0.00    0.00       1         tlaser0::~tlaser0() [262]
+                0.00    0.00       1/136         tentity::~tentity() [180]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+ [248] intro_start_init()    [160] tpower_bay::draw(int, int) [212] tlaser2::tlaser2()
+ [249] fleet_select_init()   [219] tpower_bay::init(int, int) [213] tlaser2::~tlaser2()
+ [232] intro_start_reinit()  [171] tpower_bay::bg_calc() [182] tlaser3::init(tfloor*, tentity**, float, float, int, int, tentity*)
+  [57] display_final_score() [196] tpower_bay::tpower_bay() [71] alloc_mem
+  [62] game_ship_start_init() [198] tdoor::init(int, int, int) [79] atan3f
+   [2] intro_draw()          [195] tdoor::open()          [15] blit_bm
+ [250] reset_game()          [165] tdoor::bg_calc()        [7] blit_bm_font
+  [50] credit_1_fg()         [199] tdoor::tdoor()         [86] blit_bm_scale
+  [49] credit_2_fg()           [9] tship::print_info()    [72] blit_line
+ [177] credit_6_fg()         [167] tship::draw_ntitle()   [66] blit_rect
+  [27] credit_7_fg()          [40] tship::print_score()   [73] blit_rect_hollow
+  [36] credit_8_fg()         [204] tship::create_floor(char*) [88] calc_norm_accel
+ [233] delete_ship()          [38] tship::diagram_draw()  [78] concat_filepaths
+  [26] main_logo_fg()         [24] tship::level_bg_calc() [80] console_message_add
+  [37] contacts_1_fg()       [220] tship::transport_set() [14] console_message_display
+  [21] contacts_2_fg()       [242] tship::find_transport(char*, int, int) [75] convert_2_tex
+  [65] contacts_4_fg()       [243] tship::free_all_floor() [99] create_filepaths
+   [4] game_run_draw()        [56] tship::get_ready_calc() [96] delete_tex
+   [3] draw_scroll_fg()       [55] tship::get_ready_draw() [12] display_message
+  [41] game_cont_draw()      [216] tship::set_ship_noise() [1] draw_h
+  [52] game_term_draw()      [202] tship::create_transport(char*, int, int, int, int, int) [100] dump_scores
+ [183] game_noise_draw()      [25] tship::level_check_event() [101] end_game
+  [58] game_ship_start()     [259] tship::setup_flash_screen(float, float, float, float) [102] free_ship_table
+  [23] display_scores_fg()   [244] tship::transport_change_dn() [103] free_textures
+  [48] fleet_select_draw()   [231] tship::transport_change_up() [67] get_kb_event
+ [176] tdroid_108::append_cmd(int, int, int) [245] tship::load(char const*) [104] get_score_time
+ [158] tdroid_108::block_detect() [246] tship::unload()  [105] get_score_username
+ [164] tdroid_108::set_dir_vect(float, float) [5] tship::level_run() [70] get_special_key_state
+ [159] tdroid_108::bg_calc()   [6] tship::play_draw()    [106] init_background_timer
+ [191] tdroid_108::init_cmds() [247] tship::tship()      [107] init_kb_event
+ [192] tdroid_108::tdroid_108() [201] tdroid::display_nd() [108] init_scores
+ [214] tdroid_108::~tdroid_108() [32] tdroid::draw_droid(int, int) [109] init_sound
+ [193] tdroid_108::~tdroid_108() [17] tdroid::draw_laser(tfloor*, int, int) [93] lclose
+ [234] tdroid_176::tdroid_176() [31] tdroid::create_laser(int, int) [84] load_bm
+ [235] tdroid_176::~tdroid_176() [29] tdroid::bg_calc_laser() [92] load_bm_ani
+ [222] tdroid_261::tdroid_261() [181] tdroid::draw_droid_ls(int, int) [90] load_bm_png
+ [223] tdroid_261::~tdroid_261() [35] tdroid::hit(tlaser*) [110] load_fleet_logos
+ [224] tdroid_275::tdroid_275() [64] tdroid::draw(tfloor*, int, int) [111] load_fleet_table
+ [225] tdroid_275::~tdroid_275() [194] tdroid::init(tfloor*, tentity**, float, float) [112] load_flr_xpms
+ [226] tdroid_355::tdroid_355() [42] tdroid::bg_calc()   [113] load_font
+ [227] tdroid_355::~tdroid_355() [166] tdroid::friction() [85] load_fx_sub
+ [228] tdroid_423::tdroid_423() [163] tdroid::recharge()  [91] load_png
+ [229] tdroid_423::~tdroid_423() [157] tdroid::snap_shot() [114] load_preserved_session
+ [251] tdroid_489::tdroid_489() [189] tdroid::tdroid()    [97] load_scores
+ [252] tdroid_489::~tdroid_489() [205] tfloor::load_floor_map(char*) [115] load_ship_table
+  [61] tdroid_513::attack()  [206] tfloor::load_floor_misc(char*) [116] load_sprite_xpms
+  [39] tdroid_513::bg_calc()  [11] tfloor::draw()         [82] load_xpm
+ [197] tdroid_513::tdroid_513() [207] tfloor::load(char*, char*) [94] lopen
+ [236] tdroid_513::~tdroid_513() [221] tfloor::reinit()  [117] opengl_init
+ [184] tdroid_606::target_not_hidden(tentity*) [208] tfloor::unload() [118] play_music
+  [53] tdroid_606::attack()  [170] tfloor::bg_calc()     [119] preserve_session
+ [200] tdroid_606::tdroid_606() [168] tfloor::set_pos(int, int) [13] print_str
+ [203] tdroid_606::~tdroid_606() [209] tfloor::tfloor()   [20] print_str_hazey
+ [174] tdroid_719::detect_avoid_condition() [172] tlaser::colision_doors() [8] print_str_len
+ [173] tdroid_719::move()     [33] tlaser::colision_detect() [76] put_kb_event
+  [60] tdroid_719::bg_calc()  [34] tlaser::colision_droids() [18] put_snd_event
+ [210] tdroid_719::tdroid_719() [59] tlaser::draw(tfloor*, int, int) [95] ramp_colour
+ [217] tdroid_719::~tdroid_719() [185] tlaser::init(tfloor*, tentity**, float, float, int, int, tentity*) [68] read_ln
+ [253] tdroid_720::tdroid_720() [30] tlaser::bg_calc()    [74] read_ogg_file
+ [254] tdroid_720::~tdroid_720() [45] tentity::colision_doors() [87] realloc_mem
+ [169] tdroid_805::attack()  [161] tentity::colision_floor() [81] rel_to_abs_filepath
+ [230] tdroid_805::tdroid_805() [43] tentity::colision_detect() [89] rel_to_abs_filepath_fleet
+ [255] tdroid_810::tdroid_810() [162] tentity::colision_droids() [120] save_scores
+ [256] tdroid_810::~tdroid_810() [178] tentity::init(tfloor*, bm_t*, tentity**, int, float, float) [69] shake_calc
+ [237] tdroid_899::tdroid_899() [44] tentity::bg_calc()  [121] shake_reset
+ [238] tdroid_899::~tdroid_899() [175] tentity::do_sound(int, float, float) [122] shutdown_sound
+ [257] tdroid_933::tdroid_933() [190] tentity::open_door(tdoor*) [19] sound_cmd
+ [258] tdroid_933::~tdroid_933() [156] tentity::snap_shot() [46] sound_cmd_primary
+ [239] tparadroid::display_nd() [179] tentity::tentity()  [51] sound_cmd_simple
+ [218] tparadroid::capture_droid(int, int) [180] tentity::~tentity() [54] sound_cmd_snoise
+  [63] tparadroid::hit(tlaser*) [260] tlaser0::init(tfloor*, tentity**, float, float, int, int, tentity*) [10] sound_process_fg
+  [16] tparadroid::draw()    [261] tlaser0::tlaser0()     [98] stop_music
+ [215] tparadroid::init(tfloor*, tentity**, float, float) [262] tlaser0::~tlaser0() [83] strip_leading_whitespace
+  [28] tparadroid::action(tkevent*) [186] tlaser1::init(tfloor*, tentity**, float, float, int, int, tentity*) [77] strncpy2
+  [47] tparadroid::bg_calc() [187] tlaser1::tlaser1()    [123] test_mouse_pos
+ [240] tparadroid::tparadroid() [188] tlaser1::~tlaser1()
+ [241] tparadroid::~tparadroid() [211] tlaser2::init(tfloor*, tentity**, float, float, int, int, tentity*)
