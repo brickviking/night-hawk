@@ -1,12 +1,14 @@
 /*
 	This is a test.
+        It is a perfectly acceptable test. It has no issues and
+        should compile perfectly fine in most modern compilers.
+        Here's an example compile line for the GNU Compiler Project
 
 	Compile: g++ -O2 test.cc
 
 	Mod'ed to use c++ stdlib (I've never liked it though. JN, 26OCT20)
 */
-//#include <stdio>
-//#include <stdlib>
+
 #include <iostream> // JN, 26OCT20
 
 using namespace std; // You never used to need this declaration. it's a bit like python now. JN, 26OCT20
@@ -20,14 +22,12 @@ public:
 
 A::A(void)
 {
-	cout << "Init A" << endl; // JN, 26OCT20
-//	printf("Init A\n");
+	cout << "Begin A" << endl; // BV, 26OCT20
 }
 
 void A::print_hello(void)
 {
-	cout << "Hello A" << endl; // JN, 26OCT20
-//	printf("Hello A\n");
+	cout << "Gidday A" << endl; // BV, 27OCT20
 }
 
 class B : A
@@ -39,14 +39,12 @@ public:
 
 B::B(void)
 {
-	cout << "Init B" << endl; // JN, 26OCT20
-//	printf("Init B\n");
+	cout << "Begin B" << endl; // BV, 27OCT20
 }
 
 void B::print_hello(void)
 {
-	cout << "Hello B" << endl; // JN, 26OCT20
-//	printf("Hello B\n");
+	cout << "Gidday B" << endl; // BV, 27OCT20
 }
 
 int main(void)
