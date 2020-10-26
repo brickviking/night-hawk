@@ -1,7 +1,8 @@
 /*
 	This is a test.
 */
-#include <stdio.h>
+#include <stdio>
+#include <stdlib>
 
 class A
 {
