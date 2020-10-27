@@ -17,7 +17,7 @@ class A
 {
 public:
 	A(void);
-	void print_hello(void);
+	virtual void print_hello(void);
 };
 
 A::A(void)
@@ -30,7 +30,7 @@ void A::print_hello(void)
 	cout << "Gidday A" << endl; // BV, 27OCT20
 }
 
-class B : A
+class B : public A
 {
 public:
 	B(void);
@@ -49,14 +49,21 @@ void B::print_hello(void)
 
 int main(void)
 {
-	B x;
+	A *a_ptr;
+	B b;
 
-	x.print_hello();
+	a_ptr = &b;
+	a_ptr->print_hello(); // A bit of polymorphism. JN, 27OCT20
 
 	/*
 	 * Added code. JN, 27OCT20
 	 */
-	cout << ". Yes, Aussie Internet is pretty piss poor" << endl;
-	cout << " Perhaps I should move to New Zealand instead so I can see brickviking" << endl; 
+	cout << "Yes, Aussie Internet is pretty piss poor." << endl;
+
+	/*
+	 * Added code. BV, 28OCT20
+	 */
+	cout << " Perhaps I should move to New Zealand instead so I can see brickviking" << endl;
 	return 0;
 }
+
