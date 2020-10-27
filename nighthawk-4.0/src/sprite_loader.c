@@ -212,7 +212,8 @@ void load_flr_xpms(void)
 			break;	/*EOF.. break out of loop*/
 
 		if (sscanf(str, "%s %c", fn, &bound) != 2) {
-			printf("Warning: Garbage found 'in xpm.i file. Ignoring.\n");
+			if (verbose_logging == TRUE) /*JN, 27OCT20*/
+				printf("Warning: Garbage found 'in xpm.i file. Ignoring.\n");
 			continue;
 		}
 

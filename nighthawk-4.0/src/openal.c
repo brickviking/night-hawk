@@ -331,7 +331,8 @@ void play_music(void)
 
 		rs = read_ogg_file();
 		if (rs == 0) { /*EOF ?*/
-			printf("Warning: Unexpected EOF when reading music file.\n");
+			if (verbose_logging == TRUE) /*JN, 27OCT20*/
+				printf("Warning: Unexpected EOF when reading music file.\n");
 			break;
 		}
 

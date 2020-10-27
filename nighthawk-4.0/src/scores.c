@@ -13,6 +13,9 @@
 * ----------------------------------------------------------------
 * score.c - Scoring code
 *
+* 27OCT20: Made the warnings in file handling code only print when verbose
+* logging set (as recommended by alpha tester - DM on austech forum).
+*
 ****************************************************************************
 ****************************************************************************
 ***************************************************************************/
@@ -154,13 +157,16 @@ void load_scores(void)
 
 	fp = lopen(scores_path, "r");
 	if (fp == NULL) {
-		printf("%s '%s'.\n", (char *)err_msg, scores_path);
+		if (verbose_logging == TRUE) /*JN, 27OCT20*/
+			printf("%s '%s'.\n", (char *)err_msg, scores_path);
 		return;
 	}
 
 	if (fread(score_table, sizeof(tscore_table), MAX_SCORE_TABLE, fp)
-							!= MAX_SCORE_TABLE)
-		printf("%s '%s'.\n", (char *)err_msg, scores_path);
+							!= MAX_SCORE_TABLE) {
+		if (verbose_logging == TRUE) /*JN, 27OCT20*/
+			printf("%s '%s'.\n", (char *)err_msg, scores_path);
+	}
 	lclose(fp);
 }
 
@@ -215,7 +221,8 @@ void save_scores(int complete)
 		printf("Saving scores file '%s'.\n", scores_path);
 	fp = lopen(scores_path, "w");
 	if (fp == NULL) {
-		printf("%s '%s'.\n", (char *)err_msg, scores_path);
+		if (verbose_logging == TRUE) /*JN, 27OCT20*/
+			printf("%s '%s'.\n", (char *)err_msg, scores_path);
 		return;
 	}
 
@@ -252,8 +259,10 @@ void save_scores(int complete)
 	}
 
 	if (fwrite(score_table, sizeof(tscore_table), MAX_SCORE_TABLE, fp)
-							 != MAX_SCORE_TABLE)
-		printf("%s '%s'.\n", (char *)err_msg, scores_path);
+							 != MAX_SCORE_TABLE) {
+		if (verbose_logging == TRUE) /*JN, 27OCT20*/
+			printf("%s '%s'.\n", (char *)err_msg, scores_path);
+	}
 	lclose(fp);
 }
 
@@ -283,7 +292,8 @@ void preserve_session(void)
 
 	fp = lopen(preserve_path, "w");
 	if (fp == NULL) {
-		printf("%s '%s'.\n", (char *)err_msg, preserve_path);
+		if (verbose_logging == TRUE) /*JN, 27OCT20*/
+			printf("%s '%s'.\n", (char *)err_msg, preserve_path);
 		return;
 	}
 
@@ -294,8 +304,10 @@ void preserve_session(void)
 	get_score_time(score_preserve.time);
 	score_preserve.score = score;
 
-	if (fwrite(&score_preserve, sizeof(tscore_table), 1, fp) != 1)
-		printf("%s '%s'.\n", (char *)err_msg, preserve_path);
+	if (fwrite(&score_preserve, sizeof(tscore_table), 1, fp) != 1) {
+		if (verbose_logging == TRUE) /*JN, 27OCT20*/
+			printf("%s '%s'.\n", (char *)err_msg, preserve_path);
+	}
 	lclose(fp);
 }
 
@@ -317,13 +329,15 @@ void load_preserved_session(void)
 
 	fp = lopen(preserve_path, "r");
 	if (fp == NULL) {
-		printf("%s '%s'.\n", (char *)err_msg, preserve_path);
+		if (verbose_logging == TRUE) /*JN, 27OCT20*/
+			printf("%s '%s'.\n", (char *)err_msg, preserve_path);
 		return;
 	}
 
 	preserved_session = alloc_mem(sizeof(tscore_table));
 	if (fread(preserved_session, sizeof(tscore_table), 1, fp) != 1) {
-		printf("%s '%s'.\n", (char *)err_msg, preserve_path);
+		if (verbose_logging == TRUE) /*JN, 27OCT20*/
+			printf("%s '%s'.\n", (char *)err_msg, preserve_path);
 		lclose(fp);
 		return;
 	}
