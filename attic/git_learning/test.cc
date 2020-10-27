@@ -53,5 +53,12 @@ int main(void)
 
 	x.print_hello();
 
+	/*
+	 * Added code. JN, 27OCT20
+	 */
+	for (int i = 0; i < 5; i++) {
+		cout << i << ". Yes, Aussie Internet is pretty piss poor" << endl;
+	}
+
 	return 0;
 }
