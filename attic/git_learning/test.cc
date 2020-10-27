@@ -56,9 +56,7 @@ int main(void)
 	/*
 	 * Added code. JN, 27OCT20
 	 */
-	for (int i = 0; i < 5; i++) {
-		cout << i << ". Yes, Aussie Internet is pretty piss poor" << endl;
-	}
-
+	cout << ". Yes, Aussie Internet is pretty piss poor" << endl;
+	cout << " Perhaps I should move to New Zealand instead so I can see brickviking" << endl; 
 	return 0;
 }
