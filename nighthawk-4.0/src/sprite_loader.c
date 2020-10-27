@@ -11,7 +11,7 @@
 * See README file for a list of contributors.
 *
 * ----------------------------------------------------------------
-* bm_loader.c - handles loading the sprites.
+* sprite_loader.c - handles loading the sprites.
 *
 ****************************************************************************
 ****************************************************************************
@@ -20,7 +20,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include <malloc.h>
 #include <GL/glut.h>
 #include <GL/glx.h>
 #include "defs.h"
