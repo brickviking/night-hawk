@@ -10,13 +10,17 @@
 # cd <somewhere>/build
 # cmake <Nighthawk source code filepath (pointing to this file)>
 # ccmake .   (Optional. To edit settings)
-# cmake --build .
+# make
 #
 cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 
-# While source tree is in alpha stage. Set install path to "."
+# Developmental/Alpha testing install path: "."
 #
-set(CMAKE_INSTALL_PREFIX "." CACHE PATH "Install path" FORCE)
+#set(CMAKE_INSTALL_PREFIX "." CACHE PATH "Install path" FORCE)
+
+# Beta/Stable install path
+#
+set(CMAKE_INSTALL_PREFIX "/usr/local" CACHE PATH "Install path" FORCE)
 
 # Version control for project normally goes into this function, but I
 # find it too restrictive, so retained the version.h file.

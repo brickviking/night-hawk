@@ -14,4 +14,5 @@ sox low_shields.wav -t raw -e unsigned -b 8		low_shields.8 rate -v 11025
 sox no_weapon.wav -t raw -e unsigned -b 8		no_weapon.8 rate -v 11025
 sox power_up.wav -t raw -e unsigned -b 8		power_up.8 rate -v 11025
 sox ship_complete.wav -t raw -e unsigned -b 8		ship_complete.8 rate -v 11025
-sox trans_terminated.wav -t raw -e unsigned -b 8	trans_terminated.8 rate -v 11025
+#sox trans_terminated.wav -t raw -e unsigned -b 8	trans_terminated.8 rate -v 11025
+sox trans_terminated.wav -t raw -e unsigned -b 8	trans_terminated.8

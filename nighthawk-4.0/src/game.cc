@@ -124,7 +124,7 @@ static void game_term_init(void)
 	game_term_dis_cont = 0;
 	draw_hook = game_term_draw;
 	bg_calc_hook = game_term_calc;
-	sound_cmd_primary(FX_TRANS_TERM, 1.0, 1.0);
+	sound_cmd_primary(FX_TRANS_TERM, 1.0, 0.7);
 }
 
 /***************************************************************************
