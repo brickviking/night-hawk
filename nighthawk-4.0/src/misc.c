@@ -14,6 +14,7 @@
 * misc.c - Miscellaneous code.
 *
 * 28OCT20: Added atexit() handling to fix close window bug. JN
+* 28OCT20: Changed unnamed semaphores to named semaphores. JN
 *
 ****************************************************************************
 ****************************************************************************
@@ -27,8 +28,12 @@
 #include <ctype.h>
 #include <time.h>
 #include <signal.h>
+#include <fcntl.h>
+#include <unistd.h>
 #include <semaphore.h>
+#include <sys/stat.h>
 #include <sys/time.h>
+#include <sys/types.h>
 #include <math.h>
 #include <AL/al.h>
 #include <AL/alc.h>
@@ -235,32 +240,52 @@ char *rel_to_abs_filepath_fleet(char *filepath)
 * Added semaphores for OpenGL input hooks and foreground code. Suspect
 * execution is not mutually exclusive. It is to try to solve a rare core
 * dump bug. JN, 12SEP20
+*
+* Changed unnamed semaphores to named semaphores for OS/X compatibility.
+* Bug identified by Phil from Adelaide. JN, 28OCT20
 ****************************************************************************/
-static sem_t	kb_event_sem;
+static char	kb_event_sem_name[STR_LABEL_LEN + 1];
+static sem_t	*kb_event_sem;
 static tkevent	kevent[KEVENT_SIZE];
 static int	kevent_r_ptr, kevent_w_ptr;
 
 void init_kb_event(void)
 {
-	if (sem_init(&kb_event_sem, 0, 1) == -1)
-		print_error(__func__, "sem_init()");
+	snprintf(kb_event_sem_name, STR_LABEL_LEN, "nighthawk_%d", getpid());
+
+	if (verbose_logging == TRUE)
+		printf("Opening input event semaphore '%s'.\n",
+							kb_event_sem_name);
+	kb_event_sem = sem_open(kb_event_sem_name, O_CREAT);
+	if (kb_event_sem == NULL)
+		print_error(__func__, "sem_open()");
+
+	if (sem_post(kb_event_sem) == -1) /*Unlock semaphore (ie: set it to 1)*/
+		print_error(__func__, "sem_post()");
 }
 
 void end_kb_event(void)
 {
-	sem_destroy(&kb_event_sem);
+	if (kb_event_sem == NULL)
+		return;
+
+	if (verbose_logging == TRUE)
+		printf("Closing and Unlinking input event semaphore '%s'.\n",
+							kb_event_sem_name);
+	sem_close(kb_event_sem);
+	sem_unlink(kb_event_sem_name);
 }
 
 void put_kb_event(tkevent *k)
 {
-	if (sem_wait(&kb_event_sem) == -1)
+	if (sem_wait(kb_event_sem) == -1) /*lock*/
 		print_error(__func__, "sem_wait()");
 
 	memcpy(&kevent[kevent_w_ptr], k, sizeof(tkevent));
 	kevent_w_ptr++;
 	kevent_w_ptr &= (KEVENT_SIZE - 1);
 
-	if (sem_post(&kb_event_sem) == -1)
+	if (sem_post(kb_event_sem) == -1) /*unlock*/
 		print_error(__func__, "sem_post()");
 }
 
@@ -269,14 +294,14 @@ int get_kb_event(tkevent *k)
 	if(kevent_r_ptr == kevent_w_ptr)
 		return 0;
 
-	if (sem_wait(&kb_event_sem) == -1)
+	if (sem_wait(kb_event_sem) == -1) /*lock*/
 		print_error(__func__, "sem_wait()");
 
 	memcpy(k, &kevent[kevent_r_ptr], sizeof(tkevent));
 	kevent_r_ptr++;
 	kevent_r_ptr &= (KEVENT_SIZE - 1);
 
-	if (sem_post(&kb_event_sem) == -1)
+	if (sem_post(kb_event_sem) == -1) /*unlock*/
 		print_error(__func__, "sem_post()");
 
 	return 1;

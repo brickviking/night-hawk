@@ -28,27 +28,28 @@ the start of Nighthawk's demise.
 A note about Eric Gillespie, his involvement in the project, and where 
 he fits in. Eric contacted me mid-2003 and asked if he could take over 
 the project. I agreed as I had moved on in life and had no intention of 
-maintaining Nighthawk. So Eric is the curator/promoter/point of contact 
-of this game. He's also the administrator for the Sourceforge and git 
-repository sites. Eric isn't a programmer, but has done a lot of good 
-work to promote the game on sourceforge. He maintains an excellent 
-sourceforge web site and has put a lot of effort into creating it. He is 
-also a user and a tester for this project. Eric also seeded the idea of 
-the game having a developmental style. When I released nighthawk's floor 
-editor (ned) in version 1.0, I had no idea that this editor would appeal 
-to certain users to be able to build their own floors and ships. I 
-originally left the editor in the source tree for future reference. Eric 
-asked me to restore the editor in this version, which I have done. This 
-editor is still a developmental tool, but in future versions, this 
-editor could be polished for the general public ?. In this version, 
-there is a fleet selector to allow users to create their own fleets­-
-this idea came to life during one of our email discussions about ship
-creation. This feature complements the floor editor.
+maintaining Nighthawk. So Eric is the project manager/curator 
+/promoter/point of contact of this game. He's also the administrator for 
+the Sourceforge and git repository sites. Eric isn't a programmer, but 
+has done a lot of good work to promote the game on sourceforge. He 
+maintains an excellent sourceforge web site and has put a lot of effort 
+into creating it. He is also a user and a tester for this project. Eric 
+also seeded the idea of the game having a developmental style. When I 
+released nighthawk's floor editor (ned) in version 1.0, I had no idea 
+that this editor would appeal to certain users to be able to build their 
+own floors and ships. I originally left the editor in the source tree 
+for future reference. Eric asked me to restore the editor in this 
+version, which I have done. This editor is still a developmental tool, 
+but in future versions, this editor could be polished for the general 
+public ?. In this version, there is a fleet selector to allow users to 
+create their own fleets- this idea came to life during one of our email 
+discussions about ship creation. This feature complements the floor 
+editor.
 
 Restoring this arcade game has been the most addictive personal project 
-I have undertaken in years. It's been very satisfying work­-more so than 
+I have undertaken in years. It's been very satisfying work, more so than 
 my electronic projects, as I'm exclusively a hardware man nowadays. Have 
-a look at my web page if you're interested. I think I have left the 
+a look at my web page if you're interested). I think I have left the 
 game in a good state for future developers to maintain it's currency on 
 modern platforms.
 
@@ -60,7 +61,7 @@ Friday 16 Oct 2020
 v1.0 Synopsis
 
 Nighthawk is a tribute to one of the most playable and contagious games
-ever written­-Paradroid by Andrew Braybrook. It was so good, it was worthy
+ever written- Paradroid by Andrew Braybrook. It was so good, it was worthy
 of my attention span for 6 straight months, and was the subject of
 conversation at school for many months as well. It was quite amazing seeing
 that I've never really been into "playing games", the only other game that
