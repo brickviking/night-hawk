@@ -60,7 +60,15 @@ static void init(int argc, char *argv[])
 	sigaction(SIGKILL, &kill_action, NULL);
 	sigaction(SIGTERM, &kill_action, NULL);
 	sigaction(SIGHUP, &kill_action, NULL);
+	sigaction(SIGQUIT, &kill_action, NULL); // Added. JN, 28OCT20
+	sigaction(SIGABRT, &kill_action, NULL); // Added. JN, 28OCT20
 	sigaction(SIGSEGV, &segfault_action, NULL);
+
+	/*
+	 * Add atexit to fix close window bug. See notes in misc.c. JN, 28OCT20
+	 */
+	if (atexit(atexit_h) != 0)
+		printf_error("Error running %s:atexit()", __func__);
 
 	srandom(12338);
 	umask(~0666); // Set file permissions for files created by this game.

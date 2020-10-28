@@ -13,6 +13,8 @@
 * ----------------------------------------------------------------
 * misc.c - Miscellaneous code.
 *
+* 28OCT20: Added atexit() handling to fix close window bug. JN
+*
 ****************************************************************************
 ****************************************************************************
 ***************************************************************************/
@@ -67,22 +69,34 @@ void (*bg_calc_hook)(void);
 void end_kb_event(void);
 
 /***************************************************************************
-* Exit point for nighthawk where system resources that must be cleaned up by
-* user space code must do it. Nb/ memory allocation is cleaned up by OS. No
-* need to do a bunch of free()'s.
+* end_game() must be called whenever the game needs to exit. This is the exit
+* point of the game for portability purposes (ie: other operating systems will
+* have other methods of program termination etc).
 *
-* Moving as much code into C files as C++ is yucky !. JN, 27AUG20
+* Most program exemptions/signaling is handled by the sigaction() code in
+* main:init(), however, an alpha tester (wotnot from austech), found that when
+* closing the game window, the game wasn't able to handle this situation via
+* it's signal handling. GLUT has a fix for this (glutSetOption()), but this fix
+* is a GLUT extension (and not a standard GLUT function, and I don't want to
+* use non-standard functions). So, the work around is to modify end_game() and
+* create an at_exit_h() function. So, now the game exits nicely when you close
+* the window on it. JN, 28OCT20
 ***************************************************************************/
-void end_game(int status)
+void atexit_h(void)
 {
+	if (verbose_logging == TRUE)
+		printf("Shutting down resources.\n");
 	free_textures();
 	end_kb_event();
 	shutdown_sound();
+}
 
-	if  (!status)
+void end_game(int status)
+{
+	if (!status)
 		printf("See ya\n");
 
-	exit(status);
+	exit(status); /*This then calls atexit_h(). JN, 28OCT20*/
 }
 
 /***************************************************************************
@@ -109,7 +123,7 @@ void print_error(const char *func, const char *cmd)
 
 void kill_proc(int sig)
 {
-	printf_error("TERM signal received, terminating game");
+	printf_error("Termination signal received, terminating game");
 }
 
 void seg_fault(int sig)

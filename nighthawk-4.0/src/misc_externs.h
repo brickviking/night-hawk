@@ -24,6 +24,7 @@ extern void (*bg_calc_hook)(void);
 /*
  * Functions
  */
+extern void atexit_h(void);
 extern void end_game(int status);
 extern void printf_error(const char *fmt, ...);
 extern void print_error(const char *func, const char *cmd);
