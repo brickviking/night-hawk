@@ -240,7 +240,7 @@ int main(int argc, char *argv[])
 "However, if the game window is maximised, then the game has no control over\n"
 "the window size, and the operation of the game will become indeterminate. This\n"
 "issue will be addressed in future versions, however for the time being, please\n"
-"reframe from maximising window of the game.\n"
+"avoid maximising window of the game.\n"
 "****************************************************************************\n\n");
 
 	parse_parameters(argc, argv);
