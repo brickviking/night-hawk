@@ -8,11 +8,11 @@ Nighthawk V4.0 Readme        Nighthawk Copyright (C) 1997 Jason Nunn (JsNO)
 v4.0 Intro
 ----------
 
-This is a restored Unix/Xwindows arcade game I released in the 90s. 
-Apart from a few small FX additions, enhancements and bug fixes, the 
-game is still the same. Xlib and obsolete OSS support have been replaced 
-with OpenGL and OpenAL support. The Starwars sound FX have been replaced 
-with my own FX.
+This is a restored Unix/Xwindows arcade game I released in the 1990s. 
+Apart from a few small sound and graphics FX additions, enhancements and 
+bug fixes, the game is still the same. Xlib and obsolete OSS support 
+have been replaced with OpenGL and OpenAL support. The Starwars sound FX 
+have been replaced with my own sound FX.
 
 It was 26 years ago in October 1996 that I started this project. I 
 decided to revise it because I was sad that it had become derelict on 
@@ -20,36 +20,36 @@ Eric Gillespie's Sourceforge web site. I felt it was unfinished business
 that it wasn't properly distributed.
 
 Unfortunately, I released versions 2.x with Starwars sound FX, which 
-were only meant to be temporally in order to aid me writing the game. I 
-struggled with producing FX. To my error, I left these FX in the game. 
-This prevented the game being distributed due to IP violations. This was 
-the start of Nighthawk's demise.
+were only meant to be temporary in order to aid me writing the game. I 
+struggled with producing sound FX. To my error, I left these sound FX in 
+the game. This prevented the game being distributed due to IP 
+violations. This was the start of Nighthawk's demise.
 
 A note about Eric Gillespie, his involvement in the project, and where 
 he fits in. Eric contacted me mid-2003 and asked if he could take over 
 the project. I agreed as I had moved on in life and had no intention of 
 maintaining Nighthawk. So Eric is the project manager/curator 
-/promoter/point of contact of this game. He's also the administrator for 
+/promoter/point of contact for this game. He's also the administrator for 
 the Sourceforge and git repository sites. Eric isn't a programmer, but 
-has done a lot of good work to promote the game on sourceforge. He 
-maintains an excellent sourceforge web site and has put a lot of effort 
+has done a lot of good work to promote the game on Sourceforge. He 
+maintains an excellent Sourceforge web site and has put a lot of effort 
 into creating it. He is also a user and a tester for this project. Eric 
 also seeded the idea of the game having a developmental style. When I 
-released nighthawk's floor editor (ned) in version 1.0, I had no idea 
+released Nighthawk's floor editor (ned) in version 1.0, I had no idea 
 that this editor would appeal to certain users to be able to build their 
 own floors and ships. I originally left the editor in the source tree 
 for future reference. Eric asked me to restore the editor in this 
 version, which I have done. This editor is still a developmental tool, 
 but in future versions, this editor could be polished for the general 
-public ?. In this version, there is a fleet selector to allow users to 
-create their own fleets- this idea came to life during one of our email 
+public. In this version, there is a fleet selector to allow users to 
+create their own fleets - this idea came to life during one of our email 
 discussions about ship creation. This feature complements the floor 
 editor.
 
 Restoring this arcade game has been the most addictive personal project 
 I have undertaken in years. It's been very satisfying work, more so than 
 my electronic projects, as I'm exclusively a hardware man nowadays. Have 
-a look at my web page if you're interested). I think I have left the 
+a look at my web page if you're interested. I think I have left the 
 game in a good state for future developers to maintain it's currency on 
 modern platforms.
 
@@ -61,15 +61,15 @@ Friday 16 Oct 2020
 v1.0 Synopsis
 
 Nighthawk is a tribute to one of the most playable and contagious games
-ever written- Paradroid by Andrew Braybrook. It was so good, it was worthy
+ever written - Paradroid by Andrew Braybrook. It was so good, it was worthy
 of my attention span for 6 straight months, and was the subject of
 conversation at school for many months as well. It was quite amazing seeing
 that I've never really been into "playing games", the only other game that
 lifted my skirt was 3D-Wolfenstein (the pre-cursor to DOOM).
 
-It all started when i was in Year 10 (1987). A friend of mine gave me a
+It all started when I was in Year 10 (1987). A friend of mine gave me a
 copy of Paradroid on a cassette tape (that was the common media for C-64's
-among my friends at the time), and that was it!, i was hooked.
+among my friends at the time), and that was it!, I was hooked.
 
 Nighthawk was named after the second ship (level) of the original game. It
 was extremely difficult to get to this level. If you could slate the
@@ -84,7 +84,7 @@ Paradroid was also very similar to Quazatron for the Z80 Spectrum, one of
 his favourite games. There's also an Amiga variation, and the acclaimed
 Paradroid-90 on the Atari-ST).
 
-In October 1992 (during the end of my degree i was doing at the time), I
+In October 1992 (during the end of my degree I was doing at the time), I
 attempted to write a Messydos PC game like this, but didn't have enough
 technical knowledge about real time programming and PC's etc. Four years
 later in October 1996, I started working on this game. Over a period of a
@@ -225,6 +225,8 @@ Version 4.0
 
 Eric Gillespie........................	Testing, Support,
 					New fleet (in the works)
+Don Moore.............................  Testing, suggestions/tips,
+                                        and proof reading.
 
 Sound FX created using music module samples from:
  MECH8.3SM............... By necros / five musicians
