@@ -46,7 +46,12 @@ set(CMAKE_BUILD_TYPE "RelWithDebInfo" CACHE STRING "" FORCE)
 
 # Setup game data
 #
-set(DATA_PATH   "${CMAKE_INSTALL_PREFIX}/share/nighthawk" CACHE PATH "Data path" FORCE)
+set(DATA_PATH "${CMAKE_INSTALL_PREFIX}/share/nighthawk" CACHE PATH "Data path" FORCE)
+
+# Setup home directory and owner (used to setup XFCE install desktop icon)
+#
+set(HOME_PATH "$ENV{HOME}" CACHE PATH "Home directory (This is used to install desktop icon)" FORCE)
+set(USERNAME "$ENV{USER}" CACHE PATH "Username (This is used to install desktop icon)" FORCE)
 
 # Setup scores file
 #
@@ -170,6 +175,8 @@ else ()
 endif ()
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in ${CMAKE_BINARY_DIR}/config.h)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/nighthawk.desktop.in ${CMAKE_BINARY_DIR}/nighthawk.desktop)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/uninstall.sh.in ${CMAKE_BINARY_DIR}/uninstall.sh)
 include_directories(${CMAKE_BINARY_DIR})
 
 add_executable(nighthawk
@@ -260,13 +267,32 @@ endif()
 # Installing
 #
 if (BUILD_NED)
-	install (TARGETS nighthawk nighthawk_ned DESTINATION bin)
+	install(TARGETS nighthawk nighthawk_ned DESTINATION bin)
 else ()
-	install (TARGETS nighthawk DESTINATION bin)
+	install(TARGETS nighthawk DESTINATION bin)
 endif ()
 
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/data/ DESTINATION ${DATA_PATH})
 
 # Install nighthawk in games section of man page tree (iaw "man man")
 #
-install (FILES man/nighthawk.6 DESTINATION man/man6)
+install(FILES man/nighthawk.6 DESTINATION man/man6)
+
+# From investigation work and a strong recommendation by GCB (aka wotnot),
+# install XFCE desktop icon (only applicable to Unix/Linux/BSD etc)
+#
+# Nb/ There is no generic way in cmake to set ownership of a file during
+# install :(. So, I've created a hack using execute_process(). This
+# unfortunately may make this script system specific :(. There is a possible
+# risk that install will break on future distributions. JN, 08NOV20
+#
+if (UNIX AND NOT APPLE)
+	install(FILES ${CMAKE_BINARY_DIR}/nighthawk.desktop DESTINATION ${HOME_PATH}/Desktop)
+	install(CODE "execute_process(COMMAND chown ${USERNAME}.${USERNAME} ${HOME_PATH}/Desktop/nighthawk.desktop)")
+endif ()
+
+# Create uninstall recipes in makefile
+#
+if (NOT TARGET uninstall)
+	add_custom_target(uninstall COMMAND sh ${CMAKE_CURRENT_BINARY_DIR}/uninstall.sh)
+endif ()

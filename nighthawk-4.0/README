@@ -156,11 +156,11 @@ then using unzip etc):
 
 	ccmake .		(Nb/ optional to edit build settings)
 
-	cmake --build . (or make)
+	make
 
 - Install game
 
-	sudo cmake --install .  (or sudo make install)
+	sudo make install
 
 - To run the game, type: "nighthawk"
 
@@ -168,6 +168,10 @@ then using unzip etc):
 
 - To build the floor editor (ned), run "ccmake ." and toggle the 
 BUILD_NED option, and then 'make' and 'make install' etc.
+
+- To uninstall game:
+
+	sudo make uninstall
 
 
 Full list of cmd lines (including developer cmds):
@@ -203,10 +207,7 @@ Author:
    Jason Nunn (JsNO)
    Adelaide, South Australia
    Email: jsno8192@gmail.com
-   Web: It's around !. It seems like everytime I put a URL in software,
-	a few months later, I change ISPs :(. Do a google for "Latest 
-	Projects by jsno" and "tinkerings and hacks" and you should come
-	across my web page.
+   Web: www.bluebarorange.ooguy.com/~jsno
 
 Music Author:
    Vincent Voois
@@ -226,7 +227,10 @@ Version 4.0
 Eric Gillespie........................	Testing, Support,
 					New fleet (in the works)
 giantclambake.........................  Testing, suggestions/tips,
-                                        and proof reading.
+                                        XFCE desktop icon investigation,
+                                        proof reading and hosting my web
+					site: www.bluebarorange.ooguy.com
+
 
 Sound FX created using music module samples from:
  MECH8.3SM............... By necros / five musicians

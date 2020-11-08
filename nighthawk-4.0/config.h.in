@@ -3,6 +3,5 @@
  * cmake will convert this file to a "config.h" with the defines below
  * filled in with their respective values. JN, 12OCT20
  */
-#cmakedefine INSTALL_DIR "@INSTALL_DIR@"
 #cmakedefine DATA_PATH "@DATA_PATH@"
 #cmakedefine SCORES_PATH "@SCORES_PATH@"

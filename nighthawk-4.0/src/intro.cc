@@ -69,6 +69,7 @@ static void reset_game(void)
 #define FS_LOGO_Y	30
 #define FS_LOGO_X_START	40
 #define FS_LOGO_X_SPC	120
+#define FS_COMMENT_X_OFS 8  // Added. JN, 08NOV20
 #define FS_COMMENT_Y	135
 #define FS_LINE_WIDTH	4
 #define FS_LOGO_SIZE	100
@@ -137,7 +138,7 @@ static void fleet_select_draw(void)
 
 		glColor3f(0.4, 0.4, 0.4);
 		print_str(fleet_table[i + flt_p].comment,
-			i * FS_LOGO_X_SPC + (FS_LOGO_X_START >> 1),
+			i * FS_LOGO_X_SPC + (FS_LOGO_X_START >> 1) + FS_COMMENT_X_OFS,
 			FS_COMMENT_Y);
 
 	}
@@ -247,17 +248,17 @@ static void game_cont_calc(void)
 
 static void game_cont_draw(void)
 {
-	const char *mess =
-		"You have already played Nighthawk.\n"
+	const char *mess = // Reworded as recommended by GCB. JN, 08NOV20
+		"You've previously completed ships.\n"
 		"Would you like to continue from\n"
-		"where you left ? (y/n)\n";
+		"last completed ship ? (y/n)\n";
 	char str[STR_LEN + 1];
 
 	glColor4f(0.0, 0.7, 0.0, game_cont_fade);
 	display_message((char *)mess, 20);
 	snprintf(str, STR_LEN,
 			"Name: %s\n"
-			"Ship completed: %s\n"
+			"Current Ship: %s\n"
 			"Score: %u\n"
 			"Date: %s\n",
 			preserved_session->name,
