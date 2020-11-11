@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Nighthawk
+Comment=
+Exec=@CMAKE_INSTALL_PREFIX@/bin/nighthawk
+Icon=@DATA_PATH@/xpm/v4/nighthawk_desktop_icon.png
+Path=
+Terminal=false
+StartupNotify=false
