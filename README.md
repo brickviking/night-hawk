@@ -11,8 +11,7 @@ A neat introduction is at https://night-hawk.sourceforge.net/
 
 ## Development version
 
-We are currently on nighthawk-4.0alpha, and we'd like to see some serious bugtesting on 4.0. The Issues and other suggestions can be reported here at [the issues link](https://github.com/brickviking/night-hawk/issues).
+We are currently on nighthawk-4.1dev, and we'd like to see some serious bugtesting on 4.1. The Issues and other suggestions can be reported here at [the issues link](https://github.com/brickviking/night-hawk/issues).
 
-This new version finally reintegrates sound back into Nighthawk; we've also updated the soundfiles to remove samples from Star Wars so that Debian users can finally play this game with sound.  Package maintainers will be able to update their copies to the latest version. We're also working on removing all the bugs we found.
+With the Nighthawk-4.0 version, sound is finally reintegrated back into Nighthawk; we've also updated the soundfiles to remove samples from Star Wars so that Debian users can finally play this game with sound.  Package maintainers will be able to update their copies to the latest version. We're also working on removing all the bugs we found.
 
-Previous versions are available in [old_versions](old_versions/) but may not compile cleanly and might require some work to modernise. The limitations with the 1.0/2.2/2.3 clients are that they're stuck on 320x200 game window, and may have some other bugs. In addition, they will still have the original sound effects that have been replaced with our own in 4.0.
